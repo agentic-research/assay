@@ -92,3 +92,51 @@ func TestCompute_Empty(t *testing.T) {
 	assert.Equal(t, 0.0, result.Coverage)
 	assert.Equal(t, 0.0, result.Staleness)
 }
+
+func TestCompute_FuzzyMatch(t *testing.T) {
+	entities := []Entity{
+		{Name: "MemoryStore", Kind: "type", Package: "graph"},
+		{Name: "NewGraphCache", Kind: "function", Package: "graph"},
+	}
+	refs := []DocRef{
+		{Text: "in-memory store", Kind: "code_span"},    // fuzzy match → MemoryStore
+		{Text: "new graph cache", Kind: "code_span"},     // fuzzy match → NewGraphCache
+		{Text: "completely unrelated", Kind: "code_span"}, // no match
+	}
+
+	result := Compute(entities, refs)
+
+	assert.Equal(t, 1.0, result.Coverage) // both entities matched via fuzzy
+	assert.Len(t, result.Covered, 2)
+	assert.Len(t, result.Stale, 1) // "completely unrelated" is stale
+}
+
+func TestCompute_FuzzyDisabled(t *testing.T) {
+	entities := []Entity{
+		{Name: "MemoryStore", Kind: "type", Package: "graph"},
+	}
+	refs := []DocRef{
+		{Text: "in-memory store", Kind: "code_span"},
+	}
+
+	// Exact only — no fuzzy.
+	result := ComputeWithThreshold(entities, refs, 0)
+
+	assert.Equal(t, 0.0, result.Coverage) // no exact match
+	assert.Len(t, result.Stale, 1)
+}
+
+func TestCompute_FuzzyHighThreshold(t *testing.T) {
+	entities := []Entity{
+		{Name: "MemoryStore", Kind: "type", Package: "graph"},
+	}
+	refs := []DocRef{
+		{Text: "store data values", Kind: "code_span"}, // weak overlap: only "store"
+	}
+
+	// High threshold — shouldn't match.
+	result := ComputeWithThreshold(entities, refs, 0.8)
+
+	assert.Equal(t, 0.0, result.Coverage)
+	assert.Len(t, result.Stale, 1)
+}

@@ -23,6 +23,7 @@ var (
 	flagSource       string
 	flagDocs         string
 	flagThreshold    float64
+	flagFuzzy        float64
 	flagFormat       string
 	flagExportedOnly bool
 	flagVerbose      bool
@@ -34,6 +35,7 @@ func init() {
 	verifyCmd.Flags().StringVar(&flagSource, "source", ".", "Source code root directory")
 	verifyCmd.Flags().StringVar(&flagDocs, "docs", "", "Documentation directory (default: auto-detect)")
 	verifyCmd.Flags().Float64Var(&flagThreshold, "threshold", 0.0, "Minimum coverage ratio (0.0-1.0)")
+	verifyCmd.Flags().Float64Var(&flagFuzzy, "fuzzy", coverage.DefaultFuzzyThreshold, "Jaccard similarity threshold for fuzzy matching (0=exact only)")
 	verifyCmd.Flags().StringVar(&flagFormat, "format", "text", "Output format: text, json")
 	verifyCmd.Flags().BoolVar(&flagExportedOnly, "exported-only", true, "Only count exported/public entities")
 	verifyCmd.Flags().BoolVarP(&flagVerbose, "verbose", "v", false, "Show all matched entities")
@@ -79,7 +81,7 @@ func runVerify(cmd *cobra.Command, args []string) error {
 	docRefs = mergeRefs(docRefs, rootMarkdown)
 
 	// Compute coverage.
-	result := coverage.Compute(entities, docRefs)
+	result := coverage.ComputeWithThreshold(entities, docRefs, flagFuzzy)
 
 	// Output report.
 	switch flagFormat {

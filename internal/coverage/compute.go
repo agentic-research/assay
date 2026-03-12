@@ -3,16 +3,29 @@ package coverage
 import "strings"
 
 // Compute performs set operations between code entities and doc references.
+// It first tries exact matching, then falls back to fuzzy Jaccard similarity
+// on camelCase-split tokens when fuzzyThreshold > 0.
 func Compute(entities []Entity, refs []DocRef) *CoverageResult {
+	return ComputeWithThreshold(entities, refs, DefaultFuzzyThreshold)
+}
+
+// ComputeWithThreshold is like Compute but with an explicit fuzzy threshold.
+// Set threshold to 0 to disable fuzzy matching (exact only).
+func ComputeWithThreshold(entities []Entity, refs []DocRef, fuzzyThreshold float64) *CoverageResult {
 	// Index entities by multiple lookup keys.
 	type entityEntry struct {
 		entity Entity
-		seen   bool
+		tokens []string // camelCase-split tokens for fuzzy matching
 	}
 	byName := make(map[string]*entityEntry)
+	allEntries := make([]*entityEntry, 0, len(entities))
 	for i := range entities {
 		e := &entities[i]
-		entry := &entityEntry{entity: *e}
+		entry := &entityEntry{
+			entity: *e,
+			tokens: Tokenize(e.Name),
+		}
+		allEntries = append(allEntries, entry)
 		// Bare name: "GraphCache"
 		byName[e.Name] = entry
 		// Qualified: "graph.GraphCache"
@@ -27,12 +40,32 @@ func Compute(entities []Entity, refs []DocRef) *CoverageResult {
 
 	for _, ref := range refs {
 		norm := normalizeRef(ref.Text)
+
+		// Try exact match first.
 		if entry, ok := byName[norm]; ok {
-			entry.seen = true
 			matchedEntities[entry.entity.Name] = true
-		} else {
-			stale = append(stale, ref)
+			continue
 		}
+
+		// Fuzzy fallback: tokenize the ref and find best Jaccard match.
+		if fuzzyThreshold > 0 {
+			refTokens := Tokenize(norm)
+			bestSim := 0.0
+			var bestEntry *entityEntry
+			for _, entry := range allEntries {
+				sim := Jaccard(entry.tokens, refTokens)
+				if sim > bestSim {
+					bestSim = sim
+					bestEntry = entry
+				}
+			}
+			if bestSim >= fuzzyThreshold && bestEntry != nil {
+				matchedEntities[bestEntry.entity.Name] = true
+				continue
+			}
+		}
+
+		stale = append(stale, ref)
 	}
 
 	var covered, uncovered []Entity
