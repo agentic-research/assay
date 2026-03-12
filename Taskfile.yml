@@ -1,0 +1,40 @@
+version: "3"
+
+tasks:
+  build:
+    desc: Build assay binary
+    cmds:
+      - go build -o bin/assay .
+
+  test:
+    desc: Run all tests
+    cmds:
+      - go test -race -v ./...
+
+  lint:
+    desc: Run linter
+    cmds:
+      - golangci-lint run ./...
+
+  fmt:
+    desc: Format code
+    cmds:
+      - gofumpt -w -extra .
+
+  vet:
+    desc: Run go vet
+    cmds:
+      - go vet ./...
+
+  check:
+    desc: Full CI-equivalent check
+    cmds:
+      - task: fmt
+      - task: vet
+      - task: lint
+      - task: test
+
+  tidy:
+    desc: Tidy module
+    cmds:
+      - go mod tidy
