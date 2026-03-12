@@ -82,6 +82,33 @@ func ExtractSource(src []byte, relPath string, exportedOnly bool) ([]coverage.En
 	return entities, nil
 }
 
+// extractDocComment walks backward from a scope node to collect contiguous
+// comment siblings. Uses the same adjacency check as mache's engine:
+// gap ≤ 2 bytes between nodes (allows \n or \r\n, rejects double blank lines).
+func extractDocComment(scopeNode *sitter.Node, src []byte) string {
+	if scopeNode == nil {
+		return ""
+	}
+	startByte := scopeNode.StartByte()
+	n := scopeNode
+	prev := n.PrevSibling()
+	for prev != nil && prev.Type() == "comment" {
+		gap := int(n.StartByte()) - int(prev.EndByte())
+		if gap <= 2 {
+			startByte = prev.StartByte()
+			n = prev
+			prev = prev.PrevSibling()
+		} else {
+			break
+		}
+	}
+	if startByte < scopeNode.StartByte() {
+		text := string(src[startByte:scopeNode.StartByte()])
+		return strings.TrimRight(text, "\n\r\t ")
+	}
+	return ""
+}
+
 func extractPackageName(root *sitter.Node, src []byte) string {
 	q, err := sitter.NewQuery([]byte(`(package_clause (package_identifier) @pkg)`), golang.GetLanguage())
 	if err != nil {
@@ -127,6 +154,14 @@ func runQuery(eq EntityQuery, root *sitter.Node, src []byte, pkg, relPath string
 		return nil, nil
 	}
 
+	// Find scope capture index for doc comment extraction.
+	scopeIdx := -1
+	for i := uint32(0); i < q.CaptureCount(); i++ {
+		if q.CaptureNameForId(i) == "scope" {
+			scopeIdx = int(i)
+		}
+	}
+
 	var entities []coverage.Entity
 	for {
 		m, ok := qc.NextMatch()
@@ -135,12 +170,15 @@ func runQuery(eq EntityQuery, root *sitter.Node, src []byte, pkg, relPath string
 		}
 
 		var name, receiver string
+		var scopeNode *sitter.Node
 		for _, c := range m.Captures {
 			switch int(c.Index) {
 			case nameIdx:
 				name = c.Node.Content(src)
 			case receiverIdx:
 				receiver = c.Node.Content(src)
+			case scopeIdx:
+				scopeNode = c.Node
 			}
 		}
 		if name == "" {
@@ -157,12 +195,15 @@ func runQuery(eq EntityQuery, root *sitter.Node, src []byte, pkg, relPath string
 			displayName = receiver + "." + name
 		}
 
+		docComment := extractDocComment(scopeNode, src)
+
 		entities = append(entities, coverage.Entity{
-			Name:     displayName,
-			Kind:     eq.Kind,
-			Package:  pkg,
-			File:     relPath,
-			Exported: exported,
+			Name:       displayName,
+			Kind:       eq.Kind,
+			Package:    pkg,
+			File:       relPath,
+			Exported:   exported,
+			DocComment: docComment,
 		})
 	}
 	return entities, nil

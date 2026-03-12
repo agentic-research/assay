@@ -2,11 +2,12 @@ package coverage
 
 // Entity represents a documentable code construct extracted from source.
 type Entity struct {
-	Name     string // "FuncName" or "Receiver.MethodName"
-	Kind     string // "function", "method", "type", "constant", "variable"
-	Package  string // Package name from tree-sitter
-	File     string // Source file path (relative)
-	Exported bool
+	Name       string // "FuncName" or "Receiver.MethodName"
+	Kind       string // "function", "method", "type", "constant", "variable"
+	Package    string // Package name from tree-sitter
+	File       string // Source file path (relative)
+	Exported   bool
+	DocComment string // Extracted doc comment text (for bridging)
 }
 
 // DocRef represents a code reference found in documentation.

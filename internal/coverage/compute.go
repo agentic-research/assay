@@ -2,9 +2,11 @@ package coverage
 
 import "strings"
 
+// DefaultTrigramThreshold is the minimum Dice trigram similarity for a match.
+const DefaultTrigramThreshold = 0.3
+
 // Compute performs set operations between code entities and doc references.
-// It first tries exact matching, then falls back to fuzzy Jaccard similarity
-// on camelCase-split tokens when fuzzyThreshold > 0.
+// Matching cascade: exact → Jaccard tokens → Dice trigrams → doc comment bridging.
 func Compute(entities []Entity, refs []DocRef) *CoverageResult {
 	return ComputeWithThreshold(entities, refs, DefaultFuzzyThreshold)
 }
@@ -14,8 +16,9 @@ func Compute(entities []Entity, refs []DocRef) *CoverageResult {
 func ComputeWithThreshold(entities []Entity, refs []DocRef, fuzzyThreshold float64) *CoverageResult {
 	// Index entities by multiple lookup keys.
 	type entityEntry struct {
-		entity Entity
-		tokens []string // camelCase-split tokens for fuzzy matching
+		entity    Entity
+		tokens    []string // camelCase-split tokens for fuzzy matching
+		docTokens []string // tokens from doc comment (for bridging)
 	}
 	byName := make(map[string]*entityEntry)
 	allEntries := make([]*entityEntry, 0, len(entities))
@@ -24,6 +27,9 @@ func ComputeWithThreshold(entities []Entity, refs []DocRef, fuzzyThreshold float
 		entry := &entityEntry{
 			entity: *e,
 			tokens: Tokenize(e.Name),
+		}
+		if e.DocComment != "" {
+			entry.docTokens = Tokenize(e.DocComment)
 		}
 		allEntries = append(allEntries, entry)
 		// Bare name: "GraphCache"
@@ -41,19 +47,53 @@ func ComputeWithThreshold(entities []Entity, refs []DocRef, fuzzyThreshold float
 	for _, ref := range refs {
 		norm := normalizeRef(ref.Text)
 
-		// Try exact match first.
+		// Layer 1: Exact match.
 		if entry, ok := byName[norm]; ok {
 			matchedEntities[entry.entity.Name] = true
 			continue
 		}
 
-		// Fuzzy fallback: tokenize the ref and find best Jaccard match.
 		if fuzzyThreshold > 0 {
 			refTokens := Tokenize(norm)
+
+			// Layer 2: Jaccard on camelCase-split tokens.
 			bestSim := 0.0
 			var bestEntry *entityEntry
 			for _, entry := range allEntries {
 				sim := Jaccard(entry.tokens, refTokens)
+				if sim > bestSim {
+					bestSim = sim
+					bestEntry = entry
+				}
+			}
+			if bestSim >= fuzzyThreshold && bestEntry != nil {
+				matchedEntities[bestEntry.entity.Name] = true
+				continue
+			}
+
+			// Layer 3: Dice trigram similarity (catches stemming: Store ↔ storing).
+			bestSim = 0.0
+			bestEntry = nil
+			for _, entry := range allEntries {
+				sim := DiceTrigram(entry.entity.Name, norm)
+				if sim > bestSim {
+					bestSim = sim
+					bestEntry = entry
+				}
+			}
+			if bestSim >= DefaultTrigramThreshold && bestEntry != nil {
+				matchedEntities[bestEntry.entity.Name] = true
+				continue
+			}
+
+			// Layer 4: Doc comment bridging — match ref tokens against entity's doc comment tokens.
+			bestSim = 0.0
+			bestEntry = nil
+			for _, entry := range allEntries {
+				if len(entry.docTokens) == 0 {
+					continue
+				}
+				sim := Jaccard(entry.docTokens, refTokens)
 				if sim > bestSim {
 					bestSim = sim
 					bestEntry = entry

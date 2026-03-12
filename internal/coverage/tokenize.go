@@ -95,6 +95,38 @@ func splitCamelCase(s string) []string {
 	return tokens
 }
 
+// Trigrams returns the set of character trigrams for a string.
+// Used for stemming-like fuzzy matching: "Store" ↔ "storing" share "sto", "tor".
+func Trigrams(s string) map[string]bool {
+	s = strings.ToLower(s)
+	set := make(map[string]bool)
+	runes := []rune(s)
+	for i := 0; i+3 <= len(runes); i++ {
+		tri := string(runes[i : i+3])
+		if !strings.ContainsAny(tri, " \t\n") {
+			set[tri] = true
+		}
+	}
+	return set
+}
+
+// DiceTrigram computes Dice coefficient on trigram sets of two strings.
+// Returns a value in [0.0, 1.0]. Higher = more similar.
+func DiceTrigram(a, b string) float64 {
+	setA := Trigrams(a)
+	setB := Trigrams(b)
+	if len(setA) == 0 || len(setB) == 0 {
+		return 0
+	}
+	inter := 0
+	for k := range setA {
+		if setB[k] {
+			inter++
+		}
+	}
+	return 2.0 * float64(inter) / float64(len(setA)+len(setB))
+}
+
 func toSet(tokens []string) map[string]bool {
 	s := make(map[string]bool, len(tokens))
 	for _, t := range tokens {

@@ -66,3 +66,35 @@ func TestJaccard_Empty(t *testing.T) {
 	assert.Equal(t, 0.0, Jaccard(nil, nil))
 	assert.Equal(t, 0.0, Jaccard(Tokenize("Foo"), nil))
 }
+
+func TestTrigrams_Basic(t *testing.T) {
+	tri := Trigrams("Store")
+	assert.True(t, tri["sto"])
+	assert.True(t, tri["tor"])
+	assert.True(t, tri["ore"])
+	assert.Len(t, tri, 3)
+}
+
+func TestTrigrams_Empty(t *testing.T) {
+	assert.Empty(t, Trigrams(""))
+	assert.Empty(t, Trigrams("ab")) // too short for a trigram
+}
+
+func TestDiceTrigram_StemMatch(t *testing.T) {
+	// "Store" and "storing" share "sto", "tor" trigrams.
+	sim := DiceTrigram("Store", "storing")
+	assert.Greater(t, sim, 0.3)
+}
+
+func TestDiceTrigram_Identical(t *testing.T) {
+	assert.Equal(t, 1.0, DiceTrigram("GraphCache", "GraphCache"))
+}
+
+func TestDiceTrigram_NoOverlap(t *testing.T) {
+	assert.Equal(t, 0.0, DiceTrigram("abc", "xyz"))
+}
+
+func TestDiceTrigram_Empty(t *testing.T) {
+	assert.Equal(t, 0.0, DiceTrigram("", "foo"))
+	assert.Equal(t, 0.0, DiceTrigram("foo", ""))
+}

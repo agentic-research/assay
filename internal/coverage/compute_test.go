@@ -131,11 +131,58 @@ func TestCompute_FuzzyHighThreshold(t *testing.T) {
 		{Name: "MemoryStore", Kind: "type", Package: "graph"},
 	}
 	refs := []DocRef{
-		{Text: "store data values", Kind: "code_span"}, // weak overlap: only "store"
+		{Text: "completely unrelated zebra", Kind: "code_span"}, // no overlap at any layer
 	}
 
 	// High threshold — shouldn't match.
 	result := ComputeWithThreshold(entities, refs, 0.8)
+
+	assert.Equal(t, 0.0, result.Coverage)
+	assert.Len(t, result.Stale, 1)
+}
+
+func TestCompute_TrigramMatch(t *testing.T) {
+	entities := []Entity{
+		{Name: "Store", Kind: "type", Package: "graph"},
+	}
+	refs := []DocRef{
+		{Text: "storing", Kind: "code_span"}, // trigram match: sto, tor shared
+	}
+
+	result := Compute(entities, refs)
+
+	assert.Equal(t, 1.0, result.Coverage)
+	assert.Len(t, result.Covered, 1)
+}
+
+func TestCompute_DocCommentBridging(t *testing.T) {
+	entities := []Entity{
+		{Name: "InitDB", Kind: "function", Package: "db",
+			DocComment: "// opens database connection"},
+	}
+	refs := []DocRef{
+		// 3 of 3 ref tokens match doc tokens → Jaccard 3/5 = 0.6 > 0.4
+		// doc tokens: [opens, database, connection]
+		// ref tokens: [database, connection, opens]
+		{Text: "database connection opens", Kind: "code_span"},
+	}
+
+	result := Compute(entities, refs)
+
+	assert.Equal(t, 1.0, result.Coverage)
+	assert.Len(t, result.Covered, 1)
+}
+
+func TestCompute_DocCommentBridging_NoMatch(t *testing.T) {
+	entities := []Entity{
+		{Name: "InitDB", Kind: "function", Package: "db",
+			DocComment: "// InitDB opens a database connection"},
+	}
+	refs := []DocRef{
+		{Text: "completely unrelated topic", Kind: "code_span"},
+	}
+
+	result := Compute(entities, refs)
 
 	assert.Equal(t, 0.0, result.Coverage)
 	assert.Len(t, result.Stale, 1)

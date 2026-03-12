@@ -106,6 +106,38 @@ func NewStore() {}
 	assert.Equal(t, "function", entities[0].Kind)
 }
 
+func TestExtractSource_DocComment(t *testing.T) {
+	src := []byte(`package example
+
+// NewStore creates a new store instance.
+// It initializes the connection pool.
+func NewStore() {}
+
+// standalone comment far away
+
+
+// another unrelated block
+
+
+func Bare() {}
+`)
+	entities, err := ExtractSource(src, "example.go", true)
+	require.NoError(t, err)
+
+	var newStore, bare coverage.Entity
+	for _, e := range entities {
+		switch e.Name {
+		case "NewStore":
+			newStore = e
+		case "Bare":
+			bare = e
+		}
+	}
+	assert.Contains(t, newStore.DocComment, "creates a new store instance")
+	assert.Contains(t, newStore.DocComment, "initializes the connection pool")
+	assert.Empty(t, bare.DocComment) // standalone comment too far away
+}
+
 func entityNames(entities []coverage.Entity) []string {
 	var names []string
 	for _, e := range entities {
