@@ -67,29 +67,25 @@ func runVerify(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("resolve docs path: %w", err)
 	}
 
-	// Also scan root-level markdown files (README.md, ARCHITECTURE.md, etc.)
-	rootMarkdown, err := docs.ExtractDir(source)
-	if err != nil {
-		return fmt.Errorf("extract root markdown refs: %w", err)
-	}
-
 	// Extract code entities.
 	entities, err := code.ExtractDir(source, flagExportedOnly)
 	if err != nil {
 		return fmt.Errorf("extract code entities: %w", err)
 	}
 
-	// Extract doc references from the docs directory.
-	docRefs, err := docs.ExtractDir(docsDir)
-	if err != nil {
-		return fmt.Errorf("extract doc refs: %w", err)
+	// Claim sources: the docs directory plus root-level markdown
+	// (README.md, ARCHITECTURE.md, etc.). Both are markdown today; other
+	// formats plug in behind coverage.ClaimSource.
+	sources := []coverage.ClaimSource{
+		docs.NewMarkdownSource(docsDir),
+		docs.NewMarkdownSource(source),
 	}
 
-	// Merge root-level markdown refs (deduplicated).
-	docRefs = mergeRefs(docRefs, rootMarkdown)
-
-	// Compute coverage.
-	result := coverage.ComputeWithThreshold(entities, docRefs, flagFuzzy)
+	// Compute coverage from the claim sources.
+	result, err := coverage.ComputeFromSources(entities, flagFuzzy, sources...)
+	if err != nil {
+		return fmt.Errorf("compute coverage: %w", err)
+	}
 
 	// Output report.
 	switch flagFormat {
@@ -122,20 +118,4 @@ func detectDocsDir(source string) string {
 		}
 	}
 	return ""
-}
-
-// mergeRefs combines two ref slices, deduplicating by text+file+line.
-func mergeRefs(a, b []coverage.DocRef) []coverage.DocRef {
-	seen := make(map[string]bool)
-	var merged []coverage.DocRef
-	for _, refs := range [][]coverage.DocRef{a, b} {
-		for _, r := range refs {
-			key := fmt.Sprintf("%s:%s:%d", r.Text, r.File, r.Line)
-			if !seen[key] {
-				seen[key] = true
-				merged = append(merged, r)
-			}
-		}
-	}
-	return merged
 }
