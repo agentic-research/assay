@@ -36,6 +36,7 @@ var (
 	flagMaxUncovered int
 	flagVerifier     string
 	flagMacheDB      string
+	flagHTMLDocs     string
 )
 
 func init() {
@@ -52,6 +53,7 @@ func init() {
 		"Fail when more than N exported entities are undocumented (0 = none may be; -1 = disabled). Ratchet a repo by setting its current count.")
 	verifyCmd.Flags().StringVar(&flagVerifier, "verifier", "tree-sitter", "Structural verifier backend: tree-sitter, mache")
 	verifyCmd.Flags().StringVar(&flagMacheDB, "mache-db", "", "Leyline-parsed .db with canonical AST views (required for --verifier=mache)")
+	verifyCmd.Flags().StringVar(&flagHTMLDocs, "html-docs", "", "Directory of static HTML docs to treat as an additional claim source")
 }
 
 // selectVerifier resolves the configured structural-verifier backend. The
@@ -107,6 +109,16 @@ func runVerify(cmd *cobra.Command, args []string) error {
 	sources := []coverage.ClaimSource{
 		docs.NewMarkdownSource(docsDir),
 		docs.NewMarkdownSource(source),
+	}
+	// Static HTML docs (e.g. a rendered docs site) are an opt-in additional
+	// claim source behind the same interface. The live-DOM capture path
+	// (docs.DOMSource) is a guarded seam and is not wired here.
+	if flagHTMLDocs != "" {
+		htmlDir, err := filepath.Abs(flagHTMLDocs)
+		if err != nil {
+			return fmt.Errorf("resolve html-docs path: %w", err)
+		}
+		sources = append(sources, docs.NewHTMLSource(htmlDir))
 	}
 
 	// Gather claim-references, then compute coverage of the verifier's
