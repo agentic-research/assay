@@ -1,0 +1,46 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release (e.g. v0.1.0)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  id-token: write
+
+env:
+  TAG: ${{ inputs.tag || github.ref_name }}
+  IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/rosary
+  CARGO_NET_GIT_FETCH_WITH_CLI: "true"
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Build release binary
+        run: cargo build --release --bin rsry
+
+      - name: Smoke test
+        run: |
+          target/release/rsry --help
+          target/release/rsry --version
+
+      - name: Locate pkgconfig
+        run: |
+          LL_PKG=$(find ~/.cargo/git/checkouts -name "pkgconfig" -type d | head -1)
+          echo "PKG_CONFIG_PATH=$LL_PKG"
+
+      - name: Build and push image
+        run: |
+          docker build -t ${{ env.IMAGE_NAME }}:${{ env.TAG }} .
+          docker push ${{ env.IMAGE_NAME }}:${{ env.TAG }}
