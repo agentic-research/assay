@@ -52,6 +52,11 @@ type Graph struct {
 	// provenance for the report: it makes visible what evidence was deliberately
 	// left ungathered.
 	Skipped []extract.Skipped
+	// Failed records per-(extractor, root) extraction failures (e.g. a malformed
+	// go.mod), sorted by extractor then root. Like Skipped, it is non-fatal
+	// provenance: it makes visible which inputs were skipped because they could
+	// not be parsed, rather than silently dropping them or aborting the scan.
+	Failed []extract.Failed
 	// Roots are the scan roots the facts were gathered from, in scan order. They
 	// let the repo-grouped mermaid map each fact's provenance file back to its
 	// owning root and draw root→root edges (the repo-dependency-graph shape).
@@ -60,12 +65,13 @@ type Graph struct {
 	Roots []string
 }
 
-// FromResult builds a Graph from a resolve.Result and the skip records from the
-// Gather pass that produced it. The Result's buckets are already deterministically
-// ordered by Resolve; this copies them so the report owns its own slices and
-// additionally imposes a stable order on Skipped (which Gather appends in
-// extractor order — stable, but sorted here so the report is self-contained).
-func FromResult(result *resolve.Result, skipped []extract.Skipped) *Graph {
+// FromResult builds a Graph from a resolve.Result and the skip/failure records
+// from the Gather pass that produced it. The Result's buckets are already
+// deterministically ordered by Resolve; this copies them so the report owns its
+// own slices and additionally imposes a stable order on Skipped and Failed
+// (which Gather appends in extractor × root order — stable, but sorted here so
+// the report is self-contained).
+func FromResult(result *resolve.Result, skipped []extract.Skipped, failed []extract.Failed) *Graph {
 	g := &Graph{}
 	if result != nil {
 		g.Resolved = append(g.Resolved, result.Resolved...)
@@ -74,14 +80,16 @@ func FromResult(result *resolve.Result, skipped []extract.Skipped) *Graph {
 	}
 	g.Skipped = append(g.Skipped, skipped...)
 	sortSkipped(g.Skipped)
+	g.Failed = append(g.Failed, failed...)
+	sortFailed(g.Failed)
 	return g
 }
 
 // FromResultWithRoots is FromResult plus the scan roots, recorded so the
 // repo-grouped mermaid can attribute provenance files to roots and draw root→root
 // edges. Roots are stored longest-first so a nested root matches before a parent.
-func FromResultWithRoots(result *resolve.Result, skipped []extract.Skipped, roots []string) *Graph {
-	g := FromResult(result, skipped)
+func FromResultWithRoots(result *resolve.Result, skipped []extract.Skipped, failed []extract.Failed, roots []string) *Graph {
+	g := FromResult(result, skipped, failed)
 	g.Roots = append(g.Roots, roots...)
 	sort.SliceStable(g.Roots, func(i, j int) bool { return len(g.Roots[i]) > len(g.Roots[j]) })
 	return g
@@ -95,5 +103,16 @@ func sortSkipped(s []extract.Skipped) {
 			return s[i].Name < s[j].Name
 		}
 		return s[i].Reason < s[j].Reason
+	})
+}
+
+// sortFailed orders failure records by extractor name, then root, so the report
+// is independent of registration × argument order.
+func sortFailed(f []extract.Failed) {
+	sort.Slice(f, func(i, j int) bool {
+		if f[i].Extractor != f[j].Extractor {
+			return f[i].Extractor < f[j].Extractor
+		}
+		return f[i].Root < f[j].Root
 	})
 }

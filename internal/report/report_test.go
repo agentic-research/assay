@@ -2,6 +2,7 @@ package report_test
 
 import (
 	"bytes"
+	"errors"
 	"strings"
 	"testing"
 
@@ -62,10 +63,10 @@ func TestRenderDeterministic(t *testing.T) {
 			// Two independent graphs from two independent Results: output must be
 			// byte-identical across runs.
 			var first, second bytes.Buffer
-			if err := render(&first, report.FromResult(sampleResult(), skipped)); err != nil {
+			if err := render(&first, report.FromResult(sampleResult(), skipped, nil)); err != nil {
 				t.Fatalf("first render: %v", err)
 			}
-			if err := render(&second, report.FromResult(sampleResult(), skipped)); err != nil {
+			if err := render(&second, report.FromResult(sampleResult(), skipped, nil)); err != nil {
 				t.Fatalf("second render: %v", err)
 			}
 			if first.String() != second.String() {
@@ -81,7 +82,7 @@ func TestRenderDeterministic(t *testing.T) {
 
 func TestRenderMermaidHasEdgeAndBuckets(t *testing.T) {
 	var b bytes.Buffer
-	g := report.FromResult(sampleResult(), nil)
+	g := report.FromResult(sampleResult(), nil, nil)
 	if err := report.RenderMermaid(&b, g); err != nil {
 		t.Fatalf("render: %v", err)
 	}
@@ -106,7 +107,7 @@ func TestRenderMermaidHasEdgeAndBuckets(t *testing.T) {
 
 func TestRenderJSONShape(t *testing.T) {
 	var b bytes.Buffer
-	g := report.FromResult(sampleResult(), []extract.Skipped{{Name: "x", Reason: "y"}})
+	g := report.FromResult(sampleResult(), []extract.Skipped{{Name: "x", Reason: "y"}}, nil)
 	if err := report.RenderJSON(&b, g); err != nil {
 		t.Fatalf("render: %v", err)
 	}
@@ -120,4 +121,38 @@ func TestRenderJSONShape(t *testing.T) {
 			t.Errorf("json missing %q:\n%s", want, out)
 		}
 	}
+}
+
+func TestRenderSurfacesFailedInputs(t *testing.T) {
+	failed := []extract.Failed{
+		{Extractor: "gomod", Root: "/roots/template-go", Err: errors.New("go.mod:1: usage: module module/path")},
+	}
+
+	t.Run("json", func(t *testing.T) {
+		var b bytes.Buffer
+		g := report.FromResult(sampleResult(), nil, failed)
+		if err := report.RenderJSON(&b, g); err != nil {
+			t.Fatalf("render: %v", err)
+		}
+		out := b.String()
+		for _, want := range []string{`"failed"`, `"extractor": "gomod"`, `"root": "/roots/template-go"`} {
+			if !strings.Contains(out, want) {
+				t.Errorf("json missing %q:\n%s", want, out)
+			}
+		}
+	})
+
+	t.Run("markdown", func(t *testing.T) {
+		var b bytes.Buffer
+		g := report.FromResult(sampleResult(), nil, failed)
+		if err := report.RenderMarkdown(&b, g); err != nil {
+			t.Fatalf("render: %v", err)
+		}
+		out := b.String()
+		for _, want := range []string{"Skipped inputs", "gomod", "template-go"} {
+			if !strings.Contains(out, want) {
+				t.Errorf("markdown missing %q:\n%s", want, out)
+			}
+		}
+	})
 }

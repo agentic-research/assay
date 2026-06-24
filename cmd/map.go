@@ -74,7 +74,7 @@ func buildGraph(roots []string) (*report.Graph, error) {
 	}
 
 	result := resolve.Resolve(facts)
-	return report.FromResultWithRoots(result, facts.Skipped, roots), nil
+	return report.FromResultWithRoots(result, facts.Skipped, facts.Failed, roots), nil
 }
 
 // validateMapFormat rejects unknown formats up front so a typo fails fast rather

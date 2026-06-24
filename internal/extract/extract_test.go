@@ -129,20 +129,58 @@ func TestRegistry_SkipsUnavailableExtractorRecordingReason(t *testing.T) {
 	assert.Equal(t, "binary not on PATH", result.Skipped[0].Reason)
 }
 
-func TestRegistry_PropagatesFirstError(t *testing.T) {
+func TestRegistry_IsolatesExtractErrorPerExtractorAndRoot(t *testing.T) {
+	// An extractor that errors must not abort the whole gather: its failure is
+	// recorded as a non-fatal Failed entry while every other extractor and root
+	// still contributes its facts. This is the load-bearing scan-resilience
+	// contract — one malformed input in one root cannot kill a cross-root scan.
 	sentinel := errors.New("extract boom")
 	boom := fakeExtractor{name: "boom", avail: true, err: sentinel}
 	ok := fakeExtractor{
-		name:      "ok",
-		avail:     true,
-		producers: map[string][]artifact.Producer{"r1": {prod(artifact.KindGoModule, "ok", "r1", 1)}},
+		name:  "ok",
+		avail: true,
+		producers: map[string][]artifact.Producer{
+			"good": {prod(artifact.KindGoModule, "ok", "good", 1)},
+			"bad":  {prod(artifact.KindGoModule, "ok-bad", "bad", 1)},
+		},
 	}
 
 	reg := NewRegistry(boom, ok)
-	result, err := reg.Gather("r1")
-	require.Error(t, err)
-	assert.ErrorIs(t, err, sentinel)
-	assert.Nil(t, result)
+	result, err := reg.Gather("good", "bad")
+	require.NoError(t, err)
+
+	// The healthy extractor's facts survive from BOTH roots.
+	assert.ElementsMatch(t, []artifact.Producer{
+		prod(artifact.KindGoModule, "ok", "good", 1),
+		prod(artifact.KindGoModule, "ok-bad", "bad", 1),
+	}, result.Producers)
+
+	// The failing extractor produced one Failed entry per (extractor, root),
+	// each naming the extractor, the root, and wrapping the underlying error.
+	require.Len(t, result.Failed, 2)
+	assert.Equal(t, "boom", result.Failed[0].Extractor)
+	assert.Equal(t, "boom", result.Failed[1].Extractor)
+	assert.ElementsMatch(t, []string{"good", "bad"},
+		[]string{result.Failed[0].Root, result.Failed[1].Root})
+	for _, f := range result.Failed {
+		assert.ErrorIs(t, f.Err, sentinel)
+	}
+}
+
+func TestRegistry_FailedOrderIsDeterministic(t *testing.T) {
+	// Failed entries are appended in registration × argument order, so repeated
+	// gathers over the same inputs yield byte-identical ordering.
+	boom := fakeExtractor{name: "boom", avail: true, err: errors.New("boom")}
+	reg := NewRegistry(boom)
+
+	first, err := reg.Gather("r1", "r2", "r3")
+	require.NoError(t, err)
+	require.Len(t, first.Failed, 3)
+	for i := 0; i < 5; i++ {
+		again, err := reg.Gather("r1", "r2", "r3")
+		require.NoError(t, err)
+		assert.Equal(t, first.Failed, again.Failed)
+	}
 }
 
 func TestRegistry_DeterministicOrder(t *testing.T) {

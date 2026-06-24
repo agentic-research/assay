@@ -51,6 +51,9 @@ func RenderMarkdown(w io.Writer, g *Graph) error {
 	if len(g.Skipped) > 0 {
 		fmt.Fprintf(&b, "- Skipped extractors: %d\n", len(g.Skipped))
 	}
+	if len(g.Failed) > 0 {
+		fmt.Fprintf(&b, "- Skipped inputs (parse failures): %d\n", len(g.Failed))
+	}
 	// Embed the repo-level diagram when roots are known — that is the
 	// dependency-graph view worth reading; the artifact-level diagram is
 	// available via `--format mermaid --group artifact`.
@@ -81,6 +84,12 @@ func RenderMarkdown(w io.Writer, g *Graph) error {
 		b.WriteString("\n## Skipped extractors\n\n")
 		for _, s := range g.Skipped {
 			fmt.Fprintf(&b, "- `%s` — %s\n", s.Name, s.Reason)
+		}
+	}
+	if len(g.Failed) > 0 {
+		b.WriteString("\n## Skipped inputs\n\n")
+		for _, f := range g.Failed {
+			fmt.Fprintf(&b, "- `%s` in `%s` — %s\n", f.Extractor, f.Root, f.Err)
 		}
 	}
 

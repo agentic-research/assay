@@ -16,6 +16,7 @@ type jsonReport struct {
 	Artifacts []jsonArtifact `json:"artifacts"`
 	Edges     []jsonEdge     `json:"edges"`
 	Skipped   []jsonSkipped  `json:"skipped,omitempty"`
+	Failed    []jsonFailed   `json:"failed,omitempty"`
 }
 
 // jsonArtifact is one identified unit and the bucket it landed in. An artifact
@@ -54,6 +55,15 @@ type jsonSkipped struct {
 	Reason string `json:"reason"`
 }
 
+// jsonFailed is one per-(extractor, root) extraction failure: an input the
+// extractor could not parse (e.g. a malformed go.mod). It is non-fatal
+// provenance, parallel to jsonSkipped.
+type jsonFailed struct {
+	Extractor string `json:"extractor"`
+	Root      string `json:"root"`
+	Error     string `json:"error"`
+}
+
 // RenderJSON writes the graph as indented JSON to w. Output is byte-deterministic
 // for a given Graph: artifacts are keyed and sorted by (kind, ref, bucket), edges
 // by their resolver order (already identity-sorted), skips by name.
@@ -62,6 +72,7 @@ func RenderJSON(w io.Writer, g *Graph) error {
 		Artifacts: jsonArtifacts(g),
 		Edges:     jsonEdges(g),
 		Skipped:   jsonSkips(g),
+		Failed:    jsonFails(g),
 	}
 	enc := json.NewEncoder(w)
 	enc.SetIndent("", "  ")
@@ -142,6 +153,17 @@ func jsonSkips(g *Graph) []jsonSkipped {
 	out := make([]jsonSkipped, 0, len(g.Skipped))
 	for _, s := range g.Skipped {
 		out = append(out, jsonSkipped{Name: s.Name, Reason: s.Reason})
+	}
+	return out
+}
+
+func jsonFails(g *Graph) []jsonFailed {
+	if len(g.Failed) == 0 {
+		return nil
+	}
+	out := make([]jsonFailed, 0, len(g.Failed))
+	for _, f := range g.Failed {
+		out = append(out, jsonFailed{Extractor: f.Extractor, Root: f.Root, Error: f.Err.Error()})
 	}
 	return out
 }
