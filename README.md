@@ -1,14 +1,21 @@
 # assay
 
-Documentation coverage verifier. Treats docs as claims about code and verifies them against tree-sitter-extracted entities.
+Deterministic **artifact/usage graph** of a codebase. assay reads source, build, and CI
+signals and *derives* the graph of producible/consumable artifacts — Go modules and
+symbols, container images, binaries — and the edges between them. The derived graph **is**
+the architecture/seam map: because it comes from reality rather than prose, it cannot
+silently drift.
+
+Its distinctive value is the **cross-repo build edge** — an image or module produced in one
+repo and consumed in another, a seam that lives in a `Dockerfile FROM` or a CI workflow and
+never appears in any single `.go` file. Think of it as the deterministic version of "seam
+discovery": same input, identical output, every time.
 
 ```mermaid
 graph LR
-    A[".go source files"] -->|tree-sitter| B["[]Entity"]
-    C[".md doc files"] -->|tree-sitter-markdown| D["[]DocRef"]
-    B --> E["Set operations"]
-    D --> E
-    E --> F["CoverageResult"]
+    src[".go · go.mod · Dockerfile · CI"] -->|extractors| facts["producer / consumer facts<br/>(identity + provenance)"]
+    facts -->|resolver| buckets["resolved · external · dangling"]
+    buckets -->|report| out["artifact/usage map<br/>(JSON · mermaid)"]
 ```
 
 ## Install
@@ -17,7 +24,7 @@ graph LR
 go install github.com/agentic-research/assay@latest
 ```
 
-Or build from source:
+Or build from source (requires [Task](https://taskfile.dev)):
 
 ```bash
 task build    # -> bin/assay
@@ -26,71 +33,78 @@ task build    # -> bin/assay
 ## Usage
 
 ```bash
-# Verify docs coverage for a project
-assay verify --source ./path/to/code --docs ./path/to/docs
+# derive the graph for one repo (a mono-repo is just "one scan root")
+assay map .
 
-# Auto-detect docs/ or doc/ directory
-assay verify --source .
+# multi-repo: edges that cross repos resolve into a single graph
+assay map ./repo-a ./repo-b ./repo-c
 
-# Require minimum coverage (exits non-zero if below)
-assay verify --threshold 0.8
-
-# JSON output
-assay verify --format json
-
-# Fuzzy matching (Jaccard similarity on camelCase-split tokens)
-assay verify --fuzzy 0.6
-
-# Only exported entities (default: true)
-assay verify --exported-only=false
-
-# Show all matched entities
-assay verify -v
+# formats
+assay map .            --format mermaid --group repo   # repo→repo dependency graph (default)
+assay map ./a ./b      --format json                   # machine-readable map for tooling
+assay map .            --format md                      # human markdown report
 ```
 
-### Example output
+`--group repo` draws the repo-level dependency graph; `--group artifact` emits one node per
+artifact.
+
+### Example (real, generated)
+
+`assay map` over the ecosystem derives — deterministically, not by hand:
 
 ```
-assay: documentation coverage report
-====================================
-
-Source: 3 packages, 42 exported entities
-Docs:   2 files, 28 code references
-
-Coverage:  24/42 (57.1%)
-Staleness: 3/28 (10.7%)
-
-Uncovered (18):
-  function   NewParser                      internal/code/extract.go
-  method     Parser.Reset                   internal/code/extract.go
-  ...
-
-Stale (3):
-  `OldFunc`  docs/api.md:45
-  ...
+x-ray  --4 artifacts-->  mache
+mache  --3 artifacts-->  ley-line-open
 ```
+
+That is the repo-dependency graph, *generated from code* (`go.mod` requires + Dockerfile
+`FROM` + CI image refs), so it can't drift from reality.
 
 ## How it works
 
-**Entities** are extracted from Go source using tree-sitter queries (functions, methods, types, constants, variables). **DocRefs** are extracted from markdown files via tree-sitter-markdown (backtick code spans and headings).
+- **Extractors** (`internal/extract/*`) — each deterministically parses one source kind and
+  emits typed producer/consumer facts *with provenance (file, line)*. They never match
+  edges. v1: `gomod`, `dockerfile`, `ci` (GitHub Actions), `gocode`.
+- **Resolver** (`internal/resolve`) — joins consumer references to producer ids by a
+  version-stripped **global identity**, into three computed buckets: **resolved** (producer
+  in a scanned root — the cross-root edge), **external** (a real outside-world dependency),
+  **dangling** (a producer nothing consumes — dead-surface candidate). "External vs
+  internal" is *computed* from whether a scanned root produces the id, never configured.
+- **Report** (`internal/report`) — emits the resolved graph as JSON or mermaid/markdown.
 
-Coverage is the intersection: `|Code ∩ Docs| / |Code|`
+"Repo" is not a first-class concept — it's just a scan root. Mono-repo and multi-repo are
+the same engine; global identity makes repo boundaries invisible.
 
-Matching supports:
-- Exact name matching
-- Fuzzy matching via camelCase-split Jaccard similarity
-- Trigram matching
-- Doc comment bridging (entity doc comments that reference other entities)
+The `gocode` extractor prefers [mache](https://github.com/agentic-research/mache)'s
+canonical `v_defs`/`v_refs` symbol views (read from a `.db` via pure-Go
+`modernc.org/sqlite` — mache need not be running) and falls back to in-tree tree-sitter.
+
+## Packages
+
+| Package | Role |
+|---------|------|
+| `internal/artifact/` | Vocabulary: `Identity` (canonical key), `Artifact`, `Producer`, `Consumer`, `Edge`, `Kind` |
+| `internal/extract/` | `Extractor` interface + `Registry`; sub-extractors `gomod`, `dockerfile`, `ci`, `gocode` |
+| `internal/resolve/` | Identity matching → resolved / external / dangling buckets |
+| `internal/report/` | Emit the map as JSON / mermaid / markdown |
+| `internal/code/` | Tree-sitter Go extraction (the `gocode` fallback backend) |
+| `cmd/` | Cobra CLI: `map` (derive + emit), `version` |
+
+## Status & non-goals
+
+v1 derives the graph (four extractors + resolver + `assay map`) and has been run over the
+real ecosystem. **Parked / non-goals** (deliberately not built): the old documentation-
+coverage set operations (`|Code ∩ Docs| / |Code|`), semantic / HDC matching, HTML/DOM
+extraction, a Rust rewrite, and the `assay drift` grading fallback (deferred to v2).
+
+Design rationale lives in [`docs/superpowers/specs/`](docs/superpowers/specs/) and the
+decision records in [`docs/decisions/`](docs/decisions/).
 
 ## Development
 
-Requires [Task](https://taskfile.dev) runner.
-
 ```bash
-task test     # go test -race -v ./...
-task lint     # golangci-lint run ./...
-task fmt      # gofumpt -w -extra .
 task check    # fmt + vet + lint + test
+task test     # go test -race -v ./...
 ```
 
 ## License

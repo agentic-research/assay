@@ -12,35 +12,53 @@ task check    # fmt + vet + lint + test
 
 ## Architecture
 
-Assay verifies documentation coverage by treating docs as claims about code.
+assay derives a codebase's **artifact/usage graph** from source, build, and CI signals
+(`code → docs` — derive, not grade). The derived graph *is* the architecture/seam map; the
+headline value is the cross-repo build edge (image/module produced in one repo, consumed in
+another). "Repo" is just a scan root — mono-repo and multi-repo are the same engine.
 
 ### Data Flow
 
 ```
-Source files (.go)  →  tree-sitter extraction  →  []Entity
-Markdown files (.md) →  tree-sitter-markdown   →  []DocRef
-                                                      ↓
-                                              Set operations
-                                                      ↓
-                                            CoverageResult
+go.mod · Dockerfile · CI · Go source
+        │  extractors (one per source kind; emit producer/consumer facts + provenance,
+        │              never match edges)
+        ▼
+   []Producer / []Consumer        (Registry gathers across N scan roots)
+        │  resolver (match consumer refs → producer ids by version-stripped identity)
+        ▼
+   resolved / external / dangling
+        │  report
+        ▼
+   artifact/usage map  (JSON · mermaid · md)
 ```
 
 ### Key Packages
 
 | Package | Role |
 |---------|------|
-| `internal/code/` | Tree-sitter entity extraction (Go, extensible to other langs) |
-| `internal/docs/` | Markdown code reference extraction via tree-sitter-markdown |
-| `internal/coverage/` | Types, set operations, report formatting |
-| `cmd/` | Cobra CLI: `verify`, `version` |
+| `internal/artifact/` | Vocabulary: `Identity` (canonical key), `Artifact`, `Producer`, `Consumer`, `Edge`, `Kind` |
+| `internal/extract/` | `Extractor` interface + `Registry`; sub-extractors `gomod`, `dockerfile`, `ci`, `gocode` |
+| `internal/resolve/` | Identity matching → resolved / external / dangling buckets |
+| `internal/report/` | Emit the map as JSON / mermaid / markdown |
+| `internal/code/` | Tree-sitter Go extraction (the `gocode` fallback backend) |
+| `cmd/` | Cobra CLI: `map` (derive + emit), `version` |
 
-### Tree-sitter Queries
+### Identity & resolution
 
-Queries are derived from mache's `examples/go-schema.json` — proven patterns for extracting functions, methods, types, constants, variables.
+Artifacts carry a stable global `Identity` (kind + canonical ref). The resolver keys on a
+**version-stripped** identity so repo boundaries are invisible — a producer in one root and
+a consumer in another resolve to one cross-root edge. See `docs/decisions/0002-identity-normalization.md`.
 
-### Levels (roadmap)
+### mache coupling
 
-1. **Set coverage** (current) — `|C ∩ D| / |C|`
-2. **FCA lattice** — formal concept analysis of coverage structure
-3. **Signature drift** — compare extracted sigs vs doc claims
-4. **Semantic embeddings** — cosine similarity via ley-line MiniLM
+`gocode` reads mache's canonical `v_defs`/`v_refs` from a `.db` via pure-Go
+`modernc.org/sqlite` (mache need not be running); tree-sitter is the always-available
+fallback. See `docs/decisions/0001-mache-coupling.md`.
+
+### Direction & parked non-goals
+
+v1 = derive the map (4 extractors + resolver + `assay map`). **Parked** (do not reintroduce):
+documentation-coverage set operations, semantic/HDC matching, HTML/DOM extraction, a Rust
+rewrite, and the `assay drift` grading fallback (v2). Spec:
+`docs/superpowers/specs/2026-06-22-assay-artifact-usage-graph-design.md`.

@@ -1,5 +1,11 @@
 # Ley-line Semantic Embedding Integration
 
+> **⚠️ PARKED (2026-06) — historical, not the current direction.** assay pivoted to a
+> deterministic artifact/usage graph (`assay map`); semantic / HDC matching is an
+> explicitly parked non-goal (the derived graph needs no semantic matching). This plan,
+> and the doc-coverage "matching cascade" it builds on, are retained for reference only.
+> Current direction: `docs/superpowers/specs/2026-06-22-assay-artifact-usage-graph-design.md`.
+
 ## Problem
 
 Assay's 4-layer matching cascade (exact, Jaccard tokens, Dice trigrams, doc comment bridging) works for name-level matching but can't catch semantic relationships. Example: docs that explain retry logic without ever mentioning `RetryWithBackoff` by name.
