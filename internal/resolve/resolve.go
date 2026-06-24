@@ -62,8 +62,7 @@ func Resolve(facts *extract.Facts) *Result {
 	// key are the candidate sources for any consumer that shares the key.
 	producersByKey := make(map[identityKey][]producerEntry)
 	for _, p := range facts.Producers {
-		id, version := identityRefOf(p.Kind(), p.Identity.Ref)
-		key := identityKey{Kind: p.Kind(), Identity: id}
+		key, version := keyAndVersion(p.Identity)
 		producersByKey[key] = append(producersByKey[key], producerEntry{
 			producer: p,
 			version:  version,
@@ -74,8 +73,7 @@ func Resolve(facts *extract.Facts) *Result {
 	consumed := make(map[identityKey]bool, len(producersByKey))
 
 	for _, c := range facts.Consumers {
-		id, consumerVersion := identityRefOf(c.Kind(), c.Identity.Ref)
-		key := identityKey{Kind: c.Kind(), Identity: id}
+		key, consumerVersion := keyAndVersion(c.Identity)
 
 		producers, ok := producersByKey[key]
 		if !ok {

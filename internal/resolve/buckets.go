@@ -1,8 +1,6 @@
 package resolve
 
 import (
-	"strings"
-
 	"github.com/agentic-research/assay/internal/artifact"
 )
 
@@ -29,57 +27,21 @@ const (
 // tag/digest/module-version removed), so two references to the same artifact at
 // different versions land in the same group while references under different
 // kinds stay distinct.
+//
+// It is derived from artifact.Identity.Canonical(), which owns the per-kind
+// splitting rules (decision 0002); the resolver does not re-parse refs.
 type identityKey struct {
 	Kind     artifact.Kind
 	Identity string
 }
 
-// identityRefOf splits an artifact reference into its version-stripped identity
-// reference and its version component, applying the per-kind rules from decision
-// 0002. The facts the resolver consumes carry only Identity{Kind, Ref}, so the
-// version is recovered from the ref here rather than read from a dedicated field.
-//
-// Kinds with no version concept (CLI binaries, Go package symbols) return the
-// whole ref as identity and an empty version.
-func identityRefOf(kind artifact.Kind, ref string) (identity, version string) {
-	switch kind {
-	case artifact.KindGoModule:
-		return splitGoModule(ref)
-	case artifact.KindContainerImage:
-		return splitContainerImage(ref)
-	default:
-		return ref, ""
-	}
-}
-
-// splitGoModule strips a Go module's version, returning the bare module path and
-// the version. A module ref is `path` or `path@version` (e.g.
-// `github.com/agentic-research/mache@v0.5.5`); the major-version path suffix
-// (`.../v2`) is part of identity and is NOT stripped, since `@` separates the
-// version while `/v2` is a path segment.
-func splitGoModule(ref string) (identity, version string) {
-	path, ver, found := strings.Cut(ref, "@")
-	if !found {
-		return ref, ""
-	}
-	return path, ver
-}
-
-// splitContainerImage strips a container image's tag or digest, returning the
-// `registry/repository` identity and the version (digest beats tag). A ref is
-// `registry/repository[:tag][@digest]`; an `@sha256:...` digest pins content and
-// is the strict version, otherwise a trailing `:tag` is the version. A `:port`
-// in the registry host is not a tag, so only a colon after the final `/` counts.
-func splitContainerImage(ref string) (identity, version string) {
-	if repo, digest, found := strings.Cut(ref, "@"); found {
-		return repo, digest
-	}
-	slash := strings.LastIndex(ref, "/")
-	colon := strings.LastIndex(ref, ":")
-	if colon > slash {
-		return ref[:colon], ref[colon+1:]
-	}
-	return ref, ""
+// keyAndVersion decomposes an artifact Identity into the resolver's grouping key
+// and the version component to annotate edges with. The split rules live in
+// artifact.Identity.Canonical(); this is a thin adapter to the resolver's
+// identityKey shape.
+func keyAndVersion(id artifact.Identity) (identityKey, string) {
+	c := id.Canonical()
+	return identityKey{Kind: c.Kind, Identity: c.IdentityKey}, c.Version
 }
 
 // classifyVersionMatch reports how a producer version and consumer version

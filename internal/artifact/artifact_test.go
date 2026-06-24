@@ -103,3 +103,52 @@ func TestEdge_Direction(t *testing.T) {
 	assert.Equal(t, "a/Dockerfile", e.Producer.Provenance.File)
 	assert.Equal(t, "b/Dockerfile", e.Consumer.Provenance.File)
 }
+
+func TestIdentity_Canonical_ContainerImage(t *testing.T) {
+	cases := []struct {
+		ref, identity, version string
+	}{
+		{"ghcr.io/agentic-research/rosary:v0.1.0", "ghcr.io/agentic-research/rosary", "v0.1.0"},
+		{"ghcr.io/agentic-research/rosary", "ghcr.io/agentic-research/rosary", ""},
+		{"docker.io/library/golang:1.26", "docker.io/library/golang", "1.26"},
+		// digest beats tag and is the strict version.
+		{"ghcr.io/x/y@sha256:abc", "ghcr.io/x/y", "sha256:abc"},
+		// a :port in the registry host is not a tag.
+		{"localhost:5000/x/y", "localhost:5000/x/y", ""},
+		{"localhost:5000/x/y:1.2", "localhost:5000/x/y", "1.2"},
+	}
+	for _, c := range cases {
+		got := NewIdentity(KindContainerImage, c.ref).Canonical()
+		assert.Equal(t, KindContainerImage, got.Kind, "kind of %q", c.ref)
+		assert.Equal(t, c.identity, got.IdentityKey, "identity key of %q", c.ref)
+		assert.Equal(t, c.version, got.Version, "version of %q", c.ref)
+	}
+}
+
+func TestIdentity_Canonical_GoModule(t *testing.T) {
+	cases := []struct {
+		ref, identity, version string
+	}{
+		{"github.com/agentic-research/mache", "github.com/agentic-research/mache", ""},
+		{"github.com/agentic-research/mache@v0.5.5", "github.com/agentic-research/mache", "v0.5.5"},
+		// the /vN major-version suffix is part of identity, not the version.
+		{"github.com/agentic-research/mache/v2", "github.com/agentic-research/mache/v2", ""},
+		{"github.com/agentic-research/mache/v2@v2.1.0", "github.com/agentic-research/mache/v2", "v2.1.0"},
+	}
+	for _, c := range cases {
+		got := NewIdentity(KindGoModule, c.ref).Canonical()
+		assert.Equal(t, KindGoModule, got.Kind, "kind of %q", c.ref)
+		assert.Equal(t, c.identity, got.IdentityKey, "identity key of %q", c.ref)
+		assert.Equal(t, c.version, got.Version, "version of %q", c.ref)
+	}
+}
+
+func TestIdentity_Canonical_NoVersionKinds(t *testing.T) {
+	// Kinds with no version concept return the whole ref as the identity key.
+	for _, kind := range []Kind{KindCLIBinary, KindGoPackageSymbol} {
+		got := NewIdentity(kind, "assay").Canonical()
+		assert.Equal(t, kind, got.Kind)
+		assert.Equal(t, "assay", got.IdentityKey)
+		assert.Empty(t, got.Version)
+	}
+}

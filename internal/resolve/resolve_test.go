@@ -214,39 +214,3 @@ func reverseConsumers(in []artifact.Consumer) []artifact.Consumer {
 	}
 	return out
 }
-
-func TestSplitContainerImage(t *testing.T) {
-	cases := []struct {
-		ref, identity, version string
-	}{
-		{"ghcr.io/agentic-research/rosary:v0.1.0", "ghcr.io/agentic-research/rosary", "v0.1.0"},
-		{"ghcr.io/agentic-research/rosary", "ghcr.io/agentic-research/rosary", ""},
-		{"docker.io/library/golang:1.26", "docker.io/library/golang", "1.26"},
-		// digest beats tag and is the strict version.
-		{"ghcr.io/x/y@sha256:abc", "ghcr.io/x/y", "sha256:abc"},
-		// a :port in the registry host is not a tag.
-		{"localhost:5000/x/y", "localhost:5000/x/y", ""},
-		{"localhost:5000/x/y:1.2", "localhost:5000/x/y", "1.2"},
-	}
-	for _, c := range cases {
-		id, ver := splitContainerImage(c.ref)
-		assert.Equal(t, c.identity, id, "identity of %q", c.ref)
-		assert.Equal(t, c.version, ver, "version of %q", c.ref)
-	}
-}
-
-func TestSplitGoModule(t *testing.T) {
-	cases := []struct {
-		ref, identity, version string
-	}{
-		{"github.com/agentic-research/mache", "github.com/agentic-research/mache", ""},
-		{"github.com/agentic-research/mache@v0.5.5", "github.com/agentic-research/mache", "v0.5.5"},
-		{"github.com/agentic-research/mache/v2", "github.com/agentic-research/mache/v2", ""},
-		{"github.com/agentic-research/mache/v2@v2.1.0", "github.com/agentic-research/mache/v2", "v2.1.0"},
-	}
-	for _, c := range cases {
-		id, ver := splitGoModule(c.ref)
-		assert.Equal(t, c.identity, id, "identity of %q", c.ref)
-		assert.Equal(t, c.version, ver, "version of %q", c.ref)
-	}
-}
