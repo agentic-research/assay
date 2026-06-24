@@ -90,7 +90,9 @@ func runVerify(cmd *cobra.Command, args []string) error {
 			return err
 		}
 	default:
-		coverage.FormatText(os.Stdout, result, flagVerbose)
+		if err := coverage.FormatText(os.Stdout, result, flagVerbose); err != nil {
+			return err
+		}
 	}
 
 	// Exit with error if below threshold.

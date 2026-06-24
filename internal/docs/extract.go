@@ -67,9 +67,10 @@ func ExtractSource(src []byte, relPath string) ([]coverage.DocRef, error) {
 		typ := node.Type()
 
 		// Track when we enter/exit heading blocks.
-		if typ == "atx_heading" {
+		switch typ {
+		case "atx_heading":
 			inHeading = true
-		} else if typ == "section" || typ == "paragraph" || typ == "document" {
+		case "section", "paragraph", "document":
 			inHeading = false
 		}
 
@@ -121,11 +122,6 @@ func extractInlineRefs(inlineRoot *sitter.Node, src []byte, relPath string) []co
 		}
 	})
 	return refs
-}
-
-func extractHeadingText(inlineRoot *sitter.Node, src []byte) string {
-	// Get the full text content of the heading inline tree.
-	return strings.TrimSpace(inlineRoot.Content(src))
 }
 
 func walkNode(node *sitter.Node, fn func(*sitter.Node)) {
