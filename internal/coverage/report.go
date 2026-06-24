@@ -8,42 +8,53 @@ import (
 	"strings"
 )
 
-// FormatText writes a human-readable coverage report.
-func FormatText(w io.Writer, result *CoverageResult, verbose bool) {
-	fmt.Fprintf(w, "assay: documentation coverage report\n")
-	fmt.Fprintf(w, "====================================\n\n")
+// FormatText writes a human-readable coverage report. It returns the first
+// write error encountered, if any.
+func FormatText(w io.Writer, result *CoverageResult, verbose bool) error {
+	var writeErr error
+	pf := func(format string, a ...any) {
+		if writeErr != nil {
+			return
+		}
+		_, writeErr = fmt.Fprintf(w, format, a...)
+	}
+
+	pf("assay: documentation coverage report\n")
+	pf("====================================\n\n")
 
 	pkgs := countPackages(result.Entities)
 	docFiles := countDocFiles(result.DocRefs)
 
-	fmt.Fprintf(w, "Source: %d packages, %d exported entities\n", pkgs, len(result.Entities))
-	fmt.Fprintf(w, "Docs:   %d files, %d code references\n\n", docFiles, len(result.DocRefs))
+	pf("Source: %d packages, %d exported entities\n", pkgs, len(result.Entities))
+	pf("Docs:   %d files, %d code references\n\n", docFiles, len(result.DocRefs))
 
-	fmt.Fprintf(w, "Coverage:  %d/%d (%.1f%%)\n", len(result.Covered), len(result.Entities), result.Coverage*100)
-	fmt.Fprintf(w, "Staleness: %d/%d (%.1f%%)\n", len(result.Stale), len(result.DocRefs), result.Staleness*100)
+	pf("Coverage:  %d/%d (%.1f%%)\n", len(result.Covered), len(result.Entities), result.Coverage*100)
+	pf("Staleness: %d/%d (%.1f%%)\n", len(result.Stale), len(result.DocRefs), result.Staleness*100)
 
 	if len(result.Uncovered) > 0 {
-		fmt.Fprintf(w, "\nUncovered (%d):\n", len(result.Uncovered))
+		pf("\nUncovered (%d):\n", len(result.Uncovered))
 		sorted := sortEntities(result.Uncovered)
 		for _, e := range sorted {
-			fmt.Fprintf(w, "  %-10s %-30s %s\n", e.Kind, e.Name, e.File)
+			pf("  %-10s %-30s %s\n", e.Kind, e.Name, e.File)
 		}
 	}
 
 	if len(result.Stale) > 0 {
-		fmt.Fprintf(w, "\nStale (%d):\n", len(result.Stale))
+		pf("\nStale (%d):\n", len(result.Stale))
 		for _, r := range result.Stale {
-			fmt.Fprintf(w, "  `%s`  %s:%d\n", r.Text, r.File, r.Line)
+			pf("  `%s`  %s:%d\n", r.Text, r.File, r.Line)
 		}
 	}
 
 	if verbose && len(result.Covered) > 0 {
-		fmt.Fprintf(w, "\nCovered (%d):\n", len(result.Covered))
+		pf("\nCovered (%d):\n", len(result.Covered))
 		sorted := sortEntities(result.Covered)
 		for _, e := range sorted {
-			fmt.Fprintf(w, "  %-10s %-30s %s\n", e.Kind, e.Name, e.File)
+			pf("  %-10s %-30s %s\n", e.Kind, e.Name, e.File)
 		}
 	}
+
+	return writeErr
 }
 
 // FormatJSON writes a JSON coverage report.

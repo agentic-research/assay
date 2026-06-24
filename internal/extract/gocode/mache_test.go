@@ -22,7 +22,7 @@ func buildFixtureDB(t *testing.T, dir string) string {
 	path := filepath.Join(dir, "fixture.db")
 	db, err := sql.Open("sqlite", path)
 	require.NoError(t, err)
-	defer db.Close()
+	defer func() { _ = db.Close() }()
 
 	stmts := []string{
 		`CREATE TABLE nodes (

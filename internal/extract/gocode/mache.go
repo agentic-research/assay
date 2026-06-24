@@ -2,6 +2,7 @@ package gocode
 
 import (
 	"database/sql"
+	"errors"
 	"fmt"
 	"os"
 
@@ -63,7 +64,7 @@ func (b macheBackend) open() (*sql.DB, error) {
 		return nil, fmt.Errorf("open mache .db %s: %w", b.dbPath, err)
 	}
 	if _, err := db.Exec(canonicalViewsDDL); err != nil {
-		db.Close()
+		_ = db.Close()
 		return nil, fmt.Errorf("install canonical views in %s: %w", b.dbPath, err)
 	}
 	return db, nil
@@ -72,12 +73,12 @@ func (b macheBackend) open() (*sql.DB, error) {
 // extract reads producers from v_defs and consumers from v_refs, joining
 // nodes/_ast for file:line provenance. The root argument is unused here (the
 // .db is the source of truth) but kept for backend-symmetry with treeSitterBackend.
-func (b macheBackend) extract(_ string) ([]artifact.Producer, []artifact.Consumer, error) {
+func (b macheBackend) extract(_ string) (_ []artifact.Producer, _ []artifact.Consumer, err error) {
 	db, err := b.open()
 	if err != nil {
 		return nil, nil, err
 	}
-	defer db.Close()
+	defer func() { err = errors.Join(err, db.Close()) }()
 
 	producers, err := b.queryProducers(db)
 	if err != nil {
@@ -105,7 +106,7 @@ func (b macheBackend) queryProducers(db *sql.DB) ([]artifact.Producer, error) {
 	if err != nil {
 		return nil, fmt.Errorf("query v_defs: %w", err)
 	}
-	defer rows.Close()
+	defer func() { _ = rows.Close() }()
 
 	var producers []artifact.Producer
 	for rows.Next() {
@@ -137,7 +138,7 @@ func (b macheBackend) queryConsumers(db *sql.DB) ([]artifact.Consumer, error) {
 	if err != nil {
 		return nil, fmt.Errorf("query v_refs: %w", err)
 	}
-	defer rows.Close()
+	defer func() { _ = rows.Close() }()
 
 	var consumers []artifact.Consumer
 	for rows.Next() {
