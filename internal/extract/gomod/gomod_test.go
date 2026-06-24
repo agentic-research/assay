@@ -1,6 +1,7 @@
 package gomod
 
 import (
+	"os"
 	"path/filepath"
 	"testing"
 
@@ -37,6 +38,16 @@ func hasConsumer(cons []artifact.Consumer, kind artifact.Kind, ref string) bool 
 	want := artifact.NewIdentity(kind, ref)
 	for _, c := range cons {
 		if c.Identity == want {
+			return true
+		}
+	}
+	return false
+}
+
+func hasProducer(prods []artifact.Producer, kind artifact.Kind, ref string) bool {
+	want := artifact.NewIdentity(kind, ref)
+	for _, p := range prods {
+		if p.Identity == want {
 			return true
 		}
 	}
@@ -115,6 +126,47 @@ func TestExtractor_SubdirModuleEmitsBothIdentities(t *testing.T) {
 	// The owning-repo identity is derived from the same module declaration.
 	assert.Equal(t, 1, owning.Provenance.Line)
 	assert.Equal(t, filepath.Join(root, "go.mod"), owning.Provenance.File)
+}
+
+// A repo whose Go module lives in a subdirectory (no root go.mod) must still
+// have its producer emitted: Extract walks for nested go.mod files. This is the
+// ley-line-open shape — the module is at clients/go/leyline-schema — and is what
+// makes the mache → ley-line-open cross-root edge resolve.
+func TestExtractor_NestedModuleIsDiscovered(t *testing.T) {
+	dir := t.TempDir()
+	nested := filepath.Join(dir, "clients", "go", "leyline-schema")
+	require.NoError(t, os.MkdirAll(nested, 0o755))
+	const mod = "module github.com/agentic-research/ley-line-open/clients/go/leyline-schema\n\ngo 1.26\n"
+	require.NoError(t, os.WriteFile(filepath.Join(nested, "go.mod"), []byte(mod), 0o644))
+
+	ex := New()
+	prods, _, err := ex.Extract(dir)
+	require.NoError(t, err)
+
+	full := findProducer(t, prods, artifact.KindGoModule,
+		"github.com/agentic-research/ley-line-open/clients/go/leyline-schema")
+	assert.Equal(t, filepath.Join(nested, "go.mod"), full.Provenance.File)
+
+	// The owning-repo identity is emitted too, so a require of the bare repo path
+	// also resolves.
+	assert.True(t, hasProducer(prods, artifact.KindGoModule,
+		"github.com/agentic-research/ley-line-open"))
+}
+
+// A go.mod under a skipped directory (.git, .claude worktrees, testdata, vendor)
+// must NOT contribute facts: those are scratch/throwaway modules.
+func TestExtractor_SkipsScratchDirs(t *testing.T) {
+	dir := t.TempDir()
+	scratch := filepath.Join(dir, ".claude", "worktrees", "agent-x")
+	require.NoError(t, os.MkdirAll(scratch, 0o755))
+	require.NoError(t, os.WriteFile(filepath.Join(scratch, "go.mod"),
+		[]byte("module example.com/scratch\n"), 0o644))
+
+	ex := New()
+	prods, _, err := ex.Extract(dir)
+	require.NoError(t, err)
+	assert.False(t, hasProducer(prods, artifact.KindGoModule, "example.com/scratch"),
+		"scratch module under .claude must be skipped")
 }
 
 // An ACTIVE replace is a cross-root link too: the left-hand module path becomes

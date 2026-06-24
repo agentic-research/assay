@@ -44,11 +44,57 @@ func (Extractor) Name() string { return "gomod" }
 // Available always reports true: parsing a go.mod needs no external binary.
 func (Extractor) Available() (bool, string) { return true, "" }
 
-// Extract reads <root>/go.mod and emits the module Producer and the require /
-// replace Consumers it declares. A missing go.mod is not an error: the root
-// simply has no Go-module facts to contribute.
+// Extract walks the scan root for every go.mod and emits each one's module
+// Producer and its require / replace Consumers. It finds nested modules, not just
+// <root>/go.mod: a repo whose Go module lives in a subdirectory (e.g.
+// ley-line-open's `clients/go/leyline-schema`, or any multi-module repo) still
+// contributes its producer, so a require elsewhere resolves to it. A root with no
+// go.mod is not an error — it simply contributes no Go-module facts.
 func (Extractor) Extract(root string) ([]artifact.Producer, []artifact.Consumer, error) {
-	path := filepath.Join(root, "go.mod")
+	var producers []artifact.Producer
+	var consumers []artifact.Consumer
+
+	err := filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		if d.IsDir() {
+			if _, skip := skipDirs[d.Name()]; skip {
+				return fs.SkipDir
+			}
+			return nil
+		}
+		if d.Name() != "go.mod" {
+			return nil
+		}
+		p, c, err := extractFile(path)
+		if err != nil {
+			return err
+		}
+		producers = append(producers, p...)
+		consumers = append(consumers, c...)
+		return nil
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	return producers, consumers, nil
+}
+
+// skipDirs are directory names never worth walking for go.mod files: VCS and
+// dependency/build caches, and agent worktree scratch trees whose throwaway
+// modules would pollute the graph.
+var skipDirs = map[string]struct{}{
+	".git":         {},
+	".claude":      {},
+	"node_modules": {},
+	"vendor":       {},
+	"testdata":     {},
+}
+
+// extractFile parses a single go.mod and emits its module Producer and require /
+// replace Consumers.
+func extractFile(path string) ([]artifact.Producer, []artifact.Consumer, error) {
 	data, err := os.ReadFile(path)
 	if errors.Is(err, fs.ErrNotExist) {
 		return nil, nil, nil
