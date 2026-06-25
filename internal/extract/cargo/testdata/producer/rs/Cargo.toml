@@ -1,0 +1,9 @@
+# Virtual workspace root (no [package]) — mirrors ley-line-open's rs/ll-open
+# layout. It declares members but produces no crate itself; each member's own
+# Cargo.toml carries the [package].name the resolver matches on.
+[workspace]
+members = [
+  "cas-ffi",
+  "core",
+]
+resolver = "2"

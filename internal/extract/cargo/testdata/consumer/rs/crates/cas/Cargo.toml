@@ -1,0 +1,16 @@
+[package]
+name = "cloister-cas"
+version = "0.1.0"
+edition = "2024"
+description = "Bridge crate exposing leyline-cas-ffi for cloister's bundle pipeline"
+
+[dependencies]
+# Cross-repo git dependency on ley-line-open's crate. The table key equals the
+# real crate name and `package` restates it, so the consumer identity is
+# leyline-cas-ffi and matches the producer in the producer root.
+leyline-cas-ffi = { git = "https://github.com/agentic-research/ley-line-open", rev = "593ee610bf17dd8fc152d4c39472f24242da5cb0", version = "0.4.5", package = "leyline-cas-ffi" }
+# Local cross-crate path dependency on a sibling workspace member.
+local-helper = { path = "../helper" }
+
+[dev-dependencies]
+blake3 = "1"

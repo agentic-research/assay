@@ -24,6 +24,11 @@ const (
 	KindContainerImage Kind = "container_image"
 	// KindCLIBinary is a command-line binary, identified by its invoked name.
 	KindCLIBinary Kind = "cli_binary"
+	// KindCargoCrate is a Rust crate (a Cargo package), identified by its crate
+	// name: the [package].name a manifest declares, or the package-renamed name a
+	// dependency resolves to. A crate's version/version requirement is never part
+	// of its identity.
+	KindCargoCrate Kind = "cargo_crate"
 )
 
 // validKinds is the set of recognized kinds. Extend it when adding a Kind.
@@ -32,6 +37,7 @@ var validKinds = map[Kind]struct{}{
 	KindGoPackageSymbol: {},
 	KindContainerImage:  {},
 	KindCLIBinary:       {},
+	KindCargoCrate:      {},
 }
 
 // String returns the kind's stable string form.

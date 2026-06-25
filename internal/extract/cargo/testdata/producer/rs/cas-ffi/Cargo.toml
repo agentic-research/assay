@@ -1,0 +1,12 @@
+[package]
+name = "leyline-cas-ffi"
+version = "0.5.1"
+edition = "2024"
+description = "Wasm32-callable C FFI for ll-core CAS primitives"
+
+[dependencies]
+# Path dep on the in-workspace substrate crate; also a producer in this root.
+leyline-core = { path = "../core" }
+
+[dev-dependencies]
+blake3 = "1"
