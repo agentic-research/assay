@@ -1,0 +1,7 @@
+# Virtual workspace root — mirrors cloister's rs/Cargo.toml.
+[workspace]
+members = [
+  "crates/cas",
+  "crates/helper",
+]
+resolver = "2"

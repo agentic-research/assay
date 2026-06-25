@@ -1,0 +1,20 @@
+[package]
+name = "forms-crate"
+version = "0.1.0"
+
+[dependencies]
+serde = "1.0"
+
+# A per-dependency subtable whose key is a local alias for a differently-named
+# crate: the `package` rename is the identity, not the alias.
+[dependencies.aliased]
+version = "2"
+package = "real-crate"
+
+# Platform-specific dependencies live under [target.<cfg>.*] but are still
+# crate-name consumers.
+[target.'cfg(unix)'.dependencies]
+nix-only = "0.27"
+
+[build-dependencies]
+cc = "1"

@@ -8,6 +8,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/agentic-research/assay/internal/extract"
+	"github.com/agentic-research/assay/internal/extract/cargo"
 	"github.com/agentic-research/assay/internal/extract/ci"
 	"github.com/agentic-research/assay/internal/extract/dockerfile"
 	"github.com/agentic-research/assay/internal/extract/gocode"
@@ -59,10 +60,11 @@ func runMap(cmd *cobra.Command, args []string) error {
 // extractors, resolve them, and fold the result (plus skip records and the roots
 // themselves) into a report Graph. It is the seam the cmd tests drive directly.
 func buildGraph(roots []string) (*report.Graph, error) {
-	// All four extractors, in a stable registration order. gocode's tree-sitter
-	// floor is always available, so the Go layer is never silently absent.
+	// All extractors, in a stable registration order. gocode's tree-sitter floor
+	// is always available, so the Go layer is never silently absent.
 	registry := extract.NewRegistry(
 		gomod.New(),
+		cargo.New(),
 		dockerfile.Extractor{},
 		ci.New(),
 		gocode.New(),
