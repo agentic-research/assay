@@ -1,0 +1,48 @@
+name: assay map
+
+# Drift-check the committed dependency-graph snapshot. assay scans its own repo
+# (a dogfood that also exercises the `ci` extractor reading this very workflow);
+# `task map:check` regenerates docs/dependency-graph.md and fails if it changed,
+# so a new undeclared dependency seam blocks the PR until the snapshot is updated.
+#
+# Future: cross-repo maps take several checkouts (one per root). Out of scope for
+# this single-repo cut — `assay map .` here scans only the checked-out repo.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  map:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Install Task
+        uses: go-task/setup-task@v1
+        with:
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Invokes the Taskfile target so local == CI by construction; the gate lives
+      # in the Taskfile, not in this YAML.
+      - name: Drift-check dependency graph
+        run: task map:check
+
+      # Always publish the generated snapshot so a failing drift-check is easy to
+      # inspect (download and diff against the committed copy).
+      - name: Upload dependency graph
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-graph
+          path: docs/dependency-graph.md

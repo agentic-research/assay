@@ -38,3 +38,36 @@ tasks:
     desc: Tidy module
     cmds:
       - go mod tidy
+
+  map:
+    desc: Regenerate the dependency-graph snapshot (assay map over this repo → docs/dependency-graph.md)
+    env:
+      # Insulate from any ambient go.work so the build is identical locally and in
+      # CI. CI checks out this repo alone (no workspace), so GOWORK=off is a no-op
+      # there; locally it ignores a parent monorepo go.work.
+      GOWORK: "off"
+    vars:
+      # md is the committed snapshot format: a self-contained markdown doc that
+      # renders the mermaid graph on GitHub and lists every external seam with its
+      # file:line. Override for a one-off view, e.g. `task map FORMAT=mermaid`.
+      FORMAT: '{{.FORMAT | default "md"}}'
+    cmds:
+      - go build -o bin/assay .
+      - mkdir -p docs
+      - ./bin/assay map . --format {{.FORMAT}} > docs/dependency-graph.md
+
+  map:check:
+    desc: Drift-check the dependency-graph snapshot — fails if the map changed
+    env:
+      GOWORK: "off"
+    cmds:
+      # Regenerate the canonical md snapshot, then fail if git sees any change.
+      # A new import / Dockerfile / CI-workflow seam shows up here as a diff, so an
+      # undeclared dependency edge fails CI until the snapshot is regenerated and
+      # committed. This is the load-bearing gate the assay-map workflow runs.
+      # Future: multi-root (cross-repo) scans take several checkouts; out of scope
+      # for this single-repo dogfood.
+      - go build -o bin/assay .
+      - mkdir -p docs
+      - ./bin/assay map . --format md > docs/dependency-graph.md
+      - git diff --exit-code -- docs/dependency-graph.md
