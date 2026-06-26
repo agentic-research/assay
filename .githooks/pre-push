@@ -1,0 +1,11 @@
+#!/bin/sh
+# Repo pre-push hook — runs the single-source non-mutating gate before every push.
+#
+# Per taskfile-ci-parity: the hook INVOKES the Task target, it never re-implements
+# the commands. `task ci` is 1:1 with what the CI workflow runs, so a push that CI
+# would reject fails here first — including the dependency-graph drift check
+# (task map:check), so an undeclared cross-repo seam can't slip to main.
+#
+# Install once: `task hooks:install` (sets core.hooksPath=.githooks).
+# Bypass in an emergency: `git push --no-verify`.
+exec task ci

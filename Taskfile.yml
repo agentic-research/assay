@@ -21,23 +21,46 @@ tasks:
     cmds:
       - gofumpt -w -extra .
 
+  fmt:check:
+    desc: Check formatting (non-mutating) — fails if any file needs gofumpt
+    cmds:
+      - |
+        out=$(gofumpt -l -extra .)
+        if [ -n "$out" ]; then echo "needs formatting (run: task fmt):"; echo "$out"; exit 1; fi
+
   vet:
     desc: Run go vet
     cmds:
       - go vet ./...
 
   check:
-    desc: Full CI-equivalent check
+    desc: Dev gate (MUTATING — formats + regenerates the snapshot). Local convenience; CI uses `ci`.
     cmds:
       - task: fmt
       - task: vet
       - task: lint
       - task: test
+      - task: map # regenerate the snapshot so a graph change rides along in the same commit (no post-merge 2-step)
+
+  ci:
+    desc: Merge gate (NON-mutating; 1:1 with the assay-map workflow + the pre-push hook). Never rewrites the tree.
+    cmds:
+      - task: fmt:check
+      - task: vet
+      - task: lint
+      - task: test
+      - task: map:check # fails if the committed dependency-graph snapshot drifted
 
   tidy:
     desc: Tidy module
     cmds:
       - go mod tidy
+
+  hooks:install:
+    desc: Install repo git hooks (sets core.hooksPath=.githooks); pre-push runs `task ci`
+    cmds:
+      - git config core.hooksPath .githooks
+      - 'echo "installed: core.hooksPath=.githooks — pre-push now runs ''task ci''"'
 
   map:
     desc: Regenerate the dependency-graph snapshot (assay map over this repo → docs/dependency-graph.md)

@@ -43,7 +43,7 @@ func EmbedNodes(dbPath, vecDBPath string) (int, error) {
 // Search shells out to `leyline search` for kNN vector similarity.
 // queryVec is a JSON array of float32 values (384-dim for MiniLM).
 // Returns results sorted by distance (ascending = closest).
-func Search(vecDBPath string, queryVec string, k int) ([]SearchResult, error) {
+func Search(vecDBPath, queryVec string, k int) ([]SearchResult, error) {
 	cmd := exec.Command("leyline", "search",
 		"--db", vecDBPath,
 		"--query", queryVec,

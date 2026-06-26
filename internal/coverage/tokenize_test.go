@@ -42,8 +42,8 @@ func TestJaccard_Identical(t *testing.T) {
 }
 
 func TestJaccard_Overlap(t *testing.T) {
-	a := Tokenize("NewGraphCache")             // [new, graph, cache]
-	b := Tokenize("create a new graph cache")  // [create, new, graph, cache] (a filtered)
+	a := Tokenize("NewGraphCache")            // [new, graph, cache]
+	b := Tokenize("create a new graph cache") // [create, new, graph, cache] (a filtered)
 	sim := Jaccard(a, b)
 	assert.InDelta(t, 0.75, sim, 0.01) // {new,graph,cache} ∩ {create,new,graph,cache} = 3, union = 4
 }

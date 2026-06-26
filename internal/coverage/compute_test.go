@@ -99,8 +99,8 @@ func TestCompute_FuzzyMatch(t *testing.T) {
 		{Name: "NewGraphCache", Kind: "function", Package: "graph"},
 	}
 	refs := []DocRef{
-		{Text: "in-memory store", Kind: "code_span"},    // fuzzy match → MemoryStore
-		{Text: "new graph cache", Kind: "code_span"},     // fuzzy match → NewGraphCache
+		{Text: "in-memory store", Kind: "code_span"},      // fuzzy match → MemoryStore
+		{Text: "new graph cache", Kind: "code_span"},      // fuzzy match → NewGraphCache
 		{Text: "completely unrelated", Kind: "code_span"}, // no match
 	}
 
@@ -157,8 +157,10 @@ func TestCompute_TrigramMatch(t *testing.T) {
 
 func TestCompute_DocCommentBridging(t *testing.T) {
 	entities := []Entity{
-		{Name: "InitDB", Kind: "function", Package: "db",
-			DocComment: "// opens database connection"},
+		{
+			Name: "InitDB", Kind: "function", Package: "db",
+			DocComment: "// opens database connection",
+		},
 	}
 	refs := []DocRef{
 		// 3 of 3 ref tokens match doc tokens → Jaccard 3/5 = 0.6 > 0.4
@@ -175,8 +177,10 @@ func TestCompute_DocCommentBridging(t *testing.T) {
 
 func TestCompute_DocCommentBridging_NoMatch(t *testing.T) {
 	entities := []Entity{
-		{Name: "InitDB", Kind: "function", Package: "db",
-			DocComment: "// InitDB opens a database connection"},
+		{
+			Name: "InitDB", Kind: "function", Package: "db",
+			DocComment: "// InitDB opens a database connection",
+		},
 	}
 	refs := []DocRef{
 		{Text: "completely unrelated topic", Kind: "code_span"},

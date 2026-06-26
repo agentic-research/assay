@@ -3,12 +3,20 @@
 ## Build & Test
 
 ```bash
-task build    # Build binary → bin/assay
-task test     # Run all tests (go test -race -v ./...)
-task lint     # golangci-lint run ./...
-task fmt      # gofumpt -w -extra .
-task check    # fmt + vet + lint + test
+task build         # Build binary → bin/assay
+task test          # Run all tests (go test -race -v ./...)
+task lint          # golangci-lint run ./...
+task fmt           # gofumpt -w -extra .
+task map           # Regenerate docs/dependency-graph.md (assay over itself)
+task check         # DEV gate (mutating): fmt + vet + lint + test + map
+task ci            # MERGE gate (non-mutating): fmt:check + vet + lint + test + map:check
+task hooks:install # Install repo git hooks (pre-push runs `task ci`)
 ```
+
+`task ci` is the single source of truth — the `assay-map` workflow and the `.githooks/pre-push`
+hook both invoke it (never re-implement). `task check` (dev) regenerates the dependency-graph
+snapshot so a graph change rides along in the same commit; `task ci` (CI/hook) only *verifies*
+it (`map:check`), never rewrites the tree. Run `task hooks:install` once after cloning.
 
 ## Architecture
 
