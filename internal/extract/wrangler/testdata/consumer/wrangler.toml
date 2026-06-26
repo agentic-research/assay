@@ -1,0 +1,15 @@
+name = "cloister"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Durable Objects are same-worker classes, NOT cross-worker service bindings:
+# they must never become service consumers.
+[durable_objects]
+bindings = [
+  { name = "BEAD_STORE", class_name = "BeadStore" },
+]
+
+# A service binding to another deployed worker — the cross-root edge.
+[[services]]
+binding = "NOTME"
+service = "notme-bot"

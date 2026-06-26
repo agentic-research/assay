@@ -1,0 +1,3 @@
+name = "notme-bot"
+main = "worker/index.ts"
+compatibility_date = "2025-01-01"

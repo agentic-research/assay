@@ -1,0 +1,21 @@
+name = "forms-worker"
+main = "src/index.ts"
+
+# Canonical array-of-tables form.
+[[services]]
+binding = "AUTH"
+service = "auth-service"
+
+# A second service binding, with an entrypoint (the entrypoint is not part of
+# the bound service's identity).
+[[services]]
+binding = "BILLING"
+service = "billing-service"
+entrypoint = "BillingEntrypoint"
+
+# Inline-array form: `services = [ { ... } ]`.
+inline_only = true
+[env.staging]
+services = [
+  { binding = "QUEUE", service = "queue-service" },
+]
