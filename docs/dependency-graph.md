@@ -1,7 +1,7 @@
 # assay map
 
 - Resolved edges: 0
-- External dependencies: 193
+- External dependencies: 205
 - Dangling producers: 1
 
 ## Graph
@@ -14,8 +14,10 @@ graph LR
 
 - `task` (cli_binary) — .github/workflows/assay-map.yml:39
 - `bufio` (go_module) — internal/embeddings/leyline.go:4
+- `bufio` (go_module) — internal/extract/capnp/parse.go:4
 - `bufio` (go_module) — internal/extract/gocode/treesitter.go:4
 - `bytes` (go_module) — internal/embeddings/leyline.go:5
+- `bytes` (go_module) — internal/extract/capnp/parse.go:5
 - `bytes` (go_module) — internal/extract/dockerfile/dockerfile.go:23
 - `context` (go_module) — internal/code/extract.go:4
 - `context` (go_module) — internal/docs/extract.go:4
@@ -27,6 +29,7 @@ graph LR
 - `encoding/hex` (go_module) — internal/report/mermaid_repo.go:5
 - `encoding/json` (go_module) — internal/coverage/report.go:4
 - `encoding/json` (go_module) — internal/report/json.go:4
+- `errors` (go_module) — internal/extract/capnp/capnp.go:31
 - `errors` (go_module) — internal/extract/cargo/cargo.go:22
 - `errors` (go_module) — internal/extract/gocode/mache.go:5
 - `errors` (go_module) — internal/extract/gomod/gomod.go:19
@@ -45,6 +48,8 @@ graph LR
 - `fmt` (go_module) — internal/report/mermaid.go:6
 - `fmt` (go_module) — internal/report/mermaid_repo.go:6
 - `github.com/agentic-research/assay/cmd` (go_module) — main.go:3
+- `github.com/agentic-research/assay/internal/artifact` (go_module) — internal/extract/capnp/capnp.go:37
+- `github.com/agentic-research/assay/internal/artifact` (go_module) — internal/extract/capnp/emit.go:3
 - `github.com/agentic-research/assay/internal/artifact` (go_module) — internal/extract/cargo/cargo.go:27
 - `github.com/agentic-research/assay/internal/artifact` (go_module) — internal/extract/cargo/manifest.go:9
 - `github.com/agentic-research/assay/internal/artifact` (go_module) — internal/extract/ci/ci.go:32
@@ -70,6 +75,7 @@ graph LR
 - `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/docs/extract.go:13
 - `github.com/agentic-research/assay/internal/docs` (go_module) — cmd/verify.go:12
 - `github.com/agentic-research/assay/internal/extract` (go_module) — cmd/map.go:10
+- `github.com/agentic-research/assay/internal/extract` (go_module) — internal/extract/capnp/capnp.go:38
 - `github.com/agentic-research/assay/internal/extract` (go_module) — internal/extract/cargo/cargo.go:28
 - `github.com/agentic-research/assay/internal/extract` (go_module) — internal/extract/dockerfile/dockerfile.go:35
 - `github.com/agentic-research/assay/internal/extract` (go_module) — internal/extract/gocode/gocode.go:23
@@ -77,14 +83,15 @@ graph LR
 - `github.com/agentic-research/assay/internal/extract` (go_module) — internal/extract/wrangler/wrangler.go:26
 - `github.com/agentic-research/assay/internal/extract` (go_module) — internal/report/report.go:20
 - `github.com/agentic-research/assay/internal/extract` (go_module) — internal/resolve/resolve.go:18
-- `github.com/agentic-research/assay/internal/extract/cargo` (go_module) — cmd/map.go:11
-- `github.com/agentic-research/assay/internal/extract/ci` (go_module) — cmd/map.go:12
-- `github.com/agentic-research/assay/internal/extract/dockerfile` (go_module) — cmd/map.go:13
-- `github.com/agentic-research/assay/internal/extract/gocode` (go_module) — cmd/map.go:14
-- `github.com/agentic-research/assay/internal/extract/gomod` (go_module) — cmd/map.go:15
-- `github.com/agentic-research/assay/internal/extract/wrangler` (go_module) — cmd/map.go:16
-- `github.com/agentic-research/assay/internal/report` (go_module) — cmd/map.go:17
-- `github.com/agentic-research/assay/internal/resolve` (go_module) — cmd/map.go:18
+- `github.com/agentic-research/assay/internal/extract/capnp` (go_module) — cmd/map.go:11
+- `github.com/agentic-research/assay/internal/extract/cargo` (go_module) — cmd/map.go:12
+- `github.com/agentic-research/assay/internal/extract/ci` (go_module) — cmd/map.go:13
+- `github.com/agentic-research/assay/internal/extract/dockerfile` (go_module) — cmd/map.go:14
+- `github.com/agentic-research/assay/internal/extract/gocode` (go_module) — cmd/map.go:15
+- `github.com/agentic-research/assay/internal/extract/gomod` (go_module) — cmd/map.go:16
+- `github.com/agentic-research/assay/internal/extract/wrangler` (go_module) — cmd/map.go:17
+- `github.com/agentic-research/assay/internal/report` (go_module) — cmd/map.go:18
+- `github.com/agentic-research/assay/internal/resolve` (go_module) — cmd/map.go:19
 - `github.com/agentic-research/assay/internal/resolve` (go_module) — internal/report/mermaid.go:12
 - `github.com/agentic-research/assay/internal/resolve` (go_module) — internal/report/report.go:21
 - `github.com/agext/levenshtein` (go_module) — go.mod:17
@@ -142,6 +149,7 @@ graph LR
 - `io` (go_module) — internal/report/mermaid_repo.go:7
 - `io/fs` (go_module) — internal/code/extract.go:5
 - `io/fs` (go_module) — internal/docs/extract.go:5
+- `io/fs` (go_module) — internal/extract/capnp/capnp.go:32
 - `io/fs` (go_module) — internal/extract/cargo/cargo.go:23
 - `io/fs` (go_module) — internal/extract/dockerfile/dockerfile.go:25
 - `io/fs` (go_module) — internal/extract/gocode/treesitter.go:6
@@ -157,6 +165,7 @@ graph LR
 - `os` (go_module) — cmd/verify.go:5
 - `os` (go_module) — internal/code/extract.go:6
 - `os` (go_module) — internal/docs/extract.go:6
+- `os` (go_module) — internal/extract/capnp/capnp.go:33
 - `os` (go_module) — internal/extract/cargo/cargo.go:24
 - `os` (go_module) — internal/extract/ci/ci.go:27
 - `os` (go_module) — internal/extract/dockerfile/dockerfile.go:26
@@ -168,6 +177,7 @@ graph LR
 - `path/filepath` (go_module) — cmd/verify.go:6
 - `path/filepath` (go_module) — internal/code/extract.go:7
 - `path/filepath` (go_module) — internal/docs/extract.go:7
+- `path/filepath` (go_module) — internal/extract/capnp/capnp.go:34
 - `path/filepath` (go_module) — internal/extract/cargo/cargo.go:25
 - `path/filepath` (go_module) — internal/extract/ci/ci.go:28
 - `path/filepath` (go_module) — internal/extract/dockerfile/dockerfile.go:27
@@ -193,6 +203,8 @@ graph LR
 - `strings` (go_module) — internal/coverage/tokenize.go:4
 - `strings` (go_module) — internal/docs/extract.go:8
 - `strings` (go_module) — internal/embeddings/leyline.go:9
+- `strings` (go_module) — internal/extract/capnp/capnp.go:35
+- `strings` (go_module) — internal/extract/capnp/parse.go:6
 - `strings` (go_module) — internal/extract/cargo/manifest.go:5
 - `strings` (go_module) — internal/extract/ci/ci.go:30
 - `strings` (go_module) — internal/extract/ci/parse.go:5

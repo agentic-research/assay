@@ -8,6 +8,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/agentic-research/assay/internal/extract"
+	"github.com/agentic-research/assay/internal/extract/capnp"
 	"github.com/agentic-research/assay/internal/extract/cargo"
 	"github.com/agentic-research/assay/internal/extract/ci"
 	"github.com/agentic-research/assay/internal/extract/dockerfile"
@@ -67,6 +68,7 @@ func buildGraph(roots []string) (*report.Graph, error) {
 		gomod.New(),
 		cargo.New(),
 		wrangler.New(),
+		capnp.New(),
 		dockerfile.Extractor{},
 		ci.New(),
 		gocode.New(),
