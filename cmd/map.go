@@ -13,6 +13,7 @@ import (
 	"github.com/agentic-research/assay/internal/extract/dockerfile"
 	"github.com/agentic-research/assay/internal/extract/gocode"
 	"github.com/agentic-research/assay/internal/extract/gomod"
+	"github.com/agentic-research/assay/internal/extract/wrangler"
 	"github.com/agentic-research/assay/internal/report"
 	"github.com/agentic-research/assay/internal/resolve"
 )
@@ -56,8 +57,8 @@ func runMap(cmd *cobra.Command, args []string) error {
 	return renderMap(os.Stdout, graph, flagMapFormat, flagMapGroup)
 }
 
-// buildGraph runs the full map pipeline over roots: gather facts with all four
-// extractors, resolve them, and fold the result (plus skip records and the roots
+// buildGraph runs the full map pipeline over roots: gather facts with every
+// extractor, resolve them, and fold the result (plus skip records and the roots
 // themselves) into a report Graph. It is the seam the cmd tests drive directly.
 func buildGraph(roots []string) (*report.Graph, error) {
 	// All extractors, in a stable registration order. gocode's tree-sitter floor
@@ -65,6 +66,7 @@ func buildGraph(roots []string) (*report.Graph, error) {
 	registry := extract.NewRegistry(
 		gomod.New(),
 		cargo.New(),
+		wrangler.New(),
 		dockerfile.Extractor{},
 		ci.New(),
 		gocode.New(),

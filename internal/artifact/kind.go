@@ -29,6 +29,11 @@ const (
 	// dependency resolves to. A crate's version/version requirement is never part
 	// of its identity.
 	KindCargoCrate Kind = "cargo_crate"
+	// KindService is a deployable runtime service, identified by its service
+	// name: the worker a Cloudflare wrangler.toml declares (its top-level name),
+	// or the service a binding targets. A service has no version concept — the
+	// whole name is its identity.
+	KindService Kind = "service"
 )
 
 // validKinds is the set of recognized kinds. Extend it when adding a Kind.
@@ -38,6 +43,7 @@ var validKinds = map[Kind]struct{}{
 	KindContainerImage:  {},
 	KindCLIBinary:       {},
 	KindCargoCrate:      {},
+	KindService:         {},
 }
 
 // String returns the kind's stable string form.
