@@ -1,5 +1,12 @@
 version: "3"
 
+env:
+  # Insulate every target from an ambient parent go.work (a monorepo workspace or a
+  # linked worktree), so `task ci` behaves identically locally, in a linked worktree,
+  # and in CI. A normal clone / CI checkout has no go.work, so this is a no-op there —
+  # but it's what lets the pre-push hook run `task ci` from any checkout.
+  GOWORK: "off"
+
 tasks:
   build:
     desc: Build assay binary

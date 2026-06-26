@@ -60,6 +60,54 @@ mache  --3 artifacts-->  ley-line-open
 That is the repo-dependency graph, *generated from code* (`go.mod` requires + Dockerfile
 `FROM` + CI image refs), so it can't drift from reality.
 
+## Using assay in your CI
+
+The point of a *deterministic* graph is that CI can **fail when the dependency graph
+drifts** — a new undeclared seam (import, `FROM`, CI image, crate dep) shows up as a diff
+until you regenerate and commit the snapshot. This repo dogfoods exactly this; copy the
+pattern (the canonical reference is this repo's [`Taskfile.yml`](Taskfile.yml) +
+[`.github/workflows/assay-map.yml`](.github/workflows/assay-map.yml)).
+
+**1. Install** — `go install github.com/agentic-research/assay@latest`
+
+**2. Add Taskfile targets** (single source — CI and hooks *invoke* these, never re-implement):
+
+```yaml
+  map:        # regenerate the committed snapshot
+    cmds:
+      - assay map . --format md > docs/dependency-graph.md
+  map:check:  # drift gate — fails if the graph changed
+    cmds:
+      - assay map . --format md > docs/dependency-graph.md
+      - git diff --exit-code -- docs/dependency-graph.md
+```
+
+**3. Commit a baseline** — `task map && git add docs/dependency-graph.md && git commit`.
+
+**4. Add the workflow** (`.github/workflows/assay-map.yml`) — it just calls the target:
+
+```yaml
+name: assay-map
+on: [push, pull_request]
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version-file: go.mod }
+      - run: go install github.com/agentic-research/assay@latest
+      - uses: go-task/setup-task@v1
+      - run: task map:check        # fails the build if the graph drifted
+```
+
+**5. (optional) Catch it before push** — invoke the same target from a `pre-push` hook so a
+drift fails locally first (see this repo's `.githooks/pre-push` + `task hooks:install`).
+
+> **Scope:** in-CI runs scan the single checked-out repo (`assay map .`). The cross-repo
+> graph (`assay map ./a ./b`) needs multiple checkouts in the job — a fine next step, but
+> the single-repo drift gate is the high-value default.
+
 ## How it works
 
 - **Extractors** (`internal/extract/*`) — each deterministically parses one source kind and
