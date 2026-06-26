@@ -84,7 +84,10 @@ tasks:
     cmds:
       - go build -o bin/assay .
       - mkdir -p docs
-      - ./bin/assay map . --format {{.FORMAT}} > docs/dependency-graph.md
+      # --group artifact: a single repo collapses to one repo-level node (an empty
+      # graph), so the per-PR self-snapshot uses the per-artifact view to stay
+      # non-empty. Cross-repo ecosystem maps use the repo group (see map:ecosystem).
+      - ./bin/assay map . --format {{.FORMAT}} --group artifact > docs/dependency-graph.md
 
   map:check:
     desc: Drift-check the dependency-graph snapshot — fails if the map changed
@@ -99,5 +102,34 @@ tasks:
       # for this single-repo dogfood.
       - go build -o bin/assay .
       - mkdir -p docs
-      - ./bin/assay map . --format md > docs/dependency-graph.md
+      - ./bin/assay map . --format md --group artifact > docs/dependency-graph.md
       - git diff --exit-code -- docs/dependency-graph.md
+
+  map:ecosystem:
+    desc: Regenerate the cross-repo ecosystem graph (assay map over every public root → docs/ecosystem-graph.md)
+    env:
+      GOWORK: "off"
+    vars:
+      # Base dir holding sibling checkouts, one per repo named in
+      # docs/ecosystem-roots.txt. The nightly workflow points this at its
+      # anonymous-clone workspace; locally it defaults to ~/remotes/art.
+      BASE_DIR: '{{.ASSAY_ECOSYSTEM_DIR | default (printf "%s/remotes/art" .HOME)}}'
+    cmds:
+      - go build -o bin/assay .
+      - mkdir -p docs
+      # Resolve each public root to BASE_DIR/<repo>; skip (with a warning) any not
+      # present locally so a partial checkout still produces a graph of what's there.
+      # Repo grouping draws the cross-repo (root→root) edges — the ecosystem view.
+      - |
+        roots=""
+        while IFS= read -r repo; do
+          case "$repo" in ''|'#'*) continue ;; esac
+          path="{{.BASE_DIR}}/$repo"
+          if [ -d "$path" ]; then
+            roots="$roots $path"
+          else
+            echo "warning: skipping $repo — not found at $path" >&2
+          fi
+        done < docs/ecosystem-roots.txt
+        if [ -z "$roots" ]; then echo "no ecosystem roots found under {{.BASE_DIR}}" >&2; exit 1; fi
+        ./bin/assay map $roots --format md --group repo > docs/ecosystem-graph.md

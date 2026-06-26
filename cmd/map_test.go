@@ -102,3 +102,36 @@ func TestMapRepoMermaidIsRootToRoot(t *testing.T) {
 		}
 	}
 }
+
+// TestMapMarkdownGroupArtifactIsNonEmpty asserts the md self-snapshot stays
+// non-empty for a single root. A lone root collapses to one repo-level node (an
+// empty repo diagram), so `--group artifact` must embed the per-artifact diagram
+// instead — that is what keeps assay's own per-PR snapshot meaningful.
+func TestMapMarkdownGroupArtifactIsNonEmpty(t *testing.T) {
+	roots := []string{"testdata/cross/roota"}
+	graph, err := buildGraph(roots)
+	if err != nil {
+		t.Fatalf("buildGraph: %v", err)
+	}
+
+	repoMD := renderTo(t, graph, "md", "repo")
+	artifactMD := renderTo(t, graph, "md", "artifact")
+
+	if repoMD == artifactMD {
+		t.Fatalf("artifact-group md should differ from repo-group md for a single root")
+	}
+	// roota produces example.com/lib; the artifact diagram must carry that node
+	// even though the lone-root repo diagram has no edges.
+	if !strings.Contains(artifactMD, "example.com/lib") {
+		t.Errorf("artifact-group md missing the root's produced artifact:\n%s", artifactMD)
+	}
+}
+
+func renderTo(t *testing.T, graph *report.Graph, format, group string) string {
+	t.Helper()
+	var b bytes.Buffer
+	if err := renderMap(&b, graph, format, group); err != nil {
+		t.Fatalf("render %s/%s: %v", format, group, err)
+	}
+	return b.String()
+}

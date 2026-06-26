@@ -1,0 +1,16 @@
+# Public agentic-research repos; refresh via gh repo list agentic-research --visibility public --json name -q '.[].name' (exclude .github).
+# Canonical root set for the ecosystem dependency graph. PUBLIC repos only —
+# this is what keeps the nightly credential-free (anonymous clone in CI, default
+# GITHUB_TOKEN for commit-back; no PAT/secret).
+assay
+cloister
+go-cms
+go-platform-signers
+kiln
+ley-line-open
+mache
+notme
+rosary
+signet
+x-ray
+zero

@@ -1,17 +1,102 @@
 # assay map
 
 - Resolved edges: 0
-- External dependencies: 205
+- External dependencies: 208
 - Dangling producers: 1
 
 ## Graph
 
 ```mermaid
 graph LR
+  subgraph k180db655["Go modules"]
+    n89b362ba6a29["bufio"]
+    n3eb6f6cfa493["bytes"]
+    n5057772039ce["context"]
+    n8841fa351443["crypto/sha1"]
+    n24b5be5a8bd8["database/sql"]
+    nc126039d8a11["encoding/hex"]
+    n2f0ad72d3662["encoding/json"]
+    nc3f6f1252c0b["errors"]
+    n3e9996689220["fmt"]
+    n1f4fe6ae37d6["github.com/agentic-research/assay"]
+    nb99ad35c6585["github.com/agentic-research/assay/cmd"]
+    nff86a555a54c["github.com/agentic-research/assay/internal/artifact"]
+    nf3bf57c6d081["github.com/agentic-research/assay/internal/code"]
+    n3016d1e25dbe["github.com/agentic-research/assay/internal/coverage"]
+    nb07c8971fcf3["github.com/agentic-research/assay/internal/docs"]
+    n2ba2840d08d8["github.com/agentic-research/assay/internal/extract"]
+    n9a531fd1473e["github.com/agentic-research/assay/internal/extract/capnp"]
+    n2ad892f7ffc5["github.com/agentic-research/assay/internal/extract/cargo"]
+    n9c295d6311d9["github.com/agentic-research/assay/internal/extract/ci"]
+    n6b6846d45da1["github.com/agentic-research/assay/internal/extract/dockerfile"]
+    n7dd5fda058e5["github.com/agentic-research/assay/internal/extract/gocode"]
+    nc9270fef7747["github.com/agentic-research/assay/internal/extract/gomod"]
+    n4be777845823["github.com/agentic-research/assay/internal/extract/wrangler"]
+    n852b1ec07131["github.com/agentic-research/assay/internal/report"]
+    n4b579e83c84f["github.com/agentic-research/assay/internal/resolve"]
+    n1650d597ebc4["github.com/agext/levenshtein"]
+    n5865e24c730f["github.com/containerd/typeurl"]
+    n46c521508237["github.com/containerd/typeurl/v2"]
+    n909a41dbdd81["github.com/davecgh/go-spew"]
+    n0f00bd7dca0b["github.com/docker/go-units"]
+    n336f397a35a4["github.com/dustin/go-humanize"]
+    ncd0ce1bba974["github.com/google/uuid"]
+    n15873aaa693c["github.com/inconshreveable/mousetrap"]
+    n414f6eb714f0["github.com/mattn/go-isatty"]
+    n6c1d30cd1e67["github.com/moby/buildkit"]
+    nad7fb764f896["github.com/moby/buildkit/frontend/dockerfile/instructions"]
+    n01434d44f73e["github.com/moby/buildkit/frontend/dockerfile/parser"]
+    ndfc6f1690bad["github.com/moby/buildkit/frontend/dockerfile/shell"]
+    n7b98157fbb3c["github.com/moby/docker-image-spec"]
+    n7875648850e1["github.com/ncruces/go-strftime"]
+    n9a75a242afd6["github.com/opencontainers/go-digest"]
+    n93c9c47ddc4c["github.com/opencontainers/image-spec"]
+    ne7a7ddd25433["github.com/pelletier/go-toml"]
+    n5b9043b01ff7["github.com/pelletier/go-toml/v2"]
+    n43267d7c8bf2["github.com/pelletier/go-toml/v2/unstable"]
+    n528cc8982ad0["github.com/pkg/errors"]
+    n94e89419f26a["github.com/planetscale/vtprotobuf"]
+    nc5ee35bb2469["github.com/pmezard/go-difflib"]
+    nf3264d8df737["github.com/remyoudompheng/bigfft"]
+    ncd218f94f142["github.com/smacker/go-tree-sitter"]
+    n430c5f50e5f0["github.com/smacker/go-tree-sitter/golang"]
+    n52ecc2b62164["github.com/smacker/go-tree-sitter/markdown"]
+    n1f4532de63ce["github.com/spf13/cobra"]
+    n5d772b126b80["github.com/spf13/pflag"]
+    nbf0d6c442c97["github.com/stretchr/testify"]
+    n6c56ea394212["github.com/tonistiigi/go-csvvalue"]
+    n17c266f9ccd7["golang.org/x/mod"]
+    n08e7f686577e["golang.org/x/mod/modfile"]
+    ne22e1725e7db["golang.org/x/sys"]
+    n714cc57c654b["google.golang.org/protobuf"]
+    nc4662d5c6be8["gopkg.in/yaml.v3"]
+    n40f6cf6985d8["io"]
+    n1f6e86c147e0["io/fs"]
+    n2ae63bda236c["modernc.org/libc"]
+    n995f76cf2a4f["modernc.org/mathutil"]
+    nba7d22ef1678["modernc.org/memory"]
+    n29df5f9c5bbb["modernc.org/sqlite"]
+    nd70318886a49["os"]
+    n6e26e07e76b3["os/exec"]
+    n3ff03aa9db84["path/filepath"]
+    n2ee5e6940c75["regexp"]
+    n641191019d94["sort"]
+    n7096a075b3f2["strconv"]
+    ne798671c964e["strings"]
+    n28372c6bdd43["unicode"]
+  end
+  subgraph k01708225["CLI binaries"]
+    nc086671ddc65["git"]
+    nedac642d5687["go"]
+    nf274dd52c2a7["task"]
+  end
 ```
 
 ## External dependencies
 
+- `git` (cli_binary) — .github/workflows/assay-ecosystem.yml:49
+- `go` (cli_binary) — .github/workflows/assay-ecosystem.yml:38
+- `task` (cli_binary) — .github/workflows/assay-ecosystem.yml:57
 - `task` (cli_binary) — .github/workflows/assay-map.yml:39
 - `bufio` (go_module) — internal/embeddings/leyline.go:4
 - `bufio` (go_module) — internal/extract/capnp/parse.go:4

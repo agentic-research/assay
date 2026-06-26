@@ -114,7 +114,7 @@ func renderMap(w io.Writer, graph *report.Graph, format, group string) error {
 	case "mermaid":
 		return renderMermaid(w, graph, group)
 	case "md":
-		return report.RenderMarkdown(w, graph)
+		return report.RenderMarkdownGroup(w, graph, group)
 	default:
 		return fmt.Errorf("unknown format %q", format)
 	}

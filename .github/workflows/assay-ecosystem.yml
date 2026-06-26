@@ -1,0 +1,72 @@
+name: assay ecosystem graph
+
+# Nightly regeneration of the cross-repo ecosystem dependency graph.
+#
+# CREDENTIAL-FREE BY CONSTRUCTION: the roots in docs/ecosystem-roots.txt are
+# PUBLIC agentic-research repos only. That single design constraint is what lets
+# this job run with no PAT and no secret — it clones each root ANONYMOUSLY over
+# https (public repos need no auth) and commits the refreshed graph back with the
+# default GITHUB_TOKEN. Adding a private repo to the roots would break this and
+# force a secret, so keep the roots list public-only.
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write # commit the refreshed docs/ecosystem-graph.md back to the repo
+
+jobs:
+  ecosystem:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Install Task
+        uses: go-task/setup-task@v1
+        with:
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build assay
+        run: go install . || go build -o bin/assay .
+
+      # Anonymous shallow clone of every public root into a scratch workspace. No
+      # token is passed — public repos clone without credentials, which is the
+      # whole point of the public-only roots constraint.
+      - name: Clone public ecosystem roots (anonymous)
+        run: |
+          workspace="${RUNNER_TEMP}/ecosystem"
+          mkdir -p "$workspace"
+          while IFS= read -r repo; do
+            case "$repo" in ''|'#'*) continue ;; esac
+            echo "cloning agentic-research/$repo"
+            git clone --depth 1 "https://github.com/agentic-research/$repo" "$workspace/$repo" \
+              || echo "warning: clone failed for $repo — skipping" >&2
+          done < docs/ecosystem-roots.txt
+
+      - name: Regenerate ecosystem graph
+        env:
+          ASSAY_ECOSYSTEM_DIR: ${{ runner.temp }}/ecosystem
+        run: task map:ecosystem
+
+      # Commit the refreshed graph back using the default GITHUB_TOKEN (no PAT).
+      # The git diff --quiet guard means no-op days produce no commit, so the
+      # history doesn't churn when nothing changed.
+      - name: Commit refreshed graph
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/ecosystem-graph.md
+          if git diff --cached --quiet; then
+            echo "ecosystem graph unchanged — nothing to commit"
+          else
+            git commit -m "chore: nightly ecosystem graph"
+            git push
+          fi

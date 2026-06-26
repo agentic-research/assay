@@ -38,10 +38,20 @@ func RenderMermaid(w io.Writer, g *Graph) error {
 	return err
 }
 
-// RenderMarkdown writes the full human report: a heading, summary counts, the
-// mermaid diagram, and bucket listings (external dependencies, dangling
-// producers, skipped extractors). Output is byte-deterministic.
+// RenderMarkdown writes the full human report with the repo-level diagram. It is
+// the default cross-repo dependency-graph view (one node per root); use
+// RenderMarkdownGroup with "artifact" for the per-artifact diagram.
 func RenderMarkdown(w io.Writer, g *Graph) error {
+	return RenderMarkdownGroup(w, g, "repo")
+}
+
+// RenderMarkdownGroup writes the full human report: a heading, summary counts,
+// the mermaid diagram, and bucket listings (external dependencies, dangling
+// producers, skipped extractors). The group mode selects which diagram is
+// embedded — "repo" for the root→root dependency-graph shape (the meaningful
+// view across an ecosystem), or "artifact" for one node per artifact (the
+// non-empty view for a single self-contained repo). Output is byte-deterministic.
+func RenderMarkdownGroup(w io.Writer, g *Graph, group string) error {
 	var b strings.Builder
 
 	b.WriteString("# assay map\n\n")
@@ -54,14 +64,17 @@ func RenderMarkdown(w io.Writer, g *Graph) error {
 	if len(g.Failed) > 0 {
 		fmt.Fprintf(&b, "- Skipped inputs (parse failures): %d\n", len(g.Failed))
 	}
-	// Embed the repo-level diagram when roots are known — that is the
-	// dependency-graph view worth reading; the artifact-level diagram is
-	// available via `--format mermaid --group artifact`.
+	// The repo-level diagram is the dependency-graph view worth reading across an
+	// ecosystem; for a single repo it collapses to one node (empty), so the
+	// artifact group gives a non-empty per-artifact view instead.
 	b.WriteString("\n## Graph\n\n")
 	b.WriteString("```mermaid\n")
-	if len(g.Roots) > 0 {
+	switch {
+	case group == "artifact":
+		b.WriteString(mermaidDiagram(g))
+	case len(g.Roots) > 0:
 		b.WriteString(repoDiagram(g))
-	} else {
+	default:
 		b.WriteString(mermaidDiagram(g))
 	}
 	b.WriteString("```\n")
