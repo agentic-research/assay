@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 43
-- External dependencies: 3298
-- Dangling producers: 8227
+- External dependencies: 3303
+- Dangling producers: 8230
 
 ## Graph
 
@@ -323,6 +323,7 @@ graph LR
 - `chmod` (cli_binary) — .github/workflows/release.yml:97
 - `chmod` (cli_binary) — .github/workflows/release.yml:118
 - `chmod` (cli_binary) — .github/workflows/release.yml:146
+- `chmod` (cli_binary) — .github/workflows/release.yml:156
 - `chmod` (cli_binary) — .github/workflows/signet-resign.yml:104
 - `codesign` (cli_binary) — .github/workflows/release.yml:102
 - `codesign` (cli_binary) — .github/workflows/release.yml:105
@@ -332,9 +333,12 @@ graph LR
 - `corepack` (cli_binary) — .github/workflows/ci.yml:45
 - `cosign` (cli_binary) — .github/workflows/release.yml:149
 - `cosign` (cli_binary) — .github/workflows/release.yml:156
+- `cosign` (cli_binary) — .github/workflows/release.yml:200
 - `curl` (cli_binary) — .github/workflows/ci.yml:53
+- `curl` (cli_binary) — .github/workflows/release.yml:153
 - `curl` (cli_binary) — .github/workflows/release.yml:245
 - `def` (cli_binary) — .github/workflows/release.yml:265
+- `docker` (cli_binary) — .github/workflows/release.yml:166
 - `enabled:` (cli_binary) — .github/workflows/oidc-signing.yml:67
 - `file` (cli_binary) — .github/workflows/release.yml:147
 - `gh` (cli_binary) — .github/workflows/ci.yml:54
@@ -377,7 +381,7 @@ graph LR
 - `npm` (cli_binary) — .github/workflows/ci.yml:35
 - `openssl` (cli_binary) — .github/workflows/oidc-signing.yml:41
 - `openssl` (cli_binary) — .github/workflows/openssl.yml:26
-- `pip` (cli_binary) — .github/workflows/ci.yml:66
+- `pip` (cli_binary) — .github/workflows/ci.yml:37
 - `pkg-config` (cli_binary) — .github/workflows/release.yml:131
 - `pnpm` (cli_binary) — .github/workflows/ci.yml:56
 - `pnpm` (cli_binary) — .github/workflows/ci.yml:117
@@ -392,8 +396,8 @@ graph LR
 - `sed` (cli_binary) — .github/workflows/release.yml:256
 - `sha256sum` (cli_binary) — .github/workflows/release.yml:78
 - `sha256sum` (cli_binary) — .github/workflows/release.yml:128
-- `sha256sum` (cli_binary) — .github/workflows/release.yml:129
 - `sha256sum` (cli_binary) — .github/workflows/release.yml:168
+- `sha256sum` (cli_binary) — .github/workflows/release.yml:218
 - `sha256sum` (cli_binary) — .github/workflows/rust-release.yml:134
 - `shas` (cli_binary) — .github/workflows/release.yml:263
 - `shasum` (cli_binary) — .github/workflows/release.yml:129
@@ -404,7 +408,7 @@ graph LR
 - `task` (cli_binary) — .github/workflows/assay-ecosystem.yml:57
 - `task` (cli_binary) — .github/workflows/assay-map.yml:39
 - `task` (cli_binary) — .github/workflows/cache-roundtrip.yml:59
-- `task` (cli_binary) — .github/workflows/ci.yml:36
+- `task` (cli_binary) — .github/workflows/ci.yml:40
 - `task` (cli_binary) — .github/workflows/ci.yml:51
 - `task` (cli_binary) — .github/workflows/ci.yml:57
 - `task` (cli_binary) — .github/workflows/ci.yml:61
@@ -443,6 +447,7 @@ graph LR
 - `docker.io/library/golang` (container_image) — scripts/testing/Dockerfile.test:19
 - `docker.io/library/golang` (container_image) — scripts/testing/docker/Dockerfile:1
 - `docker.io/library/rust` (container_image) — Dockerfile:10
+- `docker.io/library/ubuntu` (container_image) — Dockerfile.release:19
 - `docker.io/library/ubuntu` (container_image) — e2e.Dockerfile:15
 - `gcr.io/distroless/static-debian12` (container_image) — Dockerfile:10
 - `gcr.io/distroless/static-debian12` (container_image) — image.Dockerfile:29
@@ -3349,6 +3354,7 @@ graph LR
 - `Dockerfile#go-builder` (container_image) — Dockerfile:33
 - `Dockerfile#rust-builder` (container_image) — Dockerfile:10
 - `Dockerfile.release` (container_image) — Dockerfile.release:5
+- `Dockerfile.release` (container_image) — Dockerfile.release:19
 - `demo/http-auth/Dockerfile` (container_image) — demo/http-auth/Dockerfile:18
 - `demo/http-auth/Dockerfile#builder` (container_image) — demo/http-auth/Dockerfile:2
 - `e2e.Dockerfile` (container_image) — e2e.Dockerfile:15
@@ -8829,12 +8835,14 @@ graph LR
 - `github.com/agentic-research/mache/tools/server-json-gen.main` (go_package_symbol) — tools/server-json-gen/main.go
 - `github.com/agentic-research/mache/tools/server-json-gen.minLeyLineOpenVersion` (go_package_symbol) — tools/server-json-gen/main.go
 - `github.com/agentic-research/mache/tools/server-json-gen.newOrderedObject` (go_package_symbol) — tools/server-json-gen/main.go
+- `github.com/agentic-research/mache/tools/server-json-gen.ociImageIdentifier` (go_package_symbol) — tools/server-json-gen/main.go
 - `github.com/agentic-research/mache/tools/server-json-gen.optionalDep` (go_package_symbol) — tools/server-json-gen/main.go
 - `github.com/agentic-research/mache/tools/server-json-gen.orderedObject` (go_package_symbol) — tools/server-json-gen/main.go
 - `github.com/agentic-research/mache/tools/server-json-gen.orderedObject.MarshalJSON` (go_package_symbol) — tools/server-json-gen/main.go
 - `github.com/agentic-research/mache/tools/server-json-gen.orderedObject.set` (go_package_symbol) — tools/server-json-gen/main.go
 - `github.com/agentic-research/mache/tools/server-json-gen.orphans` (go_package_symbol) — tools/server-json-gen/main.go
 - `github.com/agentic-research/mache/tools/server-json-gen.overclaimed` (go_package_symbol) — tools/server-json-gen/main.go
+- `github.com/agentic-research/mache/tools/server-json-gen.packageEntry` (go_package_symbol) — tools/server-json-gen/main.go
 - `github.com/agentic-research/mache/tools/server-json-gen.remote` (go_package_symbol) — tools/server-json-gen/main.go
 - `github.com/agentic-research/mache/tools/server-json-gen.remoteVarTemplate` (go_package_symbol) — tools/server-json-gen/main.go
 - `github.com/agentic-research/mache/tools/server-json-gen.repository` (go_package_symbol) — tools/server-json-gen/main.go
