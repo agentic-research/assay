@@ -1,7 +1,7 @@
 # assay map
 
 - Resolved edges: 43
-- External dependencies: 3303
+- External dependencies: 3304
 - Dangling producers: 8230
 
 ## Graph
@@ -3323,13 +3323,14 @@ graph LR
 - `unsafe` (go_module) — pkg/agent/api/v1/agent.pb.go:15
 - `unsafe` (go_module) — pkg/crypto/keys/zeroize.go:6
 - `unsafe` (go_module) — touchid/touchid_signer.go:82
-- `companion-mcp` (service) — /home/runner/work/_temp/ecosystem/cloister/config.capnp:184
-- `llo-mcp` (service) — /home/runner/work/_temp/ecosystem/cloister/config.capnp:178
+- `companion-mcp` (service) — /home/runner/work/_temp/ecosystem/cloister/config.capnp:193
+- `kek-helper` (service) — /home/runner/work/_temp/ecosystem/cloister/config.capnp:200
+- `llo-mcp` (service) — /home/runner/work/_temp/ecosystem/cloister/config.capnp:187
 - `mache` (service) — /home/runner/work/_temp/ecosystem/cloister/cluster.capnp:98
-- `mache-mcp` (service) — /home/runner/work/_temp/ecosystem/cloister/config.capnp:175
+- `mache-mcp` (service) — /home/runner/work/_temp/ecosystem/cloister/config.capnp:184
 - `notme-identity` (service) — /home/runner/work/_temp/ecosystem/cloister/cluster.capnp:108
 - `rosary` (service) — /home/runner/work/_temp/ecosystem/cloister/cluster.capnp:103
-- `rosary-mcp` (service) — /home/runner/work/_temp/ecosystem/cloister/config.capnp:181
+- `rosary-mcp` (service) — /home/runner/work/_temp/ecosystem/cloister/config.capnp:190
 
 ## Dangling producers
 
