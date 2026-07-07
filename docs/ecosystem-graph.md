@@ -1,7 +1,7 @@
 # assay map
 
 - Resolved edges: 43
-- External dependencies: 3304
+- External dependencies: 3303
 - Dangling producers: 8230
 
 ## Graph
@@ -312,7 +312,7 @@ graph LR
 - `capnp` (cli_binary) — .github/workflows/generated-drift.yml:82
 - `capnp` (cli_binary) — .github/workflows/leyline-schema-go.yml:63
 - `capnp` (cli_binary) — .github/workflows/release.yml:130
-- `cargo` (cli_binary) — .github/workflows/ci.yml:206
+- `cargo` (cli_binary) — .github/workflows/ci.yml:210
 - `cargo` (cli_binary) — .github/workflows/release.yml:80
 - `cargo` (cli_binary) — .github/workflows/release.yml:137
 - `cargo` (cli_binary) — .github/workflows/rust-ci.yml:23
@@ -384,7 +384,6 @@ graph LR
 - `pip` (cli_binary) — .github/workflows/ci.yml:37
 - `pkg-config` (cli_binary) — .github/workflows/release.yml:131
 - `pnpm` (cli_binary) — .github/workflows/ci.yml:56
-- `pnpm` (cli_binary) — .github/workflows/ci.yml:117
 - `pnpm` (cli_binary) — .github/workflows/generated-drift.yml:86
 - `providers:` (cli_binary) — .github/workflows/oidc-signing.yml:60
 - `python3` (cli_binary) — .github/workflows/release.yml:259
@@ -413,7 +412,7 @@ graph LR
 - `task` (cli_binary) — .github/workflows/ci.yml:57
 - `task` (cli_binary) — .github/workflows/ci.yml:61
 - `task` (cli_binary) — .github/workflows/ci.yml:63
-- `task` (cli_binary) — .github/workflows/ci.yml:132
+- `task` (cli_binary) — .github/workflows/ci.yml:119
 - `task` (cli_binary) — .github/workflows/e2e-fresh.yml:61
 - `task` (cli_binary) — .github/workflows/find-smells.yml:57
 - `task` (cli_binary) — .github/workflows/generated-drift.yml:97
