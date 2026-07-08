@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 43
-- External dependencies: 3303
-- Dangling producers: 8230
+- External dependencies: 3309
+- Dangling producers: 8231
 
 ## Graph
 
@@ -129,6 +129,7 @@ graph LR
 - `jsonwebtoken` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:55
 - `keyring` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/sign/Cargo.toml:87
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/sign/Cargo.toml:76
+- `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:76
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli/Cargo.toml:22
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:34
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:19
@@ -252,7 +253,7 @@ graph LR
 - `toml` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:48
 - `toml` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:33
 - `tower` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/sign/Cargo.toml:96
-- `tower` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:86
+- `tower` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:93
 - `tower` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:81
 - `tower-http` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/sign/Cargo.toml:97
 - `tracing` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/sign/Cargo.toml:102
@@ -382,6 +383,7 @@ graph LR
 - `openssl` (cli_binary) — .github/workflows/oidc-signing.yml:41
 - `openssl` (cli_binary) — .github/workflows/openssl.yml:26
 - `pip` (cli_binary) — .github/workflows/ci.yml:37
+- `pip3` (cli_binary) — .github/workflows/release.yml:215
 - `pkg-config` (cli_binary) — .github/workflows/release.yml:131
 - `pnpm` (cli_binary) — .github/workflows/ci.yml:56
 - `pnpm` (cli_binary) — .github/workflows/generated-drift.yml:86
@@ -396,7 +398,7 @@ graph LR
 - `sha256sum` (cli_binary) — .github/workflows/release.yml:78
 - `sha256sum` (cli_binary) — .github/workflows/release.yml:128
 - `sha256sum` (cli_binary) — .github/workflows/release.yml:168
-- `sha256sum` (cli_binary) — .github/workflows/release.yml:218
+- `sha256sum` (cli_binary) — .github/workflows/release.yml:246
 - `sha256sum` (cli_binary) — .github/workflows/rust-release.yml:134
 - `shas` (cli_binary) — .github/workflows/release.yml:263
 - `shasum` (cli_binary) — .github/workflows/release.yml:129
@@ -418,6 +420,7 @@ graph LR
 - `task` (cli_binary) — .github/workflows/generated-drift.yml:97
 - `task` (cli_binary) — .github/workflows/integration.yml:55
 - `task` (cli_binary) — .github/workflows/oidc-signing.yml:34
+- `task` (cli_binary) — .github/workflows/release.yml:237
 - `task` (cli_binary) — .github/workflows/signet-resign.yml:83
 - `test_cms_headers.sh` (cli_binary) — .github/workflows/openssl.yml:36
 - `test_openssl_verify.sh` (cli_binary) — .github/workflows/openssl.yml:42
@@ -449,7 +452,7 @@ graph LR
 - `docker.io/library/ubuntu` (container_image) — Dockerfile.release:19
 - `docker.io/library/ubuntu` (container_image) — e2e.Dockerfile:15
 - `gcr.io/distroless/static-debian12` (container_image) — Dockerfile:10
-- `gcr.io/distroless/static-debian12` (container_image) — image.Dockerfile:29
+- `gcr.io/distroless/static-debian12` (container_image) — image.Dockerfile:32
 - `mache:0.8.0` (container_image) — /home/runner/work/_temp/ecosystem/cloister/cluster.capnp:68
 - `notme:0.1.0` (container_image) — /home/runner/work/_temp/ecosystem/cloister/cluster.capnp:50
 - `rosary:0.2.0` (container_image) — /home/runner/work/_temp/ecosystem/cloister/cluster.capnp:86
@@ -1480,7 +1483,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve.go:18
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_architecture.go:13
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_diagram.go:8
-- `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_find_smells.go:9
+- `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_find_smells.go:10
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_handler_find_callees.go:9
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_handler_find_callers.go:8
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_handler_find_definition.go:9
@@ -1490,6 +1493,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_handler_read_file.go:10
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_handler_search.go:10
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_handler_semantic_search.go:7
+- `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_handlers.go:4
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_impact.go:10
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_lsp.go:14
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_mount_annotate.go:4
@@ -1872,7 +1876,7 @@ graph LR
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/kind_filter.go:9
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_architecture.go:14
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_diagram.go:9
-- `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_find_smells.go:10
+- `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_find_smells.go:11
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_handler_find_callees.go:10
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_handler_find_callers.go:9
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_handler_find_definition.go:10
@@ -1883,7 +1887,7 @@ graph LR
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_handler_read_file.go:12
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_handler_search.go:11
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_handler_semantic_search.go:9
-- `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_handlers.go:4
+- `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_handlers.go:5
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_impact.go:11
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_lsp.go:17
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_registry.go:19
@@ -1892,7 +1896,7 @@ graph LR
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve.go:22
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_architecture.go:15
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_diagram.go:10
-- `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_find_smells.go:11
+- `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_find_smells.go:12
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_handler_find_callees.go:11
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_handler_find_callers.go:10
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_handler_find_definition.go:11
@@ -1903,7 +1907,7 @@ graph LR
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_handler_read_file.go:13
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_handler_search.go:12
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_handler_semantic_search.go:10
-- `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_handlers.go:5
+- `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_handlers.go:6
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_impact.go:12
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_lsp.go:18
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_registry.go:20
@@ -2300,6 +2304,7 @@ graph LR
 - `log` (go_module) — cmd/mount_nfs.go:5
 - `log` (go_module) — cmd/replay/main.go:25
 - `log` (go_module) — cmd/serve.go:7
+- `log` (go_module) — cmd/serve_find_smells.go:6
 - `log` (go_module) — cmd/serve_hosted.go:6
 - `log` (go_module) — cmd/serve_lsp.go:9
 - `log` (go_module) — cmd/serve_registry.go:8
@@ -2309,7 +2314,7 @@ graph LR
 - `log` (go_module) — cmd/signet-agent-test/main.go:8
 - `log` (go_module) — cmd/signet-agent/main.go:5
 - `log` (go_module) — cmd/signet/ca_bundle_server.go:6
-- `log` (go_module) — cmd/smell_rules_external.go:4
+- `log` (go_module) — cmd/smell_rules_config.go:4
 - `log` (go_module) — cmd/warm/main.go:18
 - `log` (go_module) — cmd/webarena/main.go:9
 - `log` (go_module) — demo/http-auth/main.go:7
@@ -2564,7 +2569,7 @@ graph LR
 - `os` (go_module) — cmd/sigstore-kms-signet/main.go:23
 - `os` (go_module) — cmd/smell_ratchet.go:7
 - `os` (go_module) — cmd/smell_refs_views.go:7
-- `os` (go_module) — cmd/smell_rules_external.go:5
+- `os` (go_module) — cmd/smell_rules_config.go:5
 - `os` (go_module) — cmd/uds_graph.go:5
 - `os` (go_module) — cmd/utils.go:6
 - `os` (go_module) — cmd/validate-bench/main.go:17
@@ -2727,6 +2732,7 @@ graph LR
 - `path/filepath` (go_module) — cmd/signet/auth_status.go:7
 - `path/filepath` (go_module) — cmd/signet/authority_exchange.go:16
 - `path/filepath` (go_module) — cmd/signet/verify.go:11
+- `path/filepath` (go_module) — cmd/smell_rules_config.go:6
 - `path/filepath` (go_module) — cmd/utils.go:7
 - `path/filepath` (go_module) — cmd/verify.go:6
 - `path/filepath` (go_module) — cmd/warm/main.go:20
@@ -2836,7 +2842,7 @@ graph LR
 - `sort` (go_module) — cmd/pack.go:8
 - `sort` (go_module) — cmd/schemas.go:7
 - `sort` (go_module) — cmd/serve_architecture.go:8
-- `sort` (go_module) — cmd/serve_find_smells.go:6
+- `sort` (go_module) — cmd/serve_find_smells.go:7
 - `sort` (go_module) — cmd/serve_find_smells_load.go:8
 - `sort` (go_module) — cmd/serve_handler_get_communities.go:8
 - `sort` (go_module) — cmd/smell_digest.go:4
@@ -2933,7 +2939,7 @@ graph LR
 - `strings` (go_module) — cmd/serve.go:13
 - `strings` (go_module) — cmd/serve_architecture.go:9
 - `strings` (go_module) — cmd/serve_diagram.go:6
-- `strings` (go_module) — cmd/serve_find_smells.go:7
+- `strings` (go_module) — cmd/serve_find_smells.go:8
 - `strings` (go_module) — cmd/serve_find_smells_load.go:9
 - `strings` (go_module) — cmd/serve_handler_find_definition.go:7
 - `strings` (go_module) — cmd/serve_handler_get_communities.go:9
@@ -2955,7 +2961,7 @@ graph LR
 - `strings` (go_module) — cmd/sigstore-kms-signet/main.go:24
 - `strings` (go_module) — cmd/smell_findings.go:7
 - `strings` (go_module) — cmd/smell_ratchet.go:9
-- `strings` (go_module) — cmd/smell_rules_external.go:6
+- `strings` (go_module) — cmd/smell_rules_config.go:7
 - `strings` (go_module) — cmd/uds_graph.go:6
 - `strings` (go_module) — cmd/validate-bench/main.go:18
 - `strings` (go_module) — cmd/warm/main.go:21
@@ -3360,7 +3366,7 @@ graph LR
 - `e2e.Dockerfile` (container_image) — e2e.Dockerfile:15
 - `ghcr.io/agentic-research/mache` (container_image) — .github/workflows/release.yml:21
 - `ghcr.io/agentic-research/rosary` (container_image) — .github/workflows/release.yml:21
-- `image.Dockerfile` (container_image) — image.Dockerfile:29
+- `image.Dockerfile` (container_image) — image.Dockerfile:32
 - `image.Dockerfile` (container_image) — image.Dockerfile:43
 - `scripts/testing/Dockerfile.test` (container_image) — scripts/testing/Dockerfile.test:19
 - `scripts/testing/Dockerfile.test#builder` (container_image) — scripts/testing/Dockerfile.test:3
@@ -6657,6 +6663,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.SourceConfig` (go_package_symbol) — cmd/config.go
 - `github.com/agentic-research/mache/cmd.Version` (go_package_symbol) — cmd/mount.go
 - `github.com/agentic-research/mache/cmd._` (go_package_symbol) — cmd/uds_graph.go
+- `github.com/agentic-research/mache/cmd.activeSmellRules` (go_package_symbol) — cmd/smell_rules_config.go
 - `github.com/agentic-research/mache/cmd.agentMetadata` (go_package_symbol) — cmd/agent.go
 - `github.com/agentic-research/mache/cmd.agentMode` (go_package_symbol) — cmd/mount.go
 - `github.com/agentic-research/mache/cmd.agentPromptTemplate` (go_package_symbol) — cmd/agent.go
@@ -6665,7 +6672,6 @@ graph LR
 - `github.com/agentic-research/mache/cmd.allRuleIDs` (go_package_symbol) — cmd/serve_find_smells.go
 - `github.com/agentic-research/mache/cmd.allowedRepoSchemes` (go_package_symbol) — cmd/serve_hosted.go
 - `github.com/agentic-research/mache/cmd.annotateMounts` (go_package_symbol) — cmd/serve_mount_annotate.go
-- `github.com/agentic-research/mache/cmd.appendExternalRulesFromEnv` (go_package_symbol) — cmd/smell_rules_external.go
 - `github.com/agentic-research/mache/cmd.architecture` (go_package_symbol) — cmd/serve_architecture.go
 - `github.com/agentic-research/mache/cmd.args` (go_package_symbol) — cmd/serve_lsp.go
 - `github.com/agentic-research/mache/cmd.astChunkNode` (go_package_symbol) — cmd/cache_ast.go
@@ -6859,6 +6865,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.findSmellsLimit` (go_package_symbol) — cmd/find_smells_cli.go
 - `github.com/agentic-research/mache/cmd.findSmellsMinMetric` (go_package_symbol) — cmd/find_smells_cli.go
 - `github.com/agentic-research/mache/cmd.findSmellsRule` (go_package_symbol) — cmd/find_smells_cli.go
+- `github.com/agentic-research/mache/cmd.findSmellsRulesDir` (go_package_symbol) — cmd/find_smells_cli.go
 - `github.com/agentic-research/mache/cmd.findSmellsSourceID` (go_package_symbol) — cmd/find_smells_cli.go
 - `github.com/agentic-research/mache/cmd.findSmellsTags` (go_package_symbol) — cmd/find_smells_cli.go
 - `github.com/agentic-research/mache/cmd.findSmellsWriteBaseline` (go_package_symbol) — cmd/find_smells_cli.go
@@ -6920,7 +6927,6 @@ graph LR
 - `github.com/agentic-research/mache/cmd.init` (go_package_symbol) — cmd/pack.go
 - `github.com/agentic-research/mache/cmd.init` (go_package_symbol) — cmd/schemas.go
 - `github.com/agentic-research/mache/cmd.init` (go_package_symbol) — cmd/serve.go
-- `github.com/agentic-research/mache/cmd.init` (go_package_symbol) — cmd/smell_rules_external.go
 - `github.com/agentic-research/mache/cmd.initCmd` (go_package_symbol) — cmd/init.go
 - `github.com/agentic-research/mache/cmd.initFlags` (go_package_symbol) — cmd/init.go
 - `github.com/agentic-research/mache/cmd.initOpts` (go_package_symbol) — cmd/init.go
@@ -7178,6 +7184,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.resolveRefEntry` (go_package_symbol) — cmd/serve_resolve_ref.go
 - `github.com/agentic-research/mache/cmd.resolveRefResponse` (go_package_symbol) — cmd/serve_resolve_ref.go
 - `github.com/agentic-research/mache/cmd.resolveSchema` (go_package_symbol) — cmd/config.go
+- `github.com/agentic-research/mache/cmd.resolveSmellRulesDir` (go_package_symbol) — cmd/smell_rules_config.go
 - `github.com/agentic-research/mache/cmd.resolveSubscriberSocketPath` (go_package_symbol) — cmd/sheaf_subscribe.go
 - `github.com/agentic-research/mache/cmd.resp` (go_package_symbol) — cmd/uds_graph.go
 - `github.com/agentic-research/mache/cmd.resp` (go_package_symbol) — cmd/uds_graph.go
