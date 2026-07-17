@@ -1,7 +1,7 @@
 # assay map
 
 - Resolved edges: 54
-- External dependencies: 3425
+- External dependencies: 3428
 - Dangling producers: 8505
 
 ## Graph
@@ -27,7 +27,7 @@ graph LR
 
 ## External dependencies
 
-- `agent-client-protocol` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:61
+- `agent-client-protocol` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:73
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:30
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/mediator/Cargo.toml:23
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:22
@@ -46,20 +46,20 @@ graph LR
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/compat-gen/Cargo.toml:19
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/server-json-gen/Cargo.toml:19
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/smell-projector/Cargo.toml:13
-- `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:31
-- `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:12
-- `assert_cmd` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:94
+- `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:43
+- `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:19
+- `assert_cmd` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:106
 - `async-trait` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:45
-- `async-trait` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:62
+- `async-trait` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:74
 - `axum` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:81
 - `axum` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:99
-- `axum` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:67
+- `axum` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:79
 - `base64` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:95
 - `base64` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:50
 - `base64` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:82
 - `base64` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:134
-- `base64` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:76
-- `base64` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:14
+- `base64` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:88
+- `base64` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:21
 - `base64ct` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:105
 - `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:78
 - `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:46
@@ -83,24 +83,24 @@ graph LR
 - `capnp` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/lsp/Cargo.toml:18
 - `capnp` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/schema-bridge/Cargo.toml:32
 - `capnp` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/packages/schema-bridge/Cargo.toml:18
-- `capnp` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:81
-- `capnp-futures` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:82
+- `capnp` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:93
+- `capnp-futures` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:94
 - `capnp-json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:30
 - `capnp-json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/public-schema/Cargo.toml:15
 - `capnp-json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:51
 - `capnpc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:31
 - `capnpc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/public-schema/Cargo.toml:19
 - `capnpc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-capnp/Cargo.toml:30
-- `capnpc` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:90
-- `chacha20poly1305` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:9
-- `chrono` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:32
+- `capnpc` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:102
+- `chacha20poly1305` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:16
+- `chrono` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:44
 - `clap` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:68
 - `clap` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/chat-embed/Cargo.toml:15
 - `clap` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:73
 - `clap` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli/Cargo.toml:40
 - `clap` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:106
 - `clap` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/smell-projector/Cargo.toml:17
-- `clap` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:27
+- `clap` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:39
 - `cms` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:72
 - `const-oid` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:76
 - `criterion` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/hdc/Cargo.toml:16
@@ -108,11 +108,11 @@ graph LR
 - `der` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:73
 - `dirs` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:83
 - `dirs` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli/Cargo.toml:42
-- `dirs-next` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:35
+- `dirs-next` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:47
 - `ed25519-dalek` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:92
 - `ed25519-dalek` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:57
 - `ed25519-dalek` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:77
-- `ed25519-dalek` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:75
+- `ed25519-dalek` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:87
 - `env_logger` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/chat-embed/Cargo.toml:18
 - `env_logger` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli/Cargo.toml:43
 - `fastembed` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/chat-embed/Cargo.toml:13
@@ -124,9 +124,9 @@ graph LR
 - `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:57
 - `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:133
 - `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:13
-- `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:74
-- `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:15
-- `hmac` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:69
+- `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:86
+- `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:22
+- `hmac` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:81
 - `http-body-util` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:12
 - `hyper` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:10
 - `hyper-rustls` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:16
@@ -134,14 +134,14 @@ graph LR
 - `ignore` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:94
 - `indoc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/schema-bridge/Cargo.toml:36
 - `jj-lib` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:11
-- `jsonwebtoken` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:78
+- `jsonwebtoken` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:90
 - `keyring` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:92
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:35
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:101
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli/Cargo.toml:44
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:38
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:81
-- `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:65
+- `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:77
 - `log` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:53
 - `log` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/chat-embed/Cargo.toml:19
 - `log` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:75
@@ -161,9 +161,9 @@ graph LR
 - `nfsserve` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:43
 - `nono` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:27
 - `nono` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:98
-- `openai-harmony` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:9
-- `openssl` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:87
-- `owo-colors` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:77
+- `openai-harmony` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:16
+- `openssl` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:99
+- `owo-colors` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:89
 - `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/mediator/Cargo.toml:25
 - `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:50
 - `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/core/Cargo.toml:8
@@ -175,8 +175,8 @@ graph LR
 - `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/text-search/Cargo.toml:28
 - `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:8
 - `pollster` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:22
-- `predicates` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:95
-- `pretty_assertions` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:18
+- `predicates` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:107
+- `pretty_assertions` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:25
 - `r2d2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:64
 - `r2d2_sqlite` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:65
 - `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:93
@@ -184,11 +184,11 @@ graph LR
 - `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:64
 - `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:56
 - `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:132
-- `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:97
-- `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:15
+- `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:109
+- `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:22
 - `rayon` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:85
 - `reqwest` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:136
-- `reqwest` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:38
+- `reqwest` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:50
 - `rusqlite` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:25
 - `rusqlite` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema/Cargo.toml:8
 - `rusqlite` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/chat-embed/Cargo.toml:14
@@ -199,7 +199,7 @@ graph LR
 - `rusqlite` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:129
 - `rusqlite` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:25
 - `rusqlite` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/smell-projector/Cargo.toml:16
-- `rusqlite` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:80
+- `rusqlite` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:92
 - `rustls` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:13
 - `rustls-pemfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:14
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:28
@@ -217,9 +217,9 @@ graph LR
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/compat-gen/Cargo.toml:17
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/server-json-gen/Cargo.toml:17
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/smell-projector/Cargo.toml:14
-- `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:28
-- `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:10
-- `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:12
+- `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:40
+- `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:17
+- `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:19
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:84
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:29
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:24
@@ -237,24 +237,24 @@ graph LR
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/compat-gen/Cargo.toml:18
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/server-json-gen/Cargo.toml:18
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/smell-projector/Cargo.toml:15
-- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:29
-- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:11
-- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:13
+- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:41
+- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:18
+- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:20
 - `serial_test` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:124
 - `serial_test` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:143
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:94
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:29
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sheaf/Cargo.toml:20
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:78
-- `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:70
-- `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:14
-- `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:10
-- `shellexpand` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:34
-- `socket2` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:79
+- `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:82
+- `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:21
+- `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:17
+- `shellexpand` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:46
+- `socket2` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:91
 - `spki` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:75
 - `sqlite-vec` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:66
-- `sqlx-core` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:36
-- `sqlx-mysql` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:37
+- `sqlx-core` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:48
+- `sqlx-mysql` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:49
 - `subtle` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:55
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:54
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/core/Cargo.toml:22
@@ -265,15 +265,15 @@ graph LR
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:138
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/text-search/Cargo.toml:55
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:23
-- `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:93
+- `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:105
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:57
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/schema-bridge/Cargo.toml:33
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sheaf/Cargo.toml:23
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:79
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/text-search/Cargo.toml:30
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/packages/schema-bridge/Cargo.toml:19
-- `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:13
-- `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:11
+- `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:20
+- `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:18
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/mediator/Cargo.toml:30
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:34
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:80
@@ -283,15 +283,15 @@ graph LR
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:100
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:24
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:9
-- `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:30
+- `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:42
 - `tokio-rustls` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:15
-- `tokio-util` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:63
+- `tokio-util` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:75
 - `toml` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:135
-- `toml` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:33
+- `toml` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:45
 - `toml_edit` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/smell-projector/Cargo.toml:18
 - `tower` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:118
 - `tower` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:101
-- `tower` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:96
+- `tower` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:108
 - `tower-http` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:102
 - `tracing` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:107
 - `tracing-subscriber` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:108
@@ -334,9 +334,9 @@ graph LR
 - `tree-sitter-typescript` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:51
 - `tree-sitter-typescript` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:101
 - `tree-sitter-yaml` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:89
-- `tungstenite` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:64
+- `tungstenite` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:76
 - `uuid` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/text-search/Cargo.toml:50
-- `uuid` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:68
+- `uuid` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:80
 - `uv-normalize` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:134
 - `uv-pep440` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:133
 - `uv-pep508` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:132
@@ -408,6 +408,7 @@ graph LR
 - `go` (cli_binary) — .github/workflows/ci.yml:54
 - `go` (cli_binary) — .github/workflows/ci.yml:58
 - `go` (cli_binary) — .github/workflows/cloister-schema-go.yml:63
+- `go` (cli_binary) — .github/workflows/docs.yml:50
 - `go` (cli_binary) — .github/workflows/find-smells.yml:55
 - `go` (cli_binary) — .github/workflows/integration.yml:52
 - `go` (cli_binary) — .github/workflows/leyline-schema-go.yml:69
@@ -458,6 +459,7 @@ graph LR
 - `task` (cli_binary) — .github/workflows/ci.yml:66
 - `task` (cli_binary) — .github/workflows/ci.yml:120
 - `task` (cli_binary) — .github/workflows/coverage.yml:40
+- `task` (cli_binary) — .github/workflows/docs.yml:53
 - `task` (cli_binary) — .github/workflows/e2e-fresh.yml:61
 - `task` (cli_binary) — .github/workflows/find-smells.yml:61
 - `task` (cli_binary) — .github/workflows/find-smells.yml:76
@@ -1334,7 +1336,7 @@ graph LR
 - `fmt` (go_module) — internal/testfixtures/curate.go:17
 - `fmt` (go_module) — internal/testfixtures/registry.go:17
 - `fmt` (go_module) — internal/writeback/splice.go:5
-- `fmt` (go_module) — internal/writeback/validate.go:22
+- `fmt` (go_module) — internal/writeback/validate.go:23
 - `fmt` (go_module) — pkcs11/pkcs11_signer.go:11
 - `fmt` (go_module) — pkg/agent/client.go:5
 - `fmt` (go_module) — pkg/agent/socket.go:6
@@ -1618,6 +1620,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/lang` (go_module) — internal/ingest/watcher.go:12
 - `github.com/agentic-research/mache/internal/lang` (go_module) — internal/lattice/infer_astdb.go:9
 - `github.com/agentic-research/mache/internal/lang` (go_module) — internal/testfixtures/curate.go:24
+- `github.com/agentic-research/mache/internal/lang` (go_module) — internal/writeback/validate.go:30
 - `github.com/agentic-research/mache/internal/lattice` (go_module) — cmd/build.go:16
 - `github.com/agentic-research/mache/internal/lattice` (go_module) — cmd/infer.go:13
 - `github.com/agentic-research/mache/internal/lattice` (go_module) — cmd/mount.go:19
@@ -1635,7 +1638,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — cmd/uds_graph.go:9
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/linter/linter.go:14
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/lltest/pinned_unix.go:15
-- `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/writeback/validate.go:29
+- `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/writeback/validate.go:31
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — tools/sheaf-subscribe-probe/main.go:21
 - `github.com/agentic-research/mache/internal/lint` (go_module) — tools/gate-preflight/main.go:25
 - `github.com/agentic-research/mache/internal/linter` (go_module) — cmd/mount_nfs.go:17
@@ -1663,7 +1666,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/vfs` (go_module) — internal/nfsmount/graphfs.go:21
 - `github.com/agentic-research/mache/internal/writeback` (go_module) — cmd/mount_nfs.go:19
 - `github.com/agentic-research/mache/internal/writeback` (go_module) — cmd/serve_write.go:12
-- `github.com/agentic-research/mache/internal/writeback` (go_module) — validate/validate.go:24
+- `github.com/agentic-research/mache/internal/writeback` (go_module) — validate/validate.go:22
 - `github.com/agentic-research/mache/mount` (go_module) — internal/api/websocket.go:17
 - `github.com/agentic-research/signet/pkg/agent` (go_module) — cmd/signet-agent-test/main.go:18
 - `github.com/agentic-research/signet/pkg/agent` (go_module) — cmd/signet-agent/main.go:15
@@ -1937,8 +1940,8 @@ graph LR
 - `github.com/hashicorp/golang-lru/v2` (go_module) — /home/runner/work/_temp/ecosystem/x-ray/go.mod:28
 - `github.com/hashicorp/hcl` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:13
 - `github.com/hashicorp/hcl/v2` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:13
-- `github.com/hashicorp/hcl/v2` (go_module) — internal/writeback/validate.go:26
-- `github.com/hashicorp/hcl/v2/hclsyntax` (go_module) — internal/writeback/validate.go:27
+- `github.com/hashicorp/hcl/v2` (go_module) — internal/writeback/validate.go:27
+- `github.com/hashicorp/hcl/v2/hclsyntax` (go_module) — internal/writeback/validate.go:28
 - `github.com/hashicorp/hcl/v2/hclwrite` (go_module) — internal/writeback/format.go:10
 - `github.com/inconshreveable/mousetrap` (go_module) — /home/runner/work/_temp/ecosystem/assay/go.mod:23
 - `github.com/inconshreveable/mousetrap` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:44
@@ -2876,7 +2879,7 @@ graph LR
 - `path/filepath` (go_module) — internal/vfs/context.go:4
 - `path/filepath` (go_module) — internal/vfs/location.go:4
 - `path/filepath` (go_module) — internal/writeback/splice.go:7
-- `path/filepath` (go_module) — internal/writeback/validate.go:23
+- `path/filepath` (go_module) — internal/writeback/validate.go:24
 - `path/filepath` (go_module) — pkg/agent/socket.go:8
 - `path/filepath` (go_module) — pkg/cli/config/config.go:8
 - `path/filepath` (go_module) — pkg/cli/keystore/secure.go:12
@@ -3176,7 +3179,7 @@ graph LR
 - `strings` (go_module) — internal/vfs/context.go:5
 - `strings` (go_module) — internal/vfs/location.go:5
 - `strings` (go_module) — internal/writeback/format.go:7
-- `strings` (go_module) — internal/writeback/validate.go:24
+- `strings` (go_module) — internal/writeback/validate.go:25
 - `strings` (go_module) — pkg/cli/config/config.go:10
 - `strings` (go_module) — pkg/cli/keystore/secure.go:13
 - `strings` (go_module) — pkg/crypto/keys/factory_pkcs11.go:10
@@ -3464,7 +3467,7 @@ graph LR
 - `leyline-schema-spec` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:2
 - `leyline-vcs` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:2
 - `notme-proxy` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:2
-- `rosary` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:6
+- `rosary` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:12
 - `rosary-crypto` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:2
 - `schema-bridge` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/packages/schema-bridge/Cargo.toml:2
 - `server-json-gen` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/server-json-gen/Cargo.toml:2
@@ -8744,6 +8747,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.leylineBinaryVersion` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.leylinePinnedSHA256` (go_package_symbol) — internal/leyline/binary_pin.go
 - `github.com/agentic-research/mache/internal/leyline.leylineReleaseURLTemplate` (go_package_symbol) — internal/leyline/socket.go
+- `github.com/agentic-research/mache/internal/leyline.leylineSchemaCompatFloor` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.leylineStartTimeout` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.leylineVersionMatchesPin` (go_package_symbol) — internal/leyline/binary_pin.go
 - `github.com/agentic-research/mache/internal/leyline.managed` (go_package_symbol) — internal/leyline/socket.go
@@ -9099,14 +9103,13 @@ graph LR
 - `github.com/agentic-research/mache/internal/writeback.ValidateWithAST` (go_package_symbol) — internal/writeback/validate.go
 - `github.com/agentic-research/mache/internal/writeback.ValidationError` (go_package_symbol) — internal/writeback/validate.go
 - `github.com/agentic-research/mache/internal/writeback.ValidationError.Error` (go_package_symbol) — internal/writeback/validate.go
+- `github.com/agentic-research/mache/internal/writeback.daemonValidates` (go_package_symbol) — internal/writeback/validate.go
 - `github.com/agentic-research/mache/internal/writeback.errs` (go_package_symbol) — internal/writeback/validate.go
 - `github.com/agentic-research/mache/internal/writeback.formatPrettier` (go_package_symbol) — internal/writeback/format.go
 - `github.com/agentic-research/mache/internal/writeback.formatPython` (go_package_symbol) — internal/writeback/format.go
 - `github.com/agentic-research/mache/internal/writeback.formatterTimeout` (go_package_symbol) — internal/writeback/format.go
 - `github.com/agentic-research/mache/internal/writeback.hclErrors` (go_package_symbol) — internal/writeback/validate.go
 - `github.com/agentic-research/mache/internal/writeback.isHCLPath` (go_package_symbol) — internal/writeback/validate.go
-- `github.com/agentic-research/mache/internal/writeback.langKeyForPath` (go_package_symbol) — internal/writeback/validate.go
-- `github.com/agentic-research/mache/internal/writeback.leylineValidateLangs` (go_package_symbol) — internal/writeback/validate.go
 - `github.com/agentic-research/mache/internal/writeback.runFormatter` (go_package_symbol) — internal/writeback/format.go
 - `github.com/agentic-research/mache/internal/writeback.validateHCL` (go_package_symbol) — internal/writeback/validate.go
 - `github.com/agentic-research/mache/internal/writeback.validateRemote` (go_package_symbol) — internal/writeback/validate.go
