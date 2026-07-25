@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 59
-- External dependencies: 3399
-- Dangling producers: 8507
+- External dependencies: 3403
+- Dangling producers: 8509
 
 ## Graph
 
@@ -410,12 +410,12 @@ graph LR
 - `go` (cli_binary) — .github/workflows/cache-roundtrip.yml:54
 - `go` (cli_binary) — .github/workflows/ci.yml:29
 - `go` (cli_binary) — .github/workflows/ci.yml:31
-- `go` (cli_binary) — .github/workflows/ci.yml:54
 - `go` (cli_binary) — .github/workflows/ci.yml:58
+- `go` (cli_binary) — .github/workflows/ci.yml:67
 - `go` (cli_binary) — .github/workflows/cloister-schema-go.yml:63
 - `go` (cli_binary) — .github/workflows/docs.yml:50
 - `go` (cli_binary) — .github/workflows/find-smells.yml:55
-- `go` (cli_binary) — .github/workflows/integration.yml:52
+- `go` (cli_binary) — .github/workflows/integration.yml:66
 - `go` (cli_binary) — .github/workflows/leyline-schema-go.yml:69
 - `go` (cli_binary) — .github/workflows/openssl.yml:30
 - `go` (cli_binary) — .github/workflows/release.yml:55
@@ -437,9 +437,9 @@ graph LR
 - `pip3` (cli_binary) — .github/workflows/release.yml:234
 - `pkg-config` (cli_binary) — .github/workflows/release.yml:146
 - `pnpm` (cli_binary) — .github/workflows/generated-drift.yml:72
-- `pnpm` (cli_binary) — .github/workflows/publish-dpop.yml:56
+- `pnpm` (cli_binary) — .github/workflows/publish-dpop.yml:58
 - `providers:` (cli_binary) — .github/workflows/oidc-signing.yml:60
-- `python3` (cli_binary) — .github/workflows/ci.yml:100
+- `python3` (cli_binary) — .github/workflows/ci.yml:109
 - `python3` (cli_binary) — .github/workflows/release.yml:259
 - `regen.sh` (cli_binary) — .github/workflows/cloister-schema-go.yml:68
 - `regen.sh` (cli_binary) — .github/workflows/leyline-schema-go.yml:74
@@ -460,9 +460,9 @@ graph LR
 - `task` (cli_binary) — .github/workflows/assay-map.yml:39
 - `task` (cli_binary) — .github/workflows/cache-roundtrip.yml:59
 - `task` (cli_binary) — .github/workflows/ci.yml:40
-- `task` (cli_binary) — .github/workflows/ci.yml:51
-- `task` (cli_binary) — .github/workflows/ci.yml:57
+- `task` (cli_binary) — .github/workflows/ci.yml:49
 - `task` (cli_binary) — .github/workflows/ci.yml:63
+- `task` (cli_binary) — .github/workflows/ci.yml:70
 - `task` (cli_binary) — .github/workflows/ci.yml:92
 - `task` (cli_binary) — .github/workflows/ci.yml:124
 - `task` (cli_binary) — .github/workflows/coverage.yml:40
@@ -471,9 +471,10 @@ graph LR
 - `task` (cli_binary) — .github/workflows/find-smells.yml:61
 - `task` (cli_binary) — .github/workflows/find-smells.yml:80
 - `task` (cli_binary) — .github/workflows/generated-drift.yml:83
-- `task` (cli_binary) — .github/workflows/integration.yml:58
+- `task` (cli_binary) — .github/workflows/integration.yml:71
 - `task` (cli_binary) — .github/workflows/mutants.yml:60
 - `task` (cli_binary) — .github/workflows/oidc-signing.yml:34
+- `task` (cli_binary) — .github/workflows/publish-dpop.yml:74
 - `task` (cli_binary) — .github/workflows/release.yml:165
 - `task` (cli_binary) — .github/workflows/release.yml:256
 - `task` (cli_binary) — .github/workflows/signet-resign.yml:83
@@ -1407,6 +1408,7 @@ graph LR
 - `fmt` (go_module) — tools/fuzz-gen/main.go:8
 - `fmt` (go_module) — tools/gate-preflight/main.go:22
 - `fmt` (go_module) — tools/gen-lsp-fixture/main.go:24
+- `fmt` (go_module) — tools/leyline-ensure/main.go:6
 - `fmt` (go_module) — tools/mcp-fetch/main.go:14
 - `fmt` (go_module) — tools/notion-fetch/main.go:19
 - `fmt` (go_module) — tools/server-json-gen/main.go:30
@@ -1649,6 +1651,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/lltest/project.go:11
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/testfixtures/registry.go:31
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/writeback/validate.go:31
+- `github.com/agentic-research/mache/internal/leyline` (go_module) — tools/leyline-ensure/main.go:9
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — tools/server-json-gen/main.go:36
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — tools/sheaf-subscribe-probe/main.go:21
 - `github.com/agentic-research/mache/internal/lint` (go_module) — tools/gate-preflight/main.go:25
@@ -2722,6 +2725,7 @@ graph LR
 - `os` (go_module) — tools/fuzz-gen/main.go:10
 - `os` (go_module) — tools/gate-preflight/main.go:23
 - `os` (go_module) — tools/gen-lsp-fixture/main.go:26
+- `os` (go_module) — tools/leyline-ensure/main.go:7
 - `os` (go_module) — tools/mcp-fetch/main.go:18
 - `os` (go_module) — tools/notion-fetch/main.go:23
 - `os` (go_module) — tools/server-json-gen/main.go:31
@@ -8617,6 +8621,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.DiscoverOrStart` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.DiscoverSocket` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.EmbedStatus` (go_package_symbol) — internal/leyline/semantic.go
+- `github.com/agentic-research/mache/internal/leyline.EnsureCachedBinary` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.EventHandler` (go_package_symbol) — internal/leyline/sheaf_subscriber.go
 - `github.com/agentic-research/mache/internal/leyline.FindCalleesResponse` (go_package_symbol) — internal/leyline/wire.go
 - `github.com/agentic-research/mache/internal/leyline.FindCallersResponse` (go_package_symbol) — internal/leyline/wire.go
@@ -9151,6 +9156,7 @@ graph LR
 - `github.com/agentic-research/mache/tools/gen-lsp-fixture.record` (go_package_symbol) — tools/gen-lsp-fixture/main.go
 - `github.com/agentic-research/mache/tools/gen-lsp-fixture.run` (go_package_symbol) — tools/gen-lsp-fixture/main.go
 - `github.com/agentic-research/mache/tools/gen-lsp-fixture.sf` (go_package_symbol) — tools/gen-lsp-fixture/main.go
+- `github.com/agentic-research/mache/tools/leyline-ensure.main` (go_package_symbol) — tools/leyline-ensure/main.go
 - `github.com/agentic-research/mache/tools/mcp-fetch.batchSize` (go_package_symbol) — tools/mcp-fetch/main.go
 - `github.com/agentic-research/mache/tools/mcp-fetch.entry` (go_package_symbol) — tools/mcp-fetch/main.go
 - `github.com/agentic-research/mache/tools/mcp-fetch.full` (go_package_symbol) — tools/mcp-fetch/main.go
