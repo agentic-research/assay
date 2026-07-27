@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 59
-- External dependencies: 3403
-- Dangling producers: 8509
+- External dependencies: 3402
+- Dangling producers: 8514
 
 ## Graph
 
@@ -364,15 +364,15 @@ graph LR
 - `apt-get` (cli_binary) — .github/workflows/leyline-schema-go.yml:56
 - `apt-get` (cli_binary) — .github/workflows/openssl.yml:24
 - `apt-get` (cli_binary) — .github/workflows/release.yml:56
-- `apt-get` (cli_binary) — .github/workflows/release.yml:134
+- `apt-get` (cli_binary) — .github/workflows/release.yml:113
 - `audience:` (cli_binary) — .github/workflows/oidc-signing.yml:65
 - `break` (cli_binary) — .github/workflows/oidc-signing.yml:80
 - `brew` (cli_binary) — .github/workflows/release.yml:67
-- `brew` (cli_binary) — .github/workflows/release.yml:142
+- `brew` (cli_binary) — .github/workflows/release.yml:121
 - `capnp` (cli_binary) — .github/workflows/cloister-schema-go.yml:57
 - `capnp` (cli_binary) — .github/workflows/generated-drift.yml:68
 - `capnp` (cli_binary) — .github/workflows/leyline-schema-go.yml:63
-- `capnp` (cli_binary) — .github/workflows/release.yml:145
+- `capnp` (cli_binary) — .github/workflows/release.yml:124
 - `cargo` (cli_binary) — .github/workflows/ci.yml:260
 - `cargo` (cli_binary) — .github/workflows/coverage.yml:36
 - `cargo` (cli_binary) — .github/workflows/mutants.yml:48
@@ -396,10 +396,8 @@ graph LR
 - `def` (cli_binary) — .github/workflows/release.yml:265
 - `docker` (cli_binary) — .github/workflows/release.yml:167
 - `enabled:` (cli_binary) — .github/workflows/oidc-signing.yml:67
-- `find` (cli_binary) — .github/workflows/release.yml:257
 - `gh` (cli_binary) — .github/workflows/ci.yml:54
 - `gh` (cli_binary) — .github/workflows/release.yml:34
-- `gh` (cli_binary) — .github/workflows/release.yml:59
 - `git` (cli_binary) — .github/workflows/assay-ecosystem.yml:49
 - `git` (cli_binary) — .github/workflows/ci.yml:49
 - `git` (cli_binary) — .github/workflows/coverage.yml:51
@@ -429,13 +427,12 @@ graph LR
 - `i` (cli_binary) — .github/workflows/release.yml:264
 - `import` (cli_binary) — .github/workflows/release.yml:260
 - `issuer_url:` (cli_binary) — .github/workflows/oidc-signing.yml:64
-- `mapfile` (cli_binary) — .github/workflows/release.yml:256
 - `name:` (cli_binary) — .github/workflows/oidc-signing.yml:63
 - `openssl` (cli_binary) — .github/workflows/oidc-signing.yml:41
 - `openssl` (cli_binary) — .github/workflows/openssl.yml:26
 - `pip` (cli_binary) — .github/workflows/ci.yml:37
 - `pip3` (cli_binary) — .github/workflows/release.yml:234
-- `pkg-config` (cli_binary) — .github/workflows/release.yml:146
+- `pkg-config` (cli_binary) — .github/workflows/release.yml:125
 - `pnpm` (cli_binary) — .github/workflows/generated-drift.yml:72
 - `pnpm` (cli_binary) — .github/workflows/publish-dpop.yml:58
 - `providers:` (cli_binary) — .github/workflows/oidc-signing.yml:60
@@ -475,7 +472,7 @@ graph LR
 - `task` (cli_binary) — .github/workflows/mutants.yml:60
 - `task` (cli_binary) — .github/workflows/oidc-signing.yml:34
 - `task` (cli_binary) — .github/workflows/publish-dpop.yml:74
-- `task` (cli_binary) — .github/workflows/release.yml:165
+- `task` (cli_binary) — .github/workflows/release.yml:144
 - `task` (cli_binary) — .github/workflows/release.yml:256
 - `task` (cli_binary) — .github/workflows/signet-resign.yml:83
 - `test_cms_headers.sh` (cli_binary) — .github/workflows/openssl.yml:36
@@ -519,6 +516,7 @@ graph LR
 - `bufio` (go_module) — internal/lltest/lltest.go:9
 - `bufio` (go_module) — internal/materialize/json.go:4
 - `bufio` (go_module) — tools/coverage-gate/main.go:58
+- `bytes` (go_module) — clients/go/leyline-schema/daemon/wire/events.go:19
 - `bytes` (go_module) — cmd/bench/render_zones.go:11
 - `bytes` (go_module) — cmd/cache_ast.go:41
 - `bytes` (go_module) — cmd/cache_oci.go:40
@@ -954,7 +952,7 @@ graph LR
 - `encoding/hex` (go_module) — pkg/sigid/providers/basic/provider.go:7
 - `encoding/hex` (go_module) — pkg/sigid/providers/cell/provider.go:8
 - `encoding/hex` (go_module) — pkg/sigid/providers/cert/provider.go:13
-- `encoding/json` (go_module) — clients/go/leyline-schema/daemon/wire/events.go:19
+- `encoding/json` (go_module) — clients/go/leyline-schema/daemon/wire/events.go:20
 - `encoding/json` (go_module) — cmd/agent.go:6
 - `encoding/json` (go_module) — cmd/album/main.go:7
 - `encoding/json` (go_module) — cmd/analyze-replay/main.go:14
@@ -1133,7 +1131,7 @@ graph LR
 - `flag` (go_module) — tools/gen-lsp-fixture/main.go:23
 - `flag` (go_module) — tools/mcp-fetch/main.go:13
 - `flag` (go_module) — tools/notion-fetch/main.go:18
-- `fmt` (go_module) — clients/go/leyline-schema/daemon/wire/events.go:20
+- `fmt` (go_module) — clients/go/leyline-schema/daemon/wire/events.go:21
 - `fmt` (go_module) — cmd/agent.go:7
 - `fmt` (go_module) — cmd/agentd/main.go:7
 - `fmt` (go_module) — cmd/album/main.go:8
@@ -2967,6 +2965,7 @@ graph LR
 - `sort` (go_module) — tools/coverage-gate/main.go:63
 - `sort` (go_module) — tools/server-json-gen/main.go:32
 - `strconv` (go_module) — clients/go/cloister-schema/wire/cloister.capnp.go:9
+- `strconv` (go_module) — clients/go/leyline-schema/daemon/wire/events.go:22
 - `strconv` (go_module) — clients/go/leyline-schema/net/net.capnp.go:9
 - `strconv` (go_module) — cmd/bench/main.go:10
 - `strconv` (go_module) — cmd/diag/main.go:25
@@ -3977,6 +3976,7 @@ graph LR
 - `Event.ToPtr` (go_package_symbol) — clients/go/leyline-schema/daemon/daemon.capnp.go
 - `Event.Topic` (go_package_symbol) — clients/go/leyline-schema/daemon/daemon.capnp.go
 - `Event.TopicBytes` (go_package_symbol) — clients/go/leyline-schema/daemon/daemon.capnp.go
+- `Event.UnmarshalJSON` (go_package_symbol) — clients/go/leyline-schema/daemon/wire/events.go
 - `Event_Future` (go_package_symbol) — clients/go/leyline-schema/daemon/daemon.capnp.go
 - `Event_Future.Struct` (go_package_symbol) — clients/go/leyline-schema/daemon/daemon.capnp.go
 - `Event_TypeID` (go_package_symbol) — clients/go/leyline-schema/daemon/daemon.capnp.go
@@ -11927,6 +11927,8 @@ graph LR
 - `parseInteger` (go_package_symbol) — gen/go/verify/identity.go
 - `parseScopeSequence` (go_package_symbol) — gen/go/verify/identity.go
 - `parseUTF8String` (go_package_symbol) — gen/go/verify/identity.go
+- `quoted` (go_package_symbol) — clients/go/leyline-schema/daemon/wire/events.go
+- `raw` (go_package_symbol) — clients/go/leyline-schema/daemon/wire/events.go
 - `s` (go_package_symbol) — clients/go/leyline-schema/net/net.capnp.go
 - `s` (go_package_symbol) — gen/go/identity.capnp.go
 - `s` (go_package_symbol) — gen/go/verify/identity.go
@@ -11941,4 +11943,6 @@ graph LR
 - `schema_c7c7ada1403b9f78` (go_package_symbol) — clients/go/leyline-schema/head/head.capnp.go
 - `schema_ca7eca7eca7eca7e` (go_package_symbol) — clients/go/leyline-schema/cache/cache.capnp.go
 - `scopes` (go_package_symbol) — gen/go/verify/identity.go
+- `seq` (go_package_symbol) — clients/go/leyline-schema/daemon/wire/events.go
+- `value` (go_package_symbol) — clients/go/leyline-schema/daemon/wire/events.go
 - `xray-browser` (service) — /home/runner/work/_temp/ecosystem/x-ray/deploy/cf-worker/wrangler.toml:1
