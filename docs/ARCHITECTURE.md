@@ -62,4 +62,4 @@ graph LR
 
 ## Parked / non-goals
 
-Doc-coverage set operations, semantic/HDC matching, HTML/DOM extraction, a TS/npm extractor (the TS repos have no cross-repo npm edges), a Rust rewrite, and edges encoded *purely in code* (hardcoded socket paths with no structured declaration). Each was evaluated and deliberately set aside — see the spec's "Non-goals" section.
+Semantic/HDC matching, HTML/DOM extraction, a TS/npm extractor (the TS repos have no cross-repo npm edges), a Rust rewrite, and edges encoded *purely in code* (hardcoded socket paths with no structured declaration). Doc-coverage set operations were also listed here; they are now RETAINED as the `assay verify` build gate (see CLAUDE.md "The doc gate") — what was set aside was doc coverage as a *product*, not as a *gate*. The rest were evaluated and deliberately set aside — see the spec's "Non-goals" section.

@@ -57,6 +57,7 @@ tasks:
       - task: lint
       - task: test
       - task: map:check # fails if the committed dependency-graph snapshot drifted
+      - task: docs:check # fails if an exported entity lost its documentation
 
   tidy:
     desc: Tidy module
@@ -88,6 +89,46 @@ tasks:
       # graph), so the per-PR self-snapshot uses the per-artifact view to stay
       # non-empty. Cross-repo ecosystem maps use the repo group (see map:ecosystem).
       - ./bin/assay map . --format {{.FORMAT}} --group artifact > docs/dependency-graph.md
+
+  docs:check:
+    desc: Doc gate — fails when an exported entity has no documentation reference
+    env:
+      GOWORK: "off"
+    cmds:
+      # The ratchet. DOC_UNCOVERED_BUDGET is assay's current undocumented count;
+      # the gate fails the moment a new exported entity ships without a doc
+      # reference, and lowering the number is how the debt gets paid down. It is
+      # never raised to make CI pass — that inverts the gate into a rubber stamp.
+      #
+      # Gates the COVERAGE direction only (exported entity with no doc mention).
+      # The reverse direction — a doc naming a symbol that no longer exists — is
+      # computed and reported but NOT gated: every backtick span in markdown is
+      # currently treated as a claimed symbol, so filenames, CLI flags, bead IDs
+      # and other repos' types all register as stale (92.6% on this tree). See
+      # the Gate doc comment in internal/coverage/gate.go.
+      #
+      # stdout is dropped on purpose: the full text report lists every stale doc
+      # reference (tens of thousands of lines on this tree) and would bury the
+      # verdict. The gate's failure goes to stderr and names the entities, so a
+      # red build still says exactly what regressed. Run `task docs:report` for
+      # the human view.
+      - go build -o bin/assay .
+      - ./bin/assay verify --source . --max-uncovered {{.DOC_UNCOVERED_BUDGET}} > /dev/null
+    vars:
+      DOC_UNCOVERED_BUDGET: 20
+
+  docs:report:
+    desc: Human doc-coverage report — what is documented, what is not (never fails)
+    env:
+      GOWORK: "off"
+    cmds:
+      - go build -o bin/assay .
+      # Block scalar: the jq filter contains ": " and "|", which a plain YAML
+      # scalar would parse as a mapping.
+      - |
+        ./bin/assay verify --source . --format json \
+          | jq '{coverage, staleness, total_entities, covered_count,
+                 uncovered: [.uncovered[] | "\(.Package).\(.Name)"]}'
 
   map:check:
     desc: Drift-check the dependency-graph snapshot — fails if the map changed

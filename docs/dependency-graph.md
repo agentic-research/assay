@@ -1,7 +1,7 @@
 # assay map
 
 - Resolved edges: 0
-- External dependencies: 208
+- External dependencies: 211
 - Dangling producers: 1
 
 ## Graph
@@ -123,6 +123,7 @@ graph LR
 - `fmt` (go_module) — cmd/root.go:4
 - `fmt` (go_module) — cmd/verify.go:4
 - `fmt` (go_module) — cmd/version.go:4
+- `fmt` (go_module) — internal/coverage/gate.go:4
 - `fmt` (go_module) — internal/coverage/report.go:5
 - `fmt` (go_module) — internal/embeddings/leyline.go:6
 - `fmt` (go_module) — internal/extract/cargo/manifest.go:4
@@ -271,6 +272,7 @@ graph LR
 - `path/filepath` (go_module) — internal/extract/wrangler/wrangler.go:23
 - `path/filepath` (go_module) — internal/report/mermaid_repo.go:8
 - `regexp` (go_module) — internal/extract/ci/parse.go:4
+- `sort` (go_module) — internal/coverage/gate.go:5
 - `sort` (go_module) — internal/coverage/report.go:7
 - `sort` (go_module) — internal/extract/ci/ci.go:29
 - `sort` (go_module) — internal/extract/ci/walk.go:4
@@ -284,6 +286,7 @@ graph LR
 - `strings` (go_module) — internal/artifact/identity.go:3
 - `strings` (go_module) — internal/code/extract.go:8
 - `strings` (go_module) — internal/coverage/compute.go:3
+- `strings` (go_module) — internal/coverage/gate.go:6
 - `strings` (go_module) — internal/coverage/report.go:8
 - `strings` (go_module) — internal/coverage/tokenize.go:4
 - `strings` (go_module) — internal/docs/extract.go:8

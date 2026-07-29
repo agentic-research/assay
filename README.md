@@ -43,6 +43,11 @@ assay map ./repo-a ./repo-b ./repo-c
 assay map .            --format mermaid --group repo   # repo→repo dependency graph (default)
 assay map ./a ./b      --format json                   # machine-readable map for tooling
 assay map .            --format md                      # human markdown report
+
+# Doc gate — fail the build when an exported entity has no documentation reference
+assay verify --source . --max-uncovered 0      # strict: every export must be documented
+assay verify --source . --max-uncovered 22     # ratchet: hold the line, pay debt down
+assay verify --source . --threshold 0.90       # or gate on the coverage ratio
 ```
 
 `--group repo` draws the repo-level dependency graph; `--group artifact` emits one node per
