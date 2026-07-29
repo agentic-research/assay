@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 64
-- External dependencies: 3435
-- Dangling producers: 8532
+- External dependencies: 3460
+- Dangling producers: 8537
 
 ## Graph
 
@@ -32,7 +32,7 @@ graph LR
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:30
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:22
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/core/Cargo.toml:9
-- `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/mcp-descriptor/Cargo.toml:10
+- `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/mcp-descriptor/Cargo.toml:18
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema/Cargo.toml:9
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cdc/Cargo.toml:21
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/chat-embed/Cargo.toml:17
@@ -51,7 +51,7 @@ graph LR
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/smell-projector/Cargo.toml:13
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:43
 - `anyhow` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:19
-- `assert_cmd` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:151
+- `assert_cmd` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:155
 - `async-trait` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:59
 - `async-trait` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:105
 - `axum` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:87
@@ -78,7 +78,7 @@ graph LR
 - `bytemuck` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/core/Cargo.toml:11
 - `bytemuck` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:83
 - `bytemuck` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:38
-- `bytes` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:18
+- `bytes` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:41
 - `capnp` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:29
 - `capnp` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/public-schema/Cargo.toml:9
 - `capnp` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-capnp/Cargo.toml:15
@@ -123,7 +123,7 @@ graph LR
 - `fastembed` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:77
 - `fuser` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:51
 - `futures` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:25
-- `futures` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:140
+- `futures` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:144
 - `gearhash` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cdc/Cargo.toml:14
 - `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:55
 - `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-capnp/Cargo.toml:27
@@ -135,12 +135,13 @@ graph LR
 - `hmac` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:112
 - `http-body-util` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:12
 - `hyper` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:10
-- `hyper-rustls` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:16
+- `hyper-rustls` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:33
 - `hyper-util` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:11
 - `ignore` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:100
 - `indoc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/schema-bridge/Cargo.toml:36
 - `jj-lib` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:18
-- `jj-lib` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:148
+- `jj-lib` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:152
+- `jsonschema` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/mcp-descriptor/Cargo.toml:28
 - `jsonwebtoken` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:121
 - `keyring` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:109
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:18
@@ -183,10 +184,11 @@ graph LR
 - `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/text-search/Cargo.toml:28
 - `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:8
 - `pollster` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:29
-- `pollster` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:149
-- `predicates` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:152
+- `pollster` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:153
+- `predicates` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:156
 - `pretty_assertions` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:25
-- `proptest` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:139
+- `proptest` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/schema-bridge/Cargo.toml:43
+- `proptest` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:143
 - `r2d2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:70
 - `r2d2_sqlite` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:71
 - `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:111
@@ -194,7 +196,7 @@ graph LR
 - `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:64
 - `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:62
 - `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:149
-- `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:154
+- `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:158
 - `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:22
 - `rayon` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:91
 - `reqwest` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:153
@@ -212,11 +214,12 @@ graph LR
 - `rusqlite` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:123
 - `rustls` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:13
 - `rustls-pemfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:14
+- `schemars` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:139
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:20
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:28
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:23
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/core/Cargo.toml:12
-- `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/mcp-descriptor/Cargo.toml:11
+- `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/mcp-descriptor/Cargo.toml:19
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-capnp/Cargo.toml:24
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:84
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:55
@@ -235,14 +238,14 @@ graph LR
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:21
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:29
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:24
-- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/mcp-descriptor/Cargo.toml:12
+- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/mcp-descriptor/Cargo.toml:20
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-capnp/Cargo.toml:25
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:34
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/chat-embed/Cargo.toml:16
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:85
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:56
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/lsp/Cargo.toml:13
-- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/schema-bridge/Cargo.toml:41
+- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/schema-bridge/Cargo.toml:48
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:121
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/text-search/Cargo.toml:51
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:130
@@ -280,7 +283,7 @@ graph LR
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:155
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/text-search/Cargo.toml:55
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:30
-- `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:150
+- `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:154
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:23
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:57
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/schema-bridge/Cargo.toml:33
@@ -300,14 +303,14 @@ graph LR
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:31
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:9
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:42
-- `tokio-rustls` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:15
+- `tokio-rustls` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:18
 - `tokio-util` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:106
 - `toml` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:135
 - `toml` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:45
 - `toml_edit` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/smell-projector/Cargo.toml:18
 - `tower` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:126
 - `tower` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:118
-- `tower` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:153
+- `tower` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:157
 - `tower-http` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:119
 - `tracing` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:124
 - `tracing-subscriber` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:125
@@ -357,7 +360,7 @@ graph LR
 - `uv-pep440` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:133
 - `uv-pep508` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:132
 - `walkdir` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/smell-projector/Cargo.toml:19
-- `webpki-roots` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:17
+- `webpki-roots` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:40
 - `which` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:90
 - `witchcraft` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/text-search/Cargo.toml:49
 - `x509-cert` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:77
@@ -374,6 +377,7 @@ graph LR
 - `apt-get` (cli_binary) — .github/workflows/generated-drift.yml:66
 - `apt-get` (cli_binary) — .github/workflows/leyline-schema-go.yml:56
 - `apt-get` (cli_binary) — .github/workflows/openssl.yml:24
+- `apt-get` (cli_binary) — .github/workflows/release-dryrun.yml:74
 - `apt-get` (cli_binary) — .github/workflows/release.yml:56
 - `apt-get` (cli_binary) — .github/workflows/release.yml:113
 - `audience:` (cli_binary) — .github/workflows/oidc-signing.yml:65
@@ -383,14 +387,18 @@ graph LR
 - `capnp` (cli_binary) — .github/workflows/cloister-schema-go.yml:57
 - `capnp` (cli_binary) — .github/workflows/generated-drift.yml:68
 - `capnp` (cli_binary) — .github/workflows/leyline-schema-go.yml:63
+- `capnp` (cli_binary) — .github/workflows/release-dryrun.yml:76
 - `capnp` (cli_binary) — .github/workflows/release.yml:124
 - `cargo` (cli_binary) — .github/workflows/bead-diff.yml:65
-- `cargo` (cli_binary) — .github/workflows/ci.yml:266
+- `cargo` (cli_binary) — .github/workflows/ci.yml:289
 - `cargo` (cli_binary) — .github/workflows/coverage.yml:44
-- `cargo` (cli_binary) — .github/workflows/mutants.yml:48
+- `cargo` (cli_binary) — .github/workflows/mutants.yml:67
+- `cargo` (cli_binary) — .github/workflows/release-dryrun.yml:161
 - `cargo` (cli_binary) — .github/workflows/release.yml:90
+- `cargo` (cli_binary) — .github/workflows/release.yml:121
+- `cargo` (cli_binary) — .github/workflows/release.yml:331
 - `certificate_validity:` (cli_binary) — .github/workflows/oidc-signing.yml:66
-- `chmod` (cli_binary) — .github/workflows/ci.yml:400
+- `chmod` (cli_binary) — .github/workflows/ci.yml:423
 - `chmod` (cli_binary) — .github/workflows/openssl.yml:35
 - `chmod` (cli_binary) — .github/workflows/release.yml:118
 - `chmod` (cli_binary) — .github/workflows/release.yml:157
@@ -407,15 +415,17 @@ graph LR
 - `curl` (cli_binary) — .github/workflows/release.yml:154
 - `curl` (cli_binary) — .github/workflows/release.yml:245
 - `def` (cli_binary) — .github/workflows/release.yml:265
+- `docker` (cli_binary) — .github/workflows/release-dryrun.yml:175
 - `docker` (cli_binary) — .github/workflows/release.yml:167
 - `enabled:` (cli_binary) — .github/workflows/oidc-signing.yml:67
 - `gh` (cli_binary) — .github/workflows/ci.yml:54
-- `gh` (cli_binary) — .github/workflows/ci.yml:387
+- `gh` (cli_binary) — .github/workflows/ci.yml:410
 - `gh` (cli_binary) — .github/workflows/coverage.yml:92
 - `gh` (cli_binary) — .github/workflows/release.yml:34
 - `git` (cli_binary) — .github/workflows/assay-ecosystem.yml:49
 - `git` (cli_binary) — .github/workflows/ci.yml:49
 - `git` (cli_binary) — .github/workflows/coverage.yml:73
+- `git` (cli_binary) — .github/workflows/mutants.yml:123
 - `git` (cli_binary) — .github/workflows/release.yml:278
 - `git` (cli_binary) — .github/workflows/signet-resign.yml:122
 - `global` (cli_binary) — .github/workflows/release.yml:266
@@ -432,6 +442,7 @@ graph LR
 - `go` (cli_binary) — .github/workflows/leyline-schema-go.yml:69
 - `go` (cli_binary) — .github/workflows/openssl.yml:30
 - `go` (cli_binary) — .github/workflows/release.yml:55
+- `go` (cli_binary) — .github/workflows/release.yml:95
 - `go` (cli_binary) — .github/workflows/release.yml:96
 - `golangci-lint` (cli_binary) — .github/workflows/ci.yml:54
 - `gosec` (cli_binary) — .github/workflows/ci.yml:113
@@ -446,19 +457,26 @@ graph LR
 - `openssl` (cli_binary) — .github/workflows/oidc-signing.yml:41
 - `openssl` (cli_binary) — .github/workflows/openssl.yml:26
 - `pip` (cli_binary) — .github/workflows/ci.yml:37
+- `pip3` (cli_binary) — .github/workflows/release.yml:120
 - `pip3` (cli_binary) — .github/workflows/release.yml:234
 - `pkg-config` (cli_binary) — .github/workflows/release.yml:125
 - `pnpm` (cli_binary) — .github/workflows/generated-drift.yml:72
 - `pnpm` (cli_binary) — .github/workflows/publish-dpop.yml:58
+- `printf` (cli_binary) — .github/workflows/ci.yml:187
 - `printf` (cli_binary) — .github/workflows/coverage.yml:85
+- `printf` (cli_binary) — .github/workflows/release-dryrun.yml:122
 - `providers:` (cli_binary) — .github/workflows/oidc-signing.yml:60
 - `python3` (cli_binary) — .github/workflows/ci.yml:109
+- `python3` (cli_binary) — .github/workflows/release-dryrun.yml:162
 - `python3` (cli_binary) — .github/workflows/release.yml:259
+- `python3` (cli_binary) — .github/workflows/release.yml:332
 - `regen.sh` (cli_binary) — .github/workflows/cloister-schema-go.yml:68
 - `regen.sh` (cli_binary) — .github/workflows/leyline-schema-go.yml:74
 - `result` (cli_binary) — .github/workflows/release.yml:267
 - `rsry` (cli_binary) — .github/workflows/bead-diff.yml:74
 - `rsry` (cli_binary) — .github/workflows/release.yml:101
+- `rustup` (cli_binary) — .github/workflows/release-dryrun.yml:163
+- `rustup` (cli_binary) — .github/workflows/release.yml:333
 - `sed` (cli_binary) — .github/workflows/openssl.yml:50
 - `sed` (cli_binary) — .github/workflows/release.yml:256
 - `sha256sum` (cli_binary) — .github/workflows/release.yml:78
@@ -486,19 +504,23 @@ graph LR
 - `task` (cli_binary) — .github/workflows/find-smells.yml:80
 - `task` (cli_binary) — .github/workflows/generated-drift.yml:83
 - `task` (cli_binary) — .github/workflows/integration.yml:71
-- `task` (cli_binary) — .github/workflows/mutants.yml:60
+- `task` (cli_binary) — .github/workflows/mutants.yml:105
 - `task` (cli_binary) — .github/workflows/oidc-signing.yml:34
 - `task` (cli_binary) — .github/workflows/publish-dpop.yml:74
+- `task` (cli_binary) — .github/workflows/release-dryrun.yml:86
 - `task` (cli_binary) — .github/workflows/release.yml:144
+- `task` (cli_binary) — .github/workflows/release.yml:154
 - `task` (cli_binary) — .github/workflows/release.yml:256
 - `task` (cli_binary) — .github/workflows/signet-resign.yml:83
 - `test_cms_headers.sh` (cli_binary) — .github/workflows/openssl.yml:36
 - `test_openssl_verify.sh` (cli_binary) — .github/workflows/openssl.yml:42
 - `test_sig1_http_integration.sh` (cli_binary) — .github/workflows/ci.yml:83
 - `uv` (cli_binary) — .github/workflows/interlace-spec-drift.yml:112
+- `wc` (cli_binary) — .github/workflows/mutants.yml:124
 - `with` (cli_binary) — .github/workflows/release.yml:261
 - `{` (cli_binary) — .github/workflows/oidc-signing.yml:46
 - `}` (cli_binary) — .github/workflows/oidc-signing.yml:55
+- `}` (cli_binary) — .github/workflows/release-dryrun.yml:125
 - `cgr.dev/chainguard/static` (container_image) — image.Dockerfile:43
 - `cloister:0.1.0` (container_image) — /home/runner/work/_temp/ecosystem/cloister/cluster.capnp:31
 - `docker.io/library/alpine` (container_image) — demo/http-auth/Dockerfile:18
@@ -1114,6 +1136,7 @@ graph LR
 - `errors` (go_module) — internal/graph/graph.go:5
 - `errors` (go_module) — internal/graph/memstore.go:5
 - `errors` (go_module) — internal/graph/props_compat.go:5
+- `errors` (go_module) — internal/ingest/engine_walk.go:5
 - `errors` (go_module) — internal/lsp/binding_log.go:15
 - `errors` (go_module) — internal/navigator/tools.go:5
 - `errors` (go_module) — internal/testfixtures/curate.go:16
@@ -1235,6 +1258,7 @@ graph LR
 - `fmt` (go_module) — cmd/smell_ratchet.go:5
 - `fmt` (go_module) — cmd/smell_refs_views.go:6
 - `fmt` (go_module) — cmd/smell_rules.go:6
+- `fmt` (go_module) — cmd/smell_test_nodes.go:3
 - `fmt` (go_module) — cmd/uds_graph.go:5
 - `fmt` (go_module) — cmd/utils.go:4
 - `fmt` (go_module) — cmd/validate-bench/main.go:16
@@ -1314,7 +1338,7 @@ graph LR
 - `fmt` (go_module) — internal/ingest/engine_records.go:4
 - `fmt` (go_module) — internal/ingest/engine_sqlite.go:4
 - `fmt` (go_module) — internal/ingest/engine_treesitter.go:4
-- `fmt` (go_module) — internal/ingest/engine_walk.go:5
+- `fmt` (go_module) — internal/ingest/engine_walk.go:6
 - `fmt` (go_module) — internal/ingest/git.go:6
 - `fmt` (go_module) — internal/ingest/json_walker.go:4
 - `fmt` (go_module) — internal/ingest/sqlite_loader.go:6
@@ -1534,7 +1558,7 @@ graph LR
 - `github.com/agentic-research/mache/api` (go_module) — internal/graph/sqlite_graph_schema.go:6
 - `github.com/agentic-research/mache/api` (go_module) — internal/graph/writable_graph.go:9
 - `github.com/agentic-research/mache/api` (go_module) — internal/ingest/engine.go:12
-- `github.com/agentic-research/mache/api` (go_module) — internal/ingest/engine_walk.go:14
+- `github.com/agentic-research/mache/api` (go_module) — internal/ingest/engine_walk.go:15
 - `github.com/agentic-research/mache/api` (go_module) — internal/ingest/engine_walkers.go:6
 - `github.com/agentic-research/mache/api` (go_module) — internal/lattice/greedy.go:9
 - `github.com/agentic-research/mache/api` (go_module) — internal/lattice/infer.go:9
@@ -1606,10 +1630,10 @@ graph LR
 - `github.com/agentic-research/mache/internal/graph` (go_module) — internal/ingest/engine.go:13
 - `github.com/agentic-research/mache/internal/graph` (go_module) — internal/ingest/engine_diagram.go:7
 - `github.com/agentic-research/mache/internal/graph` (go_module) — internal/ingest/engine_ingest.go:11
-- `github.com/agentic-research/mache/internal/graph` (go_module) — internal/ingest/engine_refs.go:3
+- `github.com/agentic-research/mache/internal/graph` (go_module) — internal/ingest/engine_refs.go:6
 - `github.com/agentic-research/mache/internal/graph` (go_module) — internal/ingest/engine_sqlite.go:10
 - `github.com/agentic-research/mache/internal/graph` (go_module) — internal/ingest/engine_treesitter.go:15
-- `github.com/agentic-research/mache/internal/graph` (go_module) — internal/ingest/engine_walk.go:15
+- `github.com/agentic-research/mache/internal/graph` (go_module) — internal/ingest/engine_walk.go:16
 - `github.com/agentic-research/mache/internal/graph` (go_module) — internal/ingest/sqlite_writer.go:13
 - `github.com/agentic-research/mache/internal/graph` (go_module) — internal/leyline/sheaf.go:16
 - `github.com/agentic-research/mache/internal/graph` (go_module) — internal/leyline/trigger.go:8
@@ -2427,7 +2451,7 @@ graph LR
 - `log` (go_module) — internal/ingest/engine.go:5
 - `log` (go_module) — internal/ingest/engine_sqlite.go:5
 - `log` (go_module) — internal/ingest/engine_treesitter.go:5
-- `log` (go_module) — internal/ingest/engine_walk.go:6
+- `log` (go_module) — internal/ingest/engine_walk.go:7
 - `log` (go_module) — internal/ingest/sqlite_writer.go:7
 - `log` (go_module) — internal/ingest/watcher.go:4
 - `log` (go_module) — internal/iterm/bridge.go:6
@@ -2711,7 +2735,7 @@ graph LR
 - `os` (go_module) — internal/ingest/engine_ingest.go:6
 - `os` (go_module) — internal/ingest/engine_sqlite.go:6
 - `os` (go_module) — internal/ingest/engine_treesitter.go:6
-- `os` (go_module) — internal/ingest/engine_walk.go:7
+- `os` (go_module) — internal/ingest/engine_walk.go:8
 - `os` (go_module) — internal/ingest/gitignore.go:6
 - `os` (go_module) — internal/ingest/sqlite_writer.go:8
 - `os` (go_module) — internal/ingest/watcher.go:5
@@ -2867,7 +2891,7 @@ graph LR
 - `path/filepath` (go_module) — internal/ingest/engine_filter.go:8
 - `path/filepath` (go_module) — internal/ingest/engine_ingest.go:7
 - `path/filepath` (go_module) — internal/ingest/engine_treesitter.go:7
-- `path/filepath` (go_module) — internal/ingest/engine_walk.go:8
+- `path/filepath` (go_module) — internal/ingest/engine_walk.go:9
 - `path/filepath` (go_module) — internal/ingest/gitignore.go:7
 - `path/filepath` (go_module) — internal/ingest/watcher.go:6
 - `path/filepath` (go_module) — internal/iterm/client.go:16
@@ -3142,8 +3166,9 @@ graph LR
 - `strings` (go_module) — internal/ingest/engine_extract.go:4
 - `strings` (go_module) — internal/ingest/engine_filter.go:10
 - `strings` (go_module) — internal/ingest/engine_ingest.go:8
+- `strings` (go_module) — internal/ingest/engine_refs.go:4
 - `strings` (go_module) — internal/ingest/engine_treesitter.go:10
-- `strings` (go_module) — internal/ingest/engine_walk.go:9
+- `strings` (go_module) — internal/ingest/engine_walk.go:10
 - `strings` (go_module) — internal/ingest/engine_walkers.go:4
 - `strings` (go_module) — internal/ingest/git.go:7
 - `strings` (go_module) — internal/ingest/gitignore.go:9
@@ -3247,7 +3272,7 @@ graph LR
 - `sync` (go_module) — internal/ingest/engine.go:8
 - `sync` (go_module) — internal/ingest/engine_sqlite.go:8
 - `sync` (go_module) — internal/ingest/engine_treesitter.go:11
-- `sync` (go_module) — internal/ingest/engine_walk.go:10
+- `sync` (go_module) — internal/ingest/engine_walk.go:11
 - `sync` (go_module) — internal/ingest/sqlite_writer.go:10
 - `sync` (go_module) — internal/ingest/watcher.go:9
 - `sync` (go_module) — internal/interactions/graph.go:28
@@ -3316,7 +3341,7 @@ graph LR
 - `text/template` (go_module) — internal/graph/sqlite_graph_scan.go:11
 - `text/template` (go_module) — internal/ingest/engine.go:9
 - `text/template` (go_module) — internal/ingest/engine_diagram.go:5
-- `text/template` (go_module) — internal/ingest/engine_walk.go:11
+- `text/template` (go_module) — internal/ingest/engine_walk.go:12
 - `text/template` (go_module) — internal/template/render.go:21
 - `text/template/parse` (go_module) — internal/graph/sqlite_graph_scan.go:12
 - `time` (go_module) — cmd/agent.go:13
@@ -3400,7 +3425,7 @@ graph LR
 - `time` (go_module) — internal/ingest/engine_ingest.go:9
 - `time` (go_module) — internal/ingest/engine_records.go:5
 - `time` (go_module) — internal/ingest/engine_treesitter.go:13
-- `time` (go_module) — internal/ingest/engine_walk.go:12
+- `time` (go_module) — internal/ingest/engine_walk.go:13
 - `time` (go_module) — internal/ingest/git.go:8
 - `time` (go_module) — internal/ingest/sqlite_writer.go:11
 - `time` (go_module) — internal/ingest/watcher.go:10
@@ -7140,6 +7165,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.enrichLocations` (go_package_symbol) — cmd/smell_findings.go
 - `github.com/agentic-research/mache/cmd.enrichedResult` (go_package_symbol) — cmd/serve_handler_semantic_search.go
 - `github.com/agentic-research/mache/cmd.ensureCanonicalViews` (go_package_symbol) — cmd/smell_refs_views.go
+- `github.com/agentic-research/mache/cmd.ensureTestNodesView` (go_package_symbol) — cmd/smell_test_nodes.go
 - `github.com/agentic-research/mache/cmd.entry` (go_package_symbol) — cmd/cache_ast.go
 - `github.com/agentic-research/mache/cmd.entryExists` (go_package_symbol) — cmd/leyline.go
 - `github.com/agentic-research/mache/cmd.entryExists` (go_package_symbol) — cmd/leyline.go
@@ -7653,6 +7679,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.tableHasColumn` (go_package_symbol) — cmd/smell_refs_views.go
 - `github.com/agentic-research/mache/cmd.tail` (go_package_symbol) — cmd/config.go
 - `github.com/agentic-research/mache/cmd.testFiles` (go_package_symbol) — cmd/serve_architecture.go
+- `github.com/agentic-research/mache/cmd.testNodesViewSQL` (go_package_symbol) — cmd/smell_test_nodes.go
 - `github.com/agentic-research/mache/cmd.text` (go_package_symbol) — cmd/leyline.go
 - `github.com/agentic-research/mache/cmd.token` (go_package_symbol) — cmd/leyline.go
 - `github.com/agentic-research/mache/cmd.token` (go_package_symbol) — cmd/leyline.go
@@ -8371,6 +8398,8 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.AddDef` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.AddFileChildren` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.AddNode` (go_package_symbol) — internal/ingest/engine_refs.go
+- `github.com/agentic-research/mache/internal/ingest.bufferingTarget.ListChildren` (go_package_symbol) — internal/ingest/engine_refs.go
+- `github.com/agentic-research/mache/internal/ingest.bufferingTarget.noteBuffered` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.byteOffsetToLine` (go_package_symbol) — internal/ingest/engine_extract.go
 - `github.com/agentic-research/mache/internal/ingest.callPatternRegistry` (go_package_symbol) — internal/ingest/ast_walker_calls.go
 - `github.com/agentic-research/mache/internal/ingest.callRow` (go_package_symbol) — internal/ingest/ast_walker_calls.go
@@ -8380,6 +8409,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.calls` (go_package_symbol) — internal/ingest/ast_walker_calls.go
 - `github.com/agentic-research/mache/internal/ingest.calls` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.ce` (go_package_symbol) — internal/ingest/ast_walker.go
+- `github.com/agentic-research/mache/internal/ingest.childID` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.childKind` (go_package_symbol) — internal/ingest/ast_flatten_db.go
 - `github.com/agentic-research/mache/internal/ingest.collectErr` (go_package_symbol) — internal/ingest/engine_sqlite.go
 - `github.com/agentic-research/mache/internal/ingest.collectNodes` (go_package_symbol) — internal/ingest/engine_walk.go
@@ -8396,7 +8426,6 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.cs` (go_package_symbol) — internal/ingest/ast_walker.go
 - `github.com/agentic-research/mache/internal/ingest.cur` (go_package_symbol) — internal/ingest/ast_flatten_db.go
 - `github.com/agentic-research/mache/internal/ingest.curID` (go_package_symbol) — internal/ingest/ast_flatten_db.go
-- `github.com/agentic-research/mache/internal/ingest.currentChildren` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.currentID` (go_package_symbol) — internal/ingest/engine_ingest.go
 - `github.com/agentic-research/mache/internal/ingest.currentProps` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.data` (go_package_symbol) — internal/ingest/engine_ingest.go
@@ -8410,7 +8439,6 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.err` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.escapeLikePrefix` (go_package_symbol) — internal/ingest/ast_walker_calls.go
 - `github.com/agentic-research/mache/internal/ingest.evalPatterns` (go_package_symbol) — internal/ingest/gitignore.go
-- `github.com/agentic-research/mache/internal/ingest.existingChildren` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.extractDocComments` (go_package_symbol) — internal/ingest/engine_extract.go
 - `github.com/agentic-research/mache/internal/ingest.fidelity` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.field` (go_package_symbol) — internal/ingest/ast_flatten_db.go
@@ -8447,6 +8475,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.lang` (go_package_symbol) — internal/ingest/ast_walker.go
 - `github.com/agentic-research/mache/internal/ingest.langForExt` (go_package_symbol) — internal/ingest/engine_walkers.go
 - `github.com/agentic-research/mache/internal/ingest.leafID` (go_package_symbol) — internal/ingest/ast_walker_calls.go
+- `github.com/agentic-research/mache/internal/ingest.listChildrenTolerant` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.matchAncestry` (go_package_symbol) — internal/ingest/ast_walker_selector.go
 - `github.com/agentic-research/mache/internal/ingest.matchDoublestar` (go_package_symbol) — internal/ingest/gitignore.go
 - `github.com/agentic-research/mache/internal/ingest.matchPattern` (go_package_symbol) — internal/ingest/gitignore.go
@@ -8468,6 +8497,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.out` (go_package_symbol) — internal/ingest/ast_walker_index.go
 - `github.com/agentic-research/mache/internal/ingest.out` (go_package_symbol) — internal/ingest/ast_walker_nodes.go
 - `github.com/agentic-research/mache/internal/ingest.out` (go_package_symbol) — internal/ingest/git.go
+- `github.com/agentic-research/mache/internal/ingest.out` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.parentAwareMatch` (go_package_symbol) — internal/ingest/parent_match.go
 - `github.com/agentic-research/mache/internal/ingest.parentAwareMatch.ASTScopeID` (go_package_symbol) — internal/ingest/parent_match.go
 - `github.com/agentic-research/mache/internal/ingest.parentAwareMatch.ASTSourceID` (go_package_symbol) — internal/ingest/parent_match.go
