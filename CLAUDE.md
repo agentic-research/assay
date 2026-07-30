@@ -77,8 +77,16 @@ no longer exists) is computed and reported as `staleness` but deliberately **not
 backtick span in markdown is currently treated as a claimed symbol, so filenames, CLI flags, bead
 IDs and other repos' types all register as stale (92.6% on this tree). Gating it would fail
 permanently while signalling nothing. Making it gateable needs a preprocessor that decides which
-spans actually assert a symbol; mache's `drift_doc_dead_symbol_reference` is blocked on the same
-missing piece and ships as a no-op (`WHERE 1=0`).
+spans actually assert a symbol.
+
+mache has since shipped that preprocessor as `v_doc_refs` and turned
+`drift_doc_dead_symbol_reference` into a real query — but it does **not** unblock assay, because
+the view is scoped to Rust paths (`token LIKE '%::%'`) to sidestep a Go extraction gap upstream
+(`ley-line-open-651909`: Go package-level consts emit no defs). Go has no `::`, so the view
+yields zero rows for this repo. mache also ships the rule advisory-only, not gate-tagged, with
+every measured candidate falling into a declared false-positive class. Treat the staleness
+direction as still blocked, and note that its residue — foreign types quoted in design specs — is
+a class better tokenization cannot fix; it needs docs that *declare* which symbols they cover.
 
 The decision itself is a pure function: `Gate` in `internal/coverage/gate.go` takes a
 `CoverageResult` plus `GateOptions` (`MaxUncovered` + `MaxUncoveredSet` for the ratchet,
@@ -86,6 +94,23 @@ The decision itself is a pure function: `Gate` in `internal/coverage/gate.go` ta
 The zero value of `GateOptions` disables every check, so adding it to a caller is opt-in.
 `cmd/verify.go` returns that error rather than calling `os.Exit`, which keeps it unit-testable
 and puts the offending names in the CI log.
+
+### Two swappable seams
+
+`verify` is a join, and each side varies behind one interface — see
+[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the full table.
+
+- **`coverage.ClaimSource`** — what the docs claim. `MarkdownSource` is the default;
+  `HTMLSource` is real and opt-in via `--html-docs`; `DOMSource` (live CDP capture) is a
+  guarded seam.
+- **`coverage.StructuralVerifier`** — what the code has. `TreeSitterVerifier` is the
+  always-available default; `MacheVerifier` is selectable via `--verifier=mache --mache-db`
+  and guarded.
+
+**Guarded backends return an error, never an empty result.** An empty claim set and an empty
+entity set are both meaningful in a coverage join — "the docs assert nothing" and "the code
+contains nothing". A backend that cannot run must emit neither, since both silently invert the
+gate's verdict. `Available()` reports false so callers fall back.
 
 ### Direction & parked non-goals
 

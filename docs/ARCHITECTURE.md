@@ -49,6 +49,51 @@ graph LR
 | `extract/capnp` | `*.capnp` **const data** | service / container-image facts from declared bundles + bindings (schema-only files → no facts) |
 | `extract/gocode` | Go source / mache `.db` | Go package/symbol producers + import consumers (prefers mache's `v_defs`/`v_refs`; tree-sitter fallback) |
 
+## The verify pipeline: two swappable seams
+
+`assay map` derives the artifact graph. `assay verify` answers a different question —
+*do the docs still describe the code?* — and it is a join between two independently
+swappable sides, each behind one interface:
+
+```mermaid
+graph LR
+  subgraph claims["What the docs CLAIM"]
+    ms["MarkdownSource"]; hs["HTMLSource"]; ds["DOMSource (guarded)"]
+  end
+  subgraph truth["What the code HAS"]
+    tsv["TreeSitterVerifier"]; mv["MacheVerifier (guarded)"]
+  end
+  claims -->|"coverage.ClaimSource"| join["ComputeFromVerifier"]
+  truth -->|"coverage.StructuralVerifier"| join
+  join --> gate["coverage.Gate"]
+```
+
+| Side | Interface | Contract |
+|------|-----------|----------|
+| Docs | `coverage.ClaimSource` | `Claims() ([]DocRef, error)` — yields claim-references with provenance, independent of source format |
+| Code | `coverage.StructuralVerifier` | `Name()` / `Available()` / `Entities()` — yields the constructs the code genuinely has |
+
+### Claim sources
+
+| Source | Constructor | Status |
+|--------|-------------|--------|
+| `MarkdownSource` | `NewMarkdownSource` | **Real, default.** `MarkdownSource.Claims` walks the tree and extracts code references from every markdown file. |
+| `HTMLSource` | `NewHTMLSource` | **Real, opt-in** via `--html-docs`. `HTMLSource.Claims` delegates to `ExtractHTMLDir`, which walks a rendered docs site; `ExtractHTMLFile` handles one file and `ExtractHTMLSource` parses a byte buffer, keying on code and heading elements. |
+| `DOMSource` | `NewDOMSource` | **Guarded seam.** Live-DOM capture over CDP is not wired, so `DOMSource.Available` is false and `DOMSource.Claims` returns `ErrDOMCaptureUnavailable` rather than an empty set that would read as "the page claims nothing". |
+
+### Structural verifiers
+
+| Verifier | Constructor | Status |
+|----------|-------------|--------|
+| `TreeSitterVerifier` | `NewTreeSitterVerifier` | **Real, default.** Constructed with a source root and an exported-only flag. `TreeSitterVerifier.Entities` extracts documentable constructs; `TreeSitterVerifier.Name` reports `"tree-sitter"` and `TreeSitterVerifier.Available` is always true — tree-sitter is linked into the binary. |
+| `MacheVerifier` | `NewMacheVerifier` | **Guarded seam,** selectable via `--verifier=mache --mache-db`. `MacheVerifier.Available` requires *both* `mache` on PATH and a configured leyline-parsed `.db`; `Entities` returns `ErrMacheBackendUnavailable` rather than a fabricated set. |
+
+**Why the guarded backends return errors instead of empty results.** An empty claim set and
+an empty entity set are both *meaningful* values in a coverage join — they mean "the docs
+assert nothing" and "the code contains nothing". A backend that cannot run must not emit
+either, because both would silently invert the gate's verdict. Every unwired backend
+therefore fails loudly and `Available()` reports false so callers can fall back.
+
 ## Invariants (what makes the number trustworthy)
 
 - **Deterministic.** Same input → byte-identical output. (The whole point vs. an LLM exploring.)
@@ -62,4 +107,4 @@ graph LR
 
 ## Parked / non-goals
 
-Semantic/HDC matching, HTML/DOM extraction, a TS/npm extractor (the TS repos have no cross-repo npm edges), a Rust rewrite, and edges encoded *purely in code* (hardcoded socket paths with no structured declaration). Doc-coverage set operations were also listed here; they are now RETAINED as the `assay verify` build gate (see CLAUDE.md "The doc gate") — what was set aside was doc coverage as a *product*, not as a *gate*. The rest were evaluated and deliberately set aside — see the spec's "Non-goals" section.
+Semantic/HDC matching, a TS/npm extractor (the TS repos have no cross-repo npm edges), a Rust rewrite, and edges encoded *purely in code* (hardcoded socket paths with no structured declaration). Static **HTML extraction** was also listed here and is now RETAINED as a real opt-in claim source (see "The verify pipeline" above); what remains parked is *live-DOM* capture, which ships as a guarded seam. Doc-coverage set operations were also listed here; they are now RETAINED as the `assay verify` build gate (see CLAUDE.md "The doc gate") — what was set aside was doc coverage as a *product*, not as a *gate*. The rest were evaluated and deliberately set aside — see the spec's "Non-goals" section.
