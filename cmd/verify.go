@@ -15,8 +15,13 @@ import (
 var verifyCmd = &cobra.Command{
 	Use:   "verify",
 	Short: "Verify documentation coverage against source code",
-	Long:  "Extract documentable entities from source code and code references from markdown, then compute coverage.",
-	RunE:  runVerify,
+	Long: "Extract documentable entities from source code and code references from markdown, then compute coverage.\n\n" +
+		"With --max-uncovered or --threshold, verify becomes a gate: it exits non-zero when documentation\n" +
+		"has drifted behind the code, naming the entities responsible. Wire it into CI via `task docs:check`.",
+	// A gate failure is a result, not a usage error — printing the full usage
+	// block after it would bury the entity names the caller needs.
+	SilenceUsage: true,
+	RunE:         runVerify,
 }
 
 var (
@@ -27,6 +32,7 @@ var (
 	flagFormat       string
 	flagExportedOnly bool
 	flagVerbose      bool
+	flagMaxUncovered int
 )
 
 func init() {
@@ -39,6 +45,8 @@ func init() {
 	verifyCmd.Flags().StringVar(&flagFormat, "format", "text", "Output format: text, json")
 	verifyCmd.Flags().BoolVar(&flagExportedOnly, "exported-only", true, "Only count exported/public entities")
 	verifyCmd.Flags().BoolVarP(&flagVerbose, "verbose", "v", false, "Show all matched entities")
+	verifyCmd.Flags().IntVar(&flagMaxUncovered, "max-uncovered", -1,
+		"Fail when more than N exported entities are undocumented (0 = none may be; -1 = disabled). Ratchet a repo by setting its current count.")
 }
 
 func runVerify(cmd *cobra.Command, args []string) error {
@@ -95,11 +103,14 @@ func runVerify(cmd *cobra.Command, args []string) error {
 		}
 	}
 
-	// Exit with error if below threshold.
-	if flagThreshold > 0 && result.Coverage < flagThreshold {
-		os.Exit(1)
-	}
-	return nil
+	// Apply the gate. Returning an error rather than calling os.Exit keeps the
+	// decision unit-testable and lets the reason reach the CI log — a bare
+	// exit(1) tells a reader the build failed but not which entity caused it.
+	return coverage.Gate(result, coverage.GateOptions{
+		MaxUncovered:    flagMaxUncovered,
+		MaxUncoveredSet: cmd.Flags().Changed("max-uncovered"),
+		MinCoverage:     flagThreshold,
+	})
 }
 
 func detectDocsDir(source string) string {

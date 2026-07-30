@@ -50,7 +50,7 @@ go.mod · Dockerfile · CI · Go source
 | `internal/resolve/` | Identity matching → resolved / external / dangling buckets |
 | `internal/report/` | Emit the map as JSON / mermaid / markdown |
 | `internal/code/` | Tree-sitter Go extraction (the `gocode` fallback backend) |
-| `cmd/` | Cobra CLI: `map` (derive + emit), `version` |
+| `cmd/` | Cobra CLI: `map` (derive + emit), `verify` (doc gate), `version` |
 
 ### Identity & resolution
 
@@ -64,9 +64,34 @@ a consumer in another resolve to one cross-root edge. See `docs/decisions/0002-i
 `modernc.org/sqlite` (mache need not be running); tree-sitter is the always-available
 fallback. See `docs/decisions/0001-mache-coupling.md`.
 
+### The doc gate (`assay verify`)
+
+`assay verify` computes documentation coverage over the same tree-sitter entity extraction the
+map uses, and — with `--max-uncovered` or `--threshold` — **fails the build** when an exported
+entity has no documentation reference. `task docs:check` wires it into `task ci` with a ratchet
+budget (`DOC_UNCOVERED_BUDGET`); lower it as debt is paid, never raise it to make CI pass.
+
+It gates **one direction only**: exported entity → no doc mention. Entities come from parsed
+source, so every finding names a real symbol. The reverse direction (a doc naming a symbol that
+no longer exists) is computed and reported as `staleness` but deliberately **not gated** — every
+backtick span in markdown is currently treated as a claimed symbol, so filenames, CLI flags, bead
+IDs and other repos' types all register as stale (92.6% on this tree). Gating it would fail
+permanently while signalling nothing. Making it gateable needs a preprocessor that decides which
+spans actually assert a symbol; mache's `drift_doc_dead_symbol_reference` is blocked on the same
+missing piece and ships as a no-op (`WHERE 1=0`).
+
+The decision itself is a pure function: `Gate` in `internal/coverage/gate.go` takes a
+`CoverageResult` plus `GateOptions` (`MaxUncovered` + `MaxUncoveredSet` for the ratchet,
+`MinCoverage` for the ratio floor) and returns an error naming every violating entity, or nil.
+The zero value of `GateOptions` disables every check, so adding it to a caller is opt-in.
+`cmd/verify.go` returns that error rather than calling `os.Exit`, which keeps it unit-testable
+and puts the offending names in the CI log.
+
 ### Direction & parked non-goals
 
 v1 = derive the map (4 extractors + resolver + `assay map`). **Parked** (do not reintroduce):
-documentation-coverage set operations, semantic/HDC matching, HTML/DOM extraction, a Rust
-rewrite, and the `assay drift` grading fallback (v2). Spec:
-`docs/superpowers/specs/2026-06-22-assay-artifact-usage-graph-design.md`.
+semantic/HDC matching, HTML/DOM extraction, a Rust rewrite, and the `assay drift` grading
+fallback (v2). Spec: `docs/superpowers/specs/2026-06-22-assay-artifact-usage-graph-design.md`.
+
+Note: doc-coverage set operations were previously listed as parked. They are **retained** as the
+gate above — the parked item was doc coverage as a *product* (a grade), not as a *build gate*.
