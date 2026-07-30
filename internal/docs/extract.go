@@ -74,6 +74,17 @@ func ExtractSource(src []byte, relPath string) ([]coverage.DocRef, error) {
 			inHeading = false
 		}
 
+		// Pipe-table cells carry no inline subtree. tree-sitter-markdown emits
+		// pipe_table_cell as a BLOCK node and never attaches an Inline tree to
+		// it, so the node.Inline walk below never reaches a code span inside a
+		// table. Re-parse the cell's own bytes to recover them — assay's own
+		// docs describe most entities in tables, and without this those
+		// mentions are invisible to the coverage join.
+		if typ == "pipe_table_cell" {
+			refs = append(refs, extractCellRefs(node, src, relPath)...)
+			return true
+		}
+
 		if node.Inline == nil {
 			return true
 		}
@@ -100,6 +111,42 @@ func ExtractSource(src []byte, relPath string) ([]coverage.DocRef, error) {
 	})
 
 	return refs, nil
+}
+
+// extractCellRefs recovers code spans from a pipe-table cell by re-parsing the
+// cell's bytes as a standalone document, which does produce an inline subtree.
+//
+// Line numbers come from the CELL's position in the original source, not from
+// the re-parsed fragment (whose rows restart at 0). A table cell cannot span
+// lines in GitHub-flavored markdown, so the cell's own row is exact.
+func extractCellRefs(cell *markdown.Node, src []byte, relPath string) []coverage.DocRef {
+	content := strings.TrimSpace(cell.Content(src))
+	if content == "" || !strings.Contains(content, "`") {
+		return nil
+	}
+
+	sub, err := markdown.ParseCtx(context.Background(), nil, []byte(content))
+	if err != nil {
+		// A cell that won't parse in isolation yields no claims rather than
+		// failing the whole file — one malformed row must not blind the gate
+		// to every other document.
+		return nil
+	}
+
+	line := int(cell.StartPoint().Row) + 1
+
+	var refs []coverage.DocRef
+	sub.Iter(func(n *markdown.Node) bool {
+		if n.Inline == nil {
+			return true
+		}
+		for _, r := range extractInlineRefs(n.Inline, []byte(content), relPath) {
+			r.Line = line
+			refs = append(refs, r)
+		}
+		return true
+	})
+	return refs
 }
 
 func extractInlineRefs(inlineRoot *sitter.Node, src []byte, relPath string) []coverage.DocRef {

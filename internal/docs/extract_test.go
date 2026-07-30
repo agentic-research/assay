@@ -67,3 +67,48 @@ func refTexts(refs []coverage.DocRef) []string {
 	}
 	return texts
 }
+
+// TestExtractSource_TableCells pins the pipe-table gap: tree-sitter-markdown
+// emits pipe_table_cell as a BLOCK node with no inline subtree attached, so a
+// walk that only descends into node.Inline never sees a code span inside a
+// table. assay's own ARCHITECTURE.md documents nearly every entity in tables,
+// so this silently made those mentions invisible to the coverage gate.
+func TestExtractSource_TableCells(t *testing.T) {
+	src := []byte(`# Doc
+
+| Symbol | Notes |
+|--------|-------|
+| ` + "`TableOnlySymbol`" + ` | documented only in a table |
+
+Prose mentions ` + "`ProseSymbol`" + `.
+`)
+
+	refs, err := ExtractSource(src, "doc.md")
+	require.NoError(t, err)
+
+	texts := make(map[string]bool, len(refs))
+	for _, r := range refs {
+		texts[r.Text] = true
+	}
+
+	assert.True(t, texts["ProseSymbol"], "prose code span must be extracted (control)")
+	assert.True(t, texts["TableOnlySymbol"], "table-cell code span must be extracted")
+}
+
+// TestExtractSource_TableCellLineNumbers asserts a table-cell ref reports the
+// line it actually sits on, not the line the table starts on — a finding that
+// points at the wrong line is a finding a reader cannot act on.
+func TestExtractSource_TableCellLineNumbers(t *testing.T) {
+	src := []byte("intro\n\n| A | B |\n|---|---|\n| `RowOne` | x |\n| `RowTwo` | y |\n")
+
+	refs, err := ExtractSource(src, "doc.md")
+	require.NoError(t, err)
+
+	lines := map[string]int{}
+	for _, r := range refs {
+		lines[r.Text] = r.Line
+	}
+
+	assert.Equal(t, 5, lines["RowOne"], "RowOne sits on line 5")
+	assert.Equal(t, 6, lines["RowTwo"], "RowTwo sits on line 6")
+}

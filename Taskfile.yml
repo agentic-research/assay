@@ -115,7 +115,10 @@ tasks:
       - go build -o bin/assay .
       - ./bin/assay verify --source . --max-uncovered {{.DOC_UNCOVERED_BUDGET}} > /dev/null
     vars:
-      DOC_UNCOVERED_BUDGET: 20
+      # 20 -> 18: pipe-table cells now yield claim-references (they were
+      # silently skipped), so two entities documented only in a table are
+      # correctly counted as covered.
+      DOC_UNCOVERED_BUDGET: 18
 
   docs:report:
     desc: Human doc-coverage report — what is documented, what is not (never fails)
