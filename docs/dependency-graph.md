@@ -1,7 +1,7 @@
 # assay map
 
 - Resolved edges: 0
-- External dependencies: 211
+- External dependencies: 228
 - Dangling producers: 1
 
 ## Graph
@@ -34,6 +34,7 @@ graph LR
     n4be777845823["github.com/agentic-research/assay/internal/extract/wrangler"]
     n852b1ec07131["github.com/agentic-research/assay/internal/report"]
     n4b579e83c84f["github.com/agentic-research/assay/internal/resolve"]
+    nec09d78c36af["github.com/agentic-research/assay/internal/structural"]
     n1650d597ebc4["github.com/agext/levenshtein"]
     n5865e24c730f["github.com/containerd/typeurl"]
     n46c521508237["github.com/containerd/typeurl/v2"]
@@ -67,6 +68,9 @@ graph LR
     n6c56ea394212["github.com/tonistiigi/go-csvvalue"]
     n17c266f9ccd7["golang.org/x/mod"]
     n08e7f686577e["golang.org/x/mod/modfile"]
+    n4ce2cc411244["golang.org/x/net"]
+    na05462cced72["golang.org/x/net/html"]
+    n7f6974d6e6d9["golang.org/x/net/html/atom"]
     ne22e1725e7db["golang.org/x/sys"]
     n714cc57c654b["google.golang.org/protobuf"]
     nc4662d5c6be8["gopkg.in/yaml.v3"]
@@ -101,6 +105,7 @@ graph LR
 - `bufio` (go_module) — internal/embeddings/leyline.go:4
 - `bufio` (go_module) — internal/extract/capnp/parse.go:4
 - `bufio` (go_module) — internal/extract/gocode/treesitter.go:4
+- `bytes` (go_module) — internal/docs/html.go:4
 - `bytes` (go_module) — internal/embeddings/leyline.go:5
 - `bytes` (go_module) — internal/extract/capnp/parse.go:5
 - `bytes` (go_module) — internal/extract/dockerfile/dockerfile.go:23
@@ -114,11 +119,13 @@ graph LR
 - `encoding/hex` (go_module) — internal/report/mermaid_repo.go:5
 - `encoding/json` (go_module) — internal/coverage/report.go:4
 - `encoding/json` (go_module) — internal/report/json.go:4
+- `errors` (go_module) — internal/docs/dom.go:4
 - `errors` (go_module) — internal/extract/capnp/capnp.go:31
 - `errors` (go_module) — internal/extract/cargo/cargo.go:22
 - `errors` (go_module) — internal/extract/gocode/mache.go:5
 - `errors` (go_module) — internal/extract/gomod/gomod.go:19
 - `errors` (go_module) — internal/extract/wrangler/wrangler.go:20
+- `errors` (go_module) — internal/structural/errors.go:3
 - `fmt` (go_module) — cmd/map.go:4
 - `fmt` (go_module) — cmd/root.go:4
 - `fmt` (go_module) — cmd/verify.go:4
@@ -158,7 +165,12 @@ graph LR
 - `github.com/agentic-research/assay/internal/code` (go_module) — internal/extract/gocode/treesitter.go:16
 - `github.com/agentic-research/assay/internal/coverage` (go_module) — cmd/verify.go:11
 - `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/code/extract.go:14
+- `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/code/verifier.go:3
+- `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/docs/dom.go:6
 - `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/docs/extract.go:13
+- `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/docs/html.go:13
+- `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/docs/source.go:3
+- `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/structural/mache.go:15
 - `github.com/agentic-research/assay/internal/docs` (go_module) — cmd/verify.go:12
 - `github.com/agentic-research/assay/internal/extract` (go_module) — cmd/map.go:10
 - `github.com/agentic-research/assay/internal/extract` (go_module) — internal/extract/capnp/capnp.go:38
@@ -180,31 +192,32 @@ graph LR
 - `github.com/agentic-research/assay/internal/resolve` (go_module) — cmd/map.go:19
 - `github.com/agentic-research/assay/internal/resolve` (go_module) — internal/report/mermaid.go:12
 - `github.com/agentic-research/assay/internal/resolve` (go_module) — internal/report/report.go:21
-- `github.com/agext/levenshtein` (go_module) — go.mod:17
-- `github.com/containerd/typeurl` (go_module) — go.mod:18
-- `github.com/containerd/typeurl/v2` (go_module) — go.mod:18
-- `github.com/davecgh/go-spew` (go_module) — go.mod:19
-- `github.com/docker/go-units` (go_module) — go.mod:20
-- `github.com/dustin/go-humanize` (go_module) — go.mod:21
-- `github.com/google/uuid` (go_module) — go.mod:22
-- `github.com/inconshreveable/mousetrap` (go_module) — go.mod:23
-- `github.com/mattn/go-isatty` (go_module) — go.mod:24
+- `github.com/agentic-research/assay/internal/structural` (go_module) — cmd/verify.go:13
+- `github.com/agext/levenshtein` (go_module) — go.mod:18
+- `github.com/containerd/typeurl` (go_module) — go.mod:19
+- `github.com/containerd/typeurl/v2` (go_module) — go.mod:19
+- `github.com/davecgh/go-spew` (go_module) — go.mod:20
+- `github.com/docker/go-units` (go_module) — go.mod:21
+- `github.com/dustin/go-humanize` (go_module) — go.mod:22
+- `github.com/google/uuid` (go_module) — go.mod:23
+- `github.com/inconshreveable/mousetrap` (go_module) — go.mod:24
+- `github.com/mattn/go-isatty` (go_module) — go.mod:25
 - `github.com/moby/buildkit` (go_module) — go.mod:6
 - `github.com/moby/buildkit/frontend/dockerfile/instructions` (go_module) — internal/extract/dockerfile/dockerfile.go:30
 - `github.com/moby/buildkit/frontend/dockerfile/parser` (go_module) — internal/extract/dockerfile/dockerfile.go:31
 - `github.com/moby/buildkit/frontend/dockerfile/shell` (go_module) — internal/extract/dockerfile/dockerfile.go:32
-- `github.com/moby/docker-image-spec` (go_module) — go.mod:25
-- `github.com/ncruces/go-strftime` (go_module) — go.mod:26
-- `github.com/opencontainers/go-digest` (go_module) — go.mod:27
-- `github.com/opencontainers/image-spec` (go_module) — go.mod:28
+- `github.com/moby/docker-image-spec` (go_module) — go.mod:26
+- `github.com/ncruces/go-strftime` (go_module) — go.mod:27
+- `github.com/opencontainers/go-digest` (go_module) — go.mod:28
+- `github.com/opencontainers/image-spec` (go_module) — go.mod:29
 - `github.com/pelletier/go-toml` (go_module) — go.mod:7
 - `github.com/pelletier/go-toml/v2` (go_module) — go.mod:7
 - `github.com/pelletier/go-toml/v2/unstable` (go_module) — internal/extract/cargo/manifest.go:7
 - `github.com/pelletier/go-toml/v2/unstable` (go_module) — internal/extract/wrangler/manifest.go:7
-- `github.com/pkg/errors` (go_module) — go.mod:29
-- `github.com/planetscale/vtprotobuf` (go_module) — go.mod:30
-- `github.com/pmezard/go-difflib` (go_module) — go.mod:31
-- `github.com/remyoudompheng/bigfft` (go_module) — go.mod:32
+- `github.com/pkg/errors` (go_module) — go.mod:30
+- `github.com/planetscale/vtprotobuf` (go_module) — go.mod:31
+- `github.com/pmezard/go-difflib` (go_module) — go.mod:32
+- `github.com/remyoudompheng/bigfft` (go_module) — go.mod:33
 - `github.com/smacker/go-tree-sitter` (go_module) — go.mod:8
 - `github.com/smacker/go-tree-sitter` (go_module) — internal/code/extract.go:11
 - `github.com/smacker/go-tree-sitter` (go_module) — internal/docs/extract.go:10
@@ -217,14 +230,17 @@ graph LR
 - `github.com/spf13/cobra` (go_module) — cmd/verify.go:8
 - `github.com/spf13/cobra` (go_module) — cmd/version.go:6
 - `github.com/spf13/cobra` (go_module) — go.mod:9
-- `github.com/spf13/pflag` (go_module) — go.mod:33
+- `github.com/spf13/pflag` (go_module) — go.mod:34
 - `github.com/stretchr/testify` (go_module) — go.mod:10
-- `github.com/tonistiigi/go-csvvalue` (go_module) — go.mod:34
+- `github.com/tonistiigi/go-csvvalue` (go_module) — go.mod:35
 - `golang.org/x/mod` (go_module) — go.mod:11
 - `golang.org/x/mod/modfile` (go_module) — internal/extract/gomod/gomod.go:25
-- `golang.org/x/sys` (go_module) — go.mod:35
-- `google.golang.org/protobuf` (go_module) — go.mod:36
-- `gopkg.in/yaml.v3` (go_module) — go.mod:12
+- `golang.org/x/net` (go_module) — go.mod:12
+- `golang.org/x/net/html` (go_module) — internal/docs/html.go:10
+- `golang.org/x/net/html/atom` (go_module) — internal/docs/html.go:11
+- `golang.org/x/sys` (go_module) — go.mod:36
+- `google.golang.org/protobuf` (go_module) — go.mod:37
+- `gopkg.in/yaml.v3` (go_module) — go.mod:13
 - `gopkg.in/yaml.v3` (go_module) — internal/extract/ci/ci.go:33
 - `gopkg.in/yaml.v3` (go_module) — internal/extract/ci/parse.go:7
 - `gopkg.in/yaml.v3` (go_module) — internal/extract/ci/walk.go:7
@@ -235,22 +251,24 @@ graph LR
 - `io` (go_module) — internal/report/mermaid_repo.go:7
 - `io/fs` (go_module) — internal/code/extract.go:5
 - `io/fs` (go_module) — internal/docs/extract.go:5
+- `io/fs` (go_module) — internal/docs/html.go:5
 - `io/fs` (go_module) — internal/extract/capnp/capnp.go:32
 - `io/fs` (go_module) — internal/extract/cargo/cargo.go:23
 - `io/fs` (go_module) — internal/extract/dockerfile/dockerfile.go:25
 - `io/fs` (go_module) — internal/extract/gocode/treesitter.go:6
 - `io/fs` (go_module) — internal/extract/gomod/gomod.go:20
 - `io/fs` (go_module) — internal/extract/wrangler/wrangler.go:21
-- `modernc.org/libc` (go_module) — go.mod:37
-- `modernc.org/mathutil` (go_module) — go.mod:38
-- `modernc.org/memory` (go_module) — go.mod:39
-- `modernc.org/sqlite` (go_module) — go.mod:13
+- `modernc.org/libc` (go_module) — go.mod:38
+- `modernc.org/mathutil` (go_module) — go.mod:39
+- `modernc.org/memory` (go_module) — go.mod:40
+- `modernc.org/sqlite` (go_module) — go.mod:14
 - `modernc.org/sqlite` (go_module) — internal/extract/gocode/mache.go:9
 - `os` (go_module) — cmd/map.go:6
 - `os` (go_module) — cmd/root.go:5
 - `os` (go_module) — cmd/verify.go:5
 - `os` (go_module) — internal/code/extract.go:6
 - `os` (go_module) — internal/docs/extract.go:6
+- `os` (go_module) — internal/docs/html.go:6
 - `os` (go_module) — internal/extract/capnp/capnp.go:33
 - `os` (go_module) — internal/extract/cargo/cargo.go:24
 - `os` (go_module) — internal/extract/ci/ci.go:27
@@ -260,9 +278,11 @@ graph LR
 - `os` (go_module) — internal/extract/gomod/gomod.go:21
 - `os` (go_module) — internal/extract/wrangler/wrangler.go:22
 - `os/exec` (go_module) — internal/embeddings/leyline.go:7
+- `os/exec` (go_module) — internal/structural/mache.go:13
 - `path/filepath` (go_module) — cmd/verify.go:6
 - `path/filepath` (go_module) — internal/code/extract.go:7
 - `path/filepath` (go_module) — internal/docs/extract.go:7
+- `path/filepath` (go_module) — internal/docs/html.go:7
 - `path/filepath` (go_module) — internal/extract/capnp/capnp.go:34
 - `path/filepath` (go_module) — internal/extract/cargo/cargo.go:25
 - `path/filepath` (go_module) — internal/extract/ci/ci.go:28
@@ -290,6 +310,7 @@ graph LR
 - `strings` (go_module) — internal/coverage/report.go:8
 - `strings` (go_module) — internal/coverage/tokenize.go:4
 - `strings` (go_module) — internal/docs/extract.go:8
+- `strings` (go_module) — internal/docs/html.go:8
 - `strings` (go_module) — internal/embeddings/leyline.go:9
 - `strings` (go_module) — internal/extract/capnp/capnp.go:35
 - `strings` (go_module) — internal/extract/capnp/parse.go:6

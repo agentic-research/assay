@@ -46,8 +46,12 @@ assay map .            --format md                      # human markdown report
 
 # Doc gate — fail the build when an exported entity has no documentation reference
 assay verify --source . --max-uncovered 0      # strict: every export must be documented
-assay verify --source . --max-uncovered 22     # ratchet: hold the line, pay debt down
+assay verify --source . --max-uncovered 17     # ratchet: hold the line, pay debt down
 assay verify --source . --threshold 0.90       # or gate on the coverage ratio
+
+# Swap either side of the join
+assay verify --source . --html-docs ./site     # add a rendered docs site as a claim source
+assay verify --source . --verifier mache --mache-db ./x.db   # verify against mache's AST views
 ```
 
 `--group repo` draws the repo-level dependency graph; `--group artifact` emits one node per

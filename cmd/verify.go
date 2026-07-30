@@ -10,6 +10,7 @@ import (
 	"github.com/agentic-research/assay/internal/code"
 	"github.com/agentic-research/assay/internal/coverage"
 	"github.com/agentic-research/assay/internal/docs"
+	"github.com/agentic-research/assay/internal/structural"
 )
 
 var verifyCmd = &cobra.Command{
@@ -33,6 +34,9 @@ var (
 	flagExportedOnly bool
 	flagVerbose      bool
 	flagMaxUncovered int
+	flagVerifier     string
+	flagMacheDB      string
+	flagHTMLDocs     string
 )
 
 func init() {
@@ -47,6 +51,30 @@ func init() {
 	verifyCmd.Flags().BoolVarP(&flagVerbose, "verbose", "v", false, "Show all matched entities")
 	verifyCmd.Flags().IntVar(&flagMaxUncovered, "max-uncovered", -1,
 		"Fail when more than N exported entities are undocumented (0 = none may be; -1 = disabled). Ratchet a repo by setting its current count.")
+	verifyCmd.Flags().StringVar(&flagVerifier, "verifier", "tree-sitter", "Structural verifier backend: tree-sitter, mache")
+	verifyCmd.Flags().StringVar(&flagMacheDB, "mache-db", "", "Leyline-parsed .db with canonical AST views (required for --verifier=mache)")
+	verifyCmd.Flags().StringVar(&flagHTMLDocs, "html-docs", "", "Directory of static HTML docs to treat as an additional claim source")
+}
+
+// selectVerifier resolves the configured structural-verifier backend. The
+// tree-sitter backend is the always-available default; the mache backend is
+// selectable but guarded — it must be Available() (mache on PATH + a .db),
+// otherwise selection fails loudly rather than silently faking a result.
+func selectVerifier(source string) (coverage.StructuralVerifier, error) {
+	switch flagVerifier {
+	case "", "tree-sitter":
+		return code.NewTreeSitterVerifier(source, flagExportedOnly), nil
+	case "mache":
+		v := structural.NewMacheVerifier(flagMacheDB)
+		if !v.Available() {
+			return nil, fmt.Errorf(
+				"mache verifier unavailable: needs `mache` on PATH and --mache-db pointing at a leyline-parsed .db",
+			)
+		}
+		return v, nil
+	default:
+		return nil, fmt.Errorf("unknown verifier %q; must be one of: tree-sitter, mache", flagVerifier)
+	}
 }
 
 func runVerify(cmd *cobra.Command, args []string) error {
@@ -67,29 +95,46 @@ func runVerify(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("resolve docs path: %w", err)
 	}
 
-	// Also scan root-level markdown files (README.md, ARCHITECTURE.md, etc.)
-	rootMarkdown, err := docs.ExtractDir(source)
+	// Select the structural verifier — the "what the code has" side of the
+	// coverage join. tree-sitter is the default real backend; mache is a
+	// selectable, guarded backend behind the same interface.
+	verifier, err := selectVerifier(source)
 	if err != nil {
-		return fmt.Errorf("extract root markdown refs: %w", err)
+		return err
 	}
 
-	// Extract code entities.
-	entities, err := code.ExtractDir(source, flagExportedOnly)
-	if err != nil {
-		return fmt.Errorf("extract code entities: %w", err)
+	// Claim sources: the docs directory plus root-level markdown
+	// (README.md, ARCHITECTURE.md, etc.). Both are markdown today; other
+	// formats plug in behind coverage.ClaimSource.
+	sources := []coverage.ClaimSource{
+		docs.NewMarkdownSource(docsDir),
+		docs.NewMarkdownSource(source),
+	}
+	// Static HTML docs (e.g. a rendered docs site) are an opt-in additional
+	// claim source behind the same interface. The live-DOM capture path
+	// (docs.DOMSource) is a guarded seam and is not wired here.
+	if flagHTMLDocs != "" {
+		htmlDir, err := filepath.Abs(flagHTMLDocs)
+		if err != nil {
+			return fmt.Errorf("resolve html-docs path: %w", err)
+		}
+		sources = append(sources, docs.NewHTMLSource(htmlDir))
 	}
 
-	// Extract doc references from the docs directory.
-	docRefs, err := docs.ExtractDir(docsDir)
-	if err != nil {
-		return fmt.Errorf("extract doc refs: %w", err)
+	// Gather claim-references, then compute coverage of the verifier's
+	// entity set against them.
+	var refs []coverage.DocRef
+	for _, src := range sources {
+		found, err := src.Claims()
+		if err != nil {
+			return fmt.Errorf("gather claims: %w", err)
+		}
+		refs = coverage.MergeRefs(refs, found)
 	}
-
-	// Merge root-level markdown refs (deduplicated).
-	docRefs = mergeRefs(docRefs, rootMarkdown)
-
-	// Compute coverage.
-	result := coverage.ComputeWithThreshold(entities, docRefs, flagFuzzy)
+	result, err := coverage.ComputeFromVerifier(verifier, refs, flagFuzzy)
+	if err != nil {
+		return fmt.Errorf("compute coverage: %w", err)
+	}
 
 	// Output report.
 	switch flagFormat {
@@ -122,20 +167,4 @@ func detectDocsDir(source string) string {
 		}
 	}
 	return ""
-}
-
-// mergeRefs combines two ref slices, deduplicating by text+file+line.
-func mergeRefs(a, b []coverage.DocRef) []coverage.DocRef {
-	seen := make(map[string]bool)
-	var merged []coverage.DocRef
-	for _, refs := range [][]coverage.DocRef{a, b} {
-		for _, r := range refs {
-			key := fmt.Sprintf("%s:%s:%d", r.Text, r.File, r.Line)
-			if !seen[key] {
-				seen[key] = true
-				merged = append(merged, r)
-			}
-		}
-	}
-	return merged
 }
