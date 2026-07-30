@@ -68,13 +68,17 @@ func (v MacheVerifier) Available() bool {
 // Entities would query mache's canonical v_defs view (via `mache find-smells`
 // over the smell-rule engine) to derive the entity set the code actually has.
 //
-// It is intentionally unimplemented while the upstream dependency is a
-// placeholder: returning an empty or fabricated set here would be a false
-// "nothing exists" signal. It instead returns ErrMacheBackendUnavailable so
-// the seam is honest and the failure mode is explicit. Once mache's
-// drift_doc_dead_symbol_reference rule fires for real and a .db build is in
-// place, this is where the shell-out + JSON parse lands — see leyline.Search
-// in internal/embeddings for the established CLI-shell-out shape.
+// It is intentionally unimplemented: returning an empty or fabricated set here
+// would be a false "nothing exists" signal. It returns ErrMacheBackendUnavailable
+// instead, so the seam is honest and the failure mode is explicit.
+//
+// Upstream status: mache HAS since shipped the backtick-token preprocessor
+// (v_doc_refs) and turned drift_doc_dead_symbol_reference into a real query —
+// but it is scoped to Rust paths (token LIKE '%::%') to sidestep a Go
+// extraction gap (ley-line-open-651909: Go package-level consts emit no defs),
+// and it ships advisory-only rather than gate-tagged. Go has no '::', so the
+// rule yields nothing for a Go tree. Wiring this backend therefore still waits
+// on the Go side of that view, plus a .db build assay does not perform.
 func (v MacheVerifier) Entities() ([]coverage.Entity, error) {
 	return nil, ErrMacheBackendUnavailable
 }

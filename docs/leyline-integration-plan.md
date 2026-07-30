@@ -1,10 +1,27 @@
 # Ley-line Semantic Embedding Integration
 
-> **⚠️ PARKED (2026-06) — historical, not the current direction.** assay pivoted to a
-> deterministic artifact/usage graph (`assay map`); semantic / HDC matching is an
-> explicitly parked non-goal (the derived graph needs no semantic matching). This plan,
-> and the doc-coverage "matching cascade" it builds on, are retained for reference only.
-> Current direction: `docs/superpowers/specs/2026-06-22-assay-artifact-usage-graph-design.md`.
+> **⚠️ SUPERSEDED (2026-06, package deleted 2026-07) — historical record, not live guidance.**
+>
+> assay pivoted to a deterministic artifact/usage graph (`assay map`); semantic / HDC
+> matching is an explicitly parked non-goal. Current direction:
+> `docs/superpowers/specs/2026-06-22-assay-artifact-usage-graph-design.md`.
+>
+> **Nothing below is implemented, and none of it should be built from this document.**
+> The `internal/embeddings` package it describes was **deleted** (`assay-e76565`) — it had
+> zero importers. The `--semantic`, `--semantic-threshold` and `--model` flags never
+> shipped and are not planned; there is no Layer 5 in the matching cascade.
+>
+> A later attempt at the swappable-backend half (`assay-dk6.4`) was measured and rejected:
+> its "dense baseline" was the hashing trick rather than MiniLM, and scored **0.0** on the
+> very example this document opens with — docs describing retry logic without naming
+> `RetryWithBackoff`. Archived at the git tag `archive/assay-dk6.4-semantic-matcher`.
+>
+> The swappable-backend *idea* did survive, in a working form and on the coverage side:
+> `coverage.ClaimSource` and `coverage.StructuralVerifier` (see `docs/ARCHITECTURE.md`).
+>
+> Kept because the ley-line FFI analysis below — feature gating, the four C entry points,
+> and why UDS and a full Rust rewrite were rejected — remains the best write-up of that
+> seam if the question is ever reopened.
 
 ## Problem
 

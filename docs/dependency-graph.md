@@ -1,7 +1,7 @@
 # assay map
 
 - Resolved edges: 0
-- External dependencies: 228
+- External dependencies: 222
 - Dangling producers: 1
 
 ## Graph
@@ -85,7 +85,6 @@ graph LR
     n3ff03aa9db84["path/filepath"]
     n2ee5e6940c75["regexp"]
     n641191019d94["sort"]
-    n7096a075b3f2["strconv"]
     ne798671c964e["strings"]
     n28372c6bdd43["unicode"]
   end
@@ -102,11 +101,9 @@ graph LR
 - `go` (cli_binary) — .github/workflows/assay-ecosystem.yml:38
 - `task` (cli_binary) — .github/workflows/assay-ecosystem.yml:57
 - `task` (cli_binary) — .github/workflows/assay-map.yml:39
-- `bufio` (go_module) — internal/embeddings/leyline.go:4
 - `bufio` (go_module) — internal/extract/capnp/parse.go:4
 - `bufio` (go_module) — internal/extract/gocode/treesitter.go:4
 - `bytes` (go_module) — internal/docs/html.go:4
-- `bytes` (go_module) — internal/embeddings/leyline.go:5
 - `bytes` (go_module) — internal/extract/capnp/parse.go:5
 - `bytes` (go_module) — internal/extract/dockerfile/dockerfile.go:23
 - `context` (go_module) — internal/code/extract.go:4
@@ -132,7 +129,6 @@ graph LR
 - `fmt` (go_module) — cmd/version.go:4
 - `fmt` (go_module) — internal/coverage/gate.go:4
 - `fmt` (go_module) — internal/coverage/report.go:5
-- `fmt` (go_module) — internal/embeddings/leyline.go:6
 - `fmt` (go_module) — internal/extract/cargo/manifest.go:4
 - `fmt` (go_module) — internal/extract/ci/ci.go:26
 - `fmt` (go_module) — internal/extract/dockerfile/dockerfile.go:24
@@ -277,7 +273,6 @@ graph LR
 - `os` (go_module) — internal/extract/gocode/treesitter.go:7
 - `os` (go_module) — internal/extract/gomod/gomod.go:21
 - `os` (go_module) — internal/extract/wrangler/wrangler.go:22
-- `os/exec` (go_module) — internal/embeddings/leyline.go:7
 - `os/exec` (go_module) — internal/structural/mache.go:13
 - `path/filepath` (go_module) — cmd/verify.go:6
 - `path/filepath` (go_module) — internal/code/extract.go:7
@@ -302,7 +297,6 @@ graph LR
 - `sort` (go_module) — internal/report/mermaid_repo.go:9
 - `sort` (go_module) — internal/report/report.go:17
 - `sort` (go_module) — internal/resolve/resolve.go:15
-- `strconv` (go_module) — internal/embeddings/leyline.go:8
 - `strings` (go_module) — internal/artifact/identity.go:3
 - `strings` (go_module) — internal/code/extract.go:8
 - `strings` (go_module) — internal/coverage/compute.go:3
@@ -311,7 +305,6 @@ graph LR
 - `strings` (go_module) — internal/coverage/tokenize.go:4
 - `strings` (go_module) — internal/docs/extract.go:8
 - `strings` (go_module) — internal/docs/html.go:8
-- `strings` (go_module) — internal/embeddings/leyline.go:9
 - `strings` (go_module) — internal/extract/capnp/capnp.go:35
 - `strings` (go_module) — internal/extract/capnp/parse.go:6
 - `strings` (go_module) — internal/extract/cargo/manifest.go:5
