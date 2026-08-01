@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 65
-- External dependencies: 3527
-- Dangling producers: 8763
+- External dependencies: 3536
+- Dangling producers: 8792
 
 ## Graph
 
@@ -646,6 +646,7 @@ graph LR
 - `context` (go_module) — cmd/replay/main.go:19
 - `context` (go_module) — cmd/serve.go:4
 - `context` (go_module) — cmd/serve_architecture.go:4
+- `context` (go_module) — cmd/serve_dataflow.go:4
 - `context` (go_module) — cmd/serve_diagram.go:4
 - `context` (go_module) — cmd/serve_find_smells.go:4
 - `context` (go_module) — cmd/serve_handler_find_callees.go:4
@@ -1025,6 +1026,7 @@ graph LR
 - `encoding/json` (go_module) — cmd/replay/main.go:20
 - `encoding/json` (go_module) — cmd/schemas.go:5
 - `encoding/json` (go_module) — cmd/serve_architecture.go:5
+- `encoding/json` (go_module) — cmd/serve_dataflow.go:5
 - `encoding/json` (go_module) — cmd/serve_handler_find_callees.go:5
 - `encoding/json` (go_module) — cmd/serve_handler_find_callers.go:5
 - `encoding/json` (go_module) — cmd/serve_handler_find_definition.go:5
@@ -1230,6 +1232,7 @@ graph LR
 - `fmt` (go_module) — cmd/schemas.go:6
 - `fmt` (go_module) — cmd/serve.go:7
 - `fmt` (go_module) — cmd/serve_architecture.go:6
+- `fmt` (go_module) — cmd/serve_dataflow.go:6
 - `fmt` (go_module) — cmd/serve_diagram.go:5
 - `fmt` (go_module) — cmd/serve_find_smells.go:5
 - `fmt` (go_module) — cmd/serve_find_smells_load.go:4
@@ -1632,6 +1635,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/pack.go:14
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve.go:20
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_architecture.go:13
+- `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_dataflow.go:11
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_diagram.go:8
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_find_smells.go:10
 - `github.com/agentic-research/mache/internal/graph` (go_module) — cmd/serve_handler_find_callees.go:9
@@ -2045,6 +2049,7 @@ graph LR
 - `github.com/mark3labs/mcp-go` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:14
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/kind_filter.go:9
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_architecture.go:14
+- `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_dataflow.go:12
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_diagram.go:9
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_find_smells.go:11
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_handler_find_callees.go:10
@@ -2065,6 +2070,7 @@ graph LR
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — cmd/serve_write.go:13
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve.go:24
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_architecture.go:15
+- `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_dataflow.go:13
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_diagram.go:10
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_find_smells.go:12
 - `github.com/mark3labs/mcp-go/server` (go_module) — cmd/serve_handler_find_callees.go:11
@@ -2892,6 +2898,7 @@ graph LR
 - `path/filepath` (go_module) — cmd/pack.go:7
 - `path/filepath` (go_module) — cmd/serve.go:13
 - `path/filepath` (go_module) — cmd/serve_architecture.go:7
+- `path/filepath` (go_module) — cmd/serve_dataflow.go:7
 - `path/filepath` (go_module) — cmd/serve_find_smells_load.go:6
 - `path/filepath` (go_module) — cmd/serve_handler_find_callees.go:7
 - `path/filepath` (go_module) — cmd/serve_handler_get_overview.go:7
@@ -3031,6 +3038,7 @@ graph LR
 - `sort` (go_module) — cmd/pack.go:8
 - `sort` (go_module) — cmd/schemas.go:7
 - `sort` (go_module) — cmd/serve_architecture.go:8
+- `sort` (go_module) — cmd/serve_dataflow.go:8
 - `sort` (go_module) — cmd/serve_find_smells.go:7
 - `sort` (go_module) — cmd/serve_find_smells_load.go:7
 - `sort` (go_module) — cmd/serve_handler_get_communities.go:8
@@ -3140,6 +3148,7 @@ graph LR
 - `strings` (go_module) — cmd/replay/main.go:28
 - `strings` (go_module) — cmd/serve.go:14
 - `strings` (go_module) — cmd/serve_architecture.go:9
+- `strings` (go_module) — cmd/serve_dataflow.go:9
 - `strings` (go_module) — cmd/serve_diagram.go:6
 - `strings` (go_module) — cmd/serve_find_smells.go:8
 - `strings` (go_module) — cmd/serve_find_smells_load.go:8
@@ -7152,6 +7161,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.baseName` (go_package_symbol) — cmd/agent.go
 - `github.com/agentic-research/mache/cmd.baselineEntry` (go_package_symbol) — cmd/smell_ratchet.go
 - `github.com/agentic-research/mache/cmd.bfsEntry` (go_package_symbol) — cmd/serve_impact.go
+- `github.com/agentic-research/mache/cmd.boolInt` (go_package_symbol) — cmd/serve_dataflow.go
 - `github.com/agentic-research/mache/cmd.boolVal` (go_package_symbol) — cmd/uds_graph.go
 - `github.com/agentic-research/mache/cmd.buf` (go_package_symbol) — cmd/cache_ast.go
 - `github.com/agentic-research/mache/cmd.buildBackend` (go_package_symbol) — cmd/build.go
@@ -7222,6 +7232,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.computeCyclomaticMetrics` (go_package_symbol) — cmd/smell_incremental.go
 - `github.com/agentic-research/mache/cmd.computeRoot` (go_package_symbol) — cmd/cache.go
 - `github.com/agentic-research/mache/cmd.concatenated` (go_package_symbol) — cmd/cache.go
+- `github.com/agentic-research/mache/cmd.configureManagedLeylineRuntime` (go_package_symbol) — cmd/serve.go
 - `github.com/agentic-research/mache/cmd.constructSignature` (go_package_symbol) — cmd/serve_read_modes.go
 - `github.com/agentic-research/mache/cmd.containerNames` (go_package_symbol) — cmd/serve_handler_list_directory.go
 - `github.com/agentic-research/mache/cmd.content` (go_package_symbol) — cmd/cache.go
@@ -7247,6 +7258,19 @@ graph LR
 - `github.com/agentic-research/mache/cmd.daemonRestartCmd` (go_package_symbol) — cmd/daemon_cmd.go
 - `github.com/agentic-research/mache/cmd.dataPath` (go_package_symbol) — cmd/mount.go
 - `github.com/agentic-research/mache/cmd.dataSource` (go_package_symbol) — cmd/serve_registry.go
+- `github.com/agentic-research/mache/cmd.dataflowEdge` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.dataflowEdgeIdentity` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.dataflowNode` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.dataflowQueueEntry` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.dataflowRequest` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.dataflowResult` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.dataflowTraversal` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.dataflowTraversal.admitNeighbors` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.dataflowTraversal.expandCallees` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.dataflowTraversal.expandCallers` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.dataflowTraversal.result` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.dataflowTraversal.seedRoots` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.dataflowTraversal.walk` (go_package_symbol) — cmd/serve_dataflow.go
 - `github.com/agentic-research/mache/cmd.dbHasASTTable` (go_package_symbol) — cmd/cache_ast.go
 - `github.com/agentic-research/mache/cmd.dbPath` (go_package_symbol) — cmd/mount_control.go
 - `github.com/agentic-research/mache/cmd.dbPathProvider` (go_package_symbol) — cmd/smell_refs_views.go
@@ -7515,6 +7539,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.makeGetArchitectureHandler` (go_package_symbol) — cmd/serve_architecture.go
 - `github.com/agentic-research/mache/cmd.makeGetCommunitiesHandler` (go_package_symbol) — cmd/serve_handler_get_communities.go
 - `github.com/agentic-research/mache/cmd.makeGetCommunitiesHandlerWithDone` (go_package_symbol) — cmd/serve_handler_get_communities.go
+- `github.com/agentic-research/mache/cmd.makeGetDataflowHandler` (go_package_symbol) — cmd/serve_dataflow.go
 - `github.com/agentic-research/mache/cmd.makeGetDiagnosticsHandler` (go_package_symbol) — cmd/serve_lsp.go
 - `github.com/agentic-research/mache/cmd.makeGetDiagramHandler` (go_package_symbol) — cmd/serve_diagram.go
 - `github.com/agentic-research/mache/cmd.makeGetImpactHandler` (go_package_symbol) — cmd/serve_impact.go
@@ -7527,6 +7552,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.makeSearchHandler` (go_package_symbol) — cmd/serve_handler_search.go
 - `github.com/agentic-research/mache/cmd.makeSemanticSearchHandler` (go_package_symbol) — cmd/serve_handler_semantic_search.go
 - `github.com/agentic-research/mache/cmd.makeWriteFileHandler` (go_package_symbol) — cmd/serve_write.go
+- `github.com/agentic-research/mache/cmd.marshalDataflowResult` (go_package_symbol) — cmd/serve_dataflow.go
 - `github.com/agentic-research/mache/cmd.matchRules` (go_package_symbol) — cmd/find_smells_cli.go
 - `github.com/agentic-research/mache/cmd.matched` (go_package_symbol) — cmd/sheaf_subscribe.go
 - `github.com/agentic-research/mache/cmd.matches` (go_package_symbol) — cmd/serve_handler_find_definition.go
@@ -7538,6 +7564,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.maxBatchBytes` (go_package_symbol) — cmd/serve_handler_read_file.go
 - `github.com/agentic-research/mache/cmd.maxBatchPaths` (go_package_symbol) — cmd/serve_handler_read_file.go
 - `github.com/agentic-research/mache/cmd.maxCommunities` (go_package_symbol) — cmd/serve_handler_get_communities.go
+- `github.com/agentic-research/mache/cmd.maxDataflowItems` (go_package_symbol) — cmd/serve_dataflow.go
 - `github.com/agentic-research/mache/cmd.maxDefsPerSymbol` (go_package_symbol) — cmd/serve_architecture.go
 - `github.com/agentic-research/mache/cmd.maxFileSize` (go_package_symbol) — cmd/mount.go
 - `github.com/agentic-research/mache/cmd.maxFuzzySuggestions` (go_package_symbol) — cmd/serve_handler_find_definition.go
@@ -7575,6 +7602,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.name` (go_package_symbol) — cmd/smell_refs_views.go
 - `github.com/agentic-research/mache/cmd.newASTCallExtractor` (go_package_symbol) — cmd/call_extractor_ast.go
 - `github.com/agentic-research/mache/cmd.newASTScopedCallExtractor` (go_package_symbol) — cmd/call_extractor_ast.go
+- `github.com/agentic-research/mache/cmd.newDataflowTraversal` (go_package_symbol) — cmd/serve_dataflow.go
 - `github.com/agentic-research/mache/cmd.newDebt` (go_package_symbol) — cmd/smell_ratchet.go
 - `github.com/agentic-research/mache/cmd.newErrorLazyGraph` (go_package_symbol) — cmd/serve_registry.go
 - `github.com/agentic-research/mache/cmd.newGraphRegistry` (go_package_symbol) — cmd/serve_registry.go
@@ -7618,6 +7646,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.packDir` (go_package_symbol) — cmd/pack.go
 - `github.com/agentic-research/mache/cmd.packMaxEntries` (go_package_symbol) — cmd/pack.go
 - `github.com/agentic-research/mache/cmd.padding` (go_package_symbol) — cmd/smell_findings.go
+- `github.com/agentic-research/mache/cmd.parseDataflowRequest` (go_package_symbol) — cmd/serve_dataflow.go
 - `github.com/agentic-research/mache/cmd.parseLaunchctlPrint` (go_package_symbol) — cmd/daemon_agent.go
 - `github.com/agentic-research/mache/cmd.parseSmellRuleJSON` (go_package_symbol) — cmd/smell_rules.go
 - `github.com/agentic-research/mache/cmd.parseSystemctlShow` (go_package_symbol) — cmd/daemon_agent.go
@@ -7711,6 +7740,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.resolveBuildVersion` (go_package_symbol) — cmd/mount.go
 - `github.com/agentic-research/mache/cmd.resolveCacheToken` (go_package_symbol) — cmd/cache.go
 - `github.com/agentic-research/mache/cmd.resolveDataSource` (go_package_symbol) — cmd/config.go
+- `github.com/agentic-research/mache/cmd.resolveDataflowRoots` (go_package_symbol) — cmd/serve_dataflow.go
 - `github.com/agentic-research/mache/cmd.resolveKindFromAST` (go_package_symbol) — cmd/kind_filter.go
 - `github.com/agentic-research/mache/cmd.resolveModScheme` (go_package_symbol) — cmd/serve_resolve_ref.go
 - `github.com/agentic-research/mache/cmd.resolveOrSelf` (go_package_symbol) — cmd/install.go
@@ -7792,6 +7822,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.scopedItem` (go_package_symbol) — cmd/serve_mount_annotate.go
 - `github.com/agentic-research/mache/cmd.searchResult` (go_package_symbol) — cmd/serve_handler_search.go
 - `github.com/agentic-research/mache/cmd.sentinelFiles` (go_package_symbol) — cmd/config.go
+- `github.com/agentic-research/mache/cmd.serveCDC` (go_package_symbol) — cmd/serve.go
 - `github.com/agentic-research/mache/cmd.serveCmd` (go_package_symbol) — cmd/serve.go
 - `github.com/agentic-research/mache/cmd.serveControl` (go_package_symbol) — cmd/serve.go
 - `github.com/agentic-research/mache/cmd.serveHTTP` (go_package_symbol) — cmd/serve.go
@@ -7827,6 +7858,9 @@ graph LR
 - `github.com/agentic-research/mache/cmd.snapshotPath` (go_package_symbol) — cmd/mount.go
 - `github.com/agentic-research/mache/cmd.sortEntries` (go_package_symbol) — cmd/smell_ratchet.go
 - `github.com/agentic-research/mache/cmd.sortFindingsByPosition` (go_package_symbol) — cmd/smell_ratchet.go
+- `github.com/agentic-research/mache/cmd.sortedDataflowCallerIDs` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.sortedDataflowNodeIDs` (go_package_symbol) — cmd/serve_dataflow.go
+- `github.com/agentic-research/mache/cmd.sortedUniqueStrings` (go_package_symbol) — cmd/serve_dataflow.go
 - `github.com/agentic-research/mache/cmd.sourceCodePresets` (go_package_symbol) — cmd/infer.go
 - `github.com/agentic-research/mache/cmd.sourceHasExtension` (go_package_symbol) — cmd/build_leyline_coverage.go
 - `github.com/agentic-research/mache/cmd.sourceRow` (go_package_symbol) — cmd/cache.go
@@ -7866,6 +7900,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.token` (go_package_symbol) — cmd/leyline.go
 - `github.com/agentic-research/mache/cmd.tokenCount` (go_package_symbol) — cmd/pack.go
 - `github.com/agentic-research/mache/cmd.tokenCount` (go_package_symbol) — cmd/serve_architecture.go
+- `github.com/agentic-research/mache/cmd.tokens` (go_package_symbol) — cmd/serve_dataflow.go
 - `github.com/agentic-research/mache/cmd.tomlLockfile` (go_package_symbol) — cmd/cache.go
 - `github.com/agentic-research/mache/cmd.tomlMeta` (go_package_symbol) — cmd/cache.go
 - `github.com/agentic-research/mache/cmd.tomlProcessor` (go_package_symbol) — cmd/cache.go
@@ -8953,6 +8988,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.BinaryVersion` (go_package_symbol) — internal/leyline/binary_pin.go
 - `github.com/agentic-research/mache/internal/leyline.CachedPinnedBinary` (go_package_symbol) — internal/leyline/binary_cache_path.go
 - `github.com/agentic-research/mache/internal/leyline.ComputeStalk` (go_package_symbol) — internal/leyline/sheaf.go
+- `github.com/agentic-research/mache/internal/leyline.DaemonCDC` (go_package_symbol) — internal/leyline/daemon_source.go
 - `github.com/agentic-research/mache/internal/leyline.DaemonResponseError` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.DaemonResponseError.Error` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.DaemonSource` (go_package_symbol) — internal/leyline/daemon_source.go
@@ -8978,6 +9014,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.SemanticClient.Search` (go_package_symbol) — internal/leyline/semantic.go
 - `github.com/agentic-research/mache/internal/leyline.SemanticClient.Status` (go_package_symbol) — internal/leyline/semantic.go
 - `github.com/agentic-research/mache/internal/leyline.SemanticResult` (go_package_symbol) — internal/leyline/semantic.go
+- `github.com/agentic-research/mache/internal/leyline.SetDaemonCDC` (go_package_symbol) — internal/leyline/daemon_source.go
 - `github.com/agentic-research/mache/internal/leyline.SetDaemonSource` (go_package_symbol) — internal/leyline/daemon_source.go
 - `github.com/agentic-research/mache/internal/leyline.SheafClient` (go_package_symbol) — internal/leyline/sheaf.go
 - `github.com/agentic-research/mache/internal/leyline.SheafClient.Defect` (go_package_symbol) — internal/leyline/sheaf.go
@@ -9035,6 +9072,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.cols` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.compareSemver` (go_package_symbol) — internal/leyline/version_check.go
 - `github.com/agentic-research/mache/internal/leyline.crossCommunityTokens` (go_package_symbol) — internal/leyline/sheaf.go
+- `github.com/agentic-research/mache/internal/leyline.daemonCDC` (go_package_symbol) — internal/leyline/daemon_source.go
 - `github.com/agentic-research/mache/internal/leyline.daemonSourceDir` (go_package_symbol) — internal/leyline/daemon_source.go
 - `github.com/agentic-research/mache/internal/leyline.decodeRegionAlias` (go_package_symbol) — internal/leyline/sheaf_subscriber.go
 - `github.com/agentic-research/mache/internal/leyline.defaultLeylineStartTimeout` (go_package_symbol) — internal/leyline/socket.go
