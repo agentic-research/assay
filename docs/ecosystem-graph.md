@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 65
-- External dependencies: 3536
-- Dangling producers: 8792
+- External dependencies: 3538
+- Dangling producers: 8794
 
 ## Graph
 
@@ -400,13 +400,13 @@ graph LR
 - `capnp` (cli_binary) — .github/workflows/cloister-schema-go.yml:57
 - `capnp` (cli_binary) — .github/workflows/generated-drift.yml:83
 - `cargo` (cli_binary) — .github/workflows/bead-diff.yml:65
-- `cargo` (cli_binary) — .github/workflows/ci.yml:289
+- `cargo` (cli_binary) — .github/workflows/ci.yml:305
 - `cargo` (cli_binary) — .github/workflows/coverage.yml:44
 - `cargo` (cli_binary) — .github/workflows/mutants.yml:60
 - `cargo` (cli_binary) — .github/workflows/release.yml:90
 - `cargo` (cli_binary) — .github/workflows/release.yml:127
 - `certificate_validity:` (cli_binary) — .github/workflows/oidc-signing.yml:66
-- `chmod` (cli_binary) — .github/workflows/ci.yml:423
+- `chmod` (cli_binary) — .github/workflows/ci.yml:439
 - `chmod` (cli_binary) — .github/workflows/openssl.yml:35
 - `chmod` (cli_binary) — .github/workflows/release.yml:118
 - `chmod` (cli_binary) — .github/workflows/release.yml:157
@@ -427,7 +427,7 @@ graph LR
 - `docker` (cli_binary) — .github/workflows/release.yml:167
 - `enabled:` (cli_binary) — .github/workflows/oidc-signing.yml:67
 - `gh` (cli_binary) — .github/workflows/ci.yml:54
-- `gh` (cli_binary) — .github/workflows/ci.yml:410
+- `gh` (cli_binary) — .github/workflows/ci.yml:426
 - `gh` (cli_binary) — .github/workflows/coverage.yml:92
 - `gh` (cli_binary) — .github/workflows/release.yml:34
 - `git` (cli_binary) — .github/workflows/assay-ecosystem.yml:49
@@ -469,7 +469,7 @@ graph LR
 - `pip3` (cli_binary) — .github/workflows/release.yml:234
 - `pnpm` (cli_binary) — .github/workflows/generated-drift.yml:87
 - `pnpm` (cli_binary) — .github/workflows/publish-dpop.yml:58
-- `printf` (cli_binary) — .github/workflows/ci.yml:187
+- `printf` (cli_binary) — .github/workflows/ci.yml:203
 - `printf` (cli_binary) — .github/workflows/coverage.yml:85
 - `printf` (cli_binary) — .github/workflows/release-dryrun.yml:147
 - `providers:` (cli_binary) — .github/workflows/oidc-signing.yml:60
@@ -537,7 +537,9 @@ graph LR
 - `docker.io/library/golang` (container_image) — scripts/testing/Dockerfile.test:3
 - `docker.io/library/golang` (container_image) — scripts/testing/Dockerfile.test:19
 - `docker.io/library/golang` (container_image) — scripts/testing/docker/Dockerfile:1
+- `docker.io/library/node` (container_image) — test/install-image/Dockerfile:3
 - `docker.io/library/rust` (container_image) — Dockerfile:10
+- `docker.io/library/rust` (container_image) — test/install-image/Dockerfile:1
 - `docker.io/library/ubuntu` (container_image) — Dockerfile.release:19
 - `docker.io/library/ubuntu` (container_image) — e2e.Dockerfile:15
 - `gcr.io/distroless/static-debian12` (container_image) — Dockerfile:10
@@ -3598,6 +3600,8 @@ graph LR
 - `scripts/testing/Dockerfile.test` (container_image) — scripts/testing/Dockerfile.test:19
 - `scripts/testing/Dockerfile.test#builder` (container_image) — scripts/testing/Dockerfile.test:3
 - `scripts/testing/docker/Dockerfile` (container_image) — scripts/testing/docker/Dockerfile:1
+- `test/install-image/Dockerfile` (container_image) — test/install-image/Dockerfile:3
+- `test/install-image/Dockerfile#rust-toolchain` (container_image) — test/install-image/Dockerfile:1
 - `github.com/agentic-research/assay` (go_module) — /home/runner/work/_temp/ecosystem/assay/go.mod:1
 - `github.com/agentic-research/cloister` (go_module) — /home/runner/work/_temp/ecosystem/cloister/clients/go/cloister-schema/go.mod:1
 - `github.com/agentic-research/cloister` (go_module) — /home/runner/work/_temp/ecosystem/cloister/go.mod:6
