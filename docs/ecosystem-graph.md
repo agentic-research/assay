@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 71
-- External dependencies: 3667
-- Dangling producers: 8922
+- External dependencies: 3674
+- Dangling producers: 8930
 
 ## Graph
 
@@ -400,6 +400,7 @@ graph LR
 - `zeroize` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:121
 - `*-linux-amd64` (cli_binary) — .github/workflows/release-dryrun.yml:152
 - `-` (cli_binary) — .github/workflows/oidc-signing.yml:67
+- `:` (cli_binary) — .github/workflows/release.yml:148
 - `EOF` (cli_binary) — .github/workflows/oidc-signing.yml:62
 - `apt-get` (cli_binary) — .github/workflows/bead-diff.yml:58
 - `apt-get` (cli_binary) — .github/workflows/ci.yml:25
@@ -447,6 +448,8 @@ graph LR
 - `gh` (cli_binary) — .github/workflows/ci.yml:426
 - `gh` (cli_binary) — .github/workflows/coverage.yml:92
 - `gh` (cli_binary) — .github/workflows/release.yml:34
+- `gh` (cli_binary) — .github/workflows/release.yml:199
+- `gh` (cli_binary) — .github/workflows/release.yml:315
 - `gh` (cli_binary) — .github/workflows/sync-integration.yml:157
 - `git` (cli_binary) — .github/workflows/assay-ecosystem.yml:49
 - `git` (cli_binary) — .github/workflows/ci.yml:49
@@ -468,7 +471,6 @@ graph LR
 - `go` (cli_binary) — .github/workflows/integration.yml:66
 - `go` (cli_binary) — .github/workflows/leyline-schema-go.yml:71
 - `go` (cli_binary) — .github/workflows/openssl.yml:30
-- `go` (cli_binary) — .github/workflows/release.yml:57
 - `go` (cli_binary) — .github/workflows/release.yml:96
 - `go` (cli_binary) — .github/workflows/release.yml:101
 - `golangci-lint` (cli_binary) — .github/workflows/ci.yml:60
@@ -503,10 +505,9 @@ graph LR
 - `rsry` (cli_binary) — .github/workflows/release.yml:101
 - `sed` (cli_binary) — .github/workflows/openssl.yml:50
 - `sed` (cli_binary) — .github/workflows/release.yml:256
-- `sha256sum` (cli_binary) — .github/workflows/release.yml:88
 - `sha256sum` (cli_binary) — .github/workflows/release.yml:138
 - `sha256sum` (cli_binary) — .github/workflows/release.yml:168
-- `sha256sum` (cli_binary) — .github/workflows/release.yml:247
+- `sha256sum` (cli_binary) — .github/workflows/release.yml:271
 - `shas` (cli_binary) — .github/workflows/release.yml:263
 - `signet` (cli_binary) — .github/workflows/ci.yml:76
 - `signet` (cli_binary) — .github/workflows/oidc-signing.yml:80
@@ -535,6 +536,7 @@ graph LR
 - `task` (cli_binary) — .github/workflows/oidc-signing.yml:40
 - `task` (cli_binary) — .github/workflows/publish-dpop.yml:86
 - `task` (cli_binary) — .github/workflows/release-dryrun.yml:84
+- `task` (cli_binary) — .github/workflows/release.yml:62
 - `task` (cli_binary) — .github/workflows/release.yml:132
 - `task` (cli_binary) — .github/workflows/release.yml:157
 - `task` (cli_binary) — .github/workflows/release.yml:256
@@ -1292,6 +1294,7 @@ graph LR
 - `fmt` (go_module) — cmd/mount_nfs.go:5
 - `fmt` (go_module) — cmd/pack.go:5
 - `fmt` (go_module) — cmd/project_registry.go:7
+- `fmt` (go_module) — cmd/project_registry_lock.go:4
 - `fmt` (go_module) — cmd/replay/main.go:22
 - `fmt` (go_module) — cmd/root.go:4
 - `fmt` (go_module) — cmd/schemas.go:6
@@ -2341,6 +2344,7 @@ graph LR
 - `golang.org/x/sys` (go_module) — /home/runner/work/_temp/ecosystem/notme/gen/go/go.mod:14
 - `golang.org/x/sys` (go_module) — /home/runner/work/_temp/ecosystem/signet/go.mod:55
 - `golang.org/x/sys` (go_module) — /home/runner/work/_temp/ecosystem/x-ray/go.mod:40
+- `golang.org/x/sys/unix` (go_module) — cmd/project_registry_lock.go:9
 - `golang.org/x/sys/unix` (go_module) — internal/control/control.go:12
 - `golang.org/x/term` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:62
 - `golang.org/x/term` (go_module) — /home/runner/work/_temp/ecosystem/signet/go.mod:56
@@ -2809,6 +2813,7 @@ graph LR
 - `os` (go_module) — cmd/mount_nfs.go:7
 - `os` (go_module) — cmd/pack.go:6
 - `os` (go_module) — cmd/project_registry.go:8
+- `os` (go_module) — cmd/project_registry_lock.go:5
 - `os` (go_module) — cmd/replay/main.go:26
 - `os` (go_module) — cmd/root.go:5
 - `os` (go_module) — cmd/serve.go:10
@@ -3012,6 +3017,7 @@ graph LR
 - `path/filepath` (go_module) — cmd/node_token.go:4
 - `path/filepath` (go_module) — cmd/pack.go:7
 - `path/filepath` (go_module) — cmd/project_registry.go:9
+- `path/filepath` (go_module) — cmd/project_registry_lock.go:6
 - `path/filepath` (go_module) — cmd/serve.go:13
 - `path/filepath` (go_module) — cmd/serve_architecture.go:7
 - `path/filepath` (go_module) — cmd/serve_dataflow.go:7
@@ -3431,6 +3437,7 @@ graph LR
 - `strings` (go_module) — tools/server-json-gen/main.go:33
 - `strings` (go_module) — tools/token-bench/main.go:39
 - `sync` (go_module) — cmd/cache_oci.go:50
+- `sync` (go_module) — cmd/project_registry_lock.go:7
 - `sync` (go_module) — cmd/serve_hosted.go:13
 - `sync` (go_module) — cmd/serve_registry.go:15
 - `sync` (go_module) — cmd/serve_repo.go:9
@@ -7468,6 +7475,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.enrichedResult` (go_package_symbol) — cmd/serve_handler_semantic_search.go
 - `github.com/agentic-research/mache/cmd.ensureCanonicalViews` (go_package_symbol) — cmd/smell_refs_views.go
 - `github.com/agentic-research/mache/cmd.ensureDocRefsView` (go_package_symbol) — cmd/smell_doc_refs.go
+- `github.com/agentic-research/mache/cmd.ensureProjectRegistered` (go_package_symbol) — cmd/project_registry.go
 - `github.com/agentic-research/mache/cmd.ensureSmellQueryContext` (go_package_symbol) — cmd/smell_findings.go
 - `github.com/agentic-research/mache/cmd.ensureTestNodesView` (go_package_symbol) — cmd/smell_test_nodes.go
 - `github.com/agentic-research/mache/cmd.entry` (go_package_symbol) — cmd/cache_ast.go
@@ -7876,8 +7884,11 @@ graph LR
 - `github.com/agentic-research/mache/cmd.registerMCPTools` (go_package_symbol) — cmd/serve_handlers.go
 - `github.com/agentic-research/mache/cmd.registerProject` (go_package_symbol) — cmd/project_registry.go
 - `github.com/agentic-research/mache/cmd.registerServeSidecar` (go_package_symbol) — cmd/serve.go
+- `github.com/agentic-research/mache/cmd.registryLockPath` (go_package_symbol) — cmd/project_registry_lock.go
+- `github.com/agentic-research/mache/cmd.registryMu` (go_package_symbol) — cmd/project_registry_lock.go
 - `github.com/agentic-research/mache/cmd.relForEnrich` (go_package_symbol) — cmd/serve_lsp.go
 - `github.com/agentic-research/mache/cmd.relativizeFindings` (go_package_symbol) — cmd/smell_ratchet.go
+- `github.com/agentic-research/mache/cmd.rememberResolvedRoot` (go_package_symbol) — cmd/serve_registry.go
 - `github.com/agentic-research/mache/cmd.removePinnedLeyline` (go_package_symbol) — cmd/install.go
 - `github.com/agentic-research/mache/cmd.removeRCBlock` (go_package_symbol) — cmd/install.go
 - `github.com/agentic-research/mache/cmd.removeServeSidecar` (go_package_symbol) — cmd/serve.go
@@ -8118,6 +8129,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.watchErr` (go_package_symbol) — cmd/serve.go
 - `github.com/agentic-research/mache/cmd.wg` (go_package_symbol) — cmd/cache_oci.go
 - `github.com/agentic-research/mache/cmd.wg` (go_package_symbol) — cmd/cache_oci.go
+- `github.com/agentic-research/mache/cmd.withRegistryLock` (go_package_symbol) — cmd/project_registry_lock.go
 - `github.com/agentic-research/mache/cmd.writable` (go_package_symbol) — cmd/mount.go
 - `github.com/agentic-research/mache/cmd.writeArchitectureSection` (go_package_symbol) — cmd/pack.go
 - `github.com/agentic-research/mache/cmd.writeBacker` (go_package_symbol) — cmd/serve_registry.go
@@ -8370,6 +8382,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.SQLiteGraph.SearchDefs` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.SetCallExtractor` (go_package_symbol) — graph/sqlite_graph.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.SetScopedCallExtractor` (go_package_symbol) — graph/sqlite_graph.go
+- `github.com/agentic-research/mache/graph.SQLiteGraph.calleeTokensFromContainer` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.calleeTokensFromRefs` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.collectPathEntries` (go_package_symbol) — graph/sqlite_graph_scan.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.ensureScanned` (go_package_symbol) — graph/sqlite_graph_scan.go
@@ -8574,12 +8587,14 @@ graph LR
 - `github.com/agentic-research/mache/graph.tmpls` (go_package_symbol) — graph/sqlite_graph_scan.go
 - `github.com/agentic-research/mache/graph.toDelete` (go_package_symbol) — graph/memstore_write.go
 - `github.com/agentic-research/mache/graph.tok` (go_package_symbol) — graph/sqlite_graph_callees.go
+- `github.com/agentic-research/mache/graph.tok` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.token` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.token` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.token` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.token` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.tokenInfo` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.tokens` (go_package_symbol) — graph/memstore_callees.go
+- `github.com/agentic-research/mache/graph.tokens` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.tokens` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.unmapped` (go_package_symbol) — graph/sheaf_invalidate.go
 - `github.com/agentic-research/mache/graph.walk` (go_package_symbol) — graph/sqlite_graph_scan.go
