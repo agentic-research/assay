@@ -1,7 +1,7 @@
 # assay map
 
 - Resolved edges: 71
-- External dependencies: 3694
+- External dependencies: 3696
 - Dangling producers: 8949
 
 ## Graph
@@ -421,6 +421,7 @@ graph LR
 - `cargo` (cli_binary) — .github/workflows/ci.yml:305
 - `cargo` (cli_binary) — .github/workflows/coverage.yml:44
 - `cargo` (cli_binary) — .github/workflows/mutants.yml:60
+- `cargo` (cli_binary) — .github/workflows/publish-crates.yml:112
 - `cargo` (cli_binary) — .github/workflows/release.yml:90
 - `cargo` (cli_binary) — .github/workflows/release.yml:127
 - `certificate_validity:` (cli_binary) — .github/workflows/oidc-signing.yml:72
@@ -534,6 +535,7 @@ graph LR
 - `task` (cli_binary) — .github/workflows/mutants.yml:61
 - `task` (cli_binary) — .github/workflows/mutants.yml:87
 - `task` (cli_binary) — .github/workflows/oidc-signing.yml:40
+- `task` (cli_binary) — .github/workflows/publish-crates.yml:81
 - `task` (cli_binary) — .github/workflows/publish-dpop.yml:86
 - `task` (cli_binary) — .github/workflows/release-dryrun.yml:84
 - `task` (cli_binary) — .github/workflows/release.yml:62
