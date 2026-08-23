@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 72
-- External dependencies: 3715
-- Dangling producers: 9036
+- External dependencies: 3718
+- Dangling producers: 9039
 
 ## Graph
 
@@ -982,7 +982,7 @@ graph LR
 - `database/sql` (go_module) — graph/writable_graph.go:4
 - `database/sql` (go_module) — internal/extract/gocode/mache.go:4
 - `database/sql` (go_module) — internal/fixturedb/build.go:4
-- `database/sql` (go_module) — internal/fixturedb/emit.go:3
+- `database/sql` (go_module) — internal/fixturedb/emit.go:4
 - `database/sql` (go_module) — internal/fixturedb/types.go:3
 - `database/sql` (go_module) — internal/ingest/ast_flatten_db.go:4
 - `database/sql` (go_module) — internal/ingest/ast_walker.go:4
@@ -995,6 +995,7 @@ graph LR
 - `database/sql` (go_module) — internal/materialize/json.go:5
 - `database/sql` (go_module) — internal/materialize/materialize.go:5
 - `database/sql` (go_module) — internal/refsvtab/refs_module.go:4
+- `database/sql` (go_module) — internal/sqlintro/sqlintro.go:13
 - `database/sql` (go_module) — internal/testfixtures/registry.go:16
 - `database/sql` (go_module) — tools/gen-lsp-fixture/main.go:21
 - `database/sql` (go_module) — tools/mcp-fetch/main.go:11
@@ -1854,6 +1855,8 @@ graph LR
 - `github.com/agentic-research/mache/internal/pathguard` (go_module) — schema/schema.go:15
 - `github.com/agentic-research/mache/internal/refsvtab` (go_module) — graph/memstore_refsdb.go:11
 - `github.com/agentic-research/mache/internal/refsvtab` (go_module) — graph/sqlite_graph.go:16
+- `github.com/agentic-research/mache/internal/sqlintro` (go_module) — cmd/leyline.go:11
+- `github.com/agentic-research/mache/internal/sqlintro` (go_module) — internal/fixturedb/emit.go:6
 - `github.com/agentic-research/mache/internal/template` (go_module) — cmd/mount.go:22
 - `github.com/agentic-research/mache/internal/template` (go_module) — cmd/mount_control.go:16
 - `github.com/agentic-research/mache/internal/template` (go_module) — cmd/pack.go:15
@@ -2705,7 +2708,7 @@ graph LR
 - `modernc.org/sqlite` (go_module) — cmd/build_meta.go:14
 - `modernc.org/sqlite` (go_module) — cmd/cache.go:36
 - `modernc.org/sqlite` (go_module) — cmd/find_smells_cli.go:13
-- `modernc.org/sqlite` (go_module) — cmd/leyline.go:11
+- `modernc.org/sqlite` (go_module) — cmd/leyline.go:12
 - `modernc.org/sqlite` (go_module) — ext/boltdb/boltdb.go:12
 - `modernc.org/sqlite` (go_module) — graph/memstore_refsdb.go:12
 - `modernc.org/sqlite` (go_module) — graph/sqlite.go:10
@@ -7637,7 +7640,6 @@ graph LR
 - `github.com/agentic-research/mache/cmd.hasASTTable` (go_package_symbol) — cmd/kind_filter.go
 - `github.com/agentic-research/mache/cmd.hasAnyTag` (go_package_symbol) — cmd/find_smells_cli.go
 - `github.com/agentic-research/mache/cmd.hash` (go_package_symbol) — cmd/smell_incremental.go
-- `github.com/agentic-research/mache/cmd.hidden` (go_package_symbol) — cmd/leyline.go
 - `github.com/agentic-research/mache/cmd.hidden` (go_package_symbol) — cmd/smell_refs_views.go
 - `github.com/agentic-research/mache/cmd.homebrewCellar` (go_package_symbol) — cmd/install.go
 - `github.com/agentic-research/mache/cmd.hostedContextFromRequest` (go_package_symbol) — cmd/serve_hosted.go
@@ -7862,7 +7864,6 @@ graph LR
 - `github.com/agentic-research/mache/cmd.nodeTx` (go_package_symbol) — cmd/leyline.go
 - `github.com/agentic-research/mache/cmd.nodeTx.insertNode` (go_package_symbol) — cmd/leyline.go
 - `github.com/agentic-research/mache/cmd.nodes` (go_package_symbol) — cmd/infer.go
-- `github.com/agentic-research/mache/cmd.nodesParentIsGenerated` (go_package_symbol) — cmd/leyline.go
 - `github.com/agentic-research/mache/cmd.noopCallExtractor` (go_package_symbol) — cmd/call_extractor_ast.go
 - `github.com/agentic-research/mache/cmd.notnull` (go_package_symbol) — cmd/smell_refs_views.go
 - `github.com/agentic-research/mache/cmd.ociErrorEntry` (go_package_symbol) — cmd/cache_oci.go
@@ -8260,7 +8261,6 @@ graph LR
 - `github.com/agentic-research/mache/graph.CallersDir` (go_package_symbol) — graph/vdirpath.go
 - `github.com/agentic-research/mache/graph.Class` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.ColumnExists` (go_package_symbol) — graph/nodes_table_reader.go
-- `github.com/agentic-research/mache/graph.ColumnIsGenerated` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.Community` (go_package_symbol) — graph/community.go
 - `github.com/agentic-research/mache/graph.CommunityResult` (go_package_symbol) — graph/community.go
 - `github.com/agentic-research/mache/graph.CompositeGraph` (go_package_symbol) — graph/composite.go
@@ -8605,7 +8605,6 @@ graph LR
 - `github.com/agentic-research/mache/graph.flushChildSlices` (go_package_symbol) — graph/sqlite_graph_scan.go
 - `github.com/agentic-research/mache/graph.flushErr` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.hasPathSegment` (go_package_symbol) — graph/refs_resolve.go
-- `github.com/agentic-research/mache/graph.hidden` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.id` (go_package_symbol) — graph/refs_resolve.go
 - `github.com/agentic-research/mache/graph.id` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.idf` (go_package_symbol) — graph/quotient.go
@@ -8830,8 +8829,12 @@ graph LR
 - `github.com/agentic-research/mache/internal/fixturedb.leylineTables` (go_package_symbol) — internal/fixturedb/schema_leyline.go
 - `github.com/agentic-research/mache/internal/fixturedb.lspDefSpec` (go_package_symbol) — internal/fixturedb/builder.go
 - `github.com/agentic-research/mache/internal/fixturedb.lspDefsTable` (go_package_symbol) — internal/fixturedb/build.go
+- `github.com/agentic-research/mache/internal/fixturedb.nameMatchesID` (go_package_symbol) — internal/fixturedb/builder.go
 - `github.com/agentic-research/mache/internal/fixturedb.nullIfEmpty` (go_package_symbol) — internal/fixturedb/emit.go
+- `github.com/agentic-research/mache/internal/fixturedb.parentMatchesID` (go_package_symbol) — internal/fixturedb/builder.go
 - `github.com/agentic-research/mache/internal/fixturedb.refSpec` (go_package_symbol) — internal/fixturedb/spec.go
+- `github.com/agentic-research/mache/internal/fixturedb.requireNameMatchesID` (go_package_symbol) — internal/fixturedb/builder.go
+- `github.com/agentic-research/mache/internal/fixturedb.requireParentMatchesID` (go_package_symbol) — internal/fixturedb/builder.go
 - `github.com/agentic-research/mache/internal/fixturedb.sourceSpec` (go_package_symbol) — internal/fixturedb/spec.go
 - `github.com/agentic-research/mache/internal/fixturedb.standaloneIndexes` (go_package_symbol) — internal/fixturedb/schema_standalone.go
 - `github.com/agentic-research/mache/internal/fixturedb.standaloneTableOrder` (go_package_symbol) — internal/fixturedb/schema_standalone.go
@@ -9651,6 +9654,9 @@ graph LR
 - `github.com/agentic-research/mache/internal/refsvtab.refsTable.Disconnect` (go_package_symbol) — internal/refsvtab/refs_module.go
 - `github.com/agentic-research/mache/internal/refsvtab.refsTable.Open` (go_package_symbol) — internal/refsvtab/refs_module.go
 - `github.com/agentic-research/mache/internal/refsvtab.singleton` (go_package_symbol) — internal/refsvtab/refs_module.go
+- `github.com/agentic-research/mache/internal/sqlintro.ColumnIsGenerated` (go_package_symbol) — internal/sqlintro/sqlintro.go
+- `github.com/agentic-research/mache/internal/sqlintro.RowQuerier` (go_package_symbol) — internal/sqlintro/sqlintro.go
+- `github.com/agentic-research/mache/internal/sqlintro.hidden` (go_package_symbol) — internal/sqlintro/sqlintro.go
 - `github.com/agentic-research/mache/internal/template.Funcs` (go_package_symbol) — internal/template/render.go
 - `github.com/agentic-research/mache/internal/template.Render` (go_package_symbol) — internal/template/render.go
 - `github.com/agentic-research/mache/internal/template.RenderWithFuncs` (go_package_symbol) — internal/template/render.go
