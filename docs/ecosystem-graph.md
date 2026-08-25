@@ -2,7 +2,7 @@
 
 - Resolved edges: 72
 - External dependencies: 3718
-- Dangling producers: 9039
+- Dangling producers: 9040
 
 ## Graph
 
@@ -7852,6 +7852,7 @@ graph LR
 - `github.com/agentic-research/mache/cmd.nilIfEmpty` (go_package_symbol) — cmd/serve_registry.go
 - `github.com/agentic-research/mache/cmd.noDiagnosticsResult` (go_package_symbol) — cmd/serve_lsp.go
 - `github.com/agentic-research/mache/cmd.noDiagnosticsResultWithSkipReasons` (go_package_symbol) — cmd/serve_lsp.go
+- `github.com/agentic-research/mache/cmd.noSmellLimit` (go_package_symbol) — cmd/smell_findings.go
 - `github.com/agentic-research/mache/cmd.nodeEntry` (go_package_symbol) — cmd/serve_handler_list_directory.go
 - `github.com/agentic-research/mache/cmd.nodeID` (go_package_symbol) — cmd/leyline.go
 - `github.com/agentic-research/mache/cmd.nodeID` (go_package_symbol) — cmd/leyline.go
