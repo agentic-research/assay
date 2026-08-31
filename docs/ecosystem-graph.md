@@ -2,7 +2,7 @@
 
 - Resolved edges: 74
 - External dependencies: 3827
-- Dangling producers: 9182
+- Dangling producers: 9183
 
 ## Graph
 
@@ -9347,6 +9347,9 @@ graph LR
 - `github.com/agentic-research/mache/internal/mcpserve.lspEnrichFailed` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.lspEnrichHint` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.lspEnrichTimeout` (go_package_symbol) — internal/mcpserve/serve_lsp.go
+- `github.com/agentic-research/mache/internal/mcpserve.lspLegacyDefs` (go_package_symbol) — internal/mcpserve/serve_lsp.go
+- `github.com/agentic-research/mache/internal/mcpserve.lspLegacyRefs` (go_package_symbol) — internal/mcpserve/serve_lsp.go
+- `github.com/agentic-research/mache/internal/mcpserve.lspLegacyTable` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.lspRefLocation` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.lspResult` (go_package_symbol) — internal/mcpserve/serve_handler_find_definition.go
 - `github.com/agentic-research/mache/internal/mcpserve.lspTableMissing` (go_package_symbol) — internal/mcpserve/serve_lsp.go
@@ -9411,14 +9414,12 @@ graph LR
 - `github.com/agentic-research/mache/internal/mcpserve.queryDiagnosticsFromGraph` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.queryLSPDefs` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.queryLSPDefsLegacy` (go_package_symbol) — internal/mcpserve/serve_lsp.go
+- `github.com/agentic-research/mache/internal/mcpserve.queryLSPLocationsLegacy` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.queryLSPRefs` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.queryLSPRefsLegacy` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.queryTypeInfoFromGraph` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.queue` (go_package_symbol) — internal/mcpserve/serve_impact.go
 - `github.com/agentic-research/mache/internal/mcpserve.r` (go_package_symbol) — internal/mcpserve/serve_handler_search.go
-- `github.com/agentic-research/mache/internal/mcpserve.r` (go_package_symbol) — internal/mcpserve/serve_lsp.go
-- `github.com/agentic-research/mache/internal/mcpserve.r` (go_package_symbol) — internal/mcpserve/serve_lsp.go
-- `github.com/agentic-research/mache/internal/mcpserve.r` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.r` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.r` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.r` (go_package_symbol) — internal/mcpserve/serve_lsp.go
@@ -9469,7 +9470,6 @@ graph LR
 - `github.com/agentic-research/mache/internal/mcpserve.results` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.results` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.results` (go_package_symbol) — internal/mcpserve/serve_lsp.go
-- `github.com/agentic-research/mache/internal/mcpserve.results` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.rootURIToPath` (go_package_symbol) — internal/mcpserve/serve_registry.go
 - `github.com/agentic-research/mache/internal/mcpserve.routeSheafEvent` (go_package_symbol) — internal/mcpserve/sheaf_subscribe.go
 - `github.com/agentic-research/mache/internal/mcpserve.routeSheafEventAllKnown` (go_package_symbol) — internal/mcpserve/sheaf_subscribe.go
@@ -9479,6 +9479,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/mcpserve.sanitizeSessionID` (go_package_symbol) — internal/mcpserve/serve_repo.go
 - `github.com/agentic-research/mache/internal/mcpserve.sb` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.sb` (go_package_symbol) — internal/mcpserve/serve_lsp.go
+- `github.com/agentic-research/mache/internal/mcpserve.scanLSPLegacyRows` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.schema` (go_package_symbol) — internal/mcpserve/serve_registry.go
 - `github.com/agentic-research/mache/internal/mcpserve.schemaContextKey` (go_package_symbol) — internal/mcpserve/serve_hosted.go
 - `github.com/agentic-research/mache/internal/mcpserve.schemaFromContext` (go_package_symbol) — internal/mcpserve/serve_hosted.go
