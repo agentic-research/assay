@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 74
-- External dependencies: 3827
-- Dangling producers: 9183
+- External dependencies: 3830
+- Dangling producers: 9187
 
 ## Graph
 
@@ -1501,6 +1501,7 @@ graph LR
 - `fmt` (go_module) — internal/smells/smell_refs_views.go:6
 - `fmt` (go_module) — internal/smells/smell_rules.go:6
 - `fmt` (go_module) — internal/smells/smell_test_nodes.go:4
+- `fmt` (go_module) — internal/smells/smell_vendored.go:4
 - `fmt` (go_module) — internal/template/render.go:16
 - `fmt` (go_module) — internal/testfixtures/baseline.go:16
 - `fmt` (go_module) — internal/testfixtures/curate.go:17
@@ -1774,6 +1775,7 @@ graph LR
 - `github.com/agentic-research/mache/graph` (go_module) — internal/smells/smell_incremental.go:9
 - `github.com/agentic-research/mache/graph` (go_module) — internal/smells/smell_refs_views.go:9
 - `github.com/agentic-research/mache/graph` (go_module) — internal/smells/smell_test_nodes.go:6
+- `github.com/agentic-research/mache/graph` (go_module) — internal/smells/smell_vendored.go:7
 - `github.com/agentic-research/mache/graph` (go_module) — internal/testfixtures/registry.go:28
 - `github.com/agentic-research/mache/graph` (go_module) — internal/testutil/leyline.go:12
 - `github.com/agentic-research/mache/graph` (go_module) — internal/testutil/mcptest.go:13
@@ -3543,6 +3545,7 @@ graph LR
 - `strings` (go_module) — internal/smells/smell_ratchet.go:9
 - `strings` (go_module) — internal/smells/smell_rules.go:9
 - `strings` (go_module) — internal/smells/smell_rules_config.go:7
+- `strings` (go_module) — internal/smells/smell_vendored.go:5
 - `strings` (go_module) — internal/template/render.go:19
 - `strings` (go_module) — internal/testfixtures/curate.go:22
 - `strings` (go_module) — internal/vfs/callees.go:4
@@ -9757,6 +9760,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/smells.activeSmellRules` (go_package_symbol) — internal/smells/smell_rules_config.go
 - `github.com/agentic-research/mache/internal/smells.allFindings` (go_package_symbol) — internal/smells/smell_ratchet.go
 - `github.com/agentic-research/mache/internal/smells.allRuleIDs` (go_package_symbol) — internal/smells/serve_find_smells.go
+- `github.com/agentic-research/mache/internal/smells.arms` (go_package_symbol) — internal/smells/smell_vendored.go
 - `github.com/agentic-research/mache/internal/smells.astFunc` (go_package_symbol) — internal/smells/smell_incremental.go
 - `github.com/agentic-research/mache/internal/smells.b` (go_package_symbol) — internal/smells/smell_ratchet.go
 - `github.com/agentic-research/mache/internal/smells.baselineEntry` (go_package_symbol) — internal/smells/smell_ratchet.go
@@ -9785,6 +9789,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/smells.ensureDocRefsView` (go_package_symbol) — internal/smells/smell_doc_refs.go
 - `github.com/agentic-research/mache/internal/smells.ensureSmellQueryContext` (go_package_symbol) — internal/smells/smell_findings.go
 - `github.com/agentic-research/mache/internal/smells.ensureTestNodesView` (go_package_symbol) — internal/smells/smell_test_nodes.go
+- `github.com/agentic-research/mache/internal/smells.ensureVendoredView` (go_package_symbol) — internal/smells/smell_vendored.go
 - `github.com/agentic-research/mache/internal/smells.escapePipes` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.exitFunc` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.f` (go_package_symbol) — internal/smells/smell_incremental.go
@@ -9889,6 +9894,8 @@ graph LR
 - `github.com/agentic-research/mache/internal/smells.validFailOn` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.validateScopeColumn` (go_package_symbol) — internal/smells/serve_find_smells_load.go
 - `github.com/agentic-research/mache/internal/smells.validateSmellRule` (go_package_symbol) — internal/smells/serve_find_smells_load.go
+- `github.com/agentic-research/mache/internal/smells.vendoredPrefixes` (go_package_symbol) — internal/smells/smell_vendored.go
+- `github.com/agentic-research/mache/internal/smells.vendoredViewSQL` (go_package_symbol) — internal/smells/smell_vendored.go
 - `github.com/agentic-research/mache/internal/smells.writeBaseline` (go_package_symbol) — internal/smells/smell_ratchet.go
 - `github.com/agentic-research/mache/internal/sqlintro.ColumnIsGenerated` (go_package_symbol) — internal/sqlintro/sqlintro.go
 - `github.com/agentic-research/mache/internal/sqlintro.RowQuerier` (go_package_symbol) — internal/sqlintro/sqlintro.go
