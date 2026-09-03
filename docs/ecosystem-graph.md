@@ -2,7 +2,7 @@
 
 - Resolved edges: 74
 - External dependencies: 3831
-- Dangling producers: 9194
+- Dangling producers: 9195
 
 ## Graph
 
@@ -9822,6 +9822,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/smells.id` (go_package_symbol) — internal/smells/smell_incremental.go
 - `github.com/agentic-research/mache/internal/smells.ident` (go_package_symbol) — internal/smells/smell_ratchet.go
 - `github.com/agentic-research/mache/internal/smells.init` (go_package_symbol) — internal/smells/find_smells_cli.go
+- `github.com/agentic-research/mache/internal/smells.isFileLevel` (go_package_symbol) — internal/smells/smell_findings.go
 - `github.com/agentic-research/mache/internal/smells.jsonOrPanic` (go_package_symbol) — internal/smells/smell_findings.go
 - `github.com/agentic-research/mache/internal/smells.loadBaseline` (go_package_symbol) — internal/smells/smell_ratchet.go
 - `github.com/agentic-research/mache/internal/smells.loadRuleFS` (go_package_symbol) — internal/smells/smell_rules.go
