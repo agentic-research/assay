@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 75
-- External dependencies: 3853
-- Dangling producers: 9241
+- External dependencies: 3876
+- Dangling producers: 9289
 
 ## Graph
 
@@ -421,7 +421,7 @@ graph LR
 - `cargo` (cli_binary) — .github/workflows/ci.yml:310
 - `cargo` (cli_binary) — .github/workflows/coverage.yml:44
 - `cargo` (cli_binary) — .github/workflows/mutants.yml:60
-- `cargo` (cli_binary) — .github/workflows/publish-crates.yml:112
+- `cargo` (cli_binary) — .github/workflows/publish-crates.yml:130
 - `cargo` (cli_binary) — .github/workflows/release.yml:90
 - `cargo` (cli_binary) — .github/workflows/release.yml:127
 - `certificate_validity:` (cli_binary) — .github/workflows/oidc-signing.yml:72
@@ -535,7 +535,7 @@ graph LR
 - `task` (cli_binary) — .github/workflows/mutants.yml:61
 - `task` (cli_binary) — .github/workflows/mutants.yml:164
 - `task` (cli_binary) — .github/workflows/oidc-signing.yml:40
-- `task` (cli_binary) — .github/workflows/publish-crates.yml:81
+- `task` (cli_binary) — .github/workflows/publish-crates.yml:99
 - `task` (cli_binary) — .github/workflows/publish-dpop.yml:86
 - `task` (cli_binary) — .github/workflows/release-dryrun.yml:84
 - `task` (cli_binary) — .github/workflows/release.yml:62
@@ -1187,6 +1187,7 @@ graph LR
 - `encoding/json` (go_module) — pkg/revocation/cabundle/https_fetcher.go:5
 - `encoding/json` (go_module) — resolve/gomod_resolver.go:6
 - `encoding/json` (go_module) — schema/schema.go:6
+- `encoding/json` (go_module) — tools/bench-cold/main.go:29
 - `encoding/json` (go_module) — tools/fuzz-gen/main.go:6
 - `encoding/json` (go_module) — tools/gen-lsp-fixture/main.go:22
 - `encoding/json` (go_module) — tools/mcp-fetch/main.go:12
@@ -1270,6 +1271,7 @@ graph LR
 - `flag` (go_module) — cmd/replay/main.go:21
 - `flag` (go_module) — cmd/signet-proxy/main.go:20
 - `flag` (go_module) — cmd/sigstore-kms-signet/sign_artifact.go:5
+- `flag` (go_module) — tools/bench-cold/main.go:30
 - `flag` (go_module) — tools/coverage-gate/main.go:59
 - `flag` (go_module) — tools/fixtures-rebaseline/main.go:33
 - `flag` (go_module) — tools/fixtures-snapshot/main.go:29
@@ -1378,6 +1380,8 @@ graph LR
 - `fmt` (go_module) — internal/api/websocket.go:6
 - `fmt` (go_module) — internal/audio/audio.go:7
 - `fmt` (go_module) — internal/ax/ax.go:13
+- `fmt` (go_module) — internal/benchrun/budget.go:4
+- `fmt` (go_module) — internal/benchrun/run.go:14
 - `fmt` (go_module) — internal/buildcache/cache.go:25
 - `fmt` (go_module) — internal/buildcache/cache_ast.go:46
 - `fmt` (go_module) — internal/buildcache/cache_oci.go:45
@@ -1579,6 +1583,7 @@ graph LR
 - `fmt` (go_module) — schema/schema.go:7
 - `fmt` (go_module) — tests/fixtures/sample-repo/main.go:3
 - `fmt` (go_module) — tests/fixtures/sample-repo/util.go:3
+- `fmt` (go_module) — tools/bench-cold/main.go:31
 - `fmt` (go_module) — tools/coverage-gate/main.go:60
 - `fmt` (go_module) — tools/fixtures-rebaseline/main.go:34
 - `fmt` (go_module) — tools/fixtures-snapshot/main.go:30
@@ -1593,6 +1598,7 @@ graph LR
 - `fmt` (go_module) — tools/token-bench/main.go:34
 - `fmt` (go_module) — touchid/touchid_signer.go:79
 - `github.com/BurntSushi/toml` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:7
+- `github.com/BurntSushi/toml` (go_module) — internal/benchrun/budget.go:7
 - `github.com/BurntSushi/toml` (go_module) — internal/buildcache/cache.go:32
 - `github.com/BurntSushi/toml` (go_module) — internal/testfixtures/baseline.go:23
 - `github.com/BurntSushi/toml` (go_module) — internal/testfixtures/registry.go:25
@@ -1806,6 +1812,7 @@ graph LR
 - `github.com/agentic-research/mache/graph` (go_module) — resolve/gomod_resolver.go:11
 - `github.com/agentic-research/mache/graph` (go_module) — resolve/localpath_resolver.go:11
 - `github.com/agentic-research/mache/graph` (go_module) — resolve/resolver.go:16
+- `github.com/agentic-research/mache/internal/benchrun` (go_module) — tools/bench-cold/main.go:39
 - `github.com/agentic-research/mache/internal/buildcache` (go_module) — cmd/register.go:4
 - `github.com/agentic-research/mache/internal/buildinfo` (go_module) — cmd/mount.go:16
 - `github.com/agentic-research/mache/internal/buildinfo` (go_module) — internal/buildcache/version.go:3
@@ -1878,6 +1885,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/testfixtures/registry.go:30
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/testutil/leyline.go:14
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/writeback/validate.go:31
+- `github.com/agentic-research/mache/internal/leyline` (go_module) — tools/bench-cold/main.go:40
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — tools/leyline-ensure/main.go:9
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — tools/server-json-gen/main.go:36
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — tools/sheaf-subscribe-probe/main.go:21
@@ -1914,6 +1922,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/daemonguard/daemonguard.go:28
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/mcpserve/serve_registry.go:22
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/smells/smell_rules_config.go:9
+- `github.com/agentic-research/mache/internal/projcfg` (go_module) — tools/bench-cold/main.go:41
 - `github.com/agentic-research/mache/internal/refsvtab` (go_module) — graph/memstore_refsdb.go:11
 - `github.com/agentic-research/mache/internal/refsvtab` (go_module) — graph/sqlite_graph.go:16
 - `github.com/agentic-research/mache/internal/schemainfer` (go_module) — cmd/mount.go:24
@@ -2577,6 +2586,7 @@ graph LR
 - `io` (go_module) — graph/store.go:13
 - `io` (go_module) — graph/store_local.go:9
 - `io` (go_module) — internal/audio/audio.go:8
+- `io` (go_module) — internal/benchrun/run.go:15
 - `io` (go_module) — internal/buildcache/cache.go:26
 - `io` (go_module) — internal/buildcache/cache_oci.go:46
 - `io` (go_module) — internal/cartographer/ollama.go:9
@@ -2604,6 +2614,7 @@ graph LR
 - `io` (go_module) — pkg/git/sign.go:10
 - `io` (go_module) — pkg/git/verify.go:8
 - `io` (go_module) — pkg/revocation/cabundle/https_fetcher.go:7
+- `io` (go_module) — tools/bench-cold/main.go:32
 - `io` (go_module) — tools/coverage-gate/main.go:61
 - `io` (go_module) — tools/mcp-fetch/main.go:15
 - `io` (go_module) — tools/notion-fetch/main.go:20
@@ -2968,6 +2979,7 @@ graph LR
 - `os` (go_module) — internal/api/schemacache.go:27
 - `os` (go_module) — internal/api/snapshot.go:13
 - `os` (go_module) — internal/api/websocket.go:9
+- `os` (go_module) — internal/benchrun/run.go:16
 - `os` (go_module) — internal/buildcache/cache.go:27
 - `os` (go_module) — internal/cartographer/cairn.go:25
 - `os` (go_module) — internal/cartographer/cairn_sheaf.go:16
@@ -3061,6 +3073,7 @@ graph LR
 - `os` (go_module) — resolve/build_and_open.go:5
 - `os` (go_module) — resolve/localpath_resolver.go:6
 - `os` (go_module) — schema/schema.go:9
+- `os` (go_module) — tools/bench-cold/main.go:33
 - `os` (go_module) — tools/coverage-gate/main.go:62
 - `os` (go_module) — tools/fixtures-rebaseline/main.go:35
 - `os` (go_module) — tools/fixtures-snapshot/main.go:31
@@ -3085,6 +3098,7 @@ graph LR
 - `os/exec` (go_module) — cmd/sigstore-kms-signet/sign_artifact.go:9
 - `os/exec` (go_module) — internal/audio/audio.go:9
 - `os/exec` (go_module) — internal/ax/ax.go:14
+- `os/exec` (go_module) — internal/benchrun/run.go:17
 - `os/exec` (go_module) — internal/focus/focus.go:5
 - `os/exec` (go_module) — internal/gitutil/command.go:6
 - `os/exec` (go_module) — internal/leyline/binary_override.go:7
@@ -3103,6 +3117,7 @@ graph LR
 - `os/exec` (go_module) — internal/testutil/leyline.go:7
 - `os/exec` (go_module) — internal/writeback/format.go:6
 - `os/exec` (go_module) — resolve/gomod_resolver.go:8
+- `os/exec` (go_module) — tools/bench-cold/main.go:34
 - `os/exec` (go_module) — tools/fixtures-rebaseline/main.go:36
 - `os/exec` (go_module) — tools/fixtures-snapshot/main.go:32
 - `os/exec` (go_module) — tools/fuzz-gen/main.go:11
@@ -3156,6 +3171,7 @@ graph LR
 - `path/filepath` (go_module) — graph/cache.go:7
 - `path/filepath` (go_module) — graph/index_staleness.go:6
 - `path/filepath` (go_module) — graph/memstore_callees.go:6
+- `path/filepath` (go_module) — graph/memstore_delete.go:3
 - `path/filepath` (go_module) — graph/memstore_write.go:5
 - `path/filepath` (go_module) — graph/sqlite_graph.go:9
 - `path/filepath` (go_module) — graph/sqlite_graph_callees.go:7
@@ -3244,6 +3260,7 @@ graph LR
 - `path/filepath` (go_module) — resolve/build_and_open.go:6
 - `path/filepath` (go_module) — resolve/localpath_resolver.go:7
 - `path/filepath` (go_module) — schema/schema.go:10
+- `path/filepath` (go_module) — tools/bench-cold/main.go:35
 - `path/filepath` (go_module) — tools/fixtures-rebaseline/main.go:37
 - `path/filepath` (go_module) — tools/fixtures-snapshot/main.go:33
 - `path/filepath` (go_module) — tools/fuzz-gen/main.go:12
@@ -3455,6 +3472,7 @@ graph LR
 - `strings` (go_module) — internal/api/websocket.go:11
 - `strings` (go_module) — internal/artifact/identity.go:3
 - `strings` (go_module) — internal/ax/ax.go:16
+- `strings` (go_module) — internal/benchrun/run.go:18
 - `strings` (go_module) — internal/buildcache/cache_oci.go:49
 - `strings` (go_module) — internal/buildinfo/buildinfo.go:26
 - `strings` (go_module) — internal/cartographer/agent.go:7
@@ -3589,6 +3607,7 @@ graph LR
 - `strings` (go_module) — pkg/signet/sig1.go:7
 - `strings` (go_module) — pkg/signet/signet.go:19
 - `strings` (go_module) — resolve/localpath_resolver.go:8
+- `strings` (go_module) — tools/bench-cold/main.go:36
 - `strings` (go_module) — tools/coverage-gate/main.go:65
 - `strings` (go_module) — tools/fixtures-rebaseline/main.go:40
 - `strings` (go_module) — tools/fixtures-snapshot/main.go:35
@@ -3699,6 +3718,7 @@ graph LR
 - `syscall` (go_module) — cmd/signet/authority.go:10
 - `syscall` (go_module) — cmd/webarena/main.go:18
 - `syscall` (go_module) — internal/audio/audio.go:10
+- `syscall` (go_module) — internal/benchrun/run.go:19
 - `syscall` (go_module) — internal/leyline/owner_record_unix.go:5
 - `syscall` (go_module) — internal/leyline/procgroup_other.go:8
 - `syscall` (go_module) — internal/leyline/procgroup_unix.go:8
@@ -3797,6 +3817,8 @@ graph LR
 - `time` (go_module) — internal/api/voice.go:13
 - `time` (go_module) — internal/api/websocket.go:14
 - `time` (go_module) — internal/ax/ax.go:17
+- `time` (go_module) — internal/benchrun/budget.go:5
+- `time` (go_module) — internal/benchrun/run.go:20
 - `time` (go_module) — internal/buildcache/cache.go:29
 - `time` (go_module) — internal/cartographer/agent.go:8
 - `time` (go_module) — internal/cartographer/progressive.go:13
@@ -3858,6 +3880,7 @@ graph LR
 - `time` (go_module) — pkg/sigid/providers/cell/provider.go:13
 - `time` (go_module) — pkg/sigid/providers/cert/provider.go:15
 - `time` (go_module) — pkg/signet/token.go:9
+- `time` (go_module) — tools/bench-cold/main.go:37
 - `time` (go_module) — tools/fixtures-rebaseline/main.go:41
 - `time` (go_module) — tools/fuzz-gen/main.go:15
 - `time` (go_module) — tools/sheaf-subscribe-probe/main.go:19
@@ -7790,6 +7813,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.MemoryStore.Close` (go_package_symbol) — graph/memstore_refsdb.go
 - `github.com/agentic-research/mache/graph.MemoryStore.DefsMap` (go_package_symbol) — graph/memstore_refs.go
 - `github.com/agentic-research/mache/graph.MemoryStore.DeleteFileNodes` (go_package_symbol) — graph/memstore_write.go
+- `github.com/agentic-research/mache/graph.MemoryStore.DeleteNodes` (go_package_symbol) — graph/memstore_delete.go
 - `github.com/agentic-research/mache/graph.MemoryStore.FileMtime` (go_package_symbol) — graph/memstore_livegraph.go
 - `github.com/agentic-research/mache/graph.MemoryStore.FlushRefs` (go_package_symbol) — graph/memstore_refsdb.go
 - `github.com/agentic-research/mache/graph.MemoryStore.GetCallees` (go_package_symbol) — graph/memstore_callees.go
@@ -7816,11 +7840,14 @@ graph LR
 - `github.com/agentic-research/mache/graph.MemoryStore.ShiftOrigins` (go_package_symbol) — graph/memstore_write.go
 - `github.com/agentic-research/mache/graph.MemoryStore.UpdateNodeContent` (go_package_symbol) — graph/memstore_write.go
 - `github.com/agentic-research/mache/graph.MemoryStore.UpdateNodeContext` (go_package_symbol) — graph/memstore_write.go
-- `github.com/agentic-research/mache/graph.MemoryStore.deleteFileNodes` (go_package_symbol) — graph/memstore_write.go
+- `github.com/agentic-research/mache/graph.MemoryStore.deleteFileNodes` (go_package_symbol) — graph/memstore_delete.go
+- `github.com/agentic-research/mache/graph.MemoryStore.deleteNodeSet` (go_package_symbol) — graph/memstore_delete.go
 - `github.com/agentic-research/mache/graph.MemoryStore.flushRefsInternal` (go_package_symbol) — graph/memstore_refsdb.go
+- `github.com/agentic-research/mache/graph.MemoryStore.forgetNodes` (go_package_symbol) — graph/memstore_delete.go
 - `github.com/agentic-research/mache/graph.MemoryStore.indexNode` (go_package_symbol) — graph/memstore_write.go
 - `github.com/agentic-research/mache/graph.MemoryStore.refTokensForNode` (go_package_symbol) — graph/memstore_callees.go
 - `github.com/agentic-research/mache/graph.MemoryStore.resolveContent` (go_package_symbol) — graph/memstore.go
+- `github.com/agentic-research/mache/graph.MemoryStore.unlinkFromParents` (go_package_symbol) — graph/memstore_delete.go
 - `github.com/agentic-research/mache/graph.MermaidOpts` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.MountPrefixer` (go_package_symbol) — graph/capabilities.go
 - `github.com/agentic-research/mache/graph.NewArenaFlusher` (go_package_symbol) — graph/arena_writer.go
@@ -8104,6 +8131,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.prominent` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.propsJSON` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.pruneHubTokens` (go_package_symbol) — graph/community.go
+- `github.com/agentic-research/mache/graph.pruneTokenIndex` (go_package_symbol) — graph/memstore_delete.go
 - `github.com/agentic-research/mache/graph.pruned` (go_package_symbol) — graph/community.go
 - `github.com/agentic-research/mache/graph.qcalls` (go_package_symbol) — graph/memstore_callees.go
 - `github.com/agentic-research/mache/graph.qcalls` (go_package_symbol) — graph/sqlite_graph_callees.go
@@ -8150,7 +8178,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.stdlibUppercase` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.subStats` (go_package_symbol) — graph/composite.go
 - `github.com/agentic-research/mache/graph.tmpls` (go_package_symbol) — graph/sqlite_graph_scan.go
-- `github.com/agentic-research/mache/graph.toDelete` (go_package_symbol) — graph/memstore_write.go
+- `github.com/agentic-research/mache/graph.toDelete` (go_package_symbol) — graph/memstore_delete.go
 - `github.com/agentic-research/mache/graph.tok` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.tok` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.token` (go_package_symbol) — graph/refs_resolve.go
@@ -8174,6 +8202,23 @@ graph LR
 - `github.com/agentic-research/mache/ingest.NewJsonWalker` (go_package_symbol) — ingest/ingest.go
 - `github.com/agentic-research/mache/ingest.NewSQLiteWriter` (go_package_symbol) — ingest/ingest.go
 - `github.com/agentic-research/mache/ingest.StreamSQLite` (go_package_symbol) — ingest/ingest.go
+- `github.com/agentic-research/mache/internal/benchrun.Budget` (go_package_symbol) — internal/benchrun/budget.go
+- `github.com/agentic-research/mache/internal/benchrun.Budget.Check` (go_package_symbol) — internal/benchrun/budget.go
+- `github.com/agentic-research/mache/internal/benchrun.FileBytes` (go_package_symbol) — internal/benchrun/run.go
+- `github.com/agentic-research/mache/internal/benchrun.HumanBytes` (go_package_symbol) — internal/benchrun/run.go
+- `github.com/agentic-research/mache/internal/benchrun.LoadBudget` (go_package_symbol) — internal/benchrun/budget.go
+- `github.com/agentic-research/mache/internal/benchrun.Measurement` (go_package_symbol) — internal/benchrun/run.go
+- `github.com/agentic-research/mache/internal/benchrun.Observed` (go_package_symbol) — internal/benchrun/budget.go
+- `github.com/agentic-research/mache/internal/benchrun.Run` (go_package_symbol) — internal/benchrun/run.go
+- `github.com/agentic-research/mache/internal/benchrun.Violation` (go_package_symbol) — internal/benchrun/budget.go
+- `github.com/agentic-research/mache/internal/benchrun.Violation.String` (go_package_symbol) — internal/benchrun/budget.go
+- `github.com/agentic-research/mache/internal/benchrun.budgetFile` (go_package_symbol) — internal/benchrun/budget.go
+- `github.com/agentic-research/mache/internal/benchrun.f` (go_package_symbol) — internal/benchrun/budget.go
+- `github.com/agentic-research/mache/internal/benchrun.gb` (go_package_symbol) — internal/benchrun/run.go
+- `github.com/agentic-research/mache/internal/benchrun.maxrssUnitBytes` (go_package_symbol) — internal/benchrun/maxrss_darwin.go
+- `github.com/agentic-research/mache/internal/benchrun.maxrssUnitBytes` (go_package_symbol) — internal/benchrun/maxrss_linux.go
+- `github.com/agentic-research/mache/internal/benchrun.mb` (go_package_symbol) — internal/benchrun/run.go
+- `github.com/agentic-research/mache/internal/benchrun.out` (go_package_symbol) — internal/benchrun/budget.go
 - `github.com/agentic-research/mache/internal/buildcache.CacheCmd` (go_package_symbol) — internal/buildcache/cache.go
 - `github.com/agentic-research/mache/internal/buildcache.CacheVersion` (go_package_symbol) — internal/buildcache/cache.go
 - `github.com/agentic-research/mache/internal/buildcache.MacheProducerName` (go_package_symbol) — internal/buildcache/cache.go
@@ -8499,6 +8544,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.Engine.ingestSourceTree` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.processNode` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.processSourceFileResult` (go_package_symbol) — internal/ingest/engine_treesitter.go
+- `github.com/agentic-research/mache/internal/ingest.Engine.releaseFileClaims` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.routeToProjectFiles` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.sourceIDFor` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.walkProjectFiles` (go_package_symbol) — internal/ingest/engine_filter.go
@@ -8540,6 +8586,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.AddRoot` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.Close` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.DeleteFileNodes` (go_package_symbol) — internal/ingest/sqlite_writer.go
+- `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.DeleteNodes` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.GetCallees` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.GetCallers` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.GetNode` (go_package_symbol) — internal/ingest/sqlite_writer.go
@@ -8578,6 +8625,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.alias` (go_package_symbol) — internal/ingest/ast_walker_extract.go
 - `github.com/agentic-research/mache/internal/ingest.ancestryFromPath` (go_package_symbol) — internal/ingest/ast_walker_selector.go
 - `github.com/agentic-research/mache/internal/ingest.ancestryHasPrefix` (go_package_symbol) — internal/ingest/ast_walker_selector.go
+- `github.com/agentic-research/mache/internal/ingest.appendUnderKey` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.astMatch` (go_package_symbol) — internal/ingest/ast_walker.go
 - `github.com/agentic-research/mache/internal/ingest.astMatch.ASTScopeID` (go_package_symbol) — internal/ingest/ast_walker.go
 - `github.com/agentic-research/mache/internal/ingest.astMatch.ASTSourceID` (go_package_symbol) — internal/ingest/ast_walker.go
@@ -8596,6 +8644,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.AddDef` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.AddFileChildren` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.AddNode` (go_package_symbol) — internal/ingest/engine_refs.go
+- `github.com/agentic-research/mache/internal/ingest.bufferingTarget.DeleteNodes` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.ListChildren` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.claimScope` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.noteBuffered` (go_package_symbol) — internal/ingest/engine_refs.go
@@ -8630,6 +8679,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.dedupSuffix` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.defaultBatchSize` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.deleteFileNodesSQL` (go_package_symbol) — internal/ingest/sqlite_writer.go
+- `github.com/agentic-research/mache/internal/ingest.deleteNodesSQL` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.ensureFile` (go_package_symbol) — internal/ingest/engine_filter.go
 - `github.com/agentic-research/mache/internal/ingest.err` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.evalPatterns` (go_package_symbol) — internal/ingest/gitignore.go
@@ -8675,6 +8725,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.inlineThreshold` (go_package_symbol) — internal/ingest/engine.go
 - `github.com/agentic-research/mache/internal/ingest.isBinaryFile` (go_package_symbol) — internal/ingest/engine_filter.go
 - `github.com/agentic-research/mache/internal/ingest.isSourceFile` (go_package_symbol) — internal/ingest/watcher.go
+- `github.com/agentic-research/mache/internal/ingest.joinSegment` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.jsonMatch` (go_package_symbol) — internal/ingest/json_walker.go
 - `github.com/agentic-research/mache/internal/ingest.jsonMatch.Context` (go_package_symbol) — internal/ingest/json_walker.go
 - `github.com/agentic-research/mache/internal/ingest.jsonMatch.Values` (go_package_symbol) — internal/ingest/json_walker.go
@@ -8755,6 +8806,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.scopeUnit` (go_package_symbol) — internal/ingest/ast_walker_lookup.go
 - `github.com/agentic-research/mache/internal/ingest.scopedAddrRef` (go_package_symbol) — internal/ingest/ast_walker.go
 - `github.com/agentic-research/mache/internal/ingest.scopedCallToken` (go_package_symbol) — internal/ingest/ast_walker_calls.go
+- `github.com/agentic-research/mache/internal/ingest.segmentEscape` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.selectorCapture` (go_package_symbol) — internal/ingest/ast_walker_selector.go
 - `github.com/agentic-research/mache/internal/ingest.selectorMatchPredicate` (go_package_symbol) — internal/ingest/ast_walker_selector.go
 - `github.com/agentic-research/mache/internal/ingest.selectorPattern` (go_package_symbol) — internal/ingest/ast_walker_selector.go
@@ -10176,6 +10228,25 @@ graph LR
 - `github.com/agentic-research/mache/schema.presetFiles` (go_package_symbol) — schema/schema.go
 - `github.com/agentic-research/mache/schema.presetPaths` (go_package_symbol) — schema/schema.go
 - `github.com/agentic-research/mache/schema.topology` (go_package_symbol) — schema/schema.go
+- `github.com/agentic-research/mache/tools/bench-cold.benchColdPath` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.bytes` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.corpusInfo` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.corpusSize` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.files` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.macheRepoRoot` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.main` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.measureColdPath` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.o` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.options` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.parseFlags` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.printTable` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.report` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.resolveCorpus` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.resolveMacheBinary` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.resolveSchema` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.roundSec` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.shortSHA` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.stageHEAD` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/coverage-gate.collapseBlocks` (go_package_symbol) — tools/coverage-gate/main.go
 - `github.com/agentic-research/mache/tools/coverage-gate.coverRange` (go_package_symbol) — tools/coverage-gate/main.go
 - `github.com/agentic-research/mache/tools/coverage-gate.curFile` (go_package_symbol) — tools/coverage-gate/main.go
