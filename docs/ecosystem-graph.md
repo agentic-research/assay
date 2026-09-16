@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 75
-- External dependencies: 3876
-- Dangling producers: 9289
+- External dependencies: 3885
+- Dangling producers: 9299
 
 ## Graph
 
@@ -902,6 +902,7 @@ graph LR
 - `crypto/sha256` (go_module) — internal/fixturedb/builder.go:4
 - `crypto/sha256` (go_module) — internal/leyline/binary_pin.go:4
 - `crypto/sha256` (go_module) — internal/leyline/sheaf.go:10
+- `crypto/sha256` (go_module) — internal/leylinegraph/parsecache.go:4
 - `crypto/sha256` (go_module) — internal/mcpserve/serve_registry.go:6
 - `crypto/sha256` (go_module) — pkg/cms/verifier.go:37
 - `crypto/sha256` (go_module) — pkg/crypto/algorithm/ed25519.go:7
@@ -1059,6 +1060,7 @@ graph LR
 - `encoding/hex` (go_module) — internal/fixturedb/emit.go:5
 - `encoding/hex` (go_module) — internal/leyline/binary_pin.go:5
 - `encoding/hex` (go_module) — internal/leyline/sheaf.go:11
+- `encoding/hex` (go_module) — internal/leylinegraph/parsecache.go:5
 - `encoding/hex` (go_module) — internal/mcpserve/serve_registry.go:8
 - `encoding/hex` (go_module) — internal/projcfg/project_registry.go:5
 - `encoding/hex` (go_module) — internal/report/mermaid.go:5
@@ -1449,6 +1451,7 @@ graph LR
 - `fmt` (go_module) — internal/leyline/version_check.go:4
 - `fmt` (go_module) — internal/leylinegraph/auto.go:10
 - `fmt` (go_module) — internal/leylinegraph/leyline.go:6
+- `fmt` (go_module) — internal/leylinegraph/parsecache.go:6
 - `fmt` (go_module) — internal/leylinegraph/uds_graph.go:5
 - `fmt` (go_module) — internal/lint/tool_preflight.go:44
 - `fmt` (go_module) — internal/linter/linter.go:9
@@ -1689,7 +1692,7 @@ graph LR
 - `github.com/agentic-research/ley-line-open/clients/go/leyline-schema/daemon/wire` (go_module) — internal/leyline/sheaf.go:15
 - `github.com/agentic-research/ley-line-open/clients/go/leyline-schema/daemon/wire` (go_module) — internal/leyline/sheaf_subscriber.go:12
 - `github.com/agentic-research/ley-line-open/clients/go/leyline-schema/daemon/wire` (go_module) — internal/leyline/wire.go:4
-- `github.com/agentic-research/mache/api` (go_module) — build/schema.go:10
+- `github.com/agentic-research/mache/api` (go_module) — build/schema.go:9
 - `github.com/agentic-research/mache/api` (go_module) — build/schema_coverage.go:10
 - `github.com/agentic-research/mache/api` (go_module) — cmd/build.go:9
 - `github.com/agentic-research/mache/api` (go_module) — cmd/mount.go:14
@@ -1829,7 +1832,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/gitutil` (go_module) — internal/mcpserve/serve.go:19
 - `github.com/agentic-research/mache/internal/gitutil` (go_module) — internal/mcpserve/serve_hosted.go:16
 - `github.com/agentic-research/mache/internal/gitutil` (go_module) — internal/mcpserve/serve_repo.go:11
-- `github.com/agentic-research/mache/internal/ingest` (go_module) — build/schema.go:11
+- `github.com/agentic-research/mache/internal/ingest` (go_module) — build/schema.go:10
 - `github.com/agentic-research/mache/internal/ingest` (go_module) — build/schema_coverage.go:11
 - `github.com/agentic-research/mache/internal/ingest` (go_module) — cmd/build_meta.go:11
 - `github.com/agentic-research/mache/internal/ingest` (go_module) — cmd/mount.go:17
@@ -1862,13 +1865,13 @@ graph LR
 - `github.com/agentic-research/mache/internal/lattice` (go_module) — internal/schemainfer/infer.go:13
 - `github.com/agentic-research/mache/internal/lattice` (go_module) — internal/schemainfer/mount_inference.go:12
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — build/build.go:7
-- `github.com/agentic-research/mache/internal/leyline` (go_module) — build/schema.go:12
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — cmd/build_meta.go:13
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — cmd/doctor.go:18
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — cmd/install.go:46
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — cmd/leyline_proxy.go:49
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — cmd/mount.go:20
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/leylinegraph/auto.go:16
+- `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/leylinegraph/parsecache.go:12
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/leylinegraph/uds_graph.go:10
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/linter/linter.go:14
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/lltest/pinned_unix.go:16
@@ -1889,12 +1892,14 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — tools/leyline-ensure/main.go:9
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — tools/server-json-gen/main.go:36
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — tools/sheaf-subscribe-probe/main.go:21
+- `github.com/agentic-research/mache/internal/leylinegraph` (go_module) — build/schema.go:11
 - `github.com/agentic-research/mache/internal/leylinegraph` (go_module) — cmd/build.go:11
 - `github.com/agentic-research/mache/internal/leylinegraph` (go_module) — cmd/mount.go:21
 - `github.com/agentic-research/mache/internal/leylinegraph` (go_module) — cmd/mount_control.go:15
 - `github.com/agentic-research/mache/internal/leylinegraph` (go_module) — internal/mcpserve/serve.go:22
 - `github.com/agentic-research/mache/internal/leylinegraph` (go_module) — internal/schemainfer/infer.go:14
 - `github.com/agentic-research/mache/internal/leylinegraph` (go_module) — internal/schemainfer/mount_inference.go:13
+- `github.com/agentic-research/mache/internal/leylinegraph` (go_module) — tools/bench-cold/main.go:41
 - `github.com/agentic-research/mache/internal/lint` (go_module) — tools/gate-preflight/main.go:25
 - `github.com/agentic-research/mache/internal/linter` (go_module) — cmd/mount_nfs.go:17
 - `github.com/agentic-research/mache/internal/lsp` (go_module) — internal/mcpserve/serve_lsp.go:16
@@ -1920,9 +1925,10 @@ graph LR
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — cmd/init.go:9
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/buildcache/cache.go:34
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/daemonguard/daemonguard.go:28
+- `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/leylinegraph/parsecache.go:13
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/mcpserve/serve_registry.go:22
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/smells/smell_rules_config.go:9
-- `github.com/agentic-research/mache/internal/projcfg` (go_module) — tools/bench-cold/main.go:41
+- `github.com/agentic-research/mache/internal/projcfg` (go_module) — tools/bench-cold/main.go:42
 - `github.com/agentic-research/mache/internal/refsvtab` (go_module) — graph/memstore_refsdb.go:11
 - `github.com/agentic-research/mache/internal/refsvtab` (go_module) — graph/sqlite_graph.go:16
 - `github.com/agentic-research/mache/internal/schemainfer` (go_module) — cmd/mount.go:24
@@ -1952,7 +1958,7 @@ graph LR
 - `github.com/agentic-research/mache/mount` (go_module) — internal/api/websocket.go:17
 - `github.com/agentic-research/mache/resolve` (go_module) — internal/mcpserve/serve_registry.go:24
 - `github.com/agentic-research/mache/resolve` (go_module) — internal/mcpserve/serve_resolve_ref.go:13
-- `github.com/agentic-research/mache/schema` (go_module) — build/schema.go:13
+- `github.com/agentic-research/mache/schema` (go_module) — build/schema.go:12
 - `github.com/agentic-research/mache/schema` (go_module) — internal/projcfg/config.go:17
 - `github.com/agentic-research/mache/schema` (go_module) — internal/schemainfer/schemas.go:5
 - `github.com/agentic-research/mache/schema` (go_module) — internal/testfixtures/registry.go:32
@@ -2793,7 +2799,7 @@ graph LR
 - `modernc.org/sqlite` (go_module) — /home/runner/work/_temp/ecosystem/mache/ext/boltdb/go.mod:7
 - `modernc.org/sqlite` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:24
 - `modernc.org/sqlite` (go_module) — /home/runner/work/_temp/ecosystem/x-ray/go.mod:47
-- `modernc.org/sqlite` (go_module) — build/schema.go:15
+- `modernc.org/sqlite` (go_module) — build/schema.go:14
 - `modernc.org/sqlite` (go_module) — cmd/build_meta.go:14
 - `modernc.org/sqlite` (go_module) — ext/boltdb/boltdb.go:12
 - `modernc.org/sqlite` (go_module) — graph/memstore_refsdb.go:12
@@ -3022,6 +3028,7 @@ graph LR
 - `os` (go_module) — internal/leyline/procgroup_unix.go:6
 - `os` (go_module) — internal/leyline/socket.go:20
 - `os` (go_module) — internal/leylinegraph/auto.go:12
+- `os` (go_module) — internal/leylinegraph/parsecache.go:7
 - `os` (go_module) — internal/leylinegraph/uds_graph.go:6
 - `os` (go_module) — internal/lint/tool_preflight.go:45
 - `os` (go_module) — internal/lltest/lltest.go:12
@@ -3088,7 +3095,6 @@ graph LR
 - `os` (go_module) — tools/token-bench/main.go:35
 - `os` (go_module) — validate/file.go:3
 - `os/exec` (go_module) — build/build.go:5
-- `os/exec` (go_module) — build/schema.go:7
 - `os/exec` (go_module) — cmd/agentd/main.go:12
 - `os/exec` (go_module) — cmd/daemon_agent.go:9
 - `os/exec` (go_module) — cmd/daemon_control.go:9
@@ -3206,6 +3212,7 @@ graph LR
 - `path/filepath` (go_module) — internal/leyline/arena_config.go:6
 - `path/filepath` (go_module) — internal/leyline/binary_cache_path.go:6
 - `path/filepath` (go_module) — internal/leyline/socket.go:22
+- `path/filepath` (go_module) — internal/leylinegraph/parsecache.go:8
 - `path/filepath` (go_module) — internal/lltest/lltest.go:13
 - `path/filepath` (go_module) — internal/lltest/pinned_unix.go:10
 - `path/filepath` (go_module) — internal/lltest/project.go:7
@@ -3409,7 +3416,7 @@ graph LR
 - `strconv` (go_module) — pkg/http/header/parser.go:7
 - `strconv` (go_module) — tools/coverage-gate/main.go:64
 - `strconv` (go_module) — tools/token-bench/main.go:38
-- `strings` (go_module) — build/schema.go:8
+- `strings` (go_module) — build/schema.go:7
 - `strings` (go_module) — build/schema_coverage.go:8
 - `strings` (go_module) — cmd/agent.go:10
 - `strings` (go_module) — cmd/agentd/main.go:14
@@ -3534,6 +3541,7 @@ graph LR
 - `strings` (go_module) — internal/leyline/socket.go:25
 - `strings` (go_module) — internal/leyline/version_check.go:7
 - `strings` (go_module) — internal/leylinegraph/leyline.go:7
+- `strings` (go_module) — internal/leylinegraph/parsecache.go:9
 - `strings` (go_module) — internal/leylinegraph/uds_graph.go:7
 - `strings` (go_module) — internal/lint/tool_preflight.go:48
 - `strings` (go_module) — internal/linter/linter.go:10
@@ -3723,6 +3731,7 @@ graph LR
 - `syscall` (go_module) — internal/leyline/procgroup_other.go:8
 - `syscall` (go_module) — internal/leyline/procgroup_unix.go:8
 - `syscall` (go_module) — internal/leyline/socket.go:28
+- `syscall` (go_module) — internal/leylinegraph/parsecache.go:10
 - `syscall` (go_module) — internal/lltest/pinned_unix.go:12
 - `syscall` (go_module) — internal/mcpserve/serve.go:13
 - `syscall` (go_module) — internal/mountmeta/mountmeta.go:15
@@ -7439,7 +7448,6 @@ graph LR
 - `github.com/agentic-research/mache/build.exists` (go_package_symbol) — build/schema_coverage.go
 - `github.com/agentic-research/mache/build.gaps` (go_package_symbol) — build/schema_coverage.go
 - `github.com/agentic-research/mache/build.openParsedDatabase` (go_package_symbol) — build/schema.go
-- `github.com/agentic-research/mache/build.parseToTemp` (go_package_symbol) — build/schema.go
 - `github.com/agentic-research/mache/build.parseWithSchema` (go_package_symbol) — build/schema.go
 - `github.com/agentic-research/mache/build.projectTopology` (go_package_symbol) — build/schema.go
 - `github.com/agentic-research/mache/build.requireSchemaCoverage` (go_package_symbol) — build/schema.go
@@ -9120,6 +9128,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leylinegraph.NewASTScopedCallExtractor` (go_package_symbol) — internal/leylinegraph/call_extractor_ast.go
 - `github.com/agentic-research/mache/internal/leylinegraph.NewUDSGraph` (go_package_symbol) — internal/leylinegraph/uds_graph.go
 - `github.com/agentic-research/mache/internal/leylinegraph.NoopCallExtractor` (go_package_symbol) — internal/leylinegraph/call_extractor_ast.go
+- `github.com/agentic-research/mache/internal/leylinegraph.ParseCacheDirEnv` (go_package_symbol) — internal/leylinegraph/parsecache.go
 - `github.com/agentic-research/mache/internal/leylinegraph.PickCallExtractor` (go_package_symbol) — internal/leylinegraph/call_extractor_ast.go
 - `github.com/agentic-research/mache/internal/leylinegraph.PickScopedCallExtractor` (go_package_symbol) — internal/leylinegraph/call_extractor_ast.go
 - `github.com/agentic-research/mache/internal/leylinegraph.UDSGraph` (go_package_symbol) — internal/leylinegraph/uds_graph.go
@@ -9181,11 +9190,17 @@ graph LR
 - `github.com/agentic-research/mache/internal/leylinegraph.nodeID` (go_package_symbol) — internal/leylinegraph/leyline.go
 - `github.com/agentic-research/mache/internal/leylinegraph.nodeTx` (go_package_symbol) — internal/leylinegraph/leyline.go
 - `github.com/agentic-research/mache/internal/leylinegraph.nodeTx.insertNode` (go_package_symbol) — internal/leylinegraph/leyline.go
+- `github.com/agentic-research/mache/internal/leylinegraph.parseCacheDir` (go_package_symbol) — internal/leylinegraph/parsecache.go
+- `github.com/agentic-research/mache/internal/leylinegraph.parseCacheEntry` (go_package_symbol) — internal/leylinegraph/parsecache.go
+- `github.com/agentic-research/mache/internal/leylinegraph.parseCacheEntry.discard` (go_package_symbol) — internal/leylinegraph/parsecache.go
+- `github.com/agentic-research/mache/internal/leylinegraph.parseCacheEntry.release` (go_package_symbol) — internal/leylinegraph/parsecache.go
+- `github.com/agentic-research/mache/internal/leylinegraph.reserveParseCache` (go_package_symbol) — internal/leylinegraph/parsecache.go
 - `github.com/agentic-research/mache/internal/leylinegraph.resp` (go_package_symbol) — internal/leylinegraph/uds_graph.go
 - `github.com/agentic-research/mache/internal/leylinegraph.resp` (go_package_symbol) — internal/leylinegraph/uds_graph.go
 - `github.com/agentic-research/mache/internal/leylinegraph.resp` (go_package_symbol) — internal/leylinegraph/uds_graph.go
 - `github.com/agentic-research/mache/internal/leylinegraph.resp` (go_package_symbol) — internal/leylinegraph/uds_graph.go
 - `github.com/agentic-research/mache/internal/leylinegraph.resp` (go_package_symbol) — internal/leylinegraph/uds_graph.go
+- `github.com/agentic-research/mache/internal/leylinegraph.runLeylineParse` (go_package_symbol) — internal/leylinegraph/auto.go
 - `github.com/agentic-research/mache/internal/leylinegraph.sc` (go_package_symbol) — internal/leylinegraph/leyline.go
 - `github.com/agentic-research/mache/internal/leylinegraph.sl` (go_package_symbol) — internal/leylinegraph/leyline.go
 - `github.com/agentic-research/mache/internal/leylinegraph.strVal` (go_package_symbol) — internal/leylinegraph/uds_graph.go
@@ -10235,16 +10250,20 @@ graph LR
 - `github.com/agentic-research/mache/tools/bench-cold.files` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.macheRepoRoot` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.main` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.measureBuilds` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.measureColdPath` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.o` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.options` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.parseFlags` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.planEnv` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.preparePlan` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.printTable` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.report` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.resolveCorpus` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.resolveMacheBinary` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.resolveSchema` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.roundSec` (go_package_symbol) — tools/bench-cold/main.go
+- `github.com/agentic-research/mache/tools/bench-cold.runPlan` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.shortSHA` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/bench-cold.stageHEAD` (go_package_symbol) — tools/bench-cold/main.go
 - `github.com/agentic-research/mache/tools/coverage-gate.collapseBlocks` (go_package_symbol) — tools/coverage-gate/main.go
