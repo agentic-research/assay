@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 75
-- External dependencies: 3885
-- Dangling producers: 9299
+- External dependencies: 3895
+- Dangling producers: 9318
 
 ## Graph
 
@@ -888,6 +888,7 @@ graph LR
 - `crypto/sha1` (go_module) — internal/report/mermaid_repo.go:4
 - `crypto/sha1` (go_module) — pkg/attest/x509/localca.go:8
 - `crypto/sha1` (go_module) — pkg/git/sign.go:5
+- `crypto/sha256` (go_module) — build/incremental.go:4
 - `crypto/sha256` (go_module) — cmd/agent.go:4
 - `crypto/sha256` (go_module) — cmd/mount.go:4
 - `crypto/sha256` (go_module) — cmd/signet/auth_login.go:9
@@ -958,6 +959,7 @@ graph LR
 - `crypto/x509/pkix` (go_module) — pkg/attest/x509/localca.go:10
 - `crypto/x509/pkix` (go_module) — pkg/cms/signer.go:30
 - `crypto/x509/pkix` (go_module) — pkg/cms/verifier.go:41
+- `database/sql` (go_module) — build/incremental.go:5
 - `database/sql` (go_module) — build/schema.go:4
 - `database/sql` (go_module) — build/schema_coverage.go:4
 - `database/sql` (go_module) — cmd/build_meta.go:4
@@ -1046,6 +1048,7 @@ graph LR
 - `encoding/binary` (go_module) — graph/arena.go:4
 - `encoding/binary` (go_module) — graph/arena_writer.go:5
 - `encoding/binary` (go_module) — pkg/revocation/cabundle/file_storage.go:7
+- `encoding/hex` (go_module) — build/incremental.go:6
 - `encoding/hex` (go_module) — cmd/agent.go:5
 - `encoding/hex` (go_module) — cmd/signet-proxy/main.go:19
 - `encoding/hex` (go_module) — cmd/signet/authority_setup_resign.go:7
@@ -1079,6 +1082,7 @@ graph LR
 - `encoding/hex` (go_module) — pkg/sigid/providers/basic/provider.go:7
 - `encoding/hex` (go_module) — pkg/sigid/providers/cell/provider.go:8
 - `encoding/hex` (go_module) — pkg/sigid/providers/cert/provider.go:13
+- `encoding/json` (go_module) — build/incremental.go:7
 - `encoding/json` (go_module) — clients/go/leyline-schema/daemon/wire/events.go:20
 - `encoding/json` (go_module) — cmd/album/main.go:7
 - `encoding/json` (go_module) — cmd/analyze-replay/main.go:14
@@ -1283,6 +1287,7 @@ graph LR
 - `flag` (go_module) — tools/notion-fetch/main.go:18
 - `flag` (go_module) — tools/token-bench/main.go:33
 - `fmt` (go_module) — build/build.go:4
+- `fmt` (go_module) — build/incremental.go:8
 - `fmt` (go_module) — build/schema.go:5
 - `fmt` (go_module) — clients/go/leyline-schema/daemon/wire/events.go:21
 - `fmt` (go_module) — cmd/agent.go:6
@@ -1692,6 +1697,7 @@ graph LR
 - `github.com/agentic-research/ley-line-open/clients/go/leyline-schema/daemon/wire` (go_module) — internal/leyline/sheaf.go:15
 - `github.com/agentic-research/ley-line-open/clients/go/leyline-schema/daemon/wire` (go_module) — internal/leyline/sheaf_subscriber.go:12
 - `github.com/agentic-research/ley-line-open/clients/go/leyline-schema/daemon/wire` (go_module) — internal/leyline/wire.go:4
+- `github.com/agentic-research/mache/api` (go_module) — build/incremental.go:11
 - `github.com/agentic-research/mache/api` (go_module) — build/schema.go:9
 - `github.com/agentic-research/mache/api` (go_module) — build/schema_coverage.go:10
 - `github.com/agentic-research/mache/api` (go_module) — cmd/build.go:9
@@ -1817,6 +1823,7 @@ graph LR
 - `github.com/agentic-research/mache/graph` (go_module) — resolve/resolver.go:16
 - `github.com/agentic-research/mache/internal/benchrun` (go_module) — tools/bench-cold/main.go:39
 - `github.com/agentic-research/mache/internal/buildcache` (go_module) — cmd/register.go:4
+- `github.com/agentic-research/mache/internal/buildinfo` (go_module) — build/incremental.go:12
 - `github.com/agentic-research/mache/internal/buildinfo` (go_module) — cmd/mount.go:16
 - `github.com/agentic-research/mache/internal/buildinfo` (go_module) — internal/buildcache/version.go:3
 - `github.com/agentic-research/mache/internal/buildinfo` (go_module) — internal/mcpserve/version.go:3
@@ -1832,6 +1839,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/gitutil` (go_module) — internal/mcpserve/serve.go:19
 - `github.com/agentic-research/mache/internal/gitutil` (go_module) — internal/mcpserve/serve_hosted.go:16
 - `github.com/agentic-research/mache/internal/gitutil` (go_module) — internal/mcpserve/serve_repo.go:11
+- `github.com/agentic-research/mache/internal/ingest` (go_module) — build/incremental.go:13
 - `github.com/agentic-research/mache/internal/ingest` (go_module) — build/schema.go:10
 - `github.com/agentic-research/mache/internal/ingest` (go_module) — build/schema_coverage.go:11
 - `github.com/agentic-research/mache/internal/ingest` (go_module) — cmd/build_meta.go:11
@@ -1865,6 +1873,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/lattice` (go_module) — internal/schemainfer/infer.go:13
 - `github.com/agentic-research/mache/internal/lattice` (go_module) — internal/schemainfer/mount_inference.go:12
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — build/build.go:7
+- `github.com/agentic-research/mache/internal/leyline` (go_module) — build/incremental.go:14
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — cmd/build_meta.go:13
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — cmd/doctor.go:18
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — cmd/install.go:46
@@ -2908,6 +2917,7 @@ graph LR
 - `net/url` (go_module) — pkg/oidc/cloudflare.go:8
 - `net/url` (go_module) — pkg/oidc/github.go:8
 - `net/url` (go_module) — pkg/signet/signet.go:18
+- `os` (go_module) — build/incremental.go:9
 - `os` (go_module) — build/schema.go:6
 - `os` (go_module) — cmd/agent.go:8
 - `os` (go_module) — cmd/agentd/main.go:11
@@ -7446,13 +7456,19 @@ graph LR
 - `github.com/agentic-research/mache/build.ParseWithSchemaRef` (go_package_symbol) — build/schema.go
 - `github.com/agentic-research/mache/build.collect` (go_package_symbol) — build/schema_coverage.go
 - `github.com/agentic-research/mache/build.exists` (go_package_symbol) — build/schema_coverage.go
+- `github.com/agentic-research/mache/build.fingerprintKey` (go_package_symbol) — build/incremental.go
 - `github.com/agentic-research/mache/build.gaps` (go_package_symbol) — build/schema_coverage.go
 - `github.com/agentic-research/mache/build.openParsedDatabase` (go_package_symbol) — build/schema.go
 - `github.com/agentic-research/mache/build.parseWithSchema` (go_package_symbol) — build/schema.go
 - `github.com/agentic-research/mache/build.projectTopology` (go_package_symbol) — build/schema.go
+- `github.com/agentic-research/mache/build.projectionFingerprint` (go_package_symbol) — build/incremental.go
+- `github.com/agentic-research/mache/build.readFingerprint` (go_package_symbol) — build/incremental.go
 - `github.com/agentic-research/mache/build.requireSchemaCoverage` (go_package_symbol) — build/schema.go
+- `github.com/agentic-research/mache/build.reusableIndex` (go_package_symbol) — build/incremental.go
 - `github.com/agentic-research/mache/build.schemaCoverageGaps` (go_package_symbol) — build/schema_coverage.go
 - `github.com/agentic-research/mache/build.sourceHasExtension` (go_package_symbol) — build/schema_coverage.go
+- `github.com/agentic-research/mache/build.value` (go_package_symbol) — build/incremental.go
+- `github.com/agentic-research/mache/build.writeFingerprint` (go_package_symbol) — build/incremental.go
 - `github.com/agentic-research/mache/cmd.Commit` (go_package_symbol) — cmd/mount.go
 - `github.com/agentic-research/mache/cmd.Date` (go_package_symbol) — cmd/mount.go
 - `github.com/agentic-research/mache/cmd.Execute` (go_package_symbol) — cmd/mount.go
@@ -7824,6 +7840,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.MemoryStore.DeleteNodes` (go_package_symbol) — graph/memstore_delete.go
 - `github.com/agentic-research/mache/graph.MemoryStore.FileMtime` (go_package_symbol) — graph/memstore_livegraph.go
 - `github.com/agentic-research/mache/graph.MemoryStore.FlushRefs` (go_package_symbol) — graph/memstore_refsdb.go
+- `github.com/agentic-research/mache/graph.MemoryStore.ForgetFile` (go_package_symbol) — graph/memstore_livegraph.go
 - `github.com/agentic-research/mache/graph.MemoryStore.GetCallees` (go_package_symbol) — graph/memstore_callees.go
 - `github.com/agentic-research/mache/graph.MemoryStore.GetCallers` (go_package_symbol) — graph/memstore.go
 - `github.com/agentic-research/mache/graph.MemoryStore.GetNode` (go_package_symbol) — graph/memstore.go
@@ -8539,6 +8556,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.Engine.SetASTWalker` (go_package_symbol) — internal/ingest/engine.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.SetFileIndex` (go_package_symbol) — internal/ingest/engine.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.claimConstructID` (go_package_symbol) — internal/ingest/engine_walk.go
+- `github.com/agentic-research/mache/internal/ingest.Engine.clearFileBeforeReprojecting` (go_package_symbol) — internal/ingest/engine.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.commitFileNodes` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.ensureDiagramData` (go_package_symbol) — internal/ingest/engine_diagram.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.gitignored` (go_package_symbol) — internal/ingest/engine_filter.go
@@ -8550,12 +8568,16 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.Engine.ingestSQLiteStreaming` (go_package_symbol) — internal/ingest/engine_sqlite.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.ingestSourceFile` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.ingestSourceTree` (go_package_symbol) — internal/ingest/engine_treesitter.go
+- `github.com/agentic-research/mache/internal/ingest.Engine.planSourceWalk` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.processNode` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.processSourceFileResult` (go_package_symbol) — internal/ingest/engine_treesitter.go
+- `github.com/agentic-research/mache/internal/ingest.Engine.reapDeleted` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.releaseFileClaims` (go_package_symbol) — internal/ingest/engine_walk.go
+- `github.com/agentic-research/mache/internal/ingest.Engine.retainClaims` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.routeToProjectFiles` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.sourceIDFor` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.walkProjectFiles` (go_package_symbol) — internal/ingest/engine_filter.go
+- `github.com/agentic-research/mache/internal/ingest.Engine.widenToSharedRoots` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.EnsureCanonicalViews` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.FileIndexEntry` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.FileMeta` (go_package_symbol) — internal/ingest/interfaces.go
@@ -8595,6 +8617,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.Close` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.DeleteFileNodes` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.DeleteNodes` (go_package_symbol) — internal/ingest/sqlite_writer.go
+- `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.ForgetFile` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.GetCallees` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.GetCallers` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.SQLiteWriter.GetNode` (go_package_symbol) — internal/ingest/sqlite_writer.go
@@ -8653,6 +8676,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.AddFileChildren` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.AddNode` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.DeleteNodes` (go_package_symbol) — internal/ingest/engine_refs.go
+- `github.com/agentic-research/mache/internal/ingest.bufferingTarget.ForgetFile` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.ListChildren` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.claimScope` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.bufferingTarget.noteBuffered` (go_package_symbol) — internal/ingest/engine_refs.go
@@ -8664,6 +8688,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.calls` (go_package_symbol) — internal/ingest/ast_walker_calls.go
 - `github.com/agentic-research/mache/internal/ingest.calls` (go_package_symbol) — internal/ingest/ast_walker_calls.go
 - `github.com/agentic-research/mache/internal/ingest.calls` (go_package_symbol) — internal/ingest/engine_walk.go
+- `github.com/agentic-research/mache/internal/ingest.candidates` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.child` (go_package_symbol) — internal/ingest/ast_walker_index.go
 - `github.com/agentic-research/mache/internal/ingest.childID` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.childKind` (go_package_symbol) — internal/ingest/ast_flatten_db.go
@@ -8740,6 +8765,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.kind` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.langForExt` (go_package_symbol) — internal/ingest/engine_walkers.go
 - `github.com/agentic-research/mache/internal/ingest.listChildrenTolerant` (go_package_symbol) — internal/ingest/engine_walk.go
+- `github.com/agentic-research/mache/internal/ingest.loadClaimedIDs` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.matchDoublestar` (go_package_symbol) — internal/ingest/gitignore.go
 - `github.com/agentic-research/mache/internal/ingest.matchPattern` (go_package_symbol) — internal/ingest/gitignore.go
 - `github.com/agentic-research/mache/internal/ingest.matches` (go_package_symbol) — internal/ingest/ast_walker.go
@@ -8747,6 +8773,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.mtimeNano` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.multiplier` (go_package_symbol) — internal/ingest/engine_filter.go
 - `github.com/agentic-research/mache/internal/ingest.n` (go_package_symbol) — internal/ingest/ast_walker_index.go
+- `github.com/agentic-research/mache/internal/ingest.name` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.newFileIndex` (go_package_symbol) — internal/ingest/ast_walker_index.go
 - `github.com/agentic-research/mache/internal/ingest.next` (go_package_symbol) — internal/ingest/ast_walker_lookup.go
 - `github.com/agentic-research/mache/internal/ingest.nodeID` (go_package_symbol) — internal/ingest/ast_flatten_db.go
@@ -8769,6 +8796,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.parentAwareMatch.ScopeCalls` (go_package_symbol) — internal/ingest/parent_match.go
 - `github.com/agentic-research/mache/internal/ingest.parentAwareMatch.ScopeSource` (go_package_symbol) — internal/ingest/parent_match.go
 - `github.com/agentic-research/mache/internal/ingest.parentAwareMatch.Values` (go_package_symbol) — internal/ingest/parent_match.go
+- `github.com/agentic-research/mache/internal/ingest.parentID` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.parentID` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.parentLink` (go_package_symbol) — internal/ingest/engine_refs.go
 - `github.com/agentic-research/mache/internal/ingest.parseGitignoreFile` (go_package_symbol) — internal/ingest/gitignore.go
@@ -8793,7 +8821,6 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.raw` (go_package_symbol) — internal/ingest/sqlite_loader.go
 - `github.com/agentic-research/mache/internal/ingest.raw` (go_package_symbol) — internal/ingest/sqlite_loader.go
 - `github.com/agentic-research/mache/internal/ingest.rawFile` (go_package_symbol) — internal/ingest/engine.go
-- `github.com/agentic-research/mache/internal/ingest.rawFiles` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.readSource` (go_package_symbol) — internal/ingest/ast_walker_index.go
 - `github.com/agentic-research/mache/internal/ingest.realPathOf` (go_package_symbol) — internal/ingest/engine_filter.go
 - `github.com/agentic-research/mache/internal/ingest.record` (go_package_symbol) — internal/ingest/sqlite_writer.go
@@ -8809,7 +8836,6 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.refsProvider` (go_package_symbol) — internal/ingest/engine_diagram.go
 - `github.com/agentic-research/mache/internal/ingest.result` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.result` (go_package_symbol) — internal/ingest/engine_walkers.go
-- `github.com/agentic-research/mache/internal/ingest.results` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.scopeClaimer` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.scopeUnit` (go_package_symbol) — internal/ingest/ast_walker_lookup.go
 - `github.com/agentic-research/mache/internal/ingest.scopedAddrRef` (go_package_symbol) — internal/ingest/ast_walker.go
@@ -8827,10 +8853,12 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.skipBalanced` (go_package_symbol) — internal/ingest/ast_walker_selector.go
 - `github.com/agentic-research/mache/internal/ingest.skipExts` (go_package_symbol) — internal/ingest/engine_filter.go
 - `github.com/agentic-research/mache/internal/ingest.sourceFile` (go_package_symbol) — internal/ingest/sqlite_writer.go
+- `github.com/agentic-research/mache/internal/ingest.sourceFile` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.sourceFileID` (go_package_symbol) — internal/ingest/engine_walk.go
 - `github.com/agentic-research/mache/internal/ingest.sourceFileJob` (go_package_symbol) — internal/ingest/engine.go
 - `github.com/agentic-research/mache/internal/ingest.sourceID` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.sourceText` (go_package_symbol) — internal/ingest/ast_walker_lookup.go
+- `github.com/agentic-research/mache/internal/ingest.sourceWalk` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.tableName` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.tableName` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.toNodeID` (go_package_symbol) — internal/ingest/engine_walk.go
@@ -10103,6 +10131,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/testutil.BindingRec` (go_package_symbol) — internal/testutil/bindinglog.go
 - `github.com/agentic-research/mache/internal/testutil.BuildTestGraph` (go_package_symbol) — internal/testutil/mcptest.go
 - `github.com/agentic-research/mache/internal/testutil.GoCallExtractorForTest` (go_package_symbol) — internal/testutil/leyline.go
+- `github.com/agentic-research/mache/internal/testutil.GoldenCorpusDir` (go_package_symbol) — internal/testutil/repo.go
 - `github.com/agentic-research/mache/internal/testutil.MacheRepoRoot` (go_package_symbol) — internal/testutil/repo.go
 - `github.com/agentic-research/mache/internal/testutil.MakeRequest` (go_package_symbol) — internal/testutil/mcptest.go
 - `github.com/agentic-research/mache/internal/testutil.PresetFixturesDir` (go_package_symbol) — internal/testutil/repo.go
