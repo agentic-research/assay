@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 75
-- External dependencies: 3908
-- Dangling producers: 9337
+- External dependencies: 3907
+- Dangling producers: 9336
 
 ## Graph
 
@@ -1883,7 +1883,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — cmd/leyline_proxy.go:49
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — cmd/mount.go:20
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/leylinegraph/auto.go:16
-- `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/leylinegraph/parsecache.go:12
+- `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/leylinegraph/parsecache.go:11
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/leylinegraph/uds_graph.go:10
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/linter/linter.go:14
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/lltest/pinned_unix.go:16
@@ -1937,7 +1937,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — cmd/init.go:9
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/buildcache/cache.go:34
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/daemonguard/daemonguard.go:28
-- `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/leylinegraph/parsecache.go:13
+- `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/leylinegraph/parsecache.go:12
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/leylinegraph/reap.go:12
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/mcpserve/serve_registry.go:22
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — internal/smells/smell_rules_config.go:9
@@ -3561,7 +3561,6 @@ graph LR
 - `strings` (go_module) — internal/leyline/socket.go:25
 - `strings` (go_module) — internal/leyline/version_check.go:7
 - `strings` (go_module) — internal/leylinegraph/leyline.go:7
-- `strings` (go_module) — internal/leylinegraph/parsecache.go:9
 - `strings` (go_module) — internal/leylinegraph/reap.go:8
 - `strings` (go_module) — internal/leylinegraph/uds_graph.go:7
 - `strings` (go_module) — internal/lint/tool_preflight.go:48
@@ -3752,7 +3751,7 @@ graph LR
 - `syscall` (go_module) — internal/leyline/procgroup_other.go:8
 - `syscall` (go_module) — internal/leyline/procgroup_unix.go:8
 - `syscall` (go_module) — internal/leyline/socket.go:28
-- `syscall` (go_module) — internal/leylinegraph/parsecache.go:10
+- `syscall` (go_module) — internal/leylinegraph/parsecache.go:9
 - `syscall` (go_module) — internal/leylinegraph/reap.go:9
 - `syscall` (go_module) — internal/lltest/pinned_unix.go:12
 - `syscall` (go_module) — internal/mcpserve/serve.go:13
@@ -8555,7 +8554,6 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.ASTWalker.sectionOrNil` (go_package_symbol) — internal/ingest/ast_walker.go
 - `github.com/agentic-research/mache/internal/ingest.CallExtractor` (go_package_symbol) — internal/ingest/interfaces.go
 - `github.com/agentic-research/mache/internal/ingest.CallPattern` (go_package_symbol) — internal/ingest/ast_walker_calls.go
-- `github.com/agentic-research/mache/internal/ingest.CanonicalViewsDDL` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.CoverageEntry` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.DocScope` (go_package_symbol) — internal/ingest/interfaces.go
 - `github.com/agentic-research/mache/internal/ingest.Engine` (go_package_symbol) — internal/ingest/engine.go
@@ -8591,7 +8589,6 @@ graph LR
 - `github.com/agentic-research/mache/internal/ingest.Engine.sourceIDFor` (go_package_symbol) — internal/ingest/engine_treesitter.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.walkProjectFiles` (go_package_symbol) — internal/ingest/engine_filter.go
 - `github.com/agentic-research/mache/internal/ingest.Engine.widenToSharedRoots` (go_package_symbol) — internal/ingest/engine_treesitter.go
-- `github.com/agentic-research/mache/internal/ingest.EnsureCanonicalViews` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.FileIndexEntry` (go_package_symbol) — internal/ingest/sqlite_writer.go
 - `github.com/agentic-research/mache/internal/ingest.FileMeta` (go_package_symbol) — internal/ingest/interfaces.go
 - `github.com/agentic-research/mache/internal/ingest.FlattenASTDB` (go_package_symbol) — internal/ingest/ast_flatten_db.go
@@ -9259,7 +9256,8 @@ graph LR
 - `github.com/agentic-research/mache/internal/leylinegraph.strVal` (go_package_symbol) — internal/leylinegraph/uds_graph.go
 - `github.com/agentic-research/mache/internal/leylinegraph.stripProjectFileContent` (go_package_symbol) — internal/leylinegraph/leyline.go
 - `github.com/agentic-research/mache/internal/leylinegraph.tableExists` (go_package_symbol) — internal/leylinegraph/leyline.go
-- `github.com/agentic-research/mache/internal/leylinegraph.tempDBPattern` (go_package_symbol) — internal/leylinegraph/reap.go
+- `github.com/agentic-research/mache/internal/leylinegraph.tempEntryPatterns` (go_package_symbol) — internal/leylinegraph/reap.go
+- `github.com/agentic-research/mache/internal/leylinegraph.tempParseCleanup` (go_package_symbol) — internal/leylinegraph/auto.go
 - `github.com/agentic-research/mache/internal/leylinegraph.text` (go_package_symbol) — internal/leylinegraph/leyline.go
 - `github.com/agentic-research/mache/internal/leylinegraph.token` (go_package_symbol) — internal/leylinegraph/leyline.go
 - `github.com/agentic-research/mache/internal/leylinegraph.token` (go_package_symbol) — internal/leylinegraph/leyline.go
