@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 75
-- External dependencies: 3913
-- Dangling producers: 9346
+- External dependencies: 3917
+- Dangling producers: 9356
 
 ## Graph
 
@@ -968,7 +968,9 @@ graph LR
 - `database/sql` (go_module) — graph/capabilities.go:3
 - `database/sql` (go_module) — graph/memstore.go:4
 - `database/sql` (go_module) — graph/memstore_refsdb.go:5
+- `database/sql` (go_module) — graph/nodes_row.go:3
 - `database/sql` (go_module) — graph/nodes_table_reader.go:4
+- `database/sql` (go_module) — graph/prepared_stmt.go:4
 - `database/sql` (go_module) — graph/projection_version.go:4
 - `database/sql` (go_module) — graph/props_compat.go:4
 - `database/sql` (go_module) — graph/refs_resolve.go:4
@@ -3662,6 +3664,7 @@ graph LR
 - `sync` (go_module) — graph/hotswap.go:5
 - `sync` (go_module) — graph/memstore.go:7
 - `sync` (go_module) — graph/nodes_table_reader.go:10
+- `sync` (go_module) — graph/prepared_stmt.go:5
 - `sync` (go_module) — graph/sheaf_invalidate.go:5
 - `sync` (go_module) — graph/sqlite_graph.go:11
 - `sync` (go_module) — graph/sqlite_graph_scan.go:10
@@ -3733,6 +3736,7 @@ graph LR
 - `sync/atomic` (go_module) — cmd/bench/integration_bench.go:10
 - `sync/atomic` (go_module) — graph/composite.go:9
 - `sync/atomic` (go_module) — graph/memstore.go:8
+- `sync/atomic` (go_module) — graph/prepared_stmt.go:6
 - `sync/atomic` (go_module) — internal/api/voice.go:12
 - `sync/atomic` (go_module) — internal/api/websocket.go:13
 - `sync/atomic` (go_module) — internal/cdp/proxy.go:9
@@ -7910,6 +7914,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.NodeStat` (go_package_symbol) — graph/graph.go
 - `github.com/agentic-research/mache/graph.NodesForPathProvider` (go_package_symbol) — graph/graph.go
 - `github.com/agentic-research/mache/graph.NodesTableReader` (go_package_symbol) — graph/nodes_table_reader.go
+- `github.com/agentic-research/mache/graph.NodesTableReader.Close` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.NodesTableReader.DB` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.NodesTableReader.GetCallers` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.NodesTableReader.GetNode` (go_package_symbol) — graph/nodes_table_reader.go
@@ -7917,7 +7922,8 @@ graph LR
 - `github.com/agentic-research/mache/graph.NodesTableReader.ListChildStats` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.NodesTableReader.ListChildren` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.NodesTableReader.ReadContent` (go_package_symbol) — graph/nodes_table_reader.go
-- `github.com/agentic-research/mache/graph.NodesTableReader.nodeSelect` (go_package_symbol) — graph/nodes_table_reader.go
+- `github.com/agentic-research/mache/graph.NodesTableReader.nodeSelect` (go_package_symbol) — graph/nodes_row.go
+- `github.com/agentic-research/mache/graph.NodesTableReader.query` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.NodesTableReader.renderFromRecord` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.NodesTableReader.resolveContent` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.NormalizeID` (go_package_symbol) — graph/graph.go
@@ -8045,8 +8051,8 @@ graph LR
 - `github.com/agentic-research/mache/graph.allRows` (go_package_symbol) — graph/sqlite.go
 - `github.com/agentic-research/mache/graph.appendUniq` (go_package_symbol) — graph/sliceutil.go
 - `github.com/agentic-research/mache/graph.arenaHeaderBytes` (go_package_symbol) — graph/arena.go
-- `github.com/agentic-research/mache/graph.astLocation` (go_package_symbol) — graph/nodes_table_reader.go
-- `github.com/agentic-research/mache/graph.astLocation.origin` (go_package_symbol) — graph/nodes_table_reader.go
+- `github.com/agentic-research/mache/graph.astLocation` (go_package_symbol) — graph/nodes_row.go
+- `github.com/agentic-research/mache/graph.astLocation.origin` (go_package_symbol) — graph/nodes_row.go
 - `github.com/agentic-research/mache/graph.astScopeID` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.astSourceID` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.b` (go_package_symbol) — graph/quotient.go
@@ -8139,6 +8145,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.mtimeNano` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.name` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.narrowToPackage` (go_package_symbol) — graph/refs_resolve.go
+- `github.com/agentic-research/mache/graph.newPreparedStmt` (go_package_symbol) — graph/prepared_stmt.go
 - `github.com/agentic-research/mache/graph.nextID` (go_package_symbol) — graph/memstore_refsdb.go
 - `github.com/agentic-research/mache/graph.nodeID` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.nodeID` (go_package_symbol) — graph/sqlite_graph_callees.go
@@ -8146,8 +8153,8 @@ graph LR
 - `github.com/agentic-research/mache/graph.nodeID` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.nodeID` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.nodeRow` (go_package_symbol) — graph/sqlite.go
-- `github.com/agentic-research/mache/graph.nodeScan` (go_package_symbol) — graph/nodes_table_reader.go
-- `github.com/agentic-research/mache/graph.nodeScan.scanTargets` (go_package_symbol) — graph/nodes_table_reader.go
+- `github.com/agentic-research/mache/graph.nodeScan` (go_package_symbol) — graph/nodes_row.go
+- `github.com/agentic-research/mache/graph.nodeScan.scanTargets` (go_package_symbol) — graph/nodes_row.go
 - `github.com/agentic-research/mache/graph.nodes` (go_package_symbol) — graph/memstore.go
 - `github.com/agentic-research/mache/graph.nodes` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.nodes` (go_package_symbol) — graph/sqlite_graph_callees.go
@@ -8170,6 +8177,9 @@ graph LR
 - `github.com/agentic-research/mache/graph.pathEntry` (go_package_symbol) — graph/sqlite_graph_scan.go
 - `github.com/agentic-research/mache/graph.perMount` (go_package_symbol) — graph/composite.go
 - `github.com/agentic-research/mache/graph.pickChildLevel` (go_package_symbol) — graph/sqlite_graph_schema.go
+- `github.com/agentic-research/mache/graph.preparedStmt` (go_package_symbol) — graph/prepared_stmt.go
+- `github.com/agentic-research/mache/graph.preparedStmt.close` (go_package_symbol) — graph/prepared_stmt.go
+- `github.com/agentic-research/mache/graph.preparedStmt.get` (go_package_symbol) — graph/prepared_stmt.go
 - `github.com/agentic-research/mache/graph.projectedPairs` (go_package_symbol) — graph/community.go
 - `github.com/agentic-research/mache/graph.prominent` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.propsJSON` (go_package_symbol) — graph/sqlite_graph_callees.go
@@ -8183,6 +8193,8 @@ graph LR
 - `github.com/agentic-research/mache/graph.raw` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.raw` (go_package_symbol) — graph/sqlite_graph.go
 - `github.com/agentic-research/mache/graph.raw` (go_package_symbol) — graph/sqlite_resolver.go
+- `github.com/agentic-research/mache/graph.readerStmts` (go_package_symbol) — graph/nodes_table_reader.go
+- `github.com/agentic-research/mache/graph.readerStmts.all` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.rec` (go_package_symbol) — graph/sqlite.go
 - `github.com/agentic-research/mache/graph.record` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.record` (go_package_symbol) — graph/sqlite.go
@@ -10091,6 +10103,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/sqlcount.DriverName` (go_package_symbol) — internal/sqlcount/sqlcount.go
 - `github.com/agentic-research/mache/internal/sqlcount.RegisterDriver` (go_package_symbol) — internal/sqlcount/sqlcount.go
 - `github.com/agentic-research/mache/internal/sqlcount.Reset` (go_package_symbol) — internal/sqlcount/sqlcount.go
+- `github.com/agentic-research/mache/internal/sqlcount.ResetPrepares` (go_package_symbol) — internal/sqlcount/sqlcount.go
 - `github.com/agentic-research/mache/internal/sqlcount.countingConn` (go_package_symbol) — internal/sqlcount/sqlcount.go
 - `github.com/agentic-research/mache/internal/sqlcount.countingConn.Prepare` (go_package_symbol) — internal/sqlcount/sqlcount.go
 - `github.com/agentic-research/mache/internal/sqlcount.countingConn.PrepareContext` (go_package_symbol) — internal/sqlcount/sqlcount.go
@@ -10100,6 +10113,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/sqlcount.countingStmt` (go_package_symbol) — internal/sqlcount/sqlcount.go
 - `github.com/agentic-research/mache/internal/sqlcount.countingStmt.Query` (go_package_symbol) — internal/sqlcount/sqlcount.go
 - `github.com/agentic-research/mache/internal/sqlcount.countingStmt.QueryContext` (go_package_symbol) — internal/sqlcount/sqlcount.go
+- `github.com/agentic-research/mache/internal/sqlcount.sqlPrepares` (go_package_symbol) — internal/sqlcount/sqlcount.go
 - `github.com/agentic-research/mache/internal/sqlcount.sqlQueries` (go_package_symbol) — internal/sqlcount/sqlcount.go
 - `github.com/agentic-research/mache/internal/sqlcount.valuesToNamed` (go_package_symbol) — internal/sqlcount/sqlcount.go
 - `github.com/agentic-research/mache/internal/sqlcount.wrapStmt` (go_package_symbol) — internal/sqlcount/sqlcount.go
