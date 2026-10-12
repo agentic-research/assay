@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 75
-- External dependencies: 3938
-- Dangling producers: 9433
+- External dependencies: 3961
+- Dangling producers: 9465
 
 ## Graph
 
@@ -301,7 +301,7 @@ graph LR
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:56
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/core/Cargo.toml:24
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:113
-- `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:81
+- `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:82
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/hdc/Cargo.toml:15
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/lsp/Cargo.toml:21
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:23
@@ -323,7 +323,7 @@ graph LR
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:34
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:101
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli/Cargo.toml:47
-- `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:69
+- `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:70
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/lsp/Cargo.toml:15
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:128
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:31
@@ -342,7 +342,7 @@ graph LR
 - `tracing-subscriber` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:136
 - `tree-sitter` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:69
 - `tree-sitter` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:93
-- `tree-sitter` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:70
+- `tree-sitter` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:71
 - `tree-sitter` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sheaf/Cargo.toml:50
 - `tree-sitter` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:87
 - `tree-sitter-bash` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:108
@@ -351,15 +351,15 @@ graph LR
 - `tree-sitter-containerfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:113
 - `tree-sitter-cpp` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:111
 - `tree-sitter-css` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:120
-- `tree-sitter-elixir` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:76
+- `tree-sitter-elixir` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:77
 - `tree-sitter-elixir` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:94
-- `tree-sitter-go` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:71
+- `tree-sitter-go` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:72
 - `tree-sitter-go` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:92
 - `tree-sitter-groovy` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:121
 - `tree-sitter-hcl` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:95
 - `tree-sitter-html` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:88
 - `tree-sitter-java` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:109
-- `tree-sitter-javascript` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:73
+- `tree-sitter-javascript` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:74
 - `tree-sitter-javascript` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:98
 - `tree-sitter-json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:90
 - `tree-sitter-kotlin-ng` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:116
@@ -367,16 +367,16 @@ graph LR
 - `tree-sitter-md` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:89
 - `tree-sitter-php` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:115
 - `tree-sitter-proto` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:97
-- `tree-sitter-python` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:72
+- `tree-sitter-python` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:73
 - `tree-sitter-python` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:93
 - `tree-sitter-ruby` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:114
-- `tree-sitter-rust` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:75
+- `tree-sitter-rust` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:76
 - `tree-sitter-rust` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:96
 - `tree-sitter-scala` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:118
 - `tree-sitter-sequel` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:107
 - `tree-sitter-swift` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:117
 - `tree-sitter-toml-ng` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:112
-- `tree-sitter-typescript` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:74
+- `tree-sitter-typescript` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:75
 - `tree-sitter-typescript` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:103
 - `tree-sitter-yaml` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:91
 - `tungstenite` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:107
@@ -398,7 +398,7 @@ graph LR
 - `witchcraft` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/text-search/Cargo.toml:49
 - `x509-cert` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:88
 - `zeroize` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:121
-- `*-linux-amd64` (cli_binary) — .github/workflows/release-dryrun.yml:152
+- `*-linux-amd64` (cli_binary) — .github/workflows/release-dryrun.yml:157
 - `-` (cli_binary) — .github/workflows/oidc-signing.yml:67
 - `:` (cli_binary) — .github/workflows/release.yml:148
 - `EOF` (cli_binary) — .github/workflows/oidc-signing.yml:62
@@ -443,7 +443,7 @@ graph LR
 - `curl` (cli_binary) — .github/workflows/release.yml:154
 - `curl` (cli_binary) — .github/workflows/release.yml:245
 - `def` (cli_binary) — .github/workflows/release.yml:265
-- `docker` (cli_binary) — .github/workflows/release-dryrun.yml:203
+- `docker` (cli_binary) — .github/workflows/release-dryrun.yml:208
 - `docker` (cli_binary) — .github/workflows/release.yml:167
 - `enabled:` (cli_binary) — .github/workflows/oidc-signing.yml:73
 - `gh` (cli_binary) — .github/workflows/ci.yml:54
@@ -496,7 +496,7 @@ graph LR
 - `pnpm` (cli_binary) — .github/workflows/publish-dpop.yml:63
 - `printf` (cli_binary) — .github/workflows/ci.yml:203
 - `printf` (cli_binary) — .github/workflows/coverage.yml:85
-- `printf` (cli_binary) — .github/workflows/release-dryrun.yml:155
+- `printf` (cli_binary) — .github/workflows/release-dryrun.yml:160
 - `providers:` (cli_binary) — .github/workflows/oidc-signing.yml:66
 - `python3` (cli_binary) — .github/workflows/ci.yml:124
 - `python3` (cli_binary) — .github/workflows/release.yml:259
@@ -524,7 +524,7 @@ graph LR
 - `task` (cli_binary) — .github/workflows/ci.yml:69
 - `task` (cli_binary) — .github/workflows/ci.yml:85
 - `task` (cli_binary) — .github/workflows/ci.yml:124
-- `task` (cli_binary) — .github/workflows/ci.yml:129
+- `task` (cli_binary) — .github/workflows/ci.yml:137
 - `task` (cli_binary) — .github/workflows/coverage.yml:48
 - `task` (cli_binary) — .github/workflows/docs.yml:53
 - `task` (cli_binary) — .github/workflows/e2e-fresh.yml:61
@@ -538,7 +538,7 @@ graph LR
 - `task` (cli_binary) — .github/workflows/oidc-signing.yml:40
 - `task` (cli_binary) — .github/workflows/publish-crates.yml:99
 - `task` (cli_binary) — .github/workflows/publish-dpop.yml:86
-- `task` (cli_binary) — .github/workflows/release-dryrun.yml:84
+- `task` (cli_binary) — .github/workflows/release-dryrun.yml:86
 - `task` (cli_binary) — .github/workflows/release.yml:62
 - `task` (cli_binary) — .github/workflows/release.yml:132
 - `task` (cli_binary) — .github/workflows/release.yml:157
@@ -553,7 +553,7 @@ graph LR
 - `{` (cli_binary) — .github/workflows/oidc-signing.yml:52
 - `}` (cli_binary) — .github/workflows/oidc-signing.yml:61
 - `}` (cli_binary) — .github/workflows/publish-dpop.yml:137
-- `}` (cli_binary) — .github/workflows/release-dryrun.yml:158
+- `}` (cli_binary) — .github/workflows/release-dryrun.yml:163
 - `cgr.dev/chainguard/static` (container_image) — image.Dockerfile:43
 - `cloister:0.1.0` (container_image) — /home/runner/work/_temp/ecosystem/cloister/cluster.capnp:31
 - `docker.io/library/alpine` (container_image) — demo/http-auth/Dockerfile:18
@@ -787,6 +787,7 @@ graph LR
 - `context` (go_module) — resolve/resolver.go:12
 - `context` (go_module) — tools/fuzz-gen/main.go:5
 - `context` (go_module) — tools/release-parity/main.go:32
+- `context` (go_module) — tools/release-parity/session.go:4
 - `crypto` (go_module) — cmd/signet/authority_identity.go:5
 - `crypto` (go_module) — cmd/signet/authority_register.go:5
 - `crypto` (go_module) — cmd/signet/sign.go:4
@@ -1203,6 +1204,7 @@ graph LR
 - `encoding/json` (go_module) — tools/mcp-fetch/main.go:12
 - `encoding/json` (go_module) — tools/notion-fetch/main.go:17
 - `encoding/json` (go_module) — tools/release-parity/main.go:33
+- `encoding/json` (go_module) — tools/release-parity/report.go:4
 - `encoding/json` (go_module) — tools/server-json-gen/main.go:29
 - `encoding/json` (go_module) — tools/sheaf-subscribe-probe/main.go:16
 - `encoding/json` (go_module) — tools/token-bench/main.go:32
@@ -1243,6 +1245,7 @@ graph LR
 - `errors` (go_module) — internal/extract/gomod/gomod.go:19
 - `errors` (go_module) — internal/extract/wrangler/wrangler.go:20
 - `errors` (go_module) — internal/ingest/engine_walk.go:5
+- `errors` (go_module) — internal/leyline/socket.go:15
 - `errors` (go_module) — internal/leylinegraph/uds_graph.go:4
 - `errors` (go_module) — internal/lloschema/views.go:4
 - `errors` (go_module) — internal/lsp/binding_log.go:15
@@ -1272,6 +1275,7 @@ graph LR
 - `errors` (go_module) — tools/fuzz-gen/subject/parser.go:4
 - `errors` (go_module) — tools/fuzz-gen/tasks/task_1771121798/parser.go:4
 - `errors` (go_module) — tools/release-parity/main.go:34
+- `errors` (go_module) — tools/release-parity/session.go:5
 - `example.com/quux` (go_module) — rs/ll-open/cli-lib/tests/fixtures/topology/handcrafted/go/grouped.go:8
 - `flag` (go_module) — cmd/agentd/main.go:6
 - `flag` (go_module) — cmd/analyze-replay/main.go:15
@@ -1459,7 +1463,7 @@ graph LR
 - `fmt` (go_module) — internal/leyline/semantic.go:10
 - `fmt` (go_module) — internal/leyline/sheaf.go:12
 - `fmt` (go_module) — internal/leyline/sheaf_subscriber.go:6
-- `fmt` (go_module) — internal/leyline/socket.go:15
+- `fmt` (go_module) — internal/leyline/socket.go:16
 - `fmt` (go_module) — internal/leyline/validate.go:31
 - `fmt` (go_module) — internal/leyline/version_check.go:4
 - `fmt` (go_module) — internal/leylinegraph/auto.go:10
@@ -1613,6 +1617,8 @@ graph LR
 - `fmt` (go_module) — tools/mcp-fetch/main.go:14
 - `fmt` (go_module) — tools/notion-fetch/main.go:19
 - `fmt` (go_module) — tools/release-parity/main.go:36
+- `fmt` (go_module) — tools/release-parity/report.go:5
+- `fmt` (go_module) — tools/release-parity/session.go:6
 - `fmt` (go_module) — tools/server-json-gen/main.go:30
 - `fmt` (go_module) — tools/sheaf-subscribe-probe/main.go:17
 - `fmt` (go_module) — tools/token-bench/main.go:34
@@ -1953,6 +1959,8 @@ graph LR
 - `github.com/agentic-research/mache/internal/nfsmount` (go_module) — mount/mount.go:11
 - `github.com/agentic-research/mache/internal/pathguard` (go_module) — internal/projcfg/config.go:16
 - `github.com/agentic-research/mache/internal/pathguard` (go_module) — schema/schema.go:15
+- `github.com/agentic-research/mache/internal/procsig` (go_module) — cmd/mount.go:25
+- `github.com/agentic-research/mache/internal/procsig` (go_module) — internal/mcpserve/serve.go:24
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — cmd/daemon_agent.go:16
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — cmd/daemon_control.go:17
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — cmd/doctor.go:19
@@ -1965,21 +1973,21 @@ graph LR
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — tools/bench-cold/main.go:42
 - `github.com/agentic-research/mache/internal/refsvtab` (go_module) — graph/memstore_refsdb.go:11
 - `github.com/agentic-research/mache/internal/refsvtab` (go_module) — graph/sqlite_graph.go:16
-- `github.com/agentic-research/mache/internal/schemainfer` (go_module) — cmd/mount.go:25
+- `github.com/agentic-research/mache/internal/schemainfer` (go_module) — cmd/mount.go:26
 - `github.com/agentic-research/mache/internal/schemainfer` (go_module) — internal/mcpserve/serve_hosted.go:17
 - `github.com/agentic-research/mache/internal/schemainfer` (go_module) — internal/mcpserve/serve_registry.go:23
 - `github.com/agentic-research/mache/internal/smells` (go_module) — cmd/register.go:6
-- `github.com/agentic-research/mache/internal/smells` (go_module) — internal/mcpserve/serve.go:24
+- `github.com/agentic-research/mache/internal/smells` (go_module) — internal/mcpserve/serve.go:25
 - `github.com/agentic-research/mache/internal/smells` (go_module) — internal/mcpserve/serve_handlers.go:5
 - `github.com/agentic-research/mache/internal/sqlintro` (go_module) — internal/fixturedb/emit.go:9
 - `github.com/agentic-research/mache/internal/sqlintro` (go_module) — internal/leylinegraph/leyline.go:11
-- `github.com/agentic-research/mache/internal/template` (go_module) — cmd/mount.go:26
+- `github.com/agentic-research/mache/internal/template` (go_module) — cmd/mount.go:27
 - `github.com/agentic-research/mache/internal/template` (go_module) — cmd/mount_control.go:17
 - `github.com/agentic-research/mache/internal/template` (go_module) — cmd/pack.go:15
 - `github.com/agentic-research/mache/internal/template` (go_module) — graph/open.go:5
 - `github.com/agentic-research/mache/internal/template` (go_module) — graph/sqlite_graph_scan.go:14
 - `github.com/agentic-research/mache/internal/template` (go_module) — internal/ingest/engine.go:14
-- `github.com/agentic-research/mache/internal/template` (go_module) — internal/mcpserve/serve.go:25
+- `github.com/agentic-research/mache/internal/template` (go_module) — internal/mcpserve/serve.go:26
 - `github.com/agentic-research/mache/internal/template` (go_module) — internal/smells/smell_sarif.go:9
 - `github.com/agentic-research/mache/internal/template` (go_module) — internal/testfixtures/registry.go:31
 - `github.com/agentic-research/mache/internal/testfixtures` (go_module) — tools/fixtures-rebaseline/main.go:43
@@ -2250,7 +2258,8 @@ graph LR
 - `github.com/golang/groupcache` (go_module) — /home/runner/work/_temp/ecosystem/x-ray/go.mod:23
 - `github.com/google/go-cmp` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:13
 - `github.com/google/go-cmp` (go_module) — /home/runner/work/_temp/ecosystem/x-ray/go.mod:24
-- `github.com/google/go-cmp/cmp` (go_module) — tools/release-parity/main.go:45
+- `github.com/google/go-cmp/cmp` (go_module) — tools/release-parity/mask.go:3
+- `github.com/google/go-cmp/cmp` (go_module) — tools/release-parity/report.go:11
 - `github.com/google/go-containerregistry` (go_module) — /home/runner/work/_temp/ecosystem/signet/go.mod:40
 - `github.com/google/jsonschema-go` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:41
 - `github.com/google/s2a-go` (go_module) — /home/runner/work/_temp/ecosystem/x-ray/go.mod:25
@@ -2285,7 +2294,7 @@ graph LR
 - `github.com/klauspost/cpuid/v2` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:45
 - `github.com/lucasb-eyer/go-colorful` (go_module) — /home/runner/work/_temp/ecosystem/signet/go.mod:42
 - `github.com/mark3labs/mcp-go` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:15
-- `github.com/mark3labs/mcp-go/client` (go_module) — tools/release-parity/main.go:46
+- `github.com/mark3labs/mcp-go/client` (go_module) — tools/release-parity/session.go:16
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — internal/mcpserve/kind_filter.go:9
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — internal/mcpserve/serve_architecture.go:14
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — internal/mcpserve/serve_dataflow.go:12
@@ -2308,8 +2317,9 @@ graph LR
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — internal/mcpserve/serve_write.go:13
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — internal/smells/serve_find_smells.go:11
 - `github.com/mark3labs/mcp-go/mcp` (go_module) — internal/testutil/mcptest.go:14
-- `github.com/mark3labs/mcp-go/mcp` (go_module) — tools/release-parity/main.go:47
-- `github.com/mark3labs/mcp-go/server` (go_module) — internal/mcpserve/serve.go:26
+- `github.com/mark3labs/mcp-go/mcp` (go_module) — tools/release-parity/main.go:44
+- `github.com/mark3labs/mcp-go/mcp` (go_module) — tools/release-parity/session.go:17
+- `github.com/mark3labs/mcp-go/server` (go_module) — internal/mcpserve/serve.go:27
 - `github.com/mark3labs/mcp-go/server` (go_module) — internal/mcpserve/serve_architecture.go:15
 - `github.com/mark3labs/mcp-go/server` (go_module) — internal/mcpserve/serve_dataflow.go:13
 - `github.com/mark3labs/mcp-go/server` (go_module) — internal/mcpserve/serve_diagram.go:10
@@ -2400,7 +2410,7 @@ graph LR
 - `github.com/spf13/cobra` (go_module) — cmd/install.go:47
 - `github.com/spf13/cobra` (go_module) — cmd/leyline_proxy.go:50
 - `github.com/spf13/cobra` (go_module) — cmd/map.go:8
-- `github.com/spf13/cobra` (go_module) — cmd/mount.go:27
+- `github.com/spf13/cobra` (go_module) — cmd/mount.go:28
 - `github.com/spf13/cobra` (go_module) — cmd/mount_commands.go:14
 - `github.com/spf13/cobra` (go_module) — cmd/pack.go:16
 - `github.com/spf13/cobra` (go_module) — cmd/root.go:7
@@ -2422,7 +2432,7 @@ graph LR
 - `github.com/spf13/cobra` (go_module) — cmd/verify.go:8
 - `github.com/spf13/cobra` (go_module) — cmd/version.go:6
 - `github.com/spf13/cobra` (go_module) — internal/buildcache/cache.go:35
-- `github.com/spf13/cobra` (go_module) — internal/mcpserve/serve.go:27
+- `github.com/spf13/cobra` (go_module) — internal/mcpserve/serve.go:28
 - `github.com/spf13/cobra` (go_module) — internal/smells/find_smells_cli.go:14
 - `github.com/spf13/pflag` (go_module) — /home/runner/work/_temp/ecosystem/assay/go.mod:34
 - `github.com/spf13/pflag` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:55
@@ -2638,7 +2648,7 @@ graph LR
 - `io` (go_module) — internal/fsutil/publish.go:8
 - `io` (go_module) — internal/ingest/engine_filter.go:6
 - `io` (go_module) — internal/leyline/binary_pin.go:7
-- `io` (go_module) — internal/leyline/socket.go:16
+- `io` (go_module) — internal/leyline/socket.go:17
 - `io` (go_module) — internal/lsp/binding_log.go:17
 - `io` (go_module) — internal/materialize/materialize.go:7
 - `io` (go_module) — internal/mcpserve/serve_handler_get_communities.go:7
@@ -2662,7 +2672,8 @@ graph LR
 - `io` (go_module) — tools/coverage-gate/main.go:61
 - `io` (go_module) — tools/mcp-fetch/main.go:15
 - `io` (go_module) — tools/notion-fetch/main.go:20
-- `io` (go_module) — tools/release-parity/main.go:37
+- `io` (go_module) — tools/release-parity/report.go:6
+- `io` (go_module) — tools/release-parity/session.go:7
 - `io` (go_module) — touchid/touchid_signer.go:80
 - `io/fs` (go_module) — build/schema_coverage.go:5
 - `io/fs` (go_module) — cmd/signet/auth_daemon.go:5
@@ -2753,7 +2764,7 @@ graph LR
 - `log` (go_module) — internal/leyline/binary_override.go:5
 - `log` (go_module) — internal/leyline/provenance.go:5
 - `log` (go_module) — internal/leyline/sheaf_subscriber.go:7
-- `log` (go_module) — internal/leyline/socket.go:17
+- `log` (go_module) — internal/leyline/socket.go:18
 - `log` (go_module) — internal/leyline/trigger.go:6
 - `log` (go_module) — internal/leyline/version_check.go:5
 - `log` (go_module) — internal/leylinegraph/auto.go:11
@@ -2776,7 +2787,7 @@ graph LR
 - `log` (go_module) — tools/gen-lsp-fixture/main.go:25
 - `log` (go_module) — tools/mcp-fetch/main.go:16
 - `log` (go_module) — tools/notion-fetch/main.go:21
-- `log` (go_module) — tools/release-parity/main.go:38
+- `log` (go_module) — tools/release-parity/main.go:37
 - `log/slog` (go_module) — cmd/signet-proxy/main.go:22
 - `log/slog` (go_module) — cmd/signet/authority.go:6
 - `log/slog` (go_module) — cmd/signet/authority_identity.go:13
@@ -2878,7 +2889,7 @@ graph LR
 - `net` (go_module) — cmd/sigstore-kms-signet/enroll.go:19
 - `net` (go_module) — cmd/sigstore-kms-signet/session.go:15
 - `net` (go_module) — internal/iterm/client.go:13
-- `net` (go_module) — internal/leyline/socket.go:18
+- `net` (go_module) — internal/leyline/socket.go:19
 - `net` (go_module) — internal/lltest/lltest.go:11
 - `net` (go_module) — internal/lltest/pinned_unix.go:7
 - `net` (go_module) — internal/nfsmount/server.go:5
@@ -2913,7 +2924,7 @@ graph LR
 - `net/http` (go_module) — internal/cartographer/ollama.go:11
 - `net/http` (go_module) — internal/cfbrowser/client.go:9
 - `net/http` (go_module) — internal/iterm/client.go:14
-- `net/http` (go_module) — internal/leyline/socket.go:19
+- `net/http` (go_module) — internal/leyline/socket.go:20
 - `net/http` (go_module) — internal/mcpserve/serve.go:8
 - `net/http` (go_module) — internal/mcpserve/serve_hosted.go:7
 - `net/http` (go_module) — internal/navigator/model.go:10
@@ -3067,7 +3078,7 @@ graph LR
 - `os` (go_module) — internal/leyline/owner_record.go:6
 - `os` (go_module) — internal/leyline/procgroup_other.go:6
 - `os` (go_module) — internal/leyline/procgroup_unix.go:6
-- `os` (go_module) — internal/leyline/socket.go:20
+- `os` (go_module) — internal/leyline/socket.go:21
 - `os` (go_module) — internal/leylinegraph/auto.go:12
 - `os` (go_module) — internal/leylinegraph/parsecache.go:7
 - `os` (go_module) — internal/leylinegraph/reap.go:5
@@ -3131,7 +3142,9 @@ graph LR
 - `os` (go_module) — tools/leyline-ensure/main.go:7
 - `os` (go_module) — tools/mcp-fetch/main.go:18
 - `os` (go_module) — tools/notion-fetch/main.go:23
-- `os` (go_module) — tools/release-parity/main.go:39
+- `os` (go_module) — tools/release-parity/main.go:38
+- `os` (go_module) — tools/release-parity/report.go:7
+- `os` (go_module) — tools/release-parity/session.go:8
 - `os` (go_module) — tools/server-json-gen/main.go:31
 - `os` (go_module) — tools/sheaf-subscribe-probe/main.go:18
 - `os` (go_module) — tools/token-bench/main.go:35
@@ -3154,7 +3167,7 @@ graph LR
 - `os/exec` (go_module) — internal/leyline/procgroup_other.go:7
 - `os/exec` (go_module) — internal/leyline/procgroup_unix.go:7
 - `os/exec` (go_module) — internal/leyline/provenance.go:6
-- `os/exec` (go_module) — internal/leyline/socket.go:21
+- `os/exec` (go_module) — internal/leyline/socket.go:22
 - `os/exec` (go_module) — internal/leylinegraph/auto.go:13
 - `os/exec` (go_module) — internal/lltest/pinned_unix.go:9
 - `os/exec` (go_module) — internal/lltest/project.go:6
@@ -3169,6 +3182,7 @@ graph LR
 - `os/exec` (go_module) — tools/fixtures-rebaseline/main.go:36
 - `os/exec` (go_module) — tools/fixtures-snapshot/main.go:32
 - `os/exec` (go_module) — tools/fuzz-gen/main.go:11
+- `os/exec` (go_module) — tools/release-parity/session.go:9
 - `os/signal` (go_module) — cmd/agentd/main.go:13
 - `os/signal` (go_module) — cmd/mount_control.go:7
 - `os/signal` (go_module) — cmd/mount_nfs.go:8
@@ -3178,6 +3192,7 @@ graph LR
 - `os/signal` (go_module) — cmd/signet/authority.go:9
 - `os/signal` (go_module) — cmd/webarena/main.go:14
 - `os/signal` (go_module) — internal/mcpserve/serve.go:10
+- `os/signal` (go_module) — internal/procsig/procsig.go:6
 - `path` (go_module) — graph/sqlite.go:7
 - `path` (go_module) — internal/fixturedb/builder.go:5
 - `path` (go_module) — internal/fixturedb/emit.go:6
@@ -3254,7 +3269,7 @@ graph LR
 - `path/filepath` (go_module) — internal/lang/lang.go:8
 - `path/filepath` (go_module) — internal/leyline/arena_config.go:6
 - `path/filepath` (go_module) — internal/leyline/binary_cache_path.go:6
-- `path/filepath` (go_module) — internal/leyline/socket.go:22
+- `path/filepath` (go_module) — internal/leyline/socket.go:23
 - `path/filepath` (go_module) — internal/leylinegraph/parsecache.go:8
 - `path/filepath` (go_module) — internal/leylinegraph/reap.go:6
 - `path/filepath` (go_module) — internal/lltest/lltest.go:13
@@ -3314,7 +3329,9 @@ graph LR
 - `path/filepath` (go_module) — tools/fixtures-rebaseline/main.go:37
 - `path/filepath` (go_module) — tools/fixtures-snapshot/main.go:33
 - `path/filepath` (go_module) — tools/fuzz-gen/main.go:12
-- `path/filepath` (go_module) — tools/release-parity/main.go:40
+- `path/filepath` (go_module) — tools/release-parity/main.go:39
+- `path/filepath` (go_module) — tools/release-parity/report.go:8
+- `path/filepath` (go_module) — tools/release-parity/session.go:10
 - `path/filepath` (go_module) — tools/token-bench/main.go:36
 - `reflect` (go_module) — pkg/agent/api/v1/agent.pb.go:13
 - `regexp` (go_module) — cmd/signet/authority_setup_resign.go:12
@@ -3344,7 +3361,7 @@ graph LR
 - `runtime` (go_module) — demo/http-auth/client/main.go:14
 - `runtime` (go_module) — internal/ingest/engine_sqlite.go:7
 - `runtime` (go_module) — internal/leyline/binary_pin.go:10
-- `runtime` (go_module) — internal/leyline/socket.go:23
+- `runtime` (go_module) — internal/leyline/socket.go:24
 - `runtime` (go_module) — internal/nfsmount/server.go:7
 - `runtime` (go_module) — internal/projcfg/config.go:11
 - `runtime` (go_module) — internal/testfixtures/registry.go:21
@@ -3370,7 +3387,7 @@ graph LR
 - `slices` (go_module) — pkg/oidc/cloudflare.go:10
 - `slices` (go_module) — pkg/policy/evaluator.go:12
 - `slices` (go_module) — schema/schema.go:11
-- `slices` (go_module) — tools/release-parity/main.go:41
+- `slices` (go_module) — tools/release-parity/main.go:40
 - `sort` (go_module) — build/schema_coverage.go:7
 - `sort` (go_module) — cmd/analyze-replay/main.go:19
 - `sort` (go_module) — cmd/bench/stats.go:6
@@ -3449,7 +3466,7 @@ graph LR
 - `strconv` (go_module) — internal/guardrails/completeness.go:6
 - `strconv` (go_module) — internal/ingest/address_refs.go:4
 - `strconv` (go_module) — internal/ingest/engine_filter.go:9
-- `strconv` (go_module) — internal/leyline/socket.go:24
+- `strconv` (go_module) — internal/leyline/socket.go:25
 - `strconv` (go_module) — internal/leyline/version_check.go:6
 - `strconv` (go_module) — internal/mache/engine.go:10
 - `strconv` (go_module) — internal/mache/filter.go:5
@@ -3461,6 +3478,7 @@ graph LR
 - `strconv` (go_module) — pkg/crypto/keys/factory_pkcs11.go:9
 - `strconv` (go_module) — pkg/http/header/parser.go:7
 - `strconv` (go_module) — tools/coverage-gate/main.go:64
+- `strconv` (go_module) — tools/release-parity/session.go:11
 - `strconv` (go_module) — tools/token-bench/main.go:38
 - `strings` (go_module) — build/schema.go:6
 - `strings` (go_module) — build/schema_coverage.go:8
@@ -3585,7 +3603,7 @@ graph LR
 - `strings` (go_module) — internal/lattice/project_ast.go:6
 - `strings` (go_module) — internal/leyline/binary_pin.go:11
 - `strings` (go_module) — internal/leyline/provenance.go:8
-- `strings` (go_module) — internal/leyline/socket.go:25
+- `strings` (go_module) — internal/leyline/socket.go:26
 - `strings` (go_module) — internal/leyline/version_check.go:7
 - `strings` (go_module) — internal/leylinegraph/leyline.go:7
 - `strings` (go_module) — internal/leylinegraph/reap.go:8
@@ -3669,7 +3687,9 @@ graph LR
 - `strings` (go_module) — tools/fuzz-gen/main.go:14
 - `strings` (go_module) — tools/mcp-fetch/main.go:19
 - `strings` (go_module) — tools/notion-fetch/main.go:24
-- `strings` (go_module) — tools/release-parity/main.go:42
+- `strings` (go_module) — tools/release-parity/main.go:41
+- `strings` (go_module) — tools/release-parity/report.go:9
+- `strings` (go_module) — tools/release-parity/session.go:12
 - `strings` (go_module) — tools/server-json-gen/main.go:33
 - `strings` (go_module) — tools/token-bench/main.go:39
 - `sync` (go_module) — cmd/signet/auth_login.go:24
@@ -3717,7 +3737,7 @@ graph LR
 - `sync` (go_module) — internal/iterm/client.go:18
 - `sync` (go_module) — internal/leyline/provenance.go:9
 - `sync` (go_module) — internal/leyline/sheaf_subscriber.go:9
-- `sync` (go_module) — internal/leyline/socket.go:26
+- `sync` (go_module) — internal/leyline/socket.go:27
 - `sync` (go_module) — internal/leyline/version_check.go:8
 - `sync` (go_module) — internal/mache/engine.go:12
 - `sync` (go_module) — internal/mcpserve/serve_hosted.go:13
@@ -3763,7 +3783,7 @@ graph LR
 - `sync/atomic` (go_module) — internal/control/control.go:9
 - `sync/atomic` (go_module) — internal/iterm/client.go:19
 - `sync/atomic` (go_module) — internal/leyline/daemon_source.go:3
-- `sync/atomic` (go_module) — internal/leyline/socket.go:27
+- `sync/atomic` (go_module) — internal/leyline/socket.go:28
 - `sync/atomic` (go_module) — internal/sqlcount/sqlcount.go:14
 - `syscall` (go_module) — cmd/agentd/main.go:15
 - `syscall` (go_module) — cmd/daemon_control.go:13
@@ -3780,13 +3800,15 @@ graph LR
 - `syscall` (go_module) — internal/leyline/owner_record_unix.go:5
 - `syscall` (go_module) — internal/leyline/procgroup_other.go:8
 - `syscall` (go_module) — internal/leyline/procgroup_unix.go:8
-- `syscall` (go_module) — internal/leyline/socket.go:28
+- `syscall` (go_module) — internal/leyline/socket.go:29
 - `syscall` (go_module) — internal/leylinegraph/parsecache.go:9
 - `syscall` (go_module) — internal/leylinegraph/reap.go:9
 - `syscall` (go_module) — internal/lltest/pinned_unix.go:12
 - `syscall` (go_module) — internal/mcpserve/serve.go:13
 - `syscall` (go_module) — internal/mountmeta/mountmeta.go:15
 - `syscall` (go_module) — internal/nfsmount/graphfs.go:13
+- `syscall` (go_module) — internal/procsig/procsig.go:7
+- `syscall` (go_module) — tools/release-parity/session.go:13
 - `testing` (go_module) — internal/fixturedb/build.go:6
 - `testing` (go_module) — internal/fixturedb/builder.go:8
 - `testing` (go_module) — internal/lltest/lltest.go:14
@@ -3899,7 +3921,7 @@ graph LR
 - `time` (go_module) — internal/leyline/owner_record.go:7
 - `time` (go_module) — internal/leyline/provenance.go:10
 - `time` (go_module) — internal/leyline/sheaf_subscriber.go:10
-- `time` (go_module) — internal/leyline/socket.go:29
+- `time` (go_module) — internal/leyline/socket.go:30
 - `time` (go_module) — internal/leylinegraph/leyline.go:8
 - `time` (go_module) — internal/leylinegraph/reap.go:10
 - `time` (go_module) — internal/lltest/pinned_unix.go:14
@@ -3944,7 +3966,8 @@ graph LR
 - `time` (go_module) — tools/bench-cold/main.go:37
 - `time` (go_module) — tools/fixtures-rebaseline/main.go:41
 - `time` (go_module) — tools/fuzz-gen/main.go:15
-- `time` (go_module) — tools/release-parity/main.go:43
+- `time` (go_module) — tools/release-parity/main.go:42
+- `time` (go_module) — tools/release-parity/session.go:14
 - `time` (go_module) — tools/sheaf-subscribe-probe/main.go:19
 - `unicode` (go_module) — cmd/pack.go:10
 - `unicode` (go_module) — internal/code/extract.go:9
@@ -9133,6 +9156,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.SheafSubscriber.setState` (go_package_symbol) — internal/leyline/sheaf_subscriber.go
 - `github.com/agentic-research/mache/internal/leyline.SheafSubscriber.snapshotBackoffMax` (go_package_symbol) — internal/leyline/sheaf_subscriber.go
 - `github.com/agentic-research/mache/internal/leyline.SheafSubscriber.snapshotBackoffMin` (go_package_symbol) — internal/leyline/sheaf_subscriber.go
+- `github.com/agentic-research/mache/internal/leyline.ShutdownManaged` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.SocketClient` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.SocketClient.Close` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.SocketClient.Enrich` (go_package_symbol) — internal/leyline/socket.go
@@ -9160,11 +9184,13 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.ValidateSyntaxError` (go_package_symbol) — internal/leyline/validate.go
 - `github.com/agentic-research/mache/internal/leyline.VerifyReachableDaemonVersion` (go_package_symbol) — internal/leyline/version_check.go
 - `github.com/agentic-research/mache/internal/leyline.WellKnownOwnerRecord` (go_package_symbol) — internal/leyline/owner_record.go
+- `github.com/agentic-research/mache/internal/leyline.adoptLiveDaemon` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.agreementDim` (go_package_symbol) — internal/leyline/sheaf.go
 - `github.com/agentic-research/mache/internal/leyline.aliases` (go_package_symbol) — internal/leyline/sheaf_subscriber.go
 - `github.com/agentic-research/mache/internal/leyline.arenaConfigPath` (go_package_symbol) — internal/leyline/arena_config.go
 - `github.com/agentic-research/mache/internal/leyline.arenaNeedsReset` (go_package_symbol) — internal/leyline/arena_config.go
 - `github.com/agentic-research/mache/internal/leyline.arenaSpawnConfig` (go_package_symbol) — internal/leyline/arena_config.go
+- `github.com/agentic-research/mache/internal/leyline.awaitDaemonSocket` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.batch` (go_package_symbol) — internal/leyline/trigger.go
 - `github.com/agentic-research/mache/internal/leyline.binaryVersionString` (go_package_symbol) — internal/leyline/binary_override.go
 - `github.com/agentic-research/mache/internal/leyline.buildRegions` (go_package_symbol) — internal/leyline/sheaf.go
@@ -9177,6 +9203,8 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.crossCommunityTokens` (go_package_symbol) — internal/leyline/sheaf.go
 - `github.com/agentic-research/mache/internal/leyline.daemonBinaryVersion` (go_package_symbol) — internal/leyline/version_check.go
 - `github.com/agentic-research/mache/internal/leyline.daemonCDC` (go_package_symbol) — internal/leyline/daemon_source.go
+- `github.com/agentic-research/mache/internal/leyline.daemonCommandArgs` (go_package_symbol) — internal/leyline/socket.go
+- `github.com/agentic-research/mache/internal/leyline.daemonPaths` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.daemonSourceDir` (go_package_symbol) — internal/leyline/daemon_source.go
 - `github.com/agentic-research/mache/internal/leyline.decodeRegionAlias` (go_package_symbol) — internal/leyline/sheaf_subscriber.go
 - `github.com/agentic-research/mache/internal/leyline.defaultLeylineStartTimeout` (go_package_symbol) — internal/leyline/socket.go
@@ -9220,6 +9248,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.recordResolvedLeyline` (go_package_symbol) — internal/leyline/provenance.go
 - `github.com/agentic-research/mache/internal/leyline.region` (go_package_symbol) — internal/leyline/sheaf.go
 - `github.com/agentic-research/mache/internal/leyline.resolveCachedPinned` (go_package_symbol) — internal/leyline/binary_cache_path.go
+- `github.com/agentic-research/mache/internal/leyline.resolveDaemonPaths` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.resolveInvalidatedRegions` (go_package_symbol) — internal/leyline/sheaf_subscriber.go
 - `github.com/agentic-research/mache/internal/leyline.resolvedLeyline` (go_package_symbol) — internal/leyline/provenance.go
 - `github.com/agentic-research/mache/internal/leyline.resp` (go_package_symbol) — internal/leyline/sheaf.go
@@ -9235,6 +9264,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.signalProcessGroup` (go_package_symbol) — internal/leyline/procgroup_unix.go
 - `github.com/agentic-research/mache/internal/leyline.sleepCtx` (go_package_symbol) — internal/leyline/sheaf_subscriber.go
 - `github.com/agentic-research/mache/internal/leyline.socketLivenessTimeout` (go_package_symbol) — internal/leyline/socket.go
+- `github.com/agentic-research/mache/internal/leyline.spawnAndAwait` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.stalk` (go_package_symbol) — internal/leyline/sheaf.go
 - `github.com/agentic-research/mache/internal/leyline.stalkDim` (go_package_symbol) — internal/leyline/sheaf.go
 - `github.com/agentic-research/mache/internal/leyline.total` (go_package_symbol) — internal/leyline/trigger.go
@@ -9491,9 +9521,11 @@ graph LR
 - `github.com/agentic-research/mache/internal/mcpserve.collectFuzzyMatches` (go_package_symbol) — internal/mcpserve/serve_handler_find_definition.go
 - `github.com/agentic-research/mache/internal/mcpserve.communitySummary` (go_package_symbol) — internal/mcpserve/serve_handler_get_communities.go
 - `github.com/agentic-research/mache/internal/mcpserve.configureManagedLeylineRuntime` (go_package_symbol) — internal/mcpserve/serve.go
+- `github.com/agentic-research/mache/internal/mcpserve.configureServeRuntime` (go_package_symbol) — internal/mcpserve/serve.go
 - `github.com/agentic-research/mache/internal/mcpserve.constructSignature` (go_package_symbol) — internal/mcpserve/serve_read_modes.go
 - `github.com/agentic-research/mache/internal/mcpserve.containerNames` (go_package_symbol) — internal/mcpserve/serve_handler_list_directory.go
 - `github.com/agentic-research/mache/internal/mcpserve.contextString` (go_package_symbol) — internal/mcpserve/serve_hosted.go
+- `github.com/agentic-research/mache/internal/mcpserve.crashLoopTripped` (go_package_symbol) — internal/mcpserve/serve.go
 - `github.com/agentic-research/mache/internal/mcpserve.createErr` (go_package_symbol) — internal/mcpserve/serve_repo.go
 - `github.com/agentic-research/mache/internal/mcpserve.createErr` (go_package_symbol) — internal/mcpserve/serve_repo.go
 - `github.com/agentic-research/mache/internal/mcpserve.createWorktree` (go_package_symbol) — internal/mcpserve/serve_repo.go
@@ -9521,6 +9553,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/mcpserve.diagResult` (go_package_symbol) — internal/mcpserve/serve_lsp.go
 - `github.com/agentic-research/mache/internal/mcpserve.dirInfo` (go_package_symbol) — internal/mcpserve/serve_handler_get_overview.go
 - `github.com/agentic-research/mache/internal/mcpserve.discoverSessionRoot` (go_package_symbol) — internal/mcpserve/serve_registry.go
+- `github.com/agentic-research/mache/internal/mcpserve.drainOnSignal` (go_package_symbol) — internal/mcpserve/serve.go
 - `github.com/agentic-research/mache/internal/mcpserve.drift` (go_package_symbol) — internal/mcpserve/serve_handler_get_overview.go
 - `github.com/agentic-research/mache/internal/mcpserve.emptyResult` (go_package_symbol) — internal/mcpserve/serve_handler_find_callees.go
 - `github.com/agentic-research/mache/internal/mcpserve.emptyResult` (go_package_symbol) — internal/mcpserve/serve_handler_get_communities.go
@@ -9662,6 +9695,8 @@ graph LR
 - `github.com/agentic-research/mache/internal/mcpserve.newDataflowTraversal` (go_package_symbol) — internal/mcpserve/serve_dataflow.go
 - `github.com/agentic-research/mache/internal/mcpserve.newErrorLazyGraph` (go_package_symbol) — internal/mcpserve/serve_registry.go
 - `github.com/agentic-research/mache/internal/mcpserve.newGraphRegistry` (go_package_symbol) — internal/mcpserve/serve_registry.go
+- `github.com/agentic-research/mache/internal/mcpserve.newHTTPServer` (go_package_symbol) — internal/mcpserve/serve.go
+- `github.com/agentic-research/mache/internal/mcpserve.newMCPServer` (go_package_symbol) — internal/mcpserve/serve.go
 - `github.com/agentic-research/mache/internal/mcpserve.newSheafEventRouter` (go_package_symbol) — internal/mcpserve/sheaf_subscribe.go
 - `github.com/agentic-research/mache/internal/mcpserve.nilIfEmpty` (go_package_symbol) — internal/mcpserve/serve_registry.go
 - `github.com/agentic-research/mache/internal/mcpserve.noDiagnosticsResult` (go_package_symbol) — internal/mcpserve/serve_lsp.go
@@ -9675,6 +9710,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/mcpserve.overviewIndexReport` (go_package_symbol) — internal/mcpserve/serve_handler_get_overview.go
 - `github.com/agentic-research/mache/internal/mcpserve.parseDataflowRequest` (go_package_symbol) — internal/mcpserve/serve_dataflow.go
 - `github.com/agentic-research/mache/internal/mcpserve.paths` (go_package_symbol) — internal/mcpserve/serve_handler_read_file.go
+- `github.com/agentic-research/mache/internal/mcpserve.prepareEphemeralRepo` (go_package_symbol) — internal/mcpserve/serve.go
 - `github.com/agentic-research/mache/internal/mcpserve.prioritizeAndAdvise` (go_package_symbol) — internal/mcpserve/serve_handler_read_file.go
 - `github.com/agentic-research/mache/internal/mcpserve.producerVersion` (go_package_symbol) — internal/mcpserve/version.go
 - `github.com/agentic-research/mache/internal/mcpserve.projectContextKey` (go_package_symbol) — internal/mcpserve/serve_hosted.go
@@ -9716,7 +9752,6 @@ graph LR
 - `github.com/agentic-research/mache/internal/mcpserve.removeServeSidecar` (go_package_symbol) — internal/mcpserve/serve.go
 - `github.com/agentic-research/mache/internal/mcpserve.removeWorktree` (go_package_symbol) — internal/mcpserve/serve_repo.go
 - `github.com/agentic-research/mache/internal/mcpserve.repoClone` (go_package_symbol) — internal/mcpserve/serve_hosted.go
-- `github.com/agentic-research/mache/internal/mcpserve.repoCloneDir` (go_package_symbol) — internal/mcpserve/serve.go
 - `github.com/agentic-research/mache/internal/mcpserve.repoContextKey` (go_package_symbol) — internal/mcpserve/serve_hosted.go
 - `github.com/agentic-research/mache/internal/mcpserve.repoFromContext` (go_package_symbol) — internal/mcpserve/serve_hosted.go
 - `github.com/agentic-research/mache/internal/mcpserve.repoIdleTTL` (go_package_symbol) — internal/mcpserve/serve_hosted.go
@@ -9762,6 +9797,8 @@ graph LR
 - `github.com/agentic-research/mache/internal/mcpserve.serveHTTP` (go_package_symbol) — internal/mcpserve/serve.go
 - `github.com/agentic-research/mache/internal/mcpserve.serveLandingPage` (go_package_symbol) — internal/mcpserve/serve.go
 - `github.com/agentic-research/mache/internal/mcpserve.serveMounts` (go_package_symbol) — internal/mcpserve/serve.go
+- `github.com/agentic-research/mache/internal/mcpserve.serveOverHTTP` (go_package_symbol) — internal/mcpserve/serve.go
+- `github.com/agentic-research/mache/internal/mcpserve.serveOverStdio` (go_package_symbol) — internal/mcpserve/serve.go
 - `github.com/agentic-research/mache/internal/mcpserve.servePath` (go_package_symbol) — internal/mcpserve/serve.go
 - `github.com/agentic-research/mache/internal/mcpserve.serveRepo` (go_package_symbol) — internal/mcpserve/serve.go
 - `github.com/agentic-research/mache/internal/mcpserve.serveSchema` (go_package_symbol) — internal/mcpserve/serve.go
@@ -9805,6 +9842,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/mcpserve.ve` (go_package_symbol) — internal/mcpserve/serve_write.go
 - `github.com/agentic-research/mache/internal/mcpserve.warnings` (go_package_symbol) — internal/mcpserve/serve_handler_find_callees.go
 - `github.com/agentic-research/mache/internal/mcpserve.watchErr` (go_package_symbol) — internal/mcpserve/serve.go
+- `github.com/agentic-research/mache/internal/mcpserve.wireSheafSubscriber` (go_package_symbol) — internal/mcpserve/serve.go
 - `github.com/agentic-research/mache/internal/mcpserve.writeBacker` (go_package_symbol) — internal/mcpserve/serve_registry.go
 - `github.com/agentic-research/mache/internal/mcpserve.writeResult` (go_package_symbol) — internal/mcpserve/serve_write.go
 - `github.com/agentic-research/mache/internal/mcpserve.wtDir` (go_package_symbol) — internal/mcpserve/serve_repo.go
@@ -9910,6 +9948,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/pathguard.RequireContained` (go_package_symbol) — internal/pathguard/pathguard.go
 - `github.com/agentic-research/mache/internal/pathguard.resolveExistingAncestor` (go_package_symbol) — internal/pathguard/pathguard.go
 - `github.com/agentic-research/mache/internal/pathguard.tail` (go_package_symbol) — internal/pathguard/pathguard.go
+- `github.com/agentic-research/mache/internal/procsig.SurviveBrokenPipes` (go_package_symbol) — internal/procsig/procsig.go
 - `github.com/agentic-research/mache/internal/projcfg.CheckPathContainment` (go_package_symbol) — internal/projcfg/config.go
 - `github.com/agentic-research/mache/internal/projcfg.ConfigFileName` (go_package_symbol) — internal/projcfg/config.go
 - `github.com/agentic-research/mache/internal/projcfg.DetectProjectType` (go_package_symbol) — internal/projcfg/config.go
@@ -10523,34 +10562,50 @@ graph LR
 - `github.com/agentic-research/mache/tools/notion-fetch.run` (go_package_symbol) — tools/notion-fetch/main.go
 - `github.com/agentic-research/mache/tools/release-parity.answer` (go_package_symbol) — tools/release-parity/main.go
 - `github.com/agentic-research/mache/tools/release-parity.answerPlan` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.b` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.answerSide` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.b` (go_package_symbol) — tools/release-parity/report.go
 - `github.com/agentic-research/mache/tools/release-parity.call` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.classifyRunError` (go_package_symbol) — tools/release-parity/session.go
 - `github.com/agentic-research/mache/tools/release-parity.compareReleases` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.isolatedHome` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.describeProcess` (go_package_symbol) — tools/release-parity/session.go
+- `github.com/agentic-research/mache/tools/release-parity.initializeSession` (go_package_symbol) — tools/release-parity/session.go
+- `github.com/agentic-research/mache/tools/release-parity.isolatedHome` (go_package_symbol) — tools/release-parity/session.go
+- `github.com/agentic-research/mache/tools/release-parity.leak` (go_package_symbol) — tools/release-parity/session.go
+- `github.com/agentic-research/mache/tools/release-parity.leak` (go_package_symbol) — tools/release-parity/session.go
+- `github.com/agentic-research/mache/tools/release-parity.leakError` (go_package_symbol) — tools/release-parity/session.go
+- `github.com/agentic-research/mache/tools/release-parity.leakError.Error` (go_package_symbol) — tools/release-parity/session.go
 - `github.com/agentic-research/mache/tools/release-parity.listTools` (go_package_symbol) — tools/release-parity/main.go
 - `github.com/agentic-research/mache/tools/release-parity.main` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.mask` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.maskEither` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.maskNoise` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.mask` (go_package_symbol) — tools/release-parity/mask.go
+- `github.com/agentic-research/mache/tools/release-parity.maskEither` (go_package_symbol) — tools/release-parity/mask.go
+- `github.com/agentic-research/mache/tools/release-parity.maskNoise` (go_package_symbol) — tools/release-parity/mask.go
 - `github.com/agentic-research/mache/tools/release-parity.masked` (go_package_symbol) — tools/release-parity/main.go
 - `github.com/agentic-research/mache/tools/release-parity.missing` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.noise` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.noise` (go_package_symbol) — tools/release-parity/mask.go
 - `github.com/agentic-research/mache/tools/release-parity.normalizeText` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.openSession` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.notes` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.notes` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.openSession` (go_package_symbol) — tools/release-parity/session.go
 - `github.com/agentic-research/mache/tools/release-parity.parts` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.pids` (go_package_symbol) — tools/release-parity/session.go
 - `github.com/agentic-research/mache/tools/release-parity.plan` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.processesReferencing` (go_package_symbol) — tools/release-parity/session.go
 - `github.com/agentic-research/mache/tools/release-parity.readPlan` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.runsPerSide` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.reapSurvivors` (go_package_symbol) — tools/release-parity/session.go
+- `github.com/agentic-research/mache/tools/release-parity.runsPerSide` (go_package_symbol) — tools/release-parity/mask.go
 - `github.com/agentic-research/mache/tools/release-parity.schema` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.schemaLabel` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.session` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.session.close` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.schemaLabel` (go_package_symbol) — tools/release-parity/report.go
+- `github.com/agentic-research/mache/tools/release-parity.session` (go_package_symbol) — tools/release-parity/session.go
+- `github.com/agentic-research/mache/tools/release-parity.session.close` (go_package_symbol) — tools/release-parity/session.go
+- `github.com/agentic-research/mache/tools/release-parity.session.logTail` (go_package_symbol) — tools/release-parity/session.go
+- `github.com/agentic-research/mache/tools/release-parity.session.serverLog` (go_package_symbol) — tools/release-parity/session.go
+- `github.com/agentic-research/mache/tools/release-parity.survivorGrace` (go_package_symbol) — tools/release-parity/session.go
 - `github.com/agentic-research/mache/tools/release-parity.textOf` (go_package_symbol) — tools/release-parity/main.go
 - `github.com/agentic-research/mache/tools/release-parity.uncoveredTools` (go_package_symbol) — tools/release-parity/main.go
 - `github.com/agentic-research/mache/tools/release-parity.v` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.writeAnswers` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.writeDiffReport` (go_package_symbol) — tools/release-parity/main.go
-- `github.com/agentic-research/mache/tools/release-parity.writeReport` (go_package_symbol) — tools/release-parity/main.go
+- `github.com/agentic-research/mache/tools/release-parity.writeAnswers` (go_package_symbol) — tools/release-parity/report.go
+- `github.com/agentic-research/mache/tools/release-parity.writeDiffReport` (go_package_symbol) — tools/release-parity/report.go
+- `github.com/agentic-research/mache/tools/release-parity.writeReport` (go_package_symbol) — tools/release-parity/report.go
 - `github.com/agentic-research/mache/tools/server-json-gen.artCloisterV1` (go_package_symbol) — tools/server-json-gen/main.go
 - `github.com/agentic-research/mache/tools/server-json-gen.buf` (go_package_symbol) — tools/server-json-gen/main.go
 - `github.com/agentic-research/mache/tools/server-json-gen.buf` (go_package_symbol) — tools/server-json-gen/main.go
