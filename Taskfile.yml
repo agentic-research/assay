@@ -57,7 +57,7 @@ tasks:
       - task: lint
       - task: test
       - task: map:check # fails if the committed dependency-graph snapshot drifted
-      - task: docs:check # fails if an exported entity lost its documentation
+      - task: docs:check # fails if an exported entity lost its documentation, or a doc names a deleted one
 
   tidy:
     desc: Tidy module
@@ -91,7 +91,7 @@ tasks:
       - ./bin/assay map . --format {{.FORMAT}} --group artifact > docs/dependency-graph.md
 
   docs:check:
-    desc: Doc gate — fails when an exported entity has no documentation reference
+    desc: Doc gate — fails when an exported entity has no documentation reference, or a doc names an entity that no longer exists
     env:
       GOWORK: "off"
     cmds:
@@ -100,12 +100,14 @@ tasks:
       # reference, and lowering the number is how the debt gets paid down. It is
       # never raised to make CI pass — that inverts the gate into a rubber stamp.
       #
-      # Gates the COVERAGE direction only (exported entity with no doc mention).
-      # The reverse direction — a doc naming a symbol that no longer exists — is
-      # computed and reported but NOT gated: every backtick span in markdown is
-      # currently treated as a claimed symbol, so filenames, CLI flags, bead IDs
-      # and other repos' types all register as stale (92.6% on this tree). See
-      # the Gate doc comment in internal/coverage/gate.go.
+      # Both directions are gated. --fail-on-dead-refs fails on a doc that names
+      # an entity of THIS repo that no longer exists. It does not gate the raw
+      # staleness figure (every backtick span — filenames, CLI flags, bead IDs,
+      # other repos' types — 92.6% on this tree); it checks only spans whose
+      # shape asserts a local symbol: `pkg.Name` / `pkg.Type.Method` with pkg a
+      # package of this repo, or `Type.Method` with Type a type of this repo,
+      # resolved exactly. Bare names are not checked. See DeadRefs in
+      # internal/coverage/deadref.go.
       #
       # stdout is dropped on purpose: the full text report lists every stale doc
       # reference (tens of thousands of lines on this tree) and would bury the
@@ -113,7 +115,7 @@ tasks:
       # red build still says exactly what regressed. Run `task docs:report` for
       # the human view.
       - go build -o bin/assay .
-      - ./bin/assay verify --source . --max-uncovered {{.DOC_UNCOVERED_BUDGET}} > /dev/null
+      - ./bin/assay verify --source . --max-uncovered {{.DOC_UNCOVERED_BUDGET}} --fail-on-dead-refs > /dev/null
     vars:
       # 20 -> 18: pipe-table cells now yield claim-references (they were
       # silently skipped), so two entities documented only in a table are
@@ -132,7 +134,8 @@ tasks:
       - |
         ./bin/assay verify --source . --format json \
           | jq '{coverage, staleness, total_entities, covered_count,
-                 uncovered: [.uncovered[] | "\(.Package).\(.Name)"]}'
+                 uncovered: [.uncovered[] | "\(.Package).\(.Name)"],
+                 dead: [(.dead // [])[] | "\(.Text) (\(.File):\(.Line))"]}'
 
   map:check:
     desc: Drift-check the dependency-graph snapshot — fails if the map changed

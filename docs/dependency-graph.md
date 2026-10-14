@@ -1,7 +1,7 @@
 # assay map
 
 - Resolved edges: 0
-- External dependencies: 222
+- External dependencies: 225
 - Dangling producers: 1
 
 ## Graph
@@ -157,9 +157,9 @@ graph LR
 - `github.com/agentic-research/assay/internal/artifact` (go_module) — internal/report/report.go:19
 - `github.com/agentic-research/assay/internal/artifact` (go_module) — internal/resolve/buckets.go:4
 - `github.com/agentic-research/assay/internal/artifact` (go_module) — internal/resolve/resolve.go:17
-- `github.com/agentic-research/assay/internal/code` (go_module) — cmd/verify.go:10
+- `github.com/agentic-research/assay/internal/code` (go_module) — cmd/verify.go:11
 - `github.com/agentic-research/assay/internal/code` (go_module) — internal/extract/gocode/treesitter.go:16
-- `github.com/agentic-research/assay/internal/coverage` (go_module) — cmd/verify.go:11
+- `github.com/agentic-research/assay/internal/coverage` (go_module) — cmd/verify.go:12
 - `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/code/extract.go:14
 - `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/code/verifier.go:3
 - `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/docs/dom.go:6
@@ -167,7 +167,7 @@ graph LR
 - `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/docs/html.go:13
 - `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/docs/source.go:3
 - `github.com/agentic-research/assay/internal/coverage` (go_module) — internal/structural/mache.go:15
-- `github.com/agentic-research/assay/internal/docs` (go_module) — cmd/verify.go:12
+- `github.com/agentic-research/assay/internal/docs` (go_module) — cmd/verify.go:13
 - `github.com/agentic-research/assay/internal/extract` (go_module) — cmd/map.go:10
 - `github.com/agentic-research/assay/internal/extract` (go_module) — internal/extract/capnp/capnp.go:38
 - `github.com/agentic-research/assay/internal/extract` (go_module) — internal/extract/cargo/cargo.go:28
@@ -188,7 +188,7 @@ graph LR
 - `github.com/agentic-research/assay/internal/resolve` (go_module) — cmd/map.go:19
 - `github.com/agentic-research/assay/internal/resolve` (go_module) — internal/report/mermaid.go:12
 - `github.com/agentic-research/assay/internal/resolve` (go_module) — internal/report/report.go:21
-- `github.com/agentic-research/assay/internal/structural` (go_module) — cmd/verify.go:13
+- `github.com/agentic-research/assay/internal/structural` (go_module) — cmd/verify.go:14
 - `github.com/agext/levenshtein` (go_module) — go.mod:18
 - `github.com/containerd/typeurl` (go_module) — go.mod:19
 - `github.com/containerd/typeurl/v2` (go_module) — go.mod:19
@@ -223,7 +223,7 @@ graph LR
 - `github.com/smacker/go-tree-sitter/markdown` (go_module) — internal/docs/extract.go:11
 - `github.com/spf13/cobra` (go_module) — cmd/map.go:8
 - `github.com/spf13/cobra` (go_module) — cmd/root.go:7
-- `github.com/spf13/cobra` (go_module) — cmd/verify.go:8
+- `github.com/spf13/cobra` (go_module) — cmd/verify.go:9
 - `github.com/spf13/cobra` (go_module) — cmd/version.go:6
 - `github.com/spf13/cobra` (go_module) — go.mod:9
 - `github.com/spf13/pflag` (go_module) — go.mod:34
@@ -297,9 +297,11 @@ graph LR
 - `sort` (go_module) — internal/report/mermaid_repo.go:9
 - `sort` (go_module) — internal/report/report.go:17
 - `sort` (go_module) — internal/resolve/resolve.go:15
+- `strings` (go_module) — cmd/verify.go:7
 - `strings` (go_module) — internal/artifact/identity.go:3
 - `strings` (go_module) — internal/code/extract.go:8
 - `strings` (go_module) — internal/coverage/compute.go:3
+- `strings` (go_module) — internal/coverage/deadref.go:4
 - `strings` (go_module) — internal/coverage/gate.go:6
 - `strings` (go_module) — internal/coverage/report.go:8
 - `strings` (go_module) — internal/coverage/tokenize.go:4
@@ -318,6 +320,7 @@ graph LR
 - `strings` (go_module) — internal/report/mermaid.go:9
 - `strings` (go_module) — internal/report/mermaid_repo.go:10
 - `unicode` (go_module) — internal/code/extract.go:9
+- `unicode` (go_module) — internal/coverage/deadref.go:5
 - `unicode` (go_module) — internal/coverage/tokenize.go:5
 
 ## Dangling producers

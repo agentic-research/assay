@@ -27,28 +27,32 @@ type GateOptions struct {
 	// MinCoverage fails when the covered ratio drops below this floor.
 	// Zero disables the check.
 	MinCoverage float64
+
+	// FailOnDeadRefs fails when any doc reference names an entity of this
+	// codebase that no longer exists (CoverageResult.Dead). Unlike the
+	// coverage knobs it has no budget: a dead reference is a doc that is
+	// wrong today, not debt to ratchet down.
+	FailOnDeadRefs bool
 }
 
 // Gate applies the configured thresholds to a computed result and returns a
 // non-nil error describing every violation, or nil when the result passes.
 //
-// It deliberately gates only the COVERAGE direction — exported entities that
-// no documentation mentions. The reverse direction (CoverageResult.Stale: doc
-// references matching no entity) is computed but NOT gated, because it is not
-// yet precise enough to gate on: every backtick-fenced span in markdown is
-// treated as a claimed code symbol, so filenames, CLI flags, table names, bead
-// IDs and other projects' types all register as "stale". Measured on assay's
-// own tree, staleness is 92.6% (8,355 distinct spans, of which only 861 are
-// even Go-identifier-shaped). Gating that would fail permanently while
-// signalling nothing.
+// It gates both directions of drift:
 //
-// Making the stale direction gateable needs a preprocessor that decides which
-// backtick spans actually assert a code symbol. mache's
-// drift_doc_dead_symbol_reference rule is blocked on exactly the same missing
-// piece and ships as a no-op (`WHERE 1=0`) for the same reason.
+//   - COVERAGE: exported entities that no documentation mentions
+//     (MaxUncovered / MinCoverage). Entities come from the parsed source, not
+//     from prose, so every finding names a real exported symbol.
+//   - DEAD REFERENCES: documentation naming one of this codebase's entities
+//     that no longer exists (FailOnDeadRefs).
 //
-// The coverage direction has no such problem: entities come from the parsed
-// source, not from prose, so every finding names a real exported symbol.
+// The dead-reference check does NOT gate CoverageResult.Stale. Stale treats
+// every backtick span as a claimed symbol, so filenames, CLI flags, bead IDs
+// and other projects' types all register (92.6% staleness on assay's own
+// tree); gating it would fail permanently while signalling nothing. Dead is
+// the subset whose own shape asserts "this repo's symbol" — package- or
+// receiver-qualified, resolved exactly — see DeadRefs for the rule and its
+// blind spots.
 func Gate(result *CoverageResult, opts GateOptions) error {
 	if result == nil {
 		return nil
@@ -75,6 +79,14 @@ func Gate(result *CoverageResult, opts GateOptions) error {
 			fmt.Sprintf("coverage %.4f below floor %.4f", result.Coverage, opts.MinCoverage))
 	}
 
+	if opts.FailOnDeadRefs {
+		if n := len(result.Dead); n > 0 {
+			violations = append(violations,
+				fmt.Sprintf("%d dead doc %s (names an entity the code no longer has): %s",
+					n, plural(n, "reference", "references"), refsOf(result.Dead)))
+		}
+	}
+
 	if len(violations) == 0 {
 		return nil
 	}
@@ -99,6 +111,23 @@ func namesOf(entities []Entity) string {
 		return strings.Join(names, ", ") + fmt.Sprintf(" (+%d more)", omitted)
 	}
 	return strings.Join(names, ", ")
+}
+
+// refsOf renders a stable, bounded list of doc references with their location,
+// so a failure says which doc to fix as well as which name is gone.
+func refsOf(refs []DocRef) string {
+	items := make([]string, 0, len(refs))
+	for _, r := range refs {
+		items = append(items, fmt.Sprintf("`%s` (%s:%d)", r.Text, r.File, r.Line))
+	}
+	sort.Strings(items)
+
+	if len(items) > maxNamedEntities {
+		omitted := len(items) - maxNamedEntities
+		items = items[:maxNamedEntities]
+		return strings.Join(items, ", ") + fmt.Sprintf(" (+%d more)", omitted)
+	}
+	return strings.Join(items, ", ")
 }
 
 func plural(n int, one, many string) string {

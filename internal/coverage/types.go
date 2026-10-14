@@ -25,6 +25,7 @@ type CoverageResult struct {
 	Covered   []Entity // C ∩ D
 	Uncovered []Entity // C \ D
 	Stale     []DocRef // D \ C: doc references with no matching entity
+	Dead      []DocRef // Stale's gateable core: refs naming THIS repo's entities that resolve to nothing (see DeadRefs)
 	Coverage  float64  // |C ∩ D| / |C|
 	Staleness float64  // |D \ C| / |D|
 }
