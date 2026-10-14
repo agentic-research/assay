@@ -131,6 +131,7 @@ func ComputeWithThreshold(entities []Entity, refs []DocRef, fuzzyThreshold float
 		Covered:   covered,
 		Uncovered: uncovered,
 		Stale:     stale,
+		Dead:      DeadRefs(entities, refs),
 		Coverage:  cov,
 		Staleness: stal,
 	}

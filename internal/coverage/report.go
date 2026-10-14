@@ -46,6 +46,13 @@ func FormatText(w io.Writer, result *CoverageResult, verbose bool) error {
 		}
 	}
 
+	if len(result.Dead) > 0 {
+		pf("\nDead references (%d):\n", len(result.Dead))
+		for _, r := range result.Dead {
+			pf("  `%s`  %s:%d\n", r.Text, r.File, r.Line)
+		}
+	}
+
 	if verbose && len(result.Covered) > 0 {
 		pf("\nCovered (%d):\n", len(result.Covered))
 		sorted := sortEntities(result.Covered)
@@ -66,6 +73,7 @@ func FormatJSON(w io.Writer, result *CoverageResult) error {
 		Covered   int      `json:"covered_count"`
 		Uncovered []Entity `json:"uncovered,omitempty"`
 		Stale     []DocRef `json:"stale,omitempty"`
+		Dead      []DocRef `json:"dead,omitempty"`
 	}
 	report := jsonReport{
 		Coverage:  result.Coverage,
@@ -74,6 +82,7 @@ func FormatJSON(w io.Writer, result *CoverageResult) error {
 		Covered:   len(result.Covered),
 		Uncovered: result.Uncovered,
 		Stale:     result.Stale,
+		Dead:      result.Dead,
 	}
 	enc := json.NewEncoder(w)
 	enc.SetIndent("", "  ")

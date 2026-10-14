@@ -103,7 +103,7 @@ therefore fails loudly and `Available()` reports false so callers can fall back.
 
 ## CI / drift gate
 
-`task ci` (non-mutating) is the single source of truth: `fmt:check + vet + lint + test + map:check`. Both the [`assay-map` workflow](../.github/workflows/assay-map.yml) and the [`.githooks/pre-push`](../.githooks/pre-push) hook **invoke it** (never re-implement). `map:check` regenerates the graph and fails on any diff vs the committed [`dependency-graph.md`](dependency-graph.md) — so a new undeclared seam can't reach `main`. `task check` (dev) regenerates the snapshot so a graph change rides in the same commit. See [`CLAUDE.md`](../CLAUDE.md) for the full target list.
+`task ci` (non-mutating) is the single source of truth: `fmt:check + vet + lint + test + map:check + docs:check`. Both the [`assay-map` workflow](../.github/workflows/assay-map.yml) and the [`.githooks/pre-push`](../.githooks/pre-push) hook **invoke it** (never re-implement). `map:check` regenerates the graph and fails on any diff vs the committed [`dependency-graph.md`](dependency-graph.md) — so a new undeclared seam can't reach `main`. `task check` (dev) regenerates the snapshot so a graph change rides in the same commit. See [`CLAUDE.md`](../CLAUDE.md) for the full target list.
 
 ## Parked / non-goals
 

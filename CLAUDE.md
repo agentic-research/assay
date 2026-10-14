@@ -71,26 +71,38 @@ map uses, and — with `--max-uncovered` or `--threshold` — **fails the build*
 entity has no documentation reference. `task docs:check` wires it into `task ci` with a ratchet
 budget (`DOC_UNCOVERED_BUDGET`); lower it as debt is paid, never raise it to make CI pass.
 
-It gates **one direction only**: exported entity → no doc mention. Entities come from parsed
-source, so every finding names a real symbol. The reverse direction (a doc naming a symbol that
-no longer exists) is computed and reported as `staleness` but deliberately **not gated** — every
-backtick span in markdown is currently treated as a claimed symbol, so filenames, CLI flags, bead
-IDs and other repos' types all register as stale (92.6% on this tree). Gating it would fail
-permanently while signalling nothing. Making it gateable needs a preprocessor that decides which
-spans actually assert a symbol.
+It gates **both directions**:
 
-mache has since shipped that preprocessor as `v_doc_refs` and turned
-`drift_doc_dead_symbol_reference` into a real query — but it does **not** unblock assay, because
-the view is scoped to Rust paths (`token LIKE '%::%'`) to sidestep a Go extraction gap upstream
-(`ley-line-open-651909`: Go package-level consts emit no defs). Go has no `::`, so the view
-yields zero rows for this repo. mache also ships the rule advisory-only, not gate-tagged, with
-every measured candidate falling into a declared false-positive class. Treat the staleness
-direction as still blocked, and note that its residue — foreign types quoted in design specs — is
-a class better tokenization cannot fix; it needs docs that *declare* which symbols they cover.
+- **Coverage** — exported entity → no doc mention (`--max-uncovered` / `--threshold`). Entities
+  come from parsed source, so every finding names a real symbol.
+- **Dead references** — a doc naming an entity of this repo that no longer exists
+  (`--fail-on-dead-refs`, no budget). The failure names the entity and the `file:line` of the doc.
+
+The dead-reference check does **not** gate the raw `staleness` figure. That figure treats every
+backtick span as a claimed symbol, so filenames, CLI flags, bead IDs and other repos' types all
+register as stale (92.6% on this tree); gating it would fail permanently while signalling
+nothing. Instead a span counts as an entity reference only when its own shape says "this repo's
+symbol", and it is resolved **exactly** (the fuzzy coverage layers would happily match a
+deleted `Gate`-prefixed name back to `Gate`):
+
+- **package-qualified** — `pkg.Name` or `pkg.Type.Method`, where `pkg` is a package of this repo
+  and `Name` is exported (`coverage.ClaimSource`; not `wrangler.toml`);
+- **receiver-qualified** — `Type.Method`, where `Type` is a type of this repo
+  (`MarkdownSource.Claims`).
+
+That is how the docs here actually name entities, and on this tree it flags nothing. The blind
+spots are deliberate: **bare names** (`Gate`) are not checked, because a bare identifier cannot be
+told apart from a type quoted from another project; and a package whose exported entities were
+*all* deleted stops being recognised as local. Write a qualified name when a doc must be held to
+the code. The rule lives in `DeadRefs` (`internal/coverage/deadref.go`).
+
+mache's `v_doc_refs` preprocessor does not help here: the view is scoped to Rust paths
+(`token LIKE '%::%'`, sidestepping `ley-line-open-651909`), so it yields zero rows for Go.
 
 The decision itself is a pure function: `Gate` in `internal/coverage/gate.go` takes a
 `CoverageResult` plus `GateOptions` (`MaxUncovered` + `MaxUncoveredSet` for the ratchet,
-`MinCoverage` for the ratio floor) and returns an error naming every violating entity, or nil.
+`MinCoverage` for the ratio floor, `FailOnDeadRefs` for dead references) and returns an error
+naming every violating entity, or nil.
 The zero value of `GateOptions` disables every check, so adding it to a caller is opt-in.
 `cmd/verify.go` returns that error rather than calling `os.Exit`, which keeps it unit-testable
 and puts the offending names in the CI log.

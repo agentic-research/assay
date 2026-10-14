@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/spf13/cobra"
 
@@ -18,7 +19,8 @@ var verifyCmd = &cobra.Command{
 	Short: "Verify documentation coverage against source code",
 	Long: "Extract documentable entities from source code and code references from markdown, then compute coverage.\n\n" +
 		"With --max-uncovered or --threshold, verify becomes a gate: it exits non-zero when documentation\n" +
-		"has drifted behind the code, naming the entities responsible. Wire it into CI via `task docs:check`.",
+		"has drifted behind the code, naming the entities responsible. With --fail-on-dead-refs it also\n" +
+		"exits non-zero when a doc names an entity of this codebase that no longer exists. Wire it into CI via `task docs:check`.",
 	// A gate failure is a result, not a usage error — printing the full usage
 	// block after it would bury the entity names the caller needs.
 	SilenceUsage: true,
@@ -34,6 +36,7 @@ var (
 	flagExportedOnly bool
 	flagVerbose      bool
 	flagMaxUncovered int
+	flagFailOnDead   bool
 	flagVerifier     string
 	flagMacheDB      string
 	flagHTMLDocs     string
@@ -51,6 +54,8 @@ func init() {
 	verifyCmd.Flags().BoolVarP(&flagVerbose, "verbose", "v", false, "Show all matched entities")
 	verifyCmd.Flags().IntVar(&flagMaxUncovered, "max-uncovered", -1,
 		"Fail when more than N exported entities are undocumented (0 = none may be; -1 = disabled). Ratchet a repo by setting its current count.")
+	verifyCmd.Flags().BoolVar(&flagFailOnDead, "fail-on-dead-refs", false,
+		"Fail when a doc names one of this codebase's entities (pkg.Name, Type.Method) that no longer exists")
 	verifyCmd.Flags().StringVar(&flagVerifier, "verifier", "tree-sitter", "Structural verifier backend: tree-sitter, mache")
 	verifyCmd.Flags().StringVar(&flagMacheDB, "mache-db", "", "Leyline-parsed .db with canonical AST views (required for --verifier=mache)")
 	verifyCmd.Flags().StringVar(&flagHTMLDocs, "html-docs", "", "Directory of static HTML docs to treat as an additional claim source")
@@ -106,9 +111,15 @@ func runVerify(cmd *cobra.Command, args []string) error {
 	// Claim sources: the docs directory plus root-level markdown
 	// (README.md, ARCHITECTURE.md, etc.). Both are markdown today; other
 	// formats plug in behind coverage.ClaimSource.
-	sources := []coverage.ClaimSource{
-		docs.NewMarkdownSource(docsDir),
-		docs.NewMarkdownSource(source),
+	//
+	// The source walk is recursive, so a docs directory inside the source
+	// root is already covered. Walking it a second time would report every
+	// doc twice under two different relative paths (docs/X.md and X.md),
+	// which MergeRefs cannot dedupe and which makes a failure point at a
+	// file that does not exist at the repo root.
+	sources := []coverage.ClaimSource{docs.NewMarkdownSource(source)}
+	if !isWithin(docsDir, source) {
+		sources = append(sources, docs.NewMarkdownSource(docsDir))
 	}
 	// Static HTML docs (e.g. a rendered docs site) are an opt-in additional
 	// claim source behind the same interface. The live-DOM capture path
@@ -139,11 +150,11 @@ func runVerify(cmd *cobra.Command, args []string) error {
 	// Output report.
 	switch flagFormat {
 	case "json":
-		if err := coverage.FormatJSON(os.Stdout, result); err != nil {
+		if err := coverage.FormatJSON(cmd.OutOrStdout(), result); err != nil {
 			return err
 		}
 	default:
-		if err := coverage.FormatText(os.Stdout, result, flagVerbose); err != nil {
+		if err := coverage.FormatText(cmd.OutOrStdout(), result, flagVerbose); err != nil {
 			return err
 		}
 	}
@@ -155,6 +166,7 @@ func runVerify(cmd *cobra.Command, args []string) error {
 		MaxUncovered:    flagMaxUncovered,
 		MaxUncoveredSet: cmd.Flags().Changed("max-uncovered"),
 		MinCoverage:     flagThreshold,
+		FailOnDeadRefs:  flagFailOnDead,
 	})
 }
 
@@ -167,4 +179,10 @@ func detectDocsDir(source string) string {
 		}
 	}
 	return ""
+}
+
+// isWithin reports whether path is root or lies beneath it. Both are absolute.
+func isWithin(path, root string) bool {
+	rel, err := filepath.Rel(root, path)
+	return err == nil && rel != ".." && !strings.HasPrefix(rel, ".."+string(filepath.Separator))
 }
