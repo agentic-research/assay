@@ -409,7 +409,7 @@ graph LR
 - `apt-get` (cli_binary) — .github/workflows/cloister-schema-go.yml:55
 - `apt-get` (cli_binary) — .github/workflows/coverage.yml:35
 - `apt-get` (cli_binary) — .github/workflows/generated-drift.yml:81
-- `apt-get` (cli_binary) — .github/workflows/mutants.yml:51
+- `apt-get` (cli_binary) — .github/workflows/mutants.yml:61
 - `apt-get` (cli_binary) — .github/workflows/openssl.yml:24
 - `apt-get` (cli_binary) — .github/workflows/release.yml:56
 - `audience:` (cli_binary) — .github/workflows/oidc-signing.yml:71
@@ -421,7 +421,7 @@ graph LR
 - `cargo` (cli_binary) — .github/workflows/bead-diff.yml:65
 - `cargo` (cli_binary) — .github/workflows/ci.yml:310
 - `cargo` (cli_binary) — .github/workflows/coverage.yml:44
-- `cargo` (cli_binary) — .github/workflows/mutants.yml:60
+- `cargo` (cli_binary) — .github/workflows/mutants.yml:70
 - `cargo` (cli_binary) — .github/workflows/publish-crates.yml:130
 - `cargo` (cli_binary) — .github/workflows/release.yml:90
 - `cargo` (cli_binary) — .github/workflows/release.yml:127
@@ -533,7 +533,7 @@ graph LR
 - `task` (cli_binary) — .github/workflows/generated-drift.yml:98
 - `task` (cli_binary) — .github/workflows/integration.yml:71
 - `task` (cli_binary) — .github/workflows/leyline-schema-go.yml:66
-- `task` (cli_binary) — .github/workflows/mutants.yml:61
+- `task` (cli_binary) — .github/workflows/mutants.yml:71
 - `task` (cli_binary) — .github/workflows/mutants.yml:164
 - `task` (cli_binary) — .github/workflows/oidc-signing.yml:40
 - `task` (cli_binary) — .github/workflows/publish-crates.yml:99
