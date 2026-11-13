@@ -1,8 +1,8 @@
 # assay map
 
-- Resolved edges: 142
-- External dependencies: 4479
-- Dangling producers: 10509
+- Resolved edges: 143
+- External dependencies: 4496
+- Dangling producers: 10517
 
 ## Graph
 
@@ -60,7 +60,7 @@ graph LR
 - `axum` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:103
 - `axum` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:127
 - `axum` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:110
-- `base64` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:114
+- `base64` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:116
 - `base64` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:52
 - `base64` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:104
 - `base64` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/envelope/Cargo.toml:42
@@ -77,12 +77,12 @@ graph LR
 - `bitflags` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/input/Cargo.toml:13
 - `bitflags` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/utils/Cargo.toml:11
 - `bitflags` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/vmm/Cargo.toml:48
-- `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:97
+- `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:105
 - `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:48
 - `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:35
 - `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/core/Cargo.toml:17
 - `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-capnp/Cargo.toml:21
-- `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:48
+- `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:30
 - `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cache/Cargo.toml:16
 - `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cas-ffi/Cargo.toml:28
 - `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:72
@@ -144,7 +144,7 @@ graph LR
 - `dirs` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:105
 - `dirs` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli/Cargo.toml:58
 - `dirs-next` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:47
-- `ed25519-dalek` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:111
+- `ed25519-dalek` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:113
 - `ed25519-dalek` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:59
 - `ed25519-dalek` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:154
 - `ed25519-dalek` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/envelope/Cargo.toml:36
@@ -168,7 +168,7 @@ graph LR
 - `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:77
 - `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/envelope/Cargo.toml:45
 - `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/krun-worker/Cargo.toml:40
-- `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:70
+- `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:73
 - `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sheaf/Cargo.toml:35
 - `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:106
 - `hex` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/vcs/Cargo.toml:20
@@ -188,7 +188,7 @@ graph LR
 - `jj-lib` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:158
 - `jsonschema` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/mcp-descriptor/Cargo.toml:28
 - `jsonschema` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/mcp-protocol-schema/Cargo.toml:26
-- `jsonschema` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:42
+- `jsonschema` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:56
 - `jsonwebtoken` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:127
 - `kbs-types` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/vmm/Cargo.toml:43
 - `keyring` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:120
@@ -206,10 +206,11 @@ graph LR
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:18
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:42
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/core/Cargo.toml:26
+- `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:34
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:137
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli/Cargo.toml:60
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/krun-worker/Cargo.toml:18
-- `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:27
+- `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:30
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:109
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/storefs/Cargo.toml:32
 - `libc` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/arch/Cargo.toml:17
@@ -265,7 +266,7 @@ graph LR
 - `nix` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/vmm/Cargo.toml:29
 - `nono` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:27
 - `nono` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:44
-- `nono` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:33
+- `nono` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:36
 - `nono` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:126
 - `once_cell` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/libkrun/Cargo.toml:32
 - `once_cell` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/rutabaga_gfx/ffi/Cargo.toml:18
@@ -279,7 +280,7 @@ graph LR
 - `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:37
 - `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/hdc/Cargo.toml:8
 - `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/krun-worker/Cargo.toml:43
-- `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:34
+- `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:37
 - `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sheaf/Cargo.toml:41
 - `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:82
 - `parking_lot` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/storefs/Cargo.toml:26
@@ -299,7 +300,7 @@ graph LR
 - `proptest` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:149
 - `r2d2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:86
 - `r2d2_sqlite` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:87
-- `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:112
+- `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:114
 - `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:60
 - `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:72
 - `rand` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:76
@@ -311,7 +312,7 @@ graph LR
 - `remain` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/rutabaga_gfx/Cargo.toml:26
 - `reqwest` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:196
 - `reqwest` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:50
-- `rustix` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:39
+- `rustix` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:42
 - `rustls` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:13
 - `rustls-pemfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:14
 - `schemars` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:145
@@ -325,7 +326,7 @@ graph LR
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/envelope/Cargo.toml:37
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:50
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/lsp/Cargo.toml:12
-- `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:35
+- `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:38
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sheaf/Cargo.toml:26
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:131
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/text-search/Cargo.toml:56
@@ -337,7 +338,7 @@ graph LR
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:40
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/bdr/Cargo.toml:17
 - `serde` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:19
-- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:103
+- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:83
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:21
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:29
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:28
@@ -345,7 +346,7 @@ graph LR
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/mcp-descriptor/Cargo.toml:20
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/mcp-protocol-schema/Cargo.toml:18
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-capnp/Cargo.toml:25
-- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:36
+- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:50
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema/Cargo.toml:16
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cache/Cargo.toml:34
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cas-ffi/Cargo.toml:36
@@ -356,7 +357,7 @@ graph LR
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:51
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/krun-worker/Cargo.toml:19
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/lsp/Cargo.toml:13
-- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:36
+- `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:39
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/schema-bridge/Cargo.toml:49
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sheaf/Cargo.toml:36
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:132
@@ -372,16 +373,16 @@ graph LR
 - `serde_json` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/crates/crypto/Cargo.toml:20
 - `serial_test` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:174
 - `serial_test` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:203
-- `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:113
+- `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:115
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:22
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:87
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/mcp-protocol-schema/Cargo.toml:19
-- `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:31
+- `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:45
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cache/Cargo.toml:29
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:112
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/envelope/Cargo.toml:44
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/krun-worker/Cargo.toml:41
-- `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:38
+- `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:41
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sheaf/Cargo.toml:37
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:104
 - `sha2` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:113
@@ -405,6 +406,7 @@ graph LR
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:54
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:62
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/core/Cargo.toml:34
+- `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:41
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cas-ffi/Cargo.toml:38
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:114
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli/Cargo.toml:77
@@ -412,7 +414,7 @@ graph LR
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/hdc/Cargo.toml:15
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/krun-worker/Cargo.toml:44
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/lsp/Cargo.toml:21
-- `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:40
+- `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:43
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:198
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/storefs/Cargo.toml:59
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/text-search/Cargo.toml:55
@@ -421,7 +423,7 @@ graph LR
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:23
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:65
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/envelope/Cargo.toml:46
-- `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:41
+- `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:44
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/schema-bridge/Cargo.toml:34
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sheaf/Cargo.toml:27
 - `thiserror` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:107
@@ -444,6 +446,7 @@ graph LR
 - `tokio` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:42
 - `tokio-rustls` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:18
 - `tokio-util` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:106
+- `toml` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:37
 - `toml` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:137
 - `toml` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:45
 - `toml_edit` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/smell-projector/Cargo.toml:18
@@ -494,12 +497,12 @@ graph LR
 - `tree-sitter-typescript` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:103
 - `tree-sitter-yaml` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:91
 - `tungstenite` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:107
-- `unicase` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:48
+- `unicase` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:51
 - `unicode-normalization` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:142
-- `unicode-normalization` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:45
+- `unicode-normalization` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:48
 - `ureq` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:86
 - `ureq` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cli-lib/Cargo.toml:111
-- `ureq` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:53
+- `ureq` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:56
 - `uuid` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/text-search/Cargo.toml:50
 - `uuid` (cargo_crate) — /home/runner/work/_temp/ecosystem/rosary/Cargo.toml:111
 - `uv-normalize` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/ts/Cargo.toml:136
@@ -520,7 +523,7 @@ graph LR
 - `vmm-sys-util` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/vmm/Cargo.toml:31
 - `vsock` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/aws_nitro/Cargo.toml:16
 - `wait-timeout` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/krun-worker/Cargo.toml:45
-- `wait-timeout` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:71
+- `wait-timeout` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/runtime/Cargo.toml:74
 - `walkdir` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/tools/smell-projector/Cargo.toml:19
 - `wasmparser` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:79
 - `wasmparser` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/cas-ffi/Cargo.toml:32
@@ -1772,6 +1775,7 @@ graph LR
 - `fmt` (go_module) — internal/nfsmount/graphfs.go:9
 - `fmt` (go_module) — internal/nfsmount/server.go:4
 - `fmt` (go_module) — internal/pathguard/pathguard.go:6
+- `fmt` (go_module) — internal/procscan/procscan.go:12
 - `fmt` (go_module) — internal/projcfg/config.go:6
 - `fmt` (go_module) — internal/projcfg/project_registry.go:7
 - `fmt` (go_module) — internal/projcfg/project_registry_lock.go:4
@@ -2193,6 +2197,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/lltest/pinned_unix.go:16
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/lltest/project.go:11
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/lltest/writable_tree.go:12
+- `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/mcpharness/testing.go:15
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/mcpserve/serve.go:21
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/mcpserve/serve_handler_get_communities.go:11
 - `github.com/agentic-research/mache/internal/leyline` (go_module) — internal/mcpserve/serve_handler_get_sheaf_status.go:8
@@ -2258,7 +2263,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/machehome` (go_module) — internal/leyline/binary_cache_path.go:6
 - `github.com/agentic-research/mache/internal/machehome` (go_module) — internal/leyline/owner_record.go:10
 - `github.com/agentic-research/mache/internal/machehome` (go_module) — internal/leyline/socket.go:32
-- `github.com/agentic-research/mache/internal/machehome` (go_module) — internal/mcpharness/testing.go:15
+- `github.com/agentic-research/mache/internal/machehome` (go_module) — internal/mcpharness/testing.go:16
 - `github.com/agentic-research/mache/internal/machehome` (go_module) — internal/mcpserve/sheaf_subscribe.go:12
 - `github.com/agentic-research/mache/internal/machehome` (go_module) — internal/projcfg/project_registry.go:13
 - `github.com/agentic-research/mache/internal/materialize` (go_module) — cmd/mount.go:24
@@ -2280,6 +2285,9 @@ graph LR
 - `github.com/agentic-research/mache/internal/nfsmount` (go_module) — mount/mount.go:11
 - `github.com/agentic-research/mache/internal/pathguard` (go_module) — internal/projcfg/config.go:16
 - `github.com/agentic-research/mache/internal/pathguard` (go_module) — schema/schema.go:15
+- `github.com/agentic-research/mache/internal/procscan` (go_module) — internal/lltest/pinned_unix.go:17
+- `github.com/agentic-research/mache/internal/procscan` (go_module) — internal/lltest/writable_tree.go:13
+- `github.com/agentic-research/mache/internal/procscan` (go_module) — internal/mcpharness/testing.go:17
 - `github.com/agentic-research/mache/internal/procsig` (go_module) — cmd/mount.go:26
 - `github.com/agentic-research/mache/internal/procsig` (go_module) — internal/mcpserve/serve.go:24
 - `github.com/agentic-research/mache/internal/projcfg` (go_module) — cmd/daemon_agent.go:16
@@ -2793,7 +2801,9 @@ graph LR
 - `github.com/stretchr/testify` (go_module) — /home/runner/work/_temp/ecosystem/assay/go.mod:10
 - `github.com/stretchr/testify` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:18
 - `github.com/stretchr/testify` (go_module) — /home/runner/work/_temp/ecosystem/signet/go.mod:15
+- `github.com/stretchr/testify/assert` (go_module) — internal/procscan/procscan.go:21
 - `github.com/stretchr/testify/require` (go_module) — internal/mcpharness/testing.go:13
+- `github.com/stretchr/testify/require` (go_module) — internal/procscan/procscan.go:22
 - `github.com/stretchr/testify/require` (go_module) — internal/projtest/projtest.go:24
 - `github.com/stretchr/testify/require` (go_module) — internal/testport/testport.go:12
 - `github.com/stretchr/testify/require` (go_module) — internal/testutil/bindinglog.go:10
@@ -3514,6 +3524,7 @@ graph LR
 - `os` (go_module) — internal/navigator/agent.go:8
 - `os` (go_module) — internal/nfsmount/graphfs.go:11
 - `os` (go_module) — internal/pathguard/pathguard.go:7
+- `os` (go_module) — internal/procscan/procscan.go:13
 - `os` (go_module) — internal/projcfg/config.go:8
 - `os` (go_module) — internal/projcfg/endpoint.go:4
 - `os` (go_module) — internal/projcfg/project_registry.go:8
@@ -3590,6 +3601,7 @@ graph LR
 - `os/exec` (go_module) — internal/lltest/pinned_unix.go:9
 - `os/exec` (go_module) — internal/lltest/project.go:6
 - `os/exec` (go_module) — internal/nfsmount/server.go:6
+- `os/exec` (go_module) — internal/procscan/procscan.go:14
 - `os/exec` (go_module) — internal/projcfg/config.go:9
 - `os/exec` (go_module) — internal/structural/mache.go:13
 - `os/exec` (go_module) — internal/testfixtures/registry.go:19
@@ -3925,6 +3937,7 @@ graph LR
 - `strconv` (go_module) — internal/mache/filter.go:5
 - `strconv` (go_module) — internal/navigator/agent.go:10
 - `strconv` (go_module) — internal/navigator/model.go:12
+- `strconv` (go_module) — internal/procscan/procscan.go:15
 - `strconv` (go_module) — internal/projcfg/endpoint.go:5
 - `strconv` (go_module) — internal/template/render.go:18
 - `strconv` (go_module) — internal/testfixtures/golden.go:8
@@ -4123,6 +4136,7 @@ graph LR
 - `strings` (go_module) — internal/navigator/tools_simplified.go:7
 - `strings` (go_module) — internal/nfsmount/graphfs.go:13
 - `strings` (go_module) — internal/pathguard/pathguard.go:9
+- `strings` (go_module) — internal/procscan/procscan.go:16
 - `strings` (go_module) — internal/projcfg/config.go:12
 - `strings` (go_module) — internal/projtest/projtest.go:15
 - `strings` (go_module) — internal/refsvtab/refs_module.go:6
@@ -4234,6 +4248,7 @@ graph LR
 - `sync` (go_module) — internal/navigator/agent.go:12
 - `sync` (go_module) — internal/navigator/tools.go:9
 - `sync` (go_module) — internal/nfsmount/graphfs.go:14
+- `sync` (go_module) — internal/procscan/procscan.go:17
 - `sync` (go_module) — internal/projcfg/project_registry_lock.go:7
 - `sync` (go_module) — internal/refsvtab/refs_module.go:7
 - `sync` (go_module) — internal/sqlcount/sqlcount.go:13
@@ -4312,6 +4327,7 @@ graph LR
 - `testing` (go_module) — internal/lltest/writable_tree.go:9
 - `testing` (go_module) — internal/machehome/machehome.go:17
 - `testing` (go_module) — internal/mcpharness/testing.go:9
+- `testing` (go_module) — internal/procscan/procscan.go:18
 - `testing` (go_module) — internal/projtest/projtest.go:16
 - `testing` (go_module) — internal/testfixtures/baseline.go:20
 - `testing` (go_module) — internal/testfixtures/registry.go:23
@@ -4436,6 +4452,7 @@ graph LR
 - `time` (go_module) — internal/mountmeta/mountmeta.go:16
 - `time` (go_module) — internal/navigator/model.go:14
 - `time` (go_module) — internal/nfsmount/graphfs.go:16
+- `time` (go_module) — internal/procscan/procscan.go:19
 - `time` (go_module) — internal/projcfg/endpoint.go:6
 - `time` (go_module) — internal/schemainfer/mount_inference.go:8
 - `time` (go_module) — internal/testfixtures/baseline.go:21
@@ -11249,6 +11266,14 @@ graph LR
 - `github.com/agentic-research/mache/internal/pathguard.RequireContained` (go_package_symbol) — internal/pathguard/pathguard.go
 - `github.com/agentic-research/mache/internal/pathguard.resolveExistingAncestor` (go_package_symbol) — internal/pathguard/pathguard.go
 - `github.com/agentic-research/mache/internal/pathguard.tail` (go_package_symbol) — internal/pathguard/pathguard.go
+- `github.com/agentic-research/mache/internal/procscan.AssertNoneReferencing` (go_package_symbol) — internal/procscan/procscan.go
+- `github.com/agentic-research/mache/internal/procscan.Referencing` (go_package_symbol) — internal/procscan/procscan.go
+- `github.com/agentic-research/mache/internal/procscan.hits` (go_package_symbol) — internal/procscan/procscan.go
+- `github.com/agentic-research/mache/internal/procscan.lastErr` (go_package_symbol) — internal/procscan/procscan.go
+- `github.com/agentic-research/mache/internal/procscan.lastHits` (go_package_symbol) — internal/procscan/procscan.go
+- `github.com/agentic-research/mache/internal/procscan.mu` (go_package_symbol) — internal/procscan/procscan.go
+- `github.com/agentic-research/mache/internal/procscan.noneReferencingWithin` (go_package_symbol) — internal/procscan/procscan.go
+- `github.com/agentic-research/mache/internal/procscan.survivorGrace` (go_package_symbol) — internal/procscan/procscan.go
 - `github.com/agentic-research/mache/internal/procsig.SurviveBrokenPipes` (go_package_symbol) — internal/procsig/procsig.go
 - `github.com/agentic-research/mache/internal/projcfg.CheckPathContainment` (go_package_symbol) — internal/projcfg/config.go
 - `github.com/agentic-research/mache/internal/projcfg.ConfigFileName` (go_package_symbol) — internal/projcfg/config.go
