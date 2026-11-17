@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 143
-- External dependencies: 4496
-- Dangling producers: 10517
+- External dependencies: 4509
+- Dangling producers: 10536
 
 ## Graph
 
@@ -836,6 +836,8 @@ graph LR
 - `context` (go_module) — demo/http-auth/server/main.go:4
 - `context` (go_module) — gen/go/verify/grpc.go:4
 - `context` (go_module) — gen/go/verify/middleware.go:4
+- `context` (go_module) — graph/capabilities.go:4
+- `context` (go_module) — graph/scan_pool.go:4
 - `context` (go_module) — graph/sqlite_graph_scan.go:4
 - `context` (go_module) — graph/store.go:12
 - `context` (go_module) — graph/store_local.go:4
@@ -867,6 +869,7 @@ graph LR
 - `context` (go_module) — internal/iterm/client.go:11
 - `context` (go_module) — internal/leyline/provenance.go:4
 - `context` (go_module) — internal/leyline/sheaf_subscriber.go:4
+- `context` (go_module) — internal/lloschema/lloschema.go:52
 - `context` (go_module) — internal/mcpharness/conn.go:16
 - `context` (go_module) — internal/mcpharness/testing.go:4
 - `context` (go_module) — internal/mcpserve/serve.go:4
@@ -896,8 +899,12 @@ graph LR
 - `context` (go_module) — internal/navigator/tool.go:4
 - `context` (go_module) — internal/navigator/tools.go:4
 - `context` (go_module) — internal/navigator/tools_simplified.go:4
+- `context` (go_module) — internal/smells/find_smells_cli.go:4
 - `context` (go_module) — internal/smells/serve_find_smells.go:4
+- `context` (go_module) — internal/smells/smell_connection.go:4
+- `context` (go_module) — internal/smells/smell_findings.go:4
 - `context` (go_module) — internal/sqlcount/sqlcount.go:9
+- `context` (go_module) — internal/testutil/smellgraph.go:4
 - `context` (go_module) — internal/writeback/format.go:5
 - `context` (go_module) — pkg/agent/api/v1/agent_grpc.pb.go:10
 - `context` (go_module) — pkg/agent/client.go:4
@@ -1134,7 +1141,7 @@ graph LR
 - `database/sql` (go_module) — build/schema_coverage.go:4
 - `database/sql` (go_module) — cmd/build_meta.go:4
 - `database/sql` (go_module) — ext/boltdb/boltdb.go:7
-- `database/sql` (go_module) — graph/capabilities.go:3
+- `database/sql` (go_module) — graph/capabilities.go:5
 - `database/sql` (go_module) — graph/memstore.go:4
 - `database/sql` (go_module) — graph/memstore_refsdb.go:5
 - `database/sql` (go_module) — graph/nodes_row.go:3
@@ -1144,6 +1151,7 @@ graph LR
 - `database/sql` (go_module) — graph/props_compat.go:4
 - `database/sql` (go_module) — graph/ref_search.go:4
 - `database/sql` (go_module) — graph/refs_resolve.go:4
+- `database/sql` (go_module) — graph/scan_pool.go:5
 - `database/sql` (go_module) — graph/sqlite.go:4
 - `database/sql` (go_module) — graph/sqlite_graph.go:4
 - `database/sql` (go_module) — graph/sqlite_graph_callees.go:4
@@ -1170,7 +1178,7 @@ graph LR
 - `database/sql` (go_module) — internal/leylinegraph/leyline.go:4
 - `database/sql` (go_module) — internal/linter/linter.go:8
 - `database/sql` (go_module) — internal/lloschema/blob.go:5
-- `database/sql` (go_module) — internal/lloschema/lloschema.go:52
+- `database/sql` (go_module) — internal/lloschema/lloschema.go:53
 - `database/sql` (go_module) — internal/lloschema/tree.go:4
 - `database/sql` (go_module) — internal/lloschema/v6paths.go:4
 - `database/sql` (go_module) — internal/lltest/project.go:4
@@ -1180,9 +1188,9 @@ graph LR
 - `database/sql` (go_module) — internal/mcpserve/serve_registry.go:7
 - `database/sql` (go_module) — internal/projtest/projtest.go:9
 - `database/sql` (go_module) — internal/refsvtab/refs_module.go:4
-- `database/sql` (go_module) — internal/smells/find_smells_cli.go:4
 - `database/sql` (go_module) — internal/smells/find_smells_run.go:4
-- `database/sql` (go_module) — internal/smells/smell_findings.go:4
+- `database/sql` (go_module) — internal/smells/smell_connection.go:5
+- `database/sql` (go_module) — internal/smells/smell_findings.go:5
 - `database/sql` (go_module) — internal/smells/smell_incremental.go:4
 - `database/sql` (go_module) — internal/sqlcount/reads.go:4
 - `database/sql` (go_module) — internal/sqlcount/sqlcount.go:10
@@ -1191,7 +1199,7 @@ graph LR
 - `database/sql` (go_module) — internal/testfixtures/golden.go:4
 - `database/sql` (go_module) — internal/testfixtures/registry.go:16
 - `database/sql` (go_module) — internal/testutil/leyline.go:4
-- `database/sql` (go_module) — internal/testutil/smellgraph.go:4
+- `database/sql` (go_module) — internal/testutil/smellgraph.go:5
 - `database/sql` (go_module) — tools/dolt-grpc-demo/main.go:11
 - `database/sql` (go_module) — tools/gen-lsp-fixture/main.go:21
 - `database/sql` (go_module) — tools/mcp-fetch/main.go:11
@@ -1383,7 +1391,7 @@ graph LR
 - `encoding/json` (go_module) — internal/projtest/projtest.go:10
 - `encoding/json` (go_module) — internal/report/json.go:4
 - `encoding/json` (go_module) — internal/smells/find_smells_cli.go:5
-- `encoding/json` (go_module) — internal/smells/smell_findings.go:5
+- `encoding/json` (go_module) — internal/smells/smell_findings.go:6
 - `encoding/json` (go_module) — internal/smells/smell_ratchet.go:5
 - `encoding/json` (go_module) — internal/smells/smell_rules.go:5
 - `encoding/json` (go_module) — internal/template/render.go:15
@@ -1445,6 +1453,7 @@ graph LR
 - `errors` (go_module) — graph/memstore.go:5
 - `errors` (go_module) — graph/projection_version.go:5
 - `errors` (go_module) — graph/props_compat.go:5
+- `errors` (go_module) — graph/scan_pool.go:6
 - `errors` (go_module) — graph/sqlite_graph_ids.go:5
 - `errors` (go_module) — internal/buildcache/cache_ast.go:45
 - `errors` (go_module) — internal/buildcache/cache_oci.go:44
@@ -1475,7 +1484,7 @@ graph LR
 - `errors` (go_module) — internal/mcpserve/serve_write.go:6
 - `errors` (go_module) — internal/navigator/tools.go:5
 - `errors` (go_module) — internal/projcfg/config.go:5
-- `errors` (go_module) — internal/smells/smell_findings.go:6
+- `errors` (go_module) — internal/smells/smell_findings.go:7
 - `errors` (go_module) — internal/smells/smell_ratchet.go:6
 - `errors` (go_module) — internal/structural/errors.go:3
 - `errors` (go_module) — internal/testfixtures/curate.go:16
@@ -1723,7 +1732,7 @@ graph LR
 - `fmt` (go_module) — internal/linter/linter.go:9
 - `fmt` (go_module) — internal/lloschema/blob.go:7
 - `fmt` (go_module) — internal/lloschema/derivation.go:5
-- `fmt` (go_module) — internal/lloschema/lloschema.go:53
+- `fmt` (go_module) — internal/lloschema/lloschema.go:54
 - `fmt` (go_module) — internal/lloschema/node_hash.go:3
 - `fmt` (go_module) — internal/lloschema/schema_views.go:4
 - `fmt` (go_module) — internal/lloschema/tree.go:6
@@ -1788,10 +1797,11 @@ graph LR
 - `fmt` (go_module) — internal/smells/find_smells_run.go:5
 - `fmt` (go_module) — internal/smells/serve_find_smells.go:5
 - `fmt` (go_module) — internal/smells/serve_find_smells_load.go:4
+- `fmt` (go_module) — internal/smells/smell_connection.go:6
 - `fmt` (go_module) — internal/smells/smell_coverage.go:4
 - `fmt` (go_module) — internal/smells/smell_def_scope.go:4
 - `fmt` (go_module) — internal/smells/smell_doc_refs.go:4
-- `fmt` (go_module) — internal/smells/smell_findings.go:7
+- `fmt` (go_module) — internal/smells/smell_findings.go:8
 - `fmt` (go_module) — internal/smells/smell_incremental.go:6
 - `fmt` (go_module) — internal/smells/smell_ratchet.go:7
 - `fmt` (go_module) — internal/smells/smell_refs_views.go:4
@@ -2095,10 +2105,10 @@ graph LR
 - `github.com/agentic-research/mache/graph` (go_module) — internal/smells/find_smells_cli.go:16
 - `github.com/agentic-research/mache/graph` (go_module) — internal/smells/find_smells_run.go:12
 - `github.com/agentic-research/mache/graph` (go_module) — internal/smells/serve_find_smells.go:10
+- `github.com/agentic-research/mache/graph` (go_module) — internal/smells/smell_connection.go:8
 - `github.com/agentic-research/mache/graph` (go_module) — internal/smells/smell_def_scope.go:6
-- `github.com/agentic-research/mache/graph` (go_module) — internal/smells/smell_digest.go:6
 - `github.com/agentic-research/mache/graph` (go_module) — internal/smells/smell_doc_refs.go:8
-- `github.com/agentic-research/mache/graph` (go_module) — internal/smells/smell_findings.go:12
+- `github.com/agentic-research/mache/graph` (go_module) — internal/smells/smell_findings.go:13
 - `github.com/agentic-research/mache/graph` (go_module) — internal/smells/smell_incremental.go:10
 - `github.com/agentic-research/mache/graph` (go_module) — internal/smells/smell_refs_views.go:6
 - `github.com/agentic-research/mache/graph` (go_module) — internal/smells/smell_test_nodes.go:6
@@ -2106,7 +2116,7 @@ graph LR
 - `github.com/agentic-research/mache/graph` (go_module) — internal/testfixtures/registry.go:28
 - `github.com/agentic-research/mache/graph` (go_module) — internal/testutil/leyline.go:12
 - `github.com/agentic-research/mache/graph` (go_module) — internal/testutil/mcptest.go:13
-- `github.com/agentic-research/mache/graph` (go_module) — internal/testutil/smellgraph.go:6
+- `github.com/agentic-research/mache/graph` (go_module) — internal/testutil/smellgraph.go:7
 - `github.com/agentic-research/mache/graph` (go_module) — internal/vfs/callees.go:6
 - `github.com/agentic-research/mache/graph` (go_module) — internal/vfs/callers.go:6
 - `github.com/agentic-research/mache/graph` (go_module) — internal/vfs/context.go:7
@@ -2248,9 +2258,10 @@ graph LR
 - `github.com/agentic-research/mache/internal/lloschema` (go_module) — internal/smells/find_smells_cli.go:12
 - `github.com/agentic-research/mache/internal/lloschema` (go_module) — internal/smells/smell_def_scope.go:7
 - `github.com/agentic-research/mache/internal/lloschema` (go_module) — internal/smells/smell_doc_refs.go:6
-- `github.com/agentic-research/mache/internal/lloschema` (go_module) — internal/smells/smell_findings.go:10
+- `github.com/agentic-research/mache/internal/lloschema` (go_module) — internal/smells/smell_findings.go:11
 - `github.com/agentic-research/mache/internal/lloschema` (go_module) — internal/smells/smell_refs_views.go:7
 - `github.com/agentic-research/mache/internal/lloschema` (go_module) — internal/smells/smell_vendored.go:7
+- `github.com/agentic-research/mache/internal/lloschema` (go_module) — internal/testutil/smellgraph.go:8
 - `github.com/agentic-research/mache/internal/lloschema` (go_module) — internal/writeback/propose.go:15
 - `github.com/agentic-research/mache/internal/lltest` (go_module) — internal/projtest/projtest.go:21
 - `github.com/agentic-research/mache/internal/lsp` (go_module) — internal/lloschema/views.go:9
@@ -4147,7 +4158,7 @@ graph LR
 - `strings` (go_module) — internal/smells/serve_find_smells.go:8
 - `strings` (go_module) — internal/smells/serve_find_smells_load.go:8
 - `strings` (go_module) — internal/smells/smell_coverage.go:7
-- `strings` (go_module) — internal/smells/smell_findings.go:8
+- `strings` (go_module) — internal/smells/smell_findings.go:9
 - `strings` (go_module) — internal/smells/smell_incremental.go:8
 - `strings` (go_module) — internal/smells/smell_ratchet.go:11
 - `strings` (go_module) — internal/smells/smell_rules.go:9
@@ -4205,6 +4216,7 @@ graph LR
 - `sync` (go_module) — graph/memstore.go:7
 - `sync` (go_module) — graph/nodes_table_reader.go:10
 - `sync` (go_module) — graph/parse_blobs.go:6
+- `sync` (go_module) — graph/scan_pool.go:7
 - `sync` (go_module) — graph/sheaf_invalidate.go:5
 - `sync` (go_module) — graph/sqlite_graph.go:11
 - `sync` (go_module) — graph/sqlite_graph_scan.go:10
@@ -4280,6 +4292,7 @@ graph LR
 - `sync/atomic` (go_module) — cmd/bench/integration_bench.go:10
 - `sync/atomic` (go_module) — graph/composite.go:9
 - `sync/atomic` (go_module) — graph/memstore.go:8
+- `sync/atomic` (go_module) — graph/scan_pool.go:8
 - `sync/atomic` (go_module) — internal/api/voice.go:12
 - `sync/atomic` (go_module) — internal/api/websocket.go:13
 - `sync/atomic` (go_module) — internal/cdp/proxy.go:9
@@ -8910,6 +8923,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.RefSearcher` (go_package_symbol) — graph/ref_search.go
 - `github.com/agentic-research/mache/graph.RefTarget` (go_package_symbol) — graph/refs_resolve.go
 - `github.com/agentic-research/mache/graph.RefTokenCounter` (go_package_symbol) — graph/capabilities.go
+- `github.com/agentic-research/mache/graph.RefsConnectionProvider` (go_package_symbol) — graph/capabilities.go
 - `github.com/agentic-research/mache/graph.RefsMapper` (go_package_symbol) — graph/capabilities.go
 - `github.com/agentic-research/mache/graph.RefsQuerier` (go_package_symbol) — graph/capabilities.go
 - `github.com/agentic-research/mache/graph.RequireProps` (go_package_symbol) — graph/props_compat.go
@@ -9092,6 +9106,8 @@ graph LR
 - `github.com/agentic-research/mache/graph.err` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.err` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.err` (go_package_symbol) — graph/sqlite_graph_scan.go
+- `github.com/agentic-research/mache/graph.errNoRefsDB` (go_package_symbol) — graph/scan_pool.go
+- `github.com/agentic-research/mache/graph.errScanPoolClosed` (go_package_symbol) — graph/scan_pool.go
 - `github.com/agentic-research/mache/graph.exportNode` (go_package_symbol) — graph/sqlite.go
 - `github.com/agentic-research/mache/graph.extractFieldPaths` (go_package_symbol) — graph/sqlite_graph_scan.go
 - `github.com/agentic-research/mache/graph.fileIDs` (go_package_symbol) — graph/sqlite_graph_refs.go
@@ -9138,6 +9154,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.n` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.name` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.narrowToPackage` (go_package_symbol) — graph/refs_resolve.go
+- `github.com/agentic-research/mache/graph.newScanPool` (go_package_symbol) — graph/scan_pool.go
 - `github.com/agentic-research/mache/graph.newV6Shape` (go_package_symbol) — graph/nodes_shape.go
 - `github.com/agentic-research/mache/graph.nextID` (go_package_symbol) — graph/memstore_refsdb.go
 - `github.com/agentic-research/mache/graph.nodeDegrees` (go_package_symbol) — graph/community.go
@@ -9194,6 +9211,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.record` (go_package_symbol) — graph/sqlite.go
 - `github.com/agentic-research/mache/graph.recordID` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.refResolves` (go_package_symbol) — graph/sqlite_graph_refs.go
+- `github.com/agentic-research/mache/graph.refsSidecarPath` (go_package_symbol) — graph/sqlite_graph.go
 - `github.com/agentic-research/mache/graph.rel` (go_package_symbol) — graph/index_staleness.go
 - `github.com/agentic-research/mache/graph.result` (go_package_symbol) — graph/sqlite_graph_scan.go
 - `github.com/agentic-research/mache/graph.results` (go_package_symbol) — graph/composite.go
@@ -9208,6 +9226,11 @@ graph LR
 - `github.com/agentic-research/mache/graph.sanitizeMermaidID` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.sanitizeMermaidLabel` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.sb` (go_package_symbol) — graph/refs_resolve.go
+- `github.com/agentic-research/mache/graph.scanPool` (go_package_symbol) — graph/scan_pool.go
+- `github.com/agentic-research/mache/graph.scanPool.RefsConn` (go_package_symbol) — graph/scan_pool.go
+- `github.com/agentic-research/mache/graph.scanPool.closeScans` (go_package_symbol) — graph/scan_pool.go
+- `github.com/agentic-research/mache/graph.scanPool.stats` (go_package_symbol) — graph/scan_pool.go
+- `github.com/agentic-research/mache/graph.scanPoolSize` (go_package_symbol) — graph/scan_pool.go
 - `github.com/agentic-research/mache/graph.scanResult` (go_package_symbol) — graph/sqlite_graph_scan.go
 - `github.com/agentic-research/mache/graph.schemaLevel` (go_package_symbol) — graph/sqlite_graph_schema.go
 - `github.com/agentic-research/mache/graph.searchMacheRefs` (go_package_symbol) — graph/ref_search.go
@@ -10548,6 +10571,9 @@ graph LR
 - `github.com/agentic-research/mache/internal/lloschema.Querier` (go_package_symbol) — internal/lloschema/lloschema.go
 - `github.com/agentic-research/mache/internal/lloschema.QuerierRenderer` (go_package_symbol) — internal/lloschema/v6paths.go
 - `github.com/agentic-research/mache/internal/lloschema.ReadBlob` (go_package_symbol) — internal/lloschema/blob.go
+- `github.com/agentic-research/mache/internal/lloschema.SQLDB` (go_package_symbol) — internal/lloschema/lloschema.go
+- `github.com/agentic-research/mache/internal/lloschema.SQLDB.QueryRefs` (go_package_symbol) — internal/lloschema/lloschema.go
+- `github.com/agentic-research/mache/internal/lloschema.SQLDB.RefsConn` (go_package_symbol) — internal/lloschema/lloschema.go
 - `github.com/agentic-research/mache/internal/lloschema.SourceColumns` (go_package_symbol) — internal/lloschema/blob.go
 - `github.com/agentic-research/mache/internal/lloschema.SourceScan` (go_package_symbol) — internal/lloschema/blob.go
 - `github.com/agentic-research/mache/internal/lloschema.SourceScan.Bytes` (go_package_symbol) — internal/lloschema/blob.go
@@ -10627,8 +10653,6 @@ graph LR
 - `github.com/agentic-research/mache/internal/lloschema.sourceOfSQL` (go_package_symbol) — internal/lloschema/v6paths.go
 - `github.com/agentic-research/mache/internal/lloschema.splitInjected` (go_package_symbol) — internal/lloschema/v6paths.go
 - `github.com/agentic-research/mache/internal/lloschema.splitRank` (go_package_symbol) — internal/lloschema/v6paths.go
-- `github.com/agentic-research/mache/internal/lloschema.sqlDB` (go_package_symbol) — internal/lloschema/lloschema.go
-- `github.com/agentic-research/mache/internal/lloschema.sqlDB.QueryRefs` (go_package_symbol) — internal/lloschema/lloschema.go
 - `github.com/agentic-research/mache/internal/lloschema.sqlList` (go_package_symbol) — internal/lloschema/refs_kind.go
 - `github.com/agentic-research/mache/internal/lloschema.treeModeDir` (go_package_symbol) — internal/lloschema/tree.go
 - `github.com/agentic-research/mache/internal/lloschema.typ` (go_package_symbol) — internal/lloschema/lloschema.go
@@ -10902,6 +10926,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/mcpserve.lazyGraph.ReadContent` (go_package_symbol) — internal/mcpserve/serve_registry.go
 - `github.com/agentic-research/mache/internal/mcpserve.lazyGraph.RefRangeOf` (go_package_symbol) — internal/mcpserve/serve_registry.go
 - `github.com/agentic-research/mache/internal/mcpserve.lazyGraph.RefTokenCount` (go_package_symbol) — internal/mcpserve/serve_registry.go
+- `github.com/agentic-research/mache/internal/mcpserve.lazyGraph.RefsConn` (go_package_symbol) — internal/mcpserve/serve_registry.go
 - `github.com/agentic-research/mache/internal/mcpserve.lazyGraph.RefsMap` (go_package_symbol) — internal/mcpserve/serve_registry.go
 - `github.com/agentic-research/mache/internal/mcpserve.lazyGraph.ResolveRef` (go_package_symbol) — internal/mcpserve/serve_registry.go
 - `github.com/agentic-research/mache/internal/mcpserve.lazyGraph.Schema` (go_package_symbol) — internal/mcpserve/serve_registry.go
@@ -11414,7 +11439,6 @@ graph LR
 - `github.com/agentic-research/mache/internal/smells.cyclomaticRuleID` (go_package_symbol) — internal/smells/smell_incremental.go
 - `github.com/agentic-research/mache/internal/smells.dbQuerier` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.dbQuerier.DBPath` (go_package_symbol) — internal/smells/find_smells_cli.go
-- `github.com/agentic-research/mache/internal/smells.dbQuerier.QueryRefs` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.debt` (go_package_symbol) — internal/smells/smell_ratchet.go
 - `github.com/agentic-research/mache/internal/smells.defScopeSQL` (go_package_symbol) — internal/smells/smell_def_scope.go
 - `github.com/agentic-research/mache/internal/smells.digestOneRule` (go_package_symbol) — internal/smells/smell_digest.go
@@ -11436,11 +11460,13 @@ graph LR
 - `github.com/agentic-research/mache/internal/smells.exitFunc` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.f` (go_package_symbol) — internal/smells/smell_incremental.go
 - `github.com/agentic-research/mache/internal/smells.fileCount` (go_package_symbol) — internal/smells/smell_digest.go
+- `github.com/agentic-research/mache/internal/smells.findRule` (go_package_symbol) — internal/smells/serve_find_smells.go
 - `github.com/agentic-research/mache/internal/smells.findSmellsBaseline` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.findSmellsBaselineRoot` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.findSmellsCmd` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.findSmellsDBPath` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.findSmellsFailOn` (go_package_symbol) — internal/smells/find_smells_cli.go
+- `github.com/agentic-research/mache/internal/smells.findSmellsForRule` (go_package_symbol) — internal/smells/serve_find_smells.go
 - `github.com/agentic-research/mache/internal/smells.findSmellsFormat` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.findSmellsLimit` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.findSmellsMinMetric` (go_package_symbol) — internal/smells/find_smells_cli.go
@@ -11481,6 +11507,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/smells.newSmellResponse` (go_package_symbol) — internal/smells/smell_findings.go
 - `github.com/agentic-research/mache/internal/smells.noSmellLimit` (go_package_symbol) — internal/smells/smell_findings.go
 - `github.com/agentic-research/mache/internal/smells.openSmellDB` (go_package_symbol) — internal/smells/find_smells_run.go
+- `github.com/agentic-research/mache/internal/smells.openSmellScan` (go_package_symbol) — internal/smells/smell_connection.go
 - `github.com/agentic-research/mache/internal/smells.order` (go_package_symbol) — internal/smells/smell_ratchet.go
 - `github.com/agentic-research/mache/internal/smells.out` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.out` (go_package_symbol) — internal/smells/smell_findings.go
@@ -11538,6 +11565,10 @@ graph LR
 - `github.com/agentic-research/mache/internal/smells.smellMemo` (go_package_symbol) — internal/smells/smell_incremental.go
 - `github.com/agentic-research/mache/internal/smells.smellRegistry` (go_package_symbol) — internal/smells/smell_rules.go
 - `github.com/agentic-research/mache/internal/smells.smellResponse` (go_package_symbol) — internal/smells/smell_findings.go
+- `github.com/agentic-research/mache/internal/smells.smellScan` (go_package_symbol) — internal/smells/smell_connection.go
+- `github.com/agentic-research/mache/internal/smells.smellScan.Close` (go_package_symbol) — internal/smells/smell_connection.go
+- `github.com/agentic-research/mache/internal/smells.smellScan.DBPath` (go_package_symbol) — internal/smells/smell_connection.go
+- `github.com/agentic-research/mache/internal/smells.smellScan.QueryRefs` (go_package_symbol) — internal/smells/smell_connection.go
 - `github.com/agentic-research/mache/internal/smells.snap` (go_package_symbol) — internal/smells/find_smells_cli.go
 - `github.com/agentic-research/mache/internal/smells.sortByTriple` (go_package_symbol) — internal/smells/smell_ratchet.go
 - `github.com/agentic-research/mache/internal/smells.sortedIDs` (go_package_symbol) — internal/smells/serve_find_smells.go
@@ -11674,6 +11705,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/testutil.SmellTestGraph.ASTKindChain` (go_package_symbol) — internal/testutil/smellgraph.go
 - `github.com/agentic-research/mache/internal/testutil.SmellTestGraph.DBPath` (go_package_symbol) — internal/testutil/smellgraph.go
 - `github.com/agentic-research/mache/internal/testutil.SmellTestGraph.QueryRefs` (go_package_symbol) — internal/testutil/smellgraph.go
+- `github.com/agentic-research/mache/internal/testutil.SmellTestGraph.RefsConn` (go_package_symbol) — internal/testutil/smellgraph.go
 - `github.com/agentic-research/mache/internal/testutil.WriteBindingLogForTest` (go_package_symbol) — internal/testutil/bindinglog.go
 - `github.com/agentic-research/mache/internal/testutil.WriteMultiBindingLogForTest` (go_package_symbol) — internal/testutil/bindinglog.go
 - `github.com/agentic-research/mache/internal/testutil.calls` (go_package_symbol) — internal/testutil/leyline.go
