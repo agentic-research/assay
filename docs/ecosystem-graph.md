@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 143
-- External dependencies: 4509
-- Dangling producers: 10536
+- External dependencies: 4511
+- Dangling producers: 10537
 
 ## Graph
 
@@ -544,11 +544,11 @@ graph LR
 - `EOF` (cli_binary) — .github/workflows/oidc-signing.yml:62
 - `apt-get` (cli_binary) — .github/workflows/bead-diff.yml:58
 - `apt-get` (cli_binary) — .github/workflows/ci.yml:25
-- `apt-get` (cli_binary) — .github/workflows/ci.yml:75
+- `apt-get` (cli_binary) — .github/workflows/ci.yml:79
 - `apt-get` (cli_binary) — .github/workflows/ci.yml:123
-- `apt-get` (cli_binary) — .github/workflows/cloister-schema-go.yml:55
+- `apt-get` (cli_binary) — .github/workflows/cloister-schema-go.yml:56
 - `apt-get` (cli_binary) — .github/workflows/coverage.yml:35
-- `apt-get` (cli_binary) — .github/workflows/generated-drift.yml:81
+- `apt-get` (cli_binary) — .github/workflows/generated-drift.yml:82
 - `apt-get` (cli_binary) — .github/workflows/mutants.yml:61
 - `apt-get` (cli_binary) — .github/workflows/openssl.yml:24
 - `apt-get` (cli_binary) — .github/workflows/release.yml:56
@@ -556,24 +556,24 @@ graph LR
 - `bash` (cli_binary) — .github/workflows/ci.yml:51
 - `break` (cli_binary) — .github/workflows/oidc-signing.yml:86
 - `brew` (cli_binary) — .github/workflows/release.yml:67
-- `capnp` (cli_binary) — .github/workflows/cloister-schema-go.yml:57
-- `capnp` (cli_binary) — .github/workflows/generated-drift.yml:83
+- `capnp` (cli_binary) — .github/workflows/cloister-schema-go.yml:58
+- `capnp` (cli_binary) — .github/workflows/generated-drift.yml:84
 - `cargo` (cli_binary) — .github/workflows/bead-diff.yml:65
-- `cargo` (cli_binary) — .github/workflows/ci.yml:312
+- `cargo` (cli_binary) — .github/workflows/ci.yml:316
 - `cargo` (cli_binary) — .github/workflows/coverage.yml:44
 - `cargo` (cli_binary) — .github/workflows/mutants.yml:70
 - `cargo` (cli_binary) — .github/workflows/publish-crates.yml:138
 - `cargo` (cli_binary) — .github/workflows/release.yml:90
 - `cargo` (cli_binary) — .github/workflows/release.yml:127
 - `certificate_validity:` (cli_binary) — .github/workflows/oidc-signing.yml:72
-- `chmod` (cli_binary) — .github/workflows/ci.yml:447
+- `chmod` (cli_binary) — .github/workflows/ci.yml:559
 - `chmod` (cli_binary) — .github/workflows/openssl.yml:35
 - `chmod` (cli_binary) — .github/workflows/release.yml:157
 - `codesign` (cli_binary) — .github/workflows/release-dryrun.yml:283
 - `codesign` (cli_binary) — .github/workflows/release.yml:106
 - `codesign` (cli_binary) — .github/workflows/release.yml:112
 - `config:` (cli_binary) — .github/workflows/oidc-signing.yml:68
-- `corepack` (cli_binary) — .github/workflows/ci.yml:45
+- `corepack` (cli_binary) — .github/workflows/ci.yml:49
 - `cosign` (cli_binary) — .github/workflows/release.yml:166
 - `cosign` (cli_binary) — .github/workflows/release.yml:201
 - `curl` (cli_binary) — .github/workflows/ci.yml:59
@@ -581,7 +581,7 @@ graph LR
 - `docker` (cli_binary) — .github/workflows/release-dryrun.yml:225
 - `docker` (cli_binary) — .github/workflows/release.yml:167
 - `enabled:` (cli_binary) — .github/workflows/oidc-signing.yml:73
-- `gh` (cli_binary) — .github/workflows/ci.yml:434
+- `gh` (cli_binary) — .github/workflows/ci.yml:555
 - `gh` (cli_binary) — .github/workflows/coverage.yml:92
 - `gh` (cli_binary) — .github/workflows/release.yml:211
 - `gh` (cli_binary) — .github/workflows/release.yml:315
@@ -596,7 +596,7 @@ graph LR
 - `go` (cli_binary) — .github/workflows/ci.yml:31
 - `go` (cli_binary) — .github/workflows/ci.yml:64
 - `go` (cli_binary) — .github/workflows/ci.yml:82
-- `go` (cli_binary) — .github/workflows/cloister-schema-go.yml:63
+- `go` (cli_binary) — .github/workflows/cloister-schema-go.yml:64
 - `go` (cli_binary) — .github/workflows/docs.yml:50
 - `go` (cli_binary) — .github/workflows/find-smells.yml:66
 - `go` (cli_binary) — .github/workflows/integration.yml:66
@@ -613,6 +613,8 @@ graph LR
 - `grep` (cli_binary) — .github/workflows/publish-dpop.yml:134
 - `grep` (cli_binary) — .github/workflows/release-dryrun.yml:282
 - `issuer_url:` (cli_binary) — .github/workflows/oidc-signing.yml:70
+- `kind` (cli_binary) — .github/workflows/ci.yml:380
+- `kubectl` (cli_binary) — .github/workflows/ci.yml:381
 - `name:` (cli_binary) — .github/workflows/oidc-signing.yml:69
 - `npm` (cli_binary) — .github/workflows/publish-dpop.yml:167
 - `openssl` (cli_binary) — .github/workflows/oidc-signing.yml:47
@@ -620,14 +622,14 @@ graph LR
 - `pip` (cli_binary) — .github/workflows/ci.yml:37
 - `pip3` (cli_binary) — .github/workflows/release.yml:126
 - `pip3` (cli_binary) — .github/workflows/release.yml:234
-- `pnpm` (cli_binary) — .github/workflows/generated-drift.yml:87
+- `pnpm` (cli_binary) — .github/workflows/generated-drift.yml:88
 - `pnpm` (cli_binary) — .github/workflows/publish-dpop.yml:63
-- `printf` (cli_binary) — .github/workflows/ci.yml:205
+- `printf` (cli_binary) — .github/workflows/ci.yml:209
 - `printf` (cli_binary) — .github/workflows/coverage.yml:85
 - `printf` (cli_binary) — .github/workflows/release-dryrun.yml:177
 - `providers:` (cli_binary) — .github/workflows/oidc-signing.yml:66
 - `python3` (cli_binary) — .github/workflows/ci.yml:124
-- `regen.sh` (cli_binary) — .github/workflows/cloister-schema-go.yml:68
+- `regen.sh` (cli_binary) — .github/workflows/cloister-schema-go.yml:69
 - `regen.sh` (cli_binary) — .github/workflows/leyline-schema-go.yml:82
 - `rsry` (cli_binary) — .github/workflows/bead-diff.yml:74
 - `rsry` (cli_binary) — .github/workflows/release.yml:101
@@ -647,14 +649,14 @@ graph LR
 - `task` (cli_binary) — .github/workflows/ci.yml:54
 - `task` (cli_binary) — .github/workflows/ci.yml:69
 - `task` (cli_binary) — .github/workflows/ci.yml:85
-- `task` (cli_binary) — .github/workflows/ci.yml:126
+- `task` (cli_binary) — .github/workflows/ci.yml:130
 - `task` (cli_binary) — .github/workflows/ci.yml:137
 - `task` (cli_binary) — .github/workflows/coverage.yml:48
 - `task` (cli_binary) — .github/workflows/docs.yml:53
 - `task` (cli_binary) — .github/workflows/e2e-fresh.yml:61
 - `task` (cli_binary) — .github/workflows/find-smells.yml:72
 - `task` (cli_binary) — .github/workflows/find-smells.yml:80
-- `task` (cli_binary) — .github/workflows/generated-drift.yml:98
+- `task` (cli_binary) — .github/workflows/generated-drift.yml:99
 - `task` (cli_binary) — .github/workflows/integration.yml:71
 - `task` (cli_binary) — .github/workflows/leyline-schema-go.yml:72
 - `task` (cli_binary) — .github/workflows/mutants.yml:71
@@ -672,7 +674,7 @@ graph LR
 - `test_execution_schema_asset.sh` (cli_binary) — .github/workflows/release-dryrun.yml:151
 - `test_openssl_verify.sh` (cli_binary) — .github/workflows/openssl.yml:42
 - `test_sig1_http_integration.sh` (cli_binary) — .github/workflows/ci.yml:89
-- `uv` (cli_binary) — .github/workflows/interlace-spec-drift.yml:112
+- `uv` (cli_binary) — .github/workflows/interlace-spec-drift.yml:113
 - `wc` (cli_binary) — .github/workflows/mutants.yml:92
 - `{` (cli_binary) — .github/workflows/oidc-signing.yml:52
 - `}` (cli_binary) — .github/workflows/oidc-signing.yml:61
@@ -8099,6 +8101,7 @@ graph LR
 - `github.com/agentic-research/cloister/pkg/cluster.LeylineNetBackend` (go_package_symbol) — pkg/cluster/cluster.go
 - `github.com/agentic-research/cloister/pkg/cluster.McpRouteSpec` (go_package_symbol) — pkg/cluster/cluster.go
 - `github.com/agentic-research/cloister/pkg/cluster.McpTool` (go_package_symbol) — pkg/cluster/cluster.go
+- `github.com/agentic-research/cloister/pkg/cluster.PlacementPort` (go_package_symbol) — pkg/cluster/cluster.go
 - `github.com/agentic-research/cloister/pkg/cluster.PlacementSpec` (go_package_symbol) — pkg/cluster/cluster.go
 - `github.com/agentic-research/cloister/pkg/cluster.PortSpec` (go_package_symbol) — pkg/cluster/cluster.go
 - `github.com/agentic-research/cloister/pkg/cluster.QueryParamSpec` (go_package_symbol) — pkg/cluster/cluster.go
