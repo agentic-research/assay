@@ -1,7 +1,7 @@
 # assay map
 
 - Resolved edges: 143
-- External dependencies: 4511
+- External dependencies: 4512
 - Dangling producers: 10537
 
 ## Graph
@@ -566,7 +566,7 @@ graph LR
 - `cargo` (cli_binary) — .github/workflows/release.yml:90
 - `cargo` (cli_binary) — .github/workflows/release.yml:127
 - `certificate_validity:` (cli_binary) — .github/workflows/oidc-signing.yml:72
-- `chmod` (cli_binary) — .github/workflows/ci.yml:559
+- `chmod` (cli_binary) — .github/workflows/ci.yml:613
 - `chmod` (cli_binary) — .github/workflows/openssl.yml:35
 - `chmod` (cli_binary) — .github/workflows/release.yml:157
 - `codesign` (cli_binary) — .github/workflows/release-dryrun.yml:283
@@ -578,10 +578,11 @@ graph LR
 - `cosign` (cli_binary) — .github/workflows/release.yml:201
 - `curl` (cli_binary) — .github/workflows/ci.yml:59
 - `curl` (cli_binary) — .github/workflows/release.yml:154
+- `docker` (cli_binary) — .github/workflows/ci.yml:441
 - `docker` (cli_binary) — .github/workflows/release-dryrun.yml:225
 - `docker` (cli_binary) — .github/workflows/release.yml:167
 - `enabled:` (cli_binary) — .github/workflows/oidc-signing.yml:73
-- `gh` (cli_binary) — .github/workflows/ci.yml:555
+- `gh` (cli_binary) — .github/workflows/ci.yml:609
 - `gh` (cli_binary) — .github/workflows/coverage.yml:92
 - `gh` (cli_binary) — .github/workflows/release.yml:211
 - `gh` (cli_binary) — .github/workflows/release.yml:315
