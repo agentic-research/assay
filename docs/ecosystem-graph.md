@@ -1,6 +1,6 @@
 # assay map
 
-- Resolved edges: 145
+- Resolved edges: 144
 - External dependencies: 4523
 - Dangling producers: 10537
 
@@ -17,7 +17,7 @@ graph LR
   r6e21c8a2bfc1["rosary"]
   rd1b22914fe0d["signet"]
   r9552a99b60ad["x-ray"]
-  rf37e470d3d1f -->|"8 artifacts"| reb5a932da9cd
+  rf37e470d3d1f -->|"7 artifacts"| reb5a932da9cd
   r25b25442ba7e -->|"3 artifacts"| reb5a932da9cd
   r6e21c8a2bfc1 -->|"5 artifacts"| reb5a932da9cd
   rd1b22914fe0d -->|"1 artifact"| r08abb6cc63fa
@@ -78,7 +78,7 @@ graph LR
 - `bitflags` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/utils/Cargo.toml:11
 - `bitflags` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/vmm/Cargo.toml:48
 - `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/cas/Cargo.toml:105
-- `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:37
+- `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:36
 - `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/tools/harness-sandbox/Cargo.toml:48
 - `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:35
 - `blake3` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/core/Cargo.toml:17
@@ -100,7 +100,7 @@ graph LR
 - `bytemuck` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/fs/Cargo.toml:44
 - `bytes` (cargo_crate) — /home/runner/work/_temp/ecosystem/notme/proxy/Cargo.toml:41
 - `bzip2` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/vmm/Cargo.toml:51
-- `capnp` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:36
+- `capnp` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:35
 - `capnp` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:36
 - `capnp` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/public-schema/Cargo.toml:12
 - `capnp` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-capnp/Cargo.toml:15
@@ -405,7 +405,7 @@ graph LR
 - `tar` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/aws_nitro/Cargo.toml:15
 - `tdx` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/arch/Cargo.toml:28
 - `tdx` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/vmm/Cargo.toml:56
-- `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:69
+- `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/cloister/rs/crates/host-runtime/Cargo.toml:68
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/Cargo.toml:62
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/core/Cargo.toml:34
 - `tempfile` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-core/schema-spec/Cargo.toml:41
@@ -568,7 +568,7 @@ graph LR
 - `cargo` (cli_binary) — .github/workflows/release.yml:90
 - `cargo` (cli_binary) — .github/workflows/release.yml:127
 - `certificate_validity:` (cli_binary) — .github/workflows/oidc-signing.yml:72
-- `chmod` (cli_binary) — .github/workflows/ci.yml:613
+- `chmod` (cli_binary) — .github/workflows/ci.yml:616
 - `chmod` (cli_binary) — .github/workflows/openssl.yml:35
 - `chmod` (cli_binary) — .github/workflows/release.yml:157
 - `codesign` (cli_binary) — .github/workflows/release-dryrun.yml:283
@@ -585,14 +585,14 @@ graph LR
 - `docker` (cli_binary) — .github/workflows/release-dryrun.yml:225
 - `docker` (cli_binary) — .github/workflows/release.yml:167
 - `enabled:` (cli_binary) — .github/workflows/oidc-signing.yml:73
-- `gh` (cli_binary) — .github/workflows/ci.yml:609
+- `gh` (cli_binary) — .github/workflows/ci.yml:612
 - `gh` (cli_binary) — .github/workflows/coverage.yml:92
 - `gh` (cli_binary) — .github/workflows/release-cli.yml:71
 - `gh` (cli_binary) — .github/workflows/release.yml:211
 - `gh` (cli_binary) — .github/workflows/release.yml:315
 - `gh` (cli_binary) — .github/workflows/sync-integration.yml:157
 - `git` (cli_binary) — .github/workflows/assay-ecosystem.yml:49
-- `git` (cli_binary) — .github/workflows/ci.yml:734
+- `git` (cli_binary) — .github/workflows/ci.yml:737
 - `git` (cli_binary) — .github/workflows/coverage.yml:73
 - `git` (cli_binary) — .github/workflows/mutants.yml:91
 - `git` (cli_binary) — .github/workflows/sync-integration.yml:101
@@ -615,7 +615,7 @@ graph LR
 - `gosec` (cli_binary) — .github/workflows/ci.yml:192
 - `govulncheck` (cli_binary) — .github/workflows/ci.yml:119
 - `grep` (cli_binary) — .github/workflows/ci.yml:50
-- `grep` (cli_binary) — .github/workflows/ci.yml:694
+- `grep` (cli_binary) — .github/workflows/ci.yml:697
 - `grep` (cli_binary) — .github/workflows/lfs-guard.yml:57
 - `grep` (cli_binary) — .github/workflows/publish-dpop.yml:134
 - `grep` (cli_binary) — .github/workflows/release-dryrun.yml:282
@@ -623,7 +623,7 @@ graph LR
 - `kind` (cli_binary) — .github/workflows/ci.yml:380
 - `kubectl` (cli_binary) — .github/workflows/ci.yml:381
 - `name:` (cli_binary) — .github/workflows/oidc-signing.yml:69
-- `node` (cli_binary) — .github/workflows/ci.yml:659
+- `node` (cli_binary) — .github/workflows/ci.yml:662
 - `node` (cli_binary) — .github/workflows/release-cli.yml:58
 - `npm` (cli_binary) — .github/workflows/publish-dpop.yml:167
 - `openssl` (cli_binary) — .github/workflows/oidc-signing.yml:47
@@ -631,7 +631,7 @@ graph LR
 - `pip` (cli_binary) — .github/workflows/ci.yml:37
 - `pip3` (cli_binary) — .github/workflows/release.yml:126
 - `pip3` (cli_binary) — .github/workflows/release.yml:234
-- `pnpm` (cli_binary) — .github/workflows/ci.yml:655
+- `pnpm` (cli_binary) — .github/workflows/ci.yml:658
 - `pnpm` (cli_binary) — .github/workflows/generated-drift.yml:88
 - `pnpm` (cli_binary) — .github/workflows/publish-dpop.yml:63
 - `pnpm` (cli_binary) — .github/workflows/release-cli.yml:54
