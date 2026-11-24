@@ -1,8 +1,8 @@
 # assay map
 
 - Resolved edges: 145
-- External dependencies: 4569
-- Dangling producers: 10681
+- External dependencies: 4584
+- Dangling producers: 10701
 
 ## Graph
 
@@ -581,6 +581,7 @@ graph LR
 - `cosign` (cli_binary) — .github/workflows/release.yml:166
 - `cosign` (cli_binary) — .github/workflows/release.yml:201
 - `curl` (cli_binary) — .github/workflows/ci.yml:59
+- `curl` (cli_binary) — .github/workflows/ci.yml:790
 - `curl` (cli_binary) — .github/workflows/release.yml:154
 - `docker` (cli_binary) — .github/workflows/ci.yml:441
 - `docker` (cli_binary) — .github/workflows/release-dryrun.yml:225
@@ -688,6 +689,7 @@ graph LR
 - `test_execution_schema_asset.sh` (cli_binary) — .github/workflows/release-dryrun.yml:151
 - `test_openssl_verify.sh` (cli_binary) — .github/workflows/openssl.yml:42
 - `test_sig1_http_integration.sh` (cli_binary) — .github/workflows/ci.yml:89
+- `unzip` (cli_binary) — .github/workflows/ci.yml:792
 - `uv` (cli_binary) — .github/workflows/interlace-spec-drift.yml:113
 - `wc` (cli_binary) — .github/workflows/mutants.yml:92
 - `{` (cli_binary) — .github/workflows/oidc-signing.yml:52
@@ -1178,6 +1180,7 @@ graph LR
 - `database/sql` (go_module) — graph/sqlite_graph_callees.go:4
 - `database/sql` (go_module) — graph/sqlite_graph_refs.go:5
 - `database/sql` (go_module) — graph/sqlite_graph_scan.go:5
+- `database/sql` (go_module) — graph/sqlite_graph_scan_record.go:4
 - `database/sql` (go_module) — graph/sqlite_resolver.go:4
 - `database/sql` (go_module) — graph/writable_graph.go:4
 - `database/sql` (go_module) — internal/buildcache/cache.go:23
@@ -1350,7 +1353,7 @@ graph LR
 - `encoding/json` (go_module) — graph/props.go:3
 - `encoding/json` (go_module) — graph/sqlite.go:5
 - `encoding/json` (go_module) — graph/sqlite_graph.go:5
-- `encoding/json` (go_module) — graph/sqlite_graph_scan.go:6
+- `encoding/json` (go_module) — graph/sqlite_graph_scan_record.go:5
 - `encoding/json` (go_module) — graph/sqlite_resolver.go:5
 - `encoding/json` (go_module) — graph/store_local.go:7
 - `encoding/json` (go_module) — internal/api/messages.go:4
@@ -1473,6 +1476,7 @@ graph LR
 - `errors` (go_module) — cmd/signet/verify_at.go:7
 - `errors` (go_module) — cmd/signet/verify_revocation.go:11
 - `errors` (go_module) — graph/capabilities.go:6
+- `errors` (go_module) — graph/direct_schema.go:4
 - `errors` (go_module) — graph/graph.go:5
 - `errors` (go_module) — graph/memstore.go:5
 - `errors` (go_module) — graph/projection_version.go:5
@@ -1487,6 +1491,7 @@ graph LR
 - `errors` (go_module) — internal/extract/gomod/gomod.go:19
 - `errors` (go_module) — internal/extract/wrangler/wrangler.go:20
 - `errors` (go_module) — internal/ingest/engine_walk.go:5
+- `errors` (go_module) — internal/leyline/query.go:4
 - `errors` (go_module) — internal/leyline/sheaf_region.go:7
 - `errors` (go_module) — internal/leyline/socket.go:15
 - `errors` (go_module) — internal/leyline/version_check.go:4
@@ -1646,6 +1651,7 @@ graph LR
 - `fmt` (go_module) — graph/arena.go:5
 - `fmt` (go_module) — graph/arena_writer.go:6
 - `fmt` (go_module) — graph/composite.go:4
+- `fmt` (go_module) — graph/direct_schema.go:5
 - `fmt` (go_module) — graph/memstore_callees.go:5
 - `fmt` (go_module) — graph/memstore_refsdb.go:6
 - `fmt` (go_module) — graph/nodes_table_reader.go:6
@@ -1660,7 +1666,8 @@ graph LR
 - `fmt` (go_module) — graph/sqlite_graph_content_hash.go:5
 - `fmt` (go_module) — graph/sqlite_graph_ids.go:4
 - `fmt` (go_module) — graph/sqlite_graph_refs.go:6
-- `fmt` (go_module) — graph/sqlite_graph_scan.go:7
+- `fmt` (go_module) — graph/sqlite_graph_scan.go:6
+- `fmt` (go_module) — graph/sqlite_graph_scan_record.go:6
 - `fmt` (go_module) — graph/sqlite_resolver.go:6
 - `fmt` (go_module) — graph/store_local.go:8
 - `fmt` (go_module) — graph/writable_graph.go:5
@@ -1741,6 +1748,7 @@ graph LR
 - `fmt` (go_module) — internal/leyline/binary_pin.go:6
 - `fmt` (go_module) — internal/leyline/owner_record.go:5
 - `fmt` (go_module) — internal/leyline/propose.go:14
+- `fmt` (go_module) — internal/leyline/query.go:5
 - `fmt` (go_module) — internal/leyline/semantic.go:10
 - `fmt` (go_module) — internal/leyline/sheaf.go:11
 - `fmt` (go_module) — internal/leyline/sheaf_region.go:8
@@ -2024,6 +2032,7 @@ graph LR
 - `github.com/agentic-research/ley-line-open/clients/go/leyline-schema/common` (go_module) — clients/go/leyline-schema/sigma/sigma.go:25
 - `github.com/agentic-research/ley-line-open/clients/go/leyline-schema/common` (go_module) — clients/go/leyline-schema/source/source.capnp.go:9
 - `github.com/agentic-research/ley-line-open/clients/go/leyline-schema/daemon/wire` (go_module) — internal/leyline/propose.go:16
+- `github.com/agentic-research/ley-line-open/clients/go/leyline-schema/daemon/wire` (go_module) — internal/leyline/query.go:7
 - `github.com/agentic-research/ley-line-open/clients/go/leyline-schema/daemon/wire` (go_module) — internal/leyline/sheaf.go:14
 - `github.com/agentic-research/ley-line-open/clients/go/leyline-schema/daemon/wire` (go_module) — internal/leyline/sheaf_subscriber.go:13
 - `github.com/agentic-research/ley-line-open/clients/go/leyline-schema/daemon/wire` (go_module) — internal/leyline/wire.go:4
@@ -2036,8 +2045,10 @@ graph LR
 - `github.com/agentic-research/mache/api` (go_module) — cmd/mount_control.go:12
 - `github.com/agentic-research/mache/api` (go_module) — cmd/mount_nfs.go:15
 - `github.com/agentic-research/mache/api` (go_module) — cmd/pack.go:13
+- `github.com/agentic-research/mache/api` (go_module) — graph/direct_schema.go:8
 - `github.com/agentic-research/mache/api` (go_module) — graph/open.go:4
 - `github.com/agentic-research/mache/api` (go_module) — graph/sqlite_graph.go:15
+- `github.com/agentic-research/mache/api` (go_module) — graph/sqlite_graph_scan_record.go:10
 - `github.com/agentic-research/mache/api` (go_module) — graph/sqlite_graph_schema.go:6
 - `github.com/agentic-research/mache/api` (go_module) — graph/writable_graph.go:9
 - `github.com/agentic-research/mache/api` (go_module) — internal/ingest/engine.go:12
@@ -2378,7 +2389,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/template` (go_module) — cmd/mount_control.go:17
 - `github.com/agentic-research/mache/internal/template` (go_module) — cmd/pack.go:15
 - `github.com/agentic-research/mache/internal/template` (go_module) — graph/open.go:5
-- `github.com/agentic-research/mache/internal/template` (go_module) — graph/sqlite_graph_scan.go:15
+- `github.com/agentic-research/mache/internal/template` (go_module) — graph/sqlite_graph_scan.go:14
 - `github.com/agentic-research/mache/internal/template` (go_module) — internal/ingest/engine.go:14
 - `github.com/agentic-research/mache/internal/template` (go_module) — internal/mcpserve/serve.go:26
 - `github.com/agentic-research/mache/internal/template` (go_module) — internal/projtest/projtest.go:23
@@ -2943,8 +2954,8 @@ graph LR
 - `golang.org/x/text` (go_module) — /home/runner/work/_temp/ecosystem/notme/gen/go/go.mod:15
 - `golang.org/x/text` (go_module) — /home/runner/work/_temp/ecosystem/signet/go.mod:57
 - `golang.org/x/text` (go_module) — /home/runner/work/_temp/ecosystem/x-ray/go.mod:41
-- `golang.org/x/text/cases` (go_module) — internal/template/render.go:23
-- `golang.org/x/text/language` (go_module) — internal/template/render.go:24
+- `golang.org/x/text/cases` (go_module) — internal/template/render.go:24
+- `golang.org/x/text/language` (go_module) — internal/template/render.go:25
 - `golang.org/x/time` (go_module) — /home/runner/work/_temp/ecosystem/signet/go.mod:22
 - `golang.org/x/time/rate` (go_module) — cmd/signet/authority_middleware.go:12
 - `golang.org/x/tools` (go_module) — /home/runner/work/_temp/ecosystem/mache/go.mod:62
@@ -3186,7 +3197,8 @@ graph LR
 - `log` (go_module) — graph/nodes_table_reader.go:7
 - `log` (go_module) — graph/sheaf_invalidate.go:4
 - `log` (go_module) — graph/sqlite_graph_refs.go:7
-- `log` (go_module) — graph/sqlite_graph_scan.go:8
+- `log` (go_module) — graph/sqlite_graph_scan.go:7
+- `log` (go_module) — graph/sqlite_graph_scan_record.go:7
 - `log` (go_module) — internal/api/capture.go:5
 - `log` (go_module) — internal/api/doer.go:6
 - `log` (go_module) — internal/api/edges.go:11
@@ -3920,7 +3932,7 @@ graph LR
 - `sort` (go_module) — graph/composite.go:7
 - `sort` (go_module) — graph/memstore_write.go:6
 - `sort` (go_module) — graph/quotient.go:6
-- `sort` (go_module) — graph/sqlite_graph_scan.go:9
+- `sort` (go_module) — graph/sqlite_graph_scan.go:8
 - `sort` (go_module) — graph/store_local.go:12
 - `sort` (go_module) — internal/api/colormap.go:6
 - `sort` (go_module) — internal/api/schemacache.go:30
@@ -4063,6 +4075,7 @@ graph LR
 - `strings` (go_module) — graph/community_granularity.go:3
 - `strings` (go_module) — graph/composite.go:8
 - `strings` (go_module) — graph/def_token.go:5
+- `strings` (go_module) — graph/direct_schema.go:6
 - `strings` (go_module) — graph/index_staleness.go:7
 - `strings` (go_module) — graph/nodes_table_reader.go:9
 - `strings` (go_module) — graph/projection_version.go:9
@@ -4075,7 +4088,8 @@ graph LR
 - `strings` (go_module) — graph/sqlite_graph_callees.go:8
 - `strings` (go_module) — graph/sqlite_graph_content_hash.go:6
 - `strings` (go_module) — graph/sqlite_graph_refs.go:9
-- `strings` (go_module) — graph/sqlite_graph_scan.go:10
+- `strings` (go_module) — graph/sqlite_graph_scan.go:9
+- `strings` (go_module) — graph/sqlite_graph_scan_record.go:8
 - `strings` (go_module) — graph/sqlite_graph_schema.go:4
 - `strings` (go_module) — graph/vdirpath.go:5
 - `strings` (go_module) — internal/api/capture.go:6
@@ -4278,7 +4292,7 @@ graph LR
 - `sync` (go_module) — graph/scan_pool.go:7
 - `sync` (go_module) — graph/sheaf_invalidate.go:5
 - `sync` (go_module) — graph/sqlite_graph.go:11
-- `sync` (go_module) — graph/sqlite_graph_scan.go:11
+- `sync` (go_module) — graph/sqlite_graph_scan.go:10
 - `sync` (go_module) — graph/sqlite_resolver.go:7
 - `sync` (go_module) — graph/writable_graph.go:6
 - `sync` (go_module) — internal/api/capture.go:7
@@ -4408,12 +4422,13 @@ graph LR
 - `testing` (go_module) — internal/testutil/leyline.go:10
 - `testing` (go_module) — internal/testutil/mcptest.go:11
 - `testing` (go_module) — internal/testutil/repo.go:6
-- `text/template` (go_module) — graph/sqlite_graph_scan.go:12
+- `text/template` (go_module) — graph/sqlite_graph_scan.go:11
 - `text/template` (go_module) — internal/ingest/engine.go:9
 - `text/template` (go_module) — internal/ingest/engine_diagram.go:5
 - `text/template` (go_module) — internal/ingest/engine_walk.go:12
 - `text/template` (go_module) — internal/template/render.go:21
-- `text/template/parse` (go_module) — graph/sqlite_graph_scan.go:13
+- `text/template/parse` (go_module) — graph/sqlite_graph_scan.go:12
+- `text/template/parse` (go_module) — internal/template/render.go:22
 - `time` (go_module) — cmd/agent.go:11
 - `time` (go_module) — cmd/agentd/main.go:16
 - `time` (go_module) — cmd/bench/integration_bench.go:11
@@ -8867,6 +8882,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.DiagLint` (go_package_symbol) — graph/vdirpath.go
 - `github.com/agentic-research/mache/graph.DiagnosticsDir` (go_package_symbol) — graph/vdirpath.go
 - `github.com/agentic-research/mache/graph.ErrActNotSupported` (go_package_symbol) — graph/graph.go
+- `github.com/agentic-research/mache/graph.ErrDirectSchemaUnsupported` (go_package_symbol) — graph/direct_schema.go
 - `github.com/agentic-research/mache/graph.ErrGraphNotCached` (go_package_symbol) — graph/store.go
 - `github.com/agentic-research/mache/graph.ErrGraphNotCached.Error` (go_package_symbol) — graph/store.go
 - `github.com/agentic-research/mache/graph.ErrNodeCountUnavailable` (go_package_symbol) — graph/capabilities.go
@@ -8982,6 +8998,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.MermaidOpts` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.MountLister` (go_package_symbol) — graph/capabilities.go
 - `github.com/agentic-research/mache/graph.MountPrefixer` (go_package_symbol) — graph/capabilities.go
+- `github.com/agentic-research/mache/graph.NameOrUnnamed` (go_package_symbol) — graph/ref_tokens.go
 - `github.com/agentic-research/mache/graph.NewArenaFlusher` (go_package_symbol) — graph/arena_writer.go
 - `github.com/agentic-research/mache/graph.NewCompositeGraph` (go_package_symbol) — graph/composite.go
 - `github.com/agentic-research/mache/graph.NewContentCache` (go_package_symbol) — graph/content_cache.go
@@ -9094,11 +9111,12 @@ graph LR
 - `github.com/agentic-research/mache/graph.SQLiteGraph.calleeTokensFromContainer` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.calleeTokensFromRefs` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.callsFromSourceChild` (go_package_symbol) — graph/sqlite_graph_callees.go
-- `github.com/agentic-research/mache/graph.SQLiteGraph.collectPathEntries` (go_package_symbol) — graph/sqlite_graph_scan.go
+- `github.com/agentic-research/mache/graph.SQLiteGraph.collectPathEntries` (go_package_symbol) — graph/sqlite_graph_scan_record.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.countDeleted` (go_package_symbol) — graph/index_staleness.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.countModified` (go_package_symbol) — graph/index_staleness.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.defsForToken` (go_package_symbol) — graph/refs_resolve.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.ensureScanned` (go_package_symbol) — graph/sqlite_graph_scan.go
+- `github.com/agentic-research/mache/graph.SQLiteGraph.fileName` (go_package_symbol) — graph/sqlite_graph_scan_record.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.findRootLevel` (go_package_symbol) — graph/sqlite_graph_scan.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.flushRefsInternal` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.getCallersFromMainDB` (go_package_symbol) — graph/sqlite_graph_refs.go
@@ -9109,7 +9127,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.SQLiteGraph.notValueRef` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.queryIDs` (go_package_symbol) — graph/sqlite_graph_ids.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.queryTokenIDs` (go_package_symbol) — graph/sqlite_graph_ids.go
-- `github.com/agentic-research/mache/graph.SQLiteGraph.recordTokens` (go_package_symbol) — graph/sqlite_graph_scan.go
+- `github.com/agentic-research/mache/graph.SQLiteGraph.recordTokens` (go_package_symbol) — graph/sqlite_graph_scan_record.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.refsMapFromBitmaps` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.refsMapFromNodesTable` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.SQLiteGraph.resolveCallees` (go_package_symbol) — graph/sqlite_graph_callees.go
@@ -9125,6 +9143,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.SQLiteResolver.getDB` (go_package_symbol) — graph/sqlite_resolver.go
 - `github.com/agentic-research/mache/graph.SchemaDotJSON` (go_package_symbol) — graph/vdirpath.go
 - `github.com/agentic-research/mache/graph.ScopedCallExtractor` (go_package_symbol) — graph/graph.go
+- `github.com/agentic-research/mache/graph.SegmentEscape` (go_package_symbol) — graph/ref_tokens.go
 - `github.com/agentic-research/mache/graph.SetPropRaw` (go_package_symbol) — graph/props.go
 - `github.com/agentic-research/mache/graph.SetPropString` (go_package_symbol) — graph/props.go
 - `github.com/agentic-research/mache/graph.SheafBackend` (go_package_symbol) — graph/sheaf_invalidate.go
@@ -9141,6 +9160,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.SourceOrigin` (go_package_symbol) — graph/graph.go
 - `github.com/agentic-research/mache/graph.StalenessReporter` (go_package_symbol) — graph/index_staleness.go
 - `github.com/agentic-research/mache/graph.TemplateRenderer` (go_package_symbol) — graph/sqlite_graph.go
+- `github.com/agentic-research/mache/graph.UnnamedName` (go_package_symbol) — graph/ref_tokens.go
 - `github.com/agentic-research/mache/graph.VDirSymlinkTarget` (go_package_symbol) — graph/vdirpath.go
 - `github.com/agentic-research/mache/graph.Writable` (go_package_symbol) — graph/blob_source.go
 - `github.com/agentic-research/mache/graph.WritableGraph` (go_package_symbol) — graph/writable_graph.go
@@ -9197,6 +9217,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.candidates` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.cells` (go_package_symbol) — graph/community_granularity.go
 - `github.com/agentic-research/mache/graph.chain` (go_package_symbol) — graph/sqlite_graph_ids.go
+- `github.com/agentic-research/mache/graph.checkDirectSchema` (go_package_symbol) — graph/direct_schema.go
 - `github.com/agentic-research/mache/graph.childID` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.childIDs` (go_package_symbol) — graph/memstore.go
 - `github.com/agentic-research/mache/graph.children` (go_package_symbol) — graph/composite.go
@@ -9217,14 +9238,13 @@ graph LR
 - `github.com/agentic-research/mache/graph.component` (go_package_symbol) — graph/community.go
 - `github.com/agentic-research/mache/graph.components` (go_package_symbol) — graph/community.go
 - `github.com/agentic-research/mache/graph.computeModularity` (go_package_symbol) — graph/community.go
-- `github.com/agentic-research/mache/graph.content` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.content` (go_package_symbol) — graph/sqlite_graph.go
 - `github.com/agentic-research/mache/graph.contentSize` (go_package_symbol) — graph/sqlite_graph.go
 - `github.com/agentic-research/mache/graph.count` (go_package_symbol) — graph/sqlite_graph.go
 - `github.com/agentic-research/mache/graph.count` (go_package_symbol) — graph/writable_graph.go
 - `github.com/agentic-research/mache/graph.data` (go_package_symbol) — graph/memstore.go
 - `github.com/agentic-research/mache/graph.dbPageSize` (go_package_symbol) — graph/arena_writer.go
-- `github.com/agentic-research/mache/graph.decoded` (go_package_symbol) — graph/sqlite_graph_scan.go
+- `github.com/agentic-research/mache/graph.decoded` (go_package_symbol) — graph/sqlite_graph_scan_record.go
 - `github.com/agentic-research/mache/graph.defID` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.defaultSQLitePageSize` (go_package_symbol) — graph/arena_writer.go
 - `github.com/agentic-research/mache/graph.defs` (go_package_symbol) — graph/sqlite_graph_callees.go
@@ -9233,6 +9253,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.deriveLabels` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.dirIDs` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.dirOfFile` (go_package_symbol) — graph/community_granularity.go
+- `github.com/agentic-research/mache/graph.directRecordSelectors` (go_package_symbol) — graph/direct_schema.go
 - `github.com/agentic-research/mache/graph.eb` (go_package_symbol) — graph/refs_resolve.go
 - `github.com/agentic-research/mache/graph.edgeKey` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.edgeLabel` (go_package_symbol) — graph/quotient.go
@@ -9265,6 +9286,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.imports` (go_package_symbol) — graph/memstore_callees.go
 - `github.com/agentic-research/mache/graph.indexToNode` (go_package_symbol) — graph/community.go
 - `github.com/agentic-research/mache/graph.isStdlibToken` (go_package_symbol) — graph/quotient.go
+- `github.com/agentic-research/mache/graph.isTemplated` (go_package_symbol) — graph/sqlite_graph_scan_record.go
 - `github.com/agentic-research/mache/graph.isTestNode` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.isTestToken` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.isZeroPage` (go_package_symbol) — graph/arena_writer.go
@@ -9276,7 +9298,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.kind` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.knownProjections` (go_package_symbol) — graph/projection_version.go
 - `github.com/agentic-research/mache/graph.langName` (go_package_symbol) — graph/sqlite_graph_callees.go
-- `github.com/agentic-research/mache/graph.leafMapping` (go_package_symbol) — graph/sqlite_graph_scan.go
+- `github.com/agentic-research/mache/graph.leafMapping` (go_package_symbol) — graph/sqlite_graph_scan_record.go
 - `github.com/agentic-research/mache/graph.lessBySizeThenFirst` (go_package_symbol) — graph/community.go
 - `github.com/agentic-research/mache/graph.likeMatch` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.likeMatchRec` (go_package_symbol) — graph/sqlite_graph_refs.go
@@ -9293,6 +9315,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.n` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.name` (go_package_symbol) — graph/nodes_table_reader.go
 - `github.com/agentic-research/mache/graph.narrowToPackage` (go_package_symbol) — graph/refs_resolve.go
+- `github.com/agentic-research/mache/graph.nestedSelectors` (go_package_symbol) — graph/direct_schema.go
 - `github.com/agentic-research/mache/graph.newScanPool` (go_package_symbol) — graph/scan_pool.go
 - `github.com/agentic-research/mache/graph.newV6Shape` (go_package_symbol) — graph/nodes_shape.go
 - `github.com/agentic-research/mache/graph.nextID` (go_package_symbol) — graph/memstore_refsdb.go
@@ -9324,9 +9347,11 @@ graph LR
 - `github.com/agentic-research/mache/graph.path` (go_package_symbol) — graph/refs_resolve.go
 - `github.com/agentic-research/mache/graph.path` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.path` (go_package_symbol) — graph/sqlite_graph_refs.go
-- `github.com/agentic-research/mache/graph.pathEntry` (go_package_symbol) — graph/sqlite_graph_scan.go
+- `github.com/agentic-research/mache/graph.pathEntry` (go_package_symbol) — graph/sqlite_graph_scan_record.go
 - `github.com/agentic-research/mache/graph.perMount` (go_package_symbol) — graph/composite.go
 - `github.com/agentic-research/mache/graph.pickChildLevel` (go_package_symbol) — graph/sqlite_graph_schema.go
+- `github.com/agentic-research/mache/graph.problems` (go_package_symbol) — graph/direct_schema.go
+- `github.com/agentic-research/mache/graph.problems` (go_package_symbol) — graph/direct_schema.go
 - `github.com/agentic-research/mache/graph.projectedPairs` (go_package_symbol) — graph/community.go
 - `github.com/agentic-research/mache/graph.prominent` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.propsJSON` (go_package_symbol) — graph/sqlite_graph_callees.go
@@ -9352,7 +9377,6 @@ graph LR
 - `github.com/agentic-research/mache/graph.refResolves` (go_package_symbol) — graph/sqlite_graph_refs.go
 - `github.com/agentic-research/mache/graph.refsSidecarPath` (go_package_symbol) — graph/sqlite_graph.go
 - `github.com/agentic-research/mache/graph.rel` (go_package_symbol) — graph/index_staleness.go
-- `github.com/agentic-research/mache/graph.result` (go_package_symbol) — graph/sqlite_graph_scan.go
 - `github.com/agentic-research/mache/graph.results` (go_package_symbol) — graph/composite.go
 - `github.com/agentic-research/mache/graph.results` (go_package_symbol) — graph/memstore_callees.go
 - `github.com/agentic-research/mache/graph.root` (go_package_symbol) — graph/index_staleness.go
@@ -9370,8 +9394,9 @@ graph LR
 - `github.com/agentic-research/mache/graph.scanPool.closeScans` (go_package_symbol) — graph/scan_pool.go
 - `github.com/agentic-research/mache/graph.scanPool.stats` (go_package_symbol) — graph/scan_pool.go
 - `github.com/agentic-research/mache/graph.scanPoolSize` (go_package_symbol) — graph/scan_pool.go
-- `github.com/agentic-research/mache/graph.scanResult` (go_package_symbol) — graph/sqlite_graph_scan.go
-- `github.com/agentic-research/mache/graph.scanResult.reset` (go_package_symbol) — graph/sqlite_graph_scan.go
+- `github.com/agentic-research/mache/graph.scanResult` (go_package_symbol) — graph/sqlite_graph_scan_record.go
+- `github.com/agentic-research/mache/graph.scanResult.claim` (go_package_symbol) — graph/sqlite_graph_scan_record.go
+- `github.com/agentic-research/mache/graph.scanResult.reset` (go_package_symbol) — graph/sqlite_graph_scan_record.go
 - `github.com/agentic-research/mache/graph.schemaLevel` (go_package_symbol) — graph/sqlite_graph_schema.go
 - `github.com/agentic-research/mache/graph.searchMacheRefs` (go_package_symbol) — graph/ref_search.go
 - `github.com/agentic-research/mache/graph.seen` (go_package_symbol) — graph/community_granularity.go
@@ -9399,7 +9424,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.token` (go_package_symbol) — graph/refs_resolve.go
 - `github.com/agentic-research/mache/graph.token` (go_package_symbol) — graph/sqlite_graph_ids.go
 - `github.com/agentic-research/mache/graph.token` (go_package_symbol) — graph/sqlite_graph_refs.go
-- `github.com/agentic-research/mache/graph.tokenAt` (go_package_symbol) — graph/sqlite_graph_scan.go
+- `github.com/agentic-research/mache/graph.tokenAt` (go_package_symbol) — graph/sqlite_graph_scan_record.go
 - `github.com/agentic-research/mache/graph.tokenID` (go_package_symbol) — graph/sqlite_graph_ids.go
 - `github.com/agentic-research/mache/graph.tokenInfo` (go_package_symbol) — graph/quotient.go
 - `github.com/agentic-research/mache/graph.tokens` (go_package_symbol) — graph/memstore_callees.go
@@ -9407,7 +9432,7 @@ graph LR
 - `github.com/agentic-research/mache/graph.tokens` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.tokens` (go_package_symbol) — graph/sqlite_graph_callees.go
 - `github.com/agentic-research/mache/graph.tokens` (go_package_symbol) — graph/sqlite_graph_ids.go
-- `github.com/agentic-research/mache/graph.typedRefValues` (go_package_symbol) — graph/sqlite_graph_scan.go
+- `github.com/agentic-research/mache/graph.typedRefValues` (go_package_symbol) — graph/sqlite_graph_scan_record.go
 - `github.com/agentic-research/mache/graph.unmapped` (go_package_symbol) — graph/sheaf_invalidate.go
 - `github.com/agentic-research/mache/graph.v` (go_package_symbol) — graph/projection_version.go
 - `github.com/agentic-research/mache/graph.v6Shape` (go_package_symbol) — graph/nodes_shape.go
@@ -10365,6 +10390,9 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.ProposalRefusal` (go_package_symbol) — internal/leyline/propose.go
 - `github.com/agentic-research/mache/internal/leyline.ProposeResult` (go_package_symbol) — internal/leyline/propose.go
 - `github.com/agentic-research/mache/internal/leyline.Provenance` (go_package_symbol) — internal/leyline/provenance.go
+- `github.com/agentic-research/mache/internal/leyline.QueryResult` (go_package_symbol) — internal/leyline/query.go
+- `github.com/agentic-research/mache/internal/leyline.QueryTruncatedError` (go_package_symbol) — internal/leyline/query.go
+- `github.com/agentic-research/mache/internal/leyline.QueryTruncatedError.Error` (go_package_symbol) — internal/leyline/query.go
 - `github.com/agentic-research/mache/internal/leyline.ReadOwnerRecord` (go_package_symbol) — internal/leyline/owner_record.go
 - `github.com/agentic-research/mache/internal/leyline.RecordResolved` (go_package_symbol) — internal/leyline/provenance_record.go
 - `github.com/agentic-research/mache/internal/leyline.RegionHash` (go_package_symbol) — internal/leyline/sheaf_region.go
@@ -10407,7 +10435,8 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.SocketClient.Enrich` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.SocketClient.Prioritize` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.SocketClient.Propose` (go_package_symbol) — internal/leyline/propose.go
-- `github.com/agentic-research/mache/internal/leyline.SocketClient.Query` (go_package_symbol) — internal/leyline/socket.go
+- `github.com/agentic-research/mache/internal/leyline.SocketClient.Query` (go_package_symbol) — internal/leyline/query.go
+- `github.com/agentic-research/mache/internal/leyline.SocketClient.QueryResult` (go_package_symbol) — internal/leyline/query.go
 - `github.com/agentic-research/mache/internal/leyline.SocketClient.ReadSource` (go_package_symbol) — internal/leyline/propose.go
 - `github.com/agentic-research/mache/internal/leyline.SocketClient.SendOp` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.SocketClient.SendOpInto` (go_package_symbol) — internal/leyline/socket.go
@@ -10446,7 +10475,6 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.buildRestrictions` (go_package_symbol) — internal/leyline/sheaf.go
 - `github.com/agentic-research/mache/internal/leyline.cfg` (go_package_symbol) — internal/leyline/arena_config.go
 - `github.com/agentic-research/mache/internal/leyline.checkLeylineVersionCompat` (go_package_symbol) — internal/leyline/version_check.go
-- `github.com/agentic-research/mache/internal/leyline.cols` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.compareSemver` (go_package_symbol) — internal/leyline/version_check.go
 - `github.com/agentic-research/mache/internal/leyline.crossCommunityTokens` (go_package_symbol) — internal/leyline/sheaf.go
 - `github.com/agentic-research/mache/internal/leyline.daemonBinaryVersion` (go_package_symbol) — internal/leyline/version_check.go
@@ -10461,6 +10489,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.defaultLeylineStartTimeout` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.defaultSubscribeReadTimeout` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.deref` (go_package_symbol) — internal/leyline/propose.go
+- `github.com/agentic-research/mache/internal/leyline.derr` (go_package_symbol) — internal/leyline/query.go
 - `github.com/agentic-research/mache/internal/leyline.downloadLeyline` (go_package_symbol) — internal/leyline/socket.go
 - `github.com/agentic-research/mache/internal/leyline.edgeKey` (go_package_symbol) — internal/leyline/sheaf.go
 - `github.com/agentic-research/mache/internal/leyline.envelope` (go_package_symbol) — internal/leyline/sheaf_subscriber.go
@@ -10522,6 +10551,7 @@ graph LR
 - `github.com/agentic-research/mache/internal/leyline.resp` (go_package_symbol) — internal/leyline/propose.go
 - `github.com/agentic-research/mache/internal/leyline.resp` (go_package_symbol) — internal/leyline/propose.go
 - `github.com/agentic-research/mache/internal/leyline.resp` (go_package_symbol) — internal/leyline/propose.go
+- `github.com/agentic-research/mache/internal/leyline.resp` (go_package_symbol) — internal/leyline/query.go
 - `github.com/agentic-research/mache/internal/leyline.resp` (go_package_symbol) — internal/leyline/sheaf.go
 - `github.com/agentic-research/mache/internal/leyline.resp` (go_package_symbol) — internal/leyline/sheaf.go
 - `github.com/agentic-research/mache/internal/leyline.resp` (go_package_symbol) — internal/leyline/socket.go
@@ -11832,6 +11862,11 @@ graph LR
 - `github.com/agentic-research/mache/internal/template.cache` (go_package_symbol) — internal/template/render.go
 - `github.com/agentic-research/mache/internal/template.err` (go_package_symbol) — internal/template/render.go
 - `github.com/agentic-research/mache/internal/template.err` (go_package_symbol) — internal/template/render.go
+- `github.com/agentic-research/mache/internal/template.parseTemplate` (go_package_symbol) — internal/template/render.go
+- `github.com/agentic-research/mache/internal/template.printMissingAsEmpty` (go_package_symbol) — internal/template/render.go
+- `github.com/agentic-research/mache/internal/template.printable` (go_package_symbol) — internal/template/render.go
+- `github.com/agentic-research/mache/internal/template.printableCmd` (go_package_symbol) — internal/template/render.go
+- `github.com/agentic-research/mache/internal/template.printableFunc` (go_package_symbol) — internal/template/render.go
 - `github.com/agentic-research/mache/internal/template.t` (go_package_symbol) — internal/template/render.go
 - `github.com/agentic-research/mache/internal/template.t` (go_package_symbol) — internal/template/render.go
 - `github.com/agentic-research/mache/internal/testfixtures.All` (go_package_symbol) — internal/testfixtures/registry.go
