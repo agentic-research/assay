@@ -2,7 +2,7 @@
 
 - Resolved edges: 145
 - External dependencies: 4584
-- Dangling producers: 10701
+- Dangling producers: 10703
 
 ## Graph
 
@@ -8229,6 +8229,8 @@ graph LR
 - `github.com/agentic-research/cloister/pkg/cluster.HttpForwardBackend` (go_package_symbol) — pkg/cluster/cluster.go
 - `github.com/agentic-research/cloister/pkg/cluster.HttpProxySpec` (go_package_symbol) — pkg/cluster/cluster.go
 - `github.com/agentic-research/cloister/pkg/cluster.InputSpec` (go_package_symbol) — pkg/cluster/cluster.go
+- `github.com/agentic-research/cloister/pkg/cluster.Inspect` (go_package_symbol) — pkg/cluster/cluster.go
+- `github.com/agentic-research/cloister/pkg/cluster.InspectCrd` (go_package_symbol) — pkg/cluster/cluster.go
 - `github.com/agentic-research/cloister/pkg/cluster.InterlacePolicy` (go_package_symbol) — pkg/cluster/cluster.go
 - `github.com/agentic-research/cloister/pkg/cluster.LeylineNetBackend` (go_package_symbol) — pkg/cluster/cluster.go
 - `github.com/agentic-research/cloister/pkg/cluster.McpRouteSpec` (go_package_symbol) — pkg/cluster/cluster.go
