@@ -541,7 +541,7 @@ graph LR
 - `zerocopy` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/rutabaga_gfx/Cargo.toml:28
 - `zeroize` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/ll-open/sign/Cargo.toml:121
 - `zstd` (cargo_crate) — /home/runner/work/_temp/ecosystem/ley-line-open/rs/third_party/libkrun/src/vmm/Cargo.toml:53
-- `*-linux-amd64` (cli_binary) — .github/workflows/release-dryrun.yml:174
+- `*-linux-amd64` (cli_binary) — .github/workflows/release-dryrun.yml:180
 - `-` (cli_binary) — .github/workflows/oidc-signing.yml:67
 - `:` (cli_binary) — .github/workflows/release.yml:160
 - `EOF` (cli_binary) — .github/workflows/oidc-signing.yml:62
@@ -572,7 +572,7 @@ graph LR
 - `chmod` (cli_binary) — .github/workflows/ci.yml:616
 - `chmod` (cli_binary) — .github/workflows/openssl.yml:35
 - `chmod` (cli_binary) — .github/workflows/release.yml:157
-- `codesign` (cli_binary) — .github/workflows/release-dryrun.yml:283
+- `codesign` (cli_binary) — .github/workflows/release-dryrun.yml:305
 - `codesign` (cli_binary) — .github/workflows/release.yml:106
 - `codesign` (cli_binary) — .github/workflows/release.yml:112
 - `config:` (cli_binary) — .github/workflows/oidc-signing.yml:68
@@ -584,7 +584,7 @@ graph LR
 - `curl` (cli_binary) — .github/workflows/ci.yml:790
 - `curl` (cli_binary) — .github/workflows/release.yml:154
 - `docker` (cli_binary) — .github/workflows/ci.yml:441
-- `docker` (cli_binary) — .github/workflows/release-dryrun.yml:225
+- `docker` (cli_binary) — .github/workflows/release-dryrun.yml:231
 - `docker` (cli_binary) — .github/workflows/release.yml:167
 - `enabled:` (cli_binary) — .github/workflows/oidc-signing.yml:73
 - `gh` (cli_binary) — .github/workflows/ci.yml:612
@@ -620,7 +620,7 @@ graph LR
 - `grep` (cli_binary) — .github/workflows/ci.yml:697
 - `grep` (cli_binary) — .github/workflows/lfs-guard.yml:57
 - `grep` (cli_binary) — .github/workflows/publish-dpop.yml:134
-- `grep` (cli_binary) — .github/workflows/release-dryrun.yml:282
+- `grep` (cli_binary) — .github/workflows/release-dryrun.yml:296
 - `issuer_url:` (cli_binary) — .github/workflows/oidc-signing.yml:70
 - `kind` (cli_binary) — .github/workflows/ci.yml:380
 - `kubectl` (cli_binary) — .github/workflows/ci.yml:381
@@ -639,7 +639,7 @@ graph LR
 - `pnpm` (cli_binary) — .github/workflows/release-cli.yml:54
 - `printf` (cli_binary) — .github/workflows/ci.yml:209
 - `printf` (cli_binary) — .github/workflows/coverage.yml:85
-- `printf` (cli_binary) — .github/workflows/release-dryrun.yml:177
+- `printf` (cli_binary) — .github/workflows/release-dryrun.yml:183
 - `providers:` (cli_binary) — .github/workflows/oidc-signing.yml:66
 - `python3` (cli_binary) — .github/workflows/ci.yml:124
 - `regen.sh` (cli_binary) — .github/workflows/cloister-schema-go.yml:69
@@ -650,7 +650,7 @@ graph LR
 - `sha256sum` (cli_binary) — .github/workflows/release-cli.yml:63
 - `sha256sum` (cli_binary) — .github/workflows/release.yml:138
 - `sha256sum` (cli_binary) — .github/workflows/release.yml:271
-- `sign_krun_worker.sh` (cli_binary) — .github/workflows/release-dryrun.yml:281
+- `sign_krun_worker.sh` (cli_binary) — .github/workflows/release-dryrun.yml:303
 - `signet` (cli_binary) — .github/workflows/ci.yml:76
 - `signet` (cli_binary) — .github/workflows/oidc-signing.yml:80
 - `signet-git` (cli_binary) — .github/workflows/ci.yml:77
@@ -679,14 +679,14 @@ graph LR
 - `task` (cli_binary) — .github/workflows/oidc-signing.yml:40
 - `task` (cli_binary) — .github/workflows/publish-crates.yml:107
 - `task` (cli_binary) — .github/workflows/publish-dpop.yml:86
-- `task` (cli_binary) — .github/workflows/release-dryrun.yml:91
+- `task` (cli_binary) — .github/workflows/release-dryrun.yml:97
 - `task` (cli_binary) — .github/workflows/release.yml:62
-- `task` (cli_binary) — .github/workflows/release.yml:143
+- `task` (cli_binary) — .github/workflows/release.yml:146
 - `task` (cli_binary) — .github/workflows/release.yml:157
 - `task` (cli_binary) — .github/workflows/release.yml:256
 - `task` (cli_binary) — .github/workflows/vendor-libkrun.yml:43
 - `test_cms_headers.sh` (cli_binary) — .github/workflows/openssl.yml:36
-- `test_execution_schema_asset.sh` (cli_binary) — .github/workflows/release-dryrun.yml:151
+- `test_execution_schema_asset.sh` (cli_binary) — .github/workflows/release-dryrun.yml:157
 - `test_openssl_verify.sh` (cli_binary) — .github/workflows/openssl.yml:42
 - `test_sig1_http_integration.sh` (cli_binary) — .github/workflows/ci.yml:89
 - `unzip` (cli_binary) — .github/workflows/ci.yml:792
@@ -695,7 +695,7 @@ graph LR
 - `{` (cli_binary) — .github/workflows/oidc-signing.yml:52
 - `}` (cli_binary) — .github/workflows/oidc-signing.yml:61
 - `}` (cli_binary) — .github/workflows/publish-dpop.yml:137
-- `}` (cli_binary) — .github/workflows/release-dryrun.yml:180
+- `}` (cli_binary) — .github/workflows/release-dryrun.yml:186
 - `cgr.dev/chainguard/static` (container_image) — image.Dockerfile:43
 - `cloister:0.1.0` (container_image) — /home/runner/work/_temp/ecosystem/cloister/cluster.capnp:31
 - `docker.io/library/alpine` (container_image) — demo/http-auth/Dockerfile:18
